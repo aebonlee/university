@@ -1,4 +1,4 @@
-import{j as e}from"./markdown-X-y-aifN.js";import{u as S,b as m,L as c}from"./vendor-j2q2Hh8J.js";import{u as N}from"./index-CQ3VucV8.js";import{C as b,S as D}from"./SEOHead-BkjqMOtS.js";import"./supabase-ClMXFR6t.js";const h=[{id:"ai-basics",icon:"fa-brain",titleKo:"생성형 AI 기초",titleEn:"Generative AI Basics",descKo:"생성형 AI의 개념, 동작 원리, 주요 서비스 비교 및 대학 행정 활용 전략",descEn:"Generative AI concepts, principles, service comparison, and university administration strategies",sessions:[{day:1,period:1,titleKo:"생성형 AI의 이해와 활용 전략",titleEn:"Understanding Generative AI"}],sections:[{titleKo:"생성형 AI란?",titleEn:"What is Generative AI?",contentKo:`생성형 AI(Generative AI)는 텍스트, 이미지, 코드 등 새로운 콘텐츠를 생성할 수 있는 인공지능입니다.
+import{j as e}from"./markdown-X-y-aifN.js";import{u as k,b as d,L as y}from"./vendor-j2q2Hh8J.js";import{u as D}from"./index-KcH55Ang.js";import{C as N,S as M}from"./SEOHead-BkjqMOtS.js";import"./supabase-ClMXFR6t.js";const F=[{id:"ai-basics",icon:"fa-brain",titleKo:"생성형 AI 기초",titleEn:"Generative AI Basics",descKo:"생성형 AI의 개념, 동작 원리, 주요 서비스 비교 및 대학 행정 활용 전략",descEn:"Generative AI concepts, principles, service comparison, and university administration strategies",sessions:[{day:1,period:1,titleKo:"생성형 AI의 이해와 활용 전략",titleEn:"Understanding Generative AI"}],sections:[{titleKo:"생성형 AI란?",titleEn:"What is Generative AI?",contentKo:`생성형 AI(Generative AI)는 텍스트, 이미지, 코드 등 새로운 콘텐츠를 생성할 수 있는 인공지능입니다.
 
 **핵심 개념**
 - **LLM (Large Language Model)**: 대규모 텍스트 데이터로 학습한 언어 모델
@@ -95,7 +95,7 @@ You are a university administration expert proficient in official document writi
 **C - Context**
 Provide background and specific conditions.
 \`\`\`
-The Academic Affairs Office of Chonnam National University needs to write a course registration notice for the 2nd semester of 2024.
+The Academic Affairs Office needs to write a course registration notice for the 2nd semester of 2024.
 \`\`\`
 
 **F - Format**
@@ -161,11 +161,7 @@ Gradually improve prompts based on initial results.
 \`\`\`
 [역할] {부서} 보고서 작성 전문가
 [작업] {보고서 유형} 작성
-[포함 사항]
-- 현황 요약
-- 주요 성과 (수치 포함)
-- 문제점 및 개선방안
-- 향후 계획
+[포함 사항] 현황 요약, 주요 성과, 문제점 및 개선방안, 향후 계획
 [분량] {페이지 수}
 [어조] {어조 지정}
 \`\`\``,contentEn:`**Official Document Template**
@@ -196,14 +192,10 @@ Gradually improve prompts based on initial results.
 \`\`\`
 [Role] {department} report writing expert
 [Task] Write a {report type}
-[Include]
-- Status summary
-- Key achievements (with numbers)
-- Issues and improvements
-- Future plans
+[Include] Status summary, Key achievements, Issues and improvements, Future plans
 [Length] {pages}
 [Tone] {tone}
-\`\`\``}]},{id:"document-automation",icon:"fa-file-lines",titleKo:"문서 작성 자동화",titleEn:"Document Writing Automation",descKo:"공문서, 회의록, 보고서를 AI로 빠르게 작성하고 검토하는 방법",descEn:"Quickly write and review official documents, meeting minutes, and reports with AI",sessions:[{day:1,period:3,titleKo:"AI 활용 공문서 작성",titleEn:"AI-Powered Official Document Writing"},{day:1,period:4,titleKo:"회의록·보고서 자동화",titleEn:"Meeting Minutes & Report Automation"}],sections:[{titleKo:"대학 행정 공문서 유형",titleEn:"University Administrative Document Types",contentKo:`| 유형 | 설명 | 예시 |
+\`\`\``}]}],L=[{id:"document-automation",icon:"fa-file-lines",titleKo:"공문서·보고서 작성",titleEn:"Official Documents & Reports",descKo:"공문서, 회의록, 보고서를 AI로 빠르게 작성하고 검토하는 방법",descEn:"Quickly write and review official documents, meeting minutes, and reports with AI",sessions:[{day:1,period:3,titleKo:"AI 활용 공문서 작성",titleEn:"AI-Powered Official Document Writing"},{day:1,period:4,titleKo:"회의록·보고서 자동화",titleEn:"Meeting Minutes & Report Automation"}],sections:[{titleKo:"대학 행정 공문서 유형",titleEn:"University Administrative Document Types",contentKo:`| 유형 | 설명 | 예시 |
 |------|------|------|
 | **기안문** | 업무를 기획·제안하는 문서 | 예산 신청, 행사 기획안 |
 | **통보문** | 결정 사항을 알리는 문서 | 합격 통보, 일정 안내 |
@@ -269,7 +261,7 @@ Gradually improve prompts based on initial results.
 | Weekly report | Clear results/plans | Auto-format in table |
 | Result report | Include performance metrics | Data-based summary |
 | Planning report | Logical structure | Auto-design outline |
-| Trip report | Chronological order | Timeline and insights |`}]},{id:"ppt-creation",icon:"fa-presentation-screen",titleKo:"PPT 보고자료 제작",titleEn:"PPT Report Creation",descKo:"AI 기반 PPT 구조 설계, Gamma·Canva 활용, 데이터 시각화 기법",descEn:"AI-based PPT structure design, Gamma/Canva usage, and data visualization techniques",sessions:[{day:1,period:5,titleKo:"PPT 보고자료 제작 (1)",titleEn:"PPT Report Creation (1)"},{day:1,period:6,titleKo:"PPT 보고자료 제작 (2)",titleEn:"PPT Report Creation (2)"},{day:2,period:4,titleKo:"인사행정 보고자료 제작",titleEn:"HR Report Presentation"}],sections:[{titleKo:"AI 기반 PPT 제작 도구",titleEn:"AI-Based PPT Tools",contentKo:`**Gamma (gamma.app)**
+| Trip report | Chronological order | Timeline and insights |`}]},{id:"ppt-creation",icon:"fa-chart-pie",titleKo:"PPT 보고자료 제작",titleEn:"PPT Report Creation",descKo:"AI 기반 PPT 구조 설계, Gamma·Canva 활용, 데이터 시각화 기법",descEn:"AI-based PPT structure design, Gamma/Canva usage, data visualization",sessions:[{day:1,period:5,titleKo:"PPT 보고자료 제작 (1)",titleEn:"PPT Report Creation (1)"},{day:1,period:6,titleKo:"PPT 보고자료 제작 (2)",titleEn:"PPT Report Creation (2)"}],sections:[{titleKo:"AI 기반 PPT 제작 도구",titleEn:"AI-Based PPT Tools",contentKo:`**Gamma (gamma.app)**
 AI 기반 프레젠테이션 자동 생성 도구
 1. gamma.app 접속 후 회원가입
 2. "New AI" > "Presentation" 선택
@@ -311,7 +303,7 @@ Design platform for PPT creation
 PPT structure design and content generation
 - Design structure and key messages per slide
 - Write detailed content and speaker notes
-- Recommend data visualization methods`},{titleKo:"PPT 디자인 원칙",titleEn:"PPT Design Principles",contentKo:`**4대 디자인 원칙**
+- Recommend data visualization methods`},{titleKo:"PPT 디자인 원칙 & 시각화",titleEn:"PPT Design Principles & Visualization",contentKo:`**4대 디자인 원칙**
 - **일관성**: 같은 폰트, 같은 색상 체계 유지
 - **간결성**: 슬라이드당 텍스트 50단어 이내
 - **시각성**: 아이콘, 차트, 이미지로 메시지 전달
@@ -325,14 +317,7 @@ PPT structure design and content generation
 | 추이 | 꺾은선 차트 | 시간에 따른 변화 |
 | 비율 | 원형/도넛 차트 | 전체 대비 비율 |
 | 분포 | 히트맵/산점도 | 데이터 분포 패턴 |
-| 구성 | 누적 막대 | 항목별 구성 비교 |
-
-**PPT 최종 점검 체크리스트**
-- [ ] 전체 스토리라인이 논리적인가?
-- [ ] 각 슬라이드의 핵심 메시지가 명확한가?
-- [ ] 데이터 출처가 모두 표기되었는가?
-- [ ] 폰트/색상이 일관적인가?
-- [ ] 발표 시간에 적합한 분량인가?`,contentEn:`**4 Design Principles**
+| 구성 | 누적 막대 | 항목별 구성 비교 |`,contentEn:`**4 Design Principles**
 - **Consistency**: Maintain same fonts and color scheme
 - **Simplicity**: Under 50 words per slide
 - **Visual**: Convey messages through icons, charts, images
@@ -346,14 +331,7 @@ PPT structure design and content generation
 | Trend | Line chart | Changes over time |
 | Ratio | Pie/Donut chart | Proportions of whole |
 | Distribution | Heatmap/Scatter | Data distribution patterns |
-| Composition | Stacked bar | Compare compositions |
-
-**PPT Final Checklist**
-- [ ] Is the overall storyline logical?
-- [ ] Is each slide's key message clear?
-- [ ] Are all data sources cited?
-- [ ] Are fonts/colors consistent?
-- [ ] Is the volume suitable for presentation time?`}]},{id:"excel-analysis",icon:"fa-table",titleKo:"Excel 데이터 분석",titleEn:"Excel Data Analysis",descKo:"AI 활용 수식 생성, 데이터 정리, 피벗 테이블, VBA 매크로 기초",descEn:"AI-powered formula generation, data cleaning, pivot tables, and VBA macro basics",sessions:[{day:1,period:7,titleKo:"Excel 데이터 분석 자동화",titleEn:"Excel Data Analysis Automation"},{day:2,period:3,titleKo:"근태 데이터 Excel 분석",titleEn:"Attendance Data Excel Analysis"}],sections:[{titleKo:"AI 활용 수식 생성",titleEn:"AI-Powered Formula Generation",contentKo:`AI에 Excel 작업을 설명하면 적합한 수식을 자동으로 생성해 줍니다.
+| Composition | Stacked bar | Compare compositions |`}]},{id:"excel-analysis",icon:"fa-table",titleKo:"Excel 데이터 분석",titleEn:"Excel Data Analysis",descKo:"AI 활용 수식 생성, 데이터 정리, 피벗 테이블, VBA 매크로 기초",descEn:"AI-powered formula generation, data cleaning, pivot tables, VBA basics",sessions:[{day:1,period:7,titleKo:"Excel 데이터 분석 자동화",titleEn:"Excel Data Analysis Automation"}],sections:[{titleKo:"AI 활용 수식 생성",titleEn:"AI-Powered Formula Generation",contentKo:`AI에 Excel 작업을 설명하면 적합한 수식을 자동으로 생성해 줍니다.
 
 **자주 사용하는 수식 유형**
 
@@ -391,9 +369,7 @@ Please provide Excel formulas for:
 2. Sum column C where column B >= 100
 3. Filter data where column D dates are in 2024
 Include explanations for each formula.
-\`\`\``},{titleKo:"피벗 테이블 & 차트",titleEn:"Pivot Tables & Charts",contentKo:`**피벗 테이블 활용 가이드**
-
-AI에 데이터 분석 목표를 설명하면 피벗 테이블 설정 방법을 안내받을 수 있습니다.
+\`\`\``},{titleKo:"피벗 테이블 & VBA 매크로",titleEn:"Pivot Tables & VBA Macros",contentKo:`**피벗 테이블 활용 가이드**
 
 | 분석 목표 | 행(Row) | 열(Column) | 값(Value) |
 |-----------|---------|-----------|-----------|
@@ -405,10 +381,8 @@ AI에 데이터 분석 목표를 설명하면 피벗 테이블 설정 방법을 
 - 부서별 평균 근무시간 → **가로 막대 차트**
 - 월별 지각률 추이 → **꺾은선 차트**
 - 연차 사용 현황 → **원형 차트**
-- 초과근무 Top 10 → **세로 막대 차트**
 
 **VBA 매크로 기초**
-반복 작업은 AI에 요청하여 VBA 코드를 생성할 수 있습니다.
 \`\`\`
 Excel VBA로 다음 작업을 자동화하는 매크로를 작성해 주세요:
 1. Sheet1의 A열 데이터를 읽기
@@ -416,8 +390,6 @@ Excel VBA로 다음 작업을 자동화하는 매크로를 작성해 주세요:
 3. Sheet2에 결과 출력
 주석 포함하여 초보자도 이해할 수 있도록 작성해 주세요.
 \`\`\``,contentEn:`**Pivot Table Usage Guide**
-
-Explain your data analysis goals to AI and get pivot table setup guidance.
 
 | Analysis Goal | Row | Column | Value |
 |--------------|-----|--------|-------|
@@ -429,17 +401,15 @@ Explain your data analysis goals to AI and get pivot table setup guidance.
 - Avg hours by department → **Horizontal bar chart**
 - Monthly tardiness trend → **Line chart**
 - Leave usage → **Pie chart**
-- Overtime Top 10 → **Vertical bar chart**
 
 **VBA Macro Basics**
-AI can generate VBA code for repetitive tasks.
 \`\`\`
 Write a VBA macro to:
 1. Read data from Sheet1 column A
 2. Remove duplicates and sort alphabetically
 3. Output results to Sheet2
 Include comments for beginners.
-\`\`\``}]},{id:"hr-administration",icon:"fa-users-gear",titleKo:"인사행정 AI 활용",titleEn:"HR Administration with AI",descKo:"채용공고, 인사발령, 근태 관리, 근로계약서 등 인사 업무의 AI 활용",descEn:"AI usage for job postings, appointments, attendance management, and employment contracts",sessions:[{day:2,period:1,titleKo:"인사·근태 관리 AI 활용",titleEn:"HR & Attendance AI Application"},{day:2,period:2,titleKo:"인사 관련 문서 작성",titleEn:"HR Document Creation"}],sections:[{titleKo:"인사 업무 AI 활용 영역",titleEn:"AI Applications in HR",contentKo:`| 업무 영역 | AI 활용 방안 | 예상 효과 |
+\`\`\``}]}],O=[{id:"hr-administration",icon:"fa-users-gear",titleKo:"인사·근태 관리",titleEn:"HR & Attendance Management",descKo:"채용공고, 인사발령, 근태 관리, 근로계약서 등 인사 업무의 AI 활용",descEn:"AI usage for job postings, appointments, attendance, and employment contracts",sessions:[{day:2,period:1,titleKo:"인사·근태 관리 AI 활용",titleEn:"HR & Attendance AI Application"},{day:2,period:2,titleKo:"인사 관련 문서 작성",titleEn:"HR Document Creation"},{day:2,period:3,titleKo:"근태 데이터 Excel 분석",titleEn:"Attendance Data Excel Analysis"}],sections:[{titleKo:"인사 업무 AI 활용 영역",titleEn:"AI Applications in HR",contentKo:`| 업무 영역 | AI 활용 방안 | 예상 효과 |
 |-----------|-------------|-----------|
 | **채용** | 공고 작성, 면접 질문 생성, 평가 기준 수립 | 작성 시간 70% 단축 |
 | **인사발령** | 발령 문서 자동 생성, 표준화 | 오류 감소, 일관성 확보 |
@@ -475,7 +445,7 @@ Write a job posting for university administrative staff.
 [Include]
 Organization intro, position, duties, qualifications, conditions, process, documents
 [Tone] Official yet appealing to applicants
-\`\`\``},{titleKo:"인사 문서 작성",titleEn:"HR Document Writing",contentKo:`**인사발령 통보문 프롬프트**
+\`\`\``},{titleKo:"인사 문서 작성 & 근로계약서",titleEn:"HR Documents & Employment Contracts",contentKo:`**인사발령 통보문 프롬프트**
 \`\`\`
 다음 인사 이동 정보로 인사발령 공문을 작성해 주세요:
 [발령 정보]
@@ -509,19 +479,56 @@ Write a personnel appointment notice for:
 - Verify compliance with labor laws
 - Check essential clauses (period, salary, hours)
 - Ensure consistency with internal regulations
-- Final version must be reviewed by legal team`}]},{id:"work-automation",icon:"fa-gears",titleKo:"업무 자동화 설계",titleEn:"Work Automation Design",descKo:"반복 업무 자동화 워크플로우 설계, 프롬프트 라이브러리 구축, ROI 계산",descEn:"Repetitive task automation workflow design, prompt library building, and ROI calculation",sessions:[{day:2,period:5,titleKo:"업무 템플릿 설계",titleEn:"Work Template Design"},{day:2,period:6,titleKo:"업무 자동화 워크플로우",titleEn:"Work Automation Workflow"}],sections:[{titleKo:"프롬프트 라이브러리 구축",titleEn:"Building a Prompt Library",contentKo:`**업무 템플릿 설계 원칙**
+- Final version must be reviewed by legal team`}]},{id:"hr-report",icon:"fa-chart-line",titleKo:"인사 보고자료 제작",titleEn:"HR Report Presentation",descKo:"인사 현황 PPT 시각화, 데이터 기반 스토리텔링, 경영진 보고자료",descEn:"HR status PPT visualization, data-driven storytelling, executive reports",sessions:[{day:2,period:4,titleKo:"인사행정 보고자료 제작",titleEn:"HR Report Presentation"}],sections:[{titleKo:"인사 데이터 시각화 & 스토리텔링",titleEn:"HR Data Visualization & Storytelling",contentKo:`**인사 데이터 시각화 매핑**
+
+| 데이터 | 추천 차트 | 핵심 포인트 |
+|--------|----------|------------|
+| 인력 현황 | 인포그래픽 숫자 | 전체 인원, 신규, 퇴직, 순증감 |
+| 부서별 인원 | 트리맵/막대 | 비율과 규모 동시 표현 |
+| 채용 달성률 | 도넛 차트 | 목표 대비 달성 % |
+| 이직 추이 | 꺾은선 차트 | 월별/분기별 트렌드 |
+| 근태 현황 | 히트맵/막대 | 부서별 비교 |
+
+**보고서 스토리라인 구조**
+1. **현황 제시**: 숫자로 현재 상태 요약
+2. **트렌드 분석**: 시간에 따른 변화 추이
+3. **원인 진단**: 주요 이슈의 원인 분석
+4. **개선 방안**: 데이터 기반 해결책 제시
+5. **실행 계획**: 구체적 액션 아이템과 일정
+
+**효과적인 데이터 발표 팁**
+- "숫자 → 의미 → 시사점" 순서로 설명
+- 비교 기준 명시 (전년 대비, 목표 대비)
+- 핵심 수치는 크게, 보조 수치는 작게
+- 긍정적 결과는 녹색, 주의 필요는 빨간색`,contentEn:`**HR Data Visualization Mapping**
+
+| Data | Chart Type | Key Points |
+|------|-----------|------------|
+| Workforce | Infographic numbers | Total, new, resigned, net change |
+| By department | Treemap/Bar | Ratio and scale |
+| Hiring rate | Donut chart | Target vs actual % |
+| Turnover trend | Line chart | Monthly/quarterly |
+| Attendance | Heatmap/Bar | Department comparison |
+
+**Report Storyline Structure**
+1. **Present status**: Summarize with numbers
+2. **Trend analysis**: Changes over time
+3. **Root cause**: Analyze key issues
+4. **Solutions**: Data-driven proposals
+5. **Action plan**: Specific items and timeline
+
+**Effective Data Presentation Tips**
+- Explain: "Number → Meaning → Implications"
+- Specify comparison basis (vs last year, vs target)
+- Key figures large, supplementary figures small
+- Positive results in green, caution in red`}]},{id:"work-automation",icon:"fa-gears",titleKo:"업무 자동화 설계",titleEn:"Work Automation Design",descKo:"프롬프트 라이브러리 구축, 워크플로우 설계, ROI 계산",descEn:"Prompt library building, workflow design, ROI calculation",sessions:[{day:2,period:5,titleKo:"업무 템플릿 설계",titleEn:"Work Template Design"},{day:2,period:6,titleKo:"업무 자동화 워크플로우",titleEn:"Work Automation Workflow"}],sections:[{titleKo:"프롬프트 라이브러리 & 가이드라인",titleEn:"Prompt Library & Guidelines",contentKo:`**업무 템플릿 설계 원칙**
 1. **재사용성**: 다양한 상황에 적용 가능하도록 변수({변수}) 활용
 2. **커스터마이징**: 변수 부분만 수정하면 완성
 3. **표준화**: 일관된 형식과 품질 보장
 4. **공유 가능**: 팀원과 쉽게 공유
 
-**프롬프트 관리 시스템**
-1. 공유 문서에 프롬프트 모음 관리
-2. 카테고리 분류: 공문서 / 보고서 / 데이터분석 / 인사 / 기타
-3. 버전 관리: 프롬프트 개선 이력 기록
-4. 효과성 평가: 주기적으로 프롬프트 품질 평가
-
 **AI 활용 가이드라인**
+
 | 항목 | 가이드라인 |
 |------|-----------|
 | 개인정보 | 실명, 주민번호 등 개인정보 입력 금지 |
@@ -534,13 +541,8 @@ Write a personnel appointment notice for:
 3. **Standardization**: Ensure consistent format and quality
 4. **Shareable**: Easy to share with team members
 
-**Prompt Management System**
-1. Manage prompt collection in shared documents
-2. Category classification: Documents / Reports / Data Analysis / HR / Other
-3. Version control: Record prompt improvement history
-4. Effectiveness evaluation: Periodic quality assessment
-
 **AI Usage Guidelines**
+
 | Item | Guideline |
 |------|-----------|
 | Personal info | Never input names, SSN, etc. |
@@ -548,6 +550,7 @@ Write a personnel appointment notice for:
 | Verification | Always fact-check AI outputs |
 | Attribution | Disclose AI usage when needed |
 | Storage | Register useful prompts in shared library |`},{titleKo:"워크플로우 설계 & ROI",titleEn:"Workflow Design & ROI",contentKo:`**자동화 대상 업무 선정 기준**
+
 | 기준 | 설명 |
 |------|------|
 | 반복 빈도 | 주 1회 이상 반복되는 업무 |
@@ -575,6 +578,7 @@ Write a personnel appointment notice for:
 
 예시: (2.5h - 0.8h) x 4회 x 12개월 x 30,000원 = 연간 2,448,000원 절감
 \`\`\``,contentEn:`**Automation Target Selection Criteria**
+
 | Criterion | Description |
 |-----------|-------------|
 | Frequency | Tasks repeated weekly or more |
@@ -601,6 +605,6 @@ Annual savings = Monthly savings x 12
 Cost savings = Annual hours saved x Hourly rate
 
 Example: (2.5h - 0.8h) x 4 x 12 x 30,000 KRW = 2,448,000 KRW/year
-\`\`\``}]}];function U(){const{language:p}=N(),n=p==="ko",u=S(),[f,y]=m.useState({}),[P,v]=m.useState(h[0].id),[A,r]=m.useState(!1),C=m.useRef(null),T=b.filter(t=>t.day===1),R=b.filter(t=>t.day===2);m.useEffect(()=>{if(u.hash){const t=u.hash.slice(1);v(t),setTimeout(()=>{var i;(i=document.getElementById(t))==null||i.scrollIntoView({behavior:"smooth",block:"start"})},100)}},[u.hash]),m.useEffect(()=>{function t(){const i=h.map(s=>document.getElementById(s.id)).filter(Boolean);for(let s=i.length-1;s>=0;s--){const d=i[s];if(d&&d.getBoundingClientRect().top<=150){v(h[s].id);break}}}return window.addEventListener("scroll",t,{passive:!0}),()=>window.removeEventListener("scroll",t)},[]);function K(t){y(i=>({...i,[t]:!i[t]}))}function j(t){var i;v(t),r(!1),(i=document.getElementById(t))==null||i.scrollIntoView({behavior:"smooth",block:"start"})}return e.jsxs("div",{className:"learning-page",children:[e.jsx(D,{title:n?"학습자료":"Learning Materials"}),e.jsxs("button",{className:"sidebar-toggle",onClick:()=>r(!A),children:[e.jsx("i",{className:`fa-solid ${A?"fa-xmark":"fa-bars"}`}),e.jsx("span",{children:n?"학습자료 목차":"Contents"})]}),e.jsxs("div",{className:"learning-layout",children:[e.jsx("aside",{className:`learning-sidebar ${A?"open":""}`,children:e.jsxs("div",{className:"sidebar-inner",children:[e.jsxs("div",{className:"sidebar-header",children:[e.jsx("i",{className:"fa-solid fa-book"}),e.jsx("span",{children:n?"학습자료":"Materials"})]}),e.jsxs("div",{className:"sidebar-group",children:[e.jsx("div",{className:"sidebar-group-title",children:n?"주제별 학습":"By Topic"}),h.map(t=>e.jsxs("button",{className:`sidebar-item ${P===t.id?"active":""}`,onClick:()=>j(t.id),children:[e.jsx("i",{className:`fa-solid ${t.icon}`}),e.jsx("span",{children:n?t.titleKo:t.titleEn})]},t.id))]}),e.jsxs("div",{className:"sidebar-group",children:[e.jsx("div",{className:"sidebar-group-title",children:n?"1일차: 문서행정 자동화":"Day 1: Document Automation"}),T.map(t=>e.jsxs(c,{to:`/day1/${t.period}`,className:"sidebar-item sidebar-session",onClick:()=>r(!1),children:[e.jsx("span",{className:"sidebar-period",children:t.period}),e.jsx("span",{children:n?t.title:t.titleEn})]},t.id))]}),e.jsxs("div",{className:"sidebar-group",children:[e.jsx("div",{className:"sidebar-group-title",children:n?"2일차: 인사행정 자동화":"Day 2: HR Automation"}),R.map(t=>e.jsxs(c,{to:`/day2/${t.period}`,className:"sidebar-item sidebar-session",onClick:()=>r(!1),children:[e.jsx("span",{className:"sidebar-period",children:t.period}),e.jsx("span",{children:n?t.title:t.titleEn})]},t.id))]}),e.jsxs("div",{className:"sidebar-group",children:[e.jsx("div",{className:"sidebar-group-title",children:n?"바로가기":"Quick Links"}),e.jsxs(c,{to:"/tools",className:"sidebar-item",onClick:()=>r(!1),children:[e.jsx("i",{className:"fa-solid fa-wrench"}),e.jsx("span",{children:n?"도구 가이드":"Tool Guide"})]}),e.jsxs(c,{to:"/community",className:"sidebar-item",onClick:()=>r(!1),children:[e.jsx("i",{className:"fa-solid fa-comments"}),e.jsx("span",{children:n?"커뮤니티":"Community"})]})]})]})}),A&&e.jsx("div",{className:"sidebar-overlay",onClick:()=>r(!1)}),e.jsxs("div",{className:"learning-content",ref:C,children:[e.jsxs("div",{className:"learning-content-header",children:[e.jsx("h1",{children:n?"학습자료":"Learning Materials"}),e.jsx("p",{children:n?"2일 16교시 교육 내용을 주제별로 정리한 핵심 학습자료입니다. 왼쪽 메뉴에서 주제를 선택하거나 교시별 상세 페이지로 이동할 수 있습니다.":"Key learning materials organized by topic. Select a topic from the left menu or navigate to detailed session pages."})]}),h.map(t=>e.jsxs("section",{id:t.id,className:"topic-section",children:[e.jsxs("div",{className:"topic-header",children:[e.jsx("div",{className:"topic-icon",children:e.jsx("i",{className:`fa-solid ${t.icon}`})}),e.jsxs("div",{className:"topic-header-text",children:[e.jsx("h2",{children:n?t.titleKo:t.titleEn}),e.jsx("p",{children:n?t.descKo:t.descEn})]})]}),e.jsxs("div",{className:"topic-sessions",children:[e.jsxs("span",{className:"topic-sessions-label",children:[e.jsx("i",{className:"fa-solid fa-book-open"})," ",n?"관련 교시":"Related Sessions",":"]}),t.sessions.map((i,s)=>e.jsxs(c,{to:`/day${i.day}/${i.period}`,className:"topic-session-link",children:[n?`${i.day}일차 ${i.period}교시`:`Day ${i.day} Session ${i.period}`,e.jsxs("span",{className:"topic-session-title",children:[" - ",n?i.titleKo:i.titleEn]})]},s))]}),e.jsx("div",{className:"topic-content",children:t.sections.map((i,s)=>{const d=`${t.id}-${s}`,x=f[d];return e.jsxs("div",{className:`accordion-item ${x?"open":""}`,children:[e.jsxs("button",{className:"accordion-header",onClick:()=>K(d),children:[e.jsx("span",{children:n?i.titleKo:i.titleEn}),e.jsx("i",{className:`fa-solid fa-chevron-${x?"up":"down"}`})]}),x&&e.jsx("div",{className:"accordion-body",children:e.jsxs("div",{className:"accordion-content markdown-content",children:[(n?i.contentKo:i.contentEn).split(`
-`).map((a,o)=>{var I;if(a.startsWith("|")){const E=a.split("|").filter(g=>g.trim());if(E.every(g=>/^[-:\s]+$/.test(g.trim())))return null;const w=o>0&&((I=(n?i.contentKo:i.contentEn).split(`
-`)[o+1])==null?void 0:I.trim().startsWith("|---"))?"th":"td";return e.jsx("table",{children:e.jsx("tbody",{children:e.jsx("tr",{children:E.map((g,k)=>e.jsx(w,{dangerouslySetInnerHTML:{__html:l(g.trim())}},k))})})},o)}return a.startsWith("```")?null:a.startsWith("**")&&a.endsWith("**")?e.jsx("h4",{dangerouslySetInnerHTML:{__html:l(a)}},o):a.trim()?a.startsWith(">")?e.jsx("blockquote",{dangerouslySetInnerHTML:{__html:l(a.slice(1).trim())}},o):a.startsWith("- [")?e.jsx("div",{className:"checklist-item",dangerouslySetInnerHTML:{__html:l(a)}},o):a.startsWith("- ")||a.startsWith("* ")?e.jsx("li",{dangerouslySetInnerHTML:{__html:l(a.slice(2))}},o):/^\d+\.\s/.test(a)?e.jsx("li",{className:"ol-item",dangerouslySetInnerHTML:{__html:l(a.replace(/^\d+\.\s/,""))}},o):e.jsx("p",{dangerouslySetInnerHTML:{__html:l(a)}},o):e.jsx("br",{},o)}),M(n?i.contentKo:i.contentEn)]})})]},d)})})]},t.id)),e.jsxs("div",{className:"learning-cta",children:[e.jsx("h3",{children:n?"실습을 통해 학습을 완성하세요":"Complete Your Learning Through Practice"}),e.jsx("p",{children:n?"학습자료를 참고하여 각 교시의 실습 과제를 수행해 보세요":"Refer to these materials while completing practice assignments"}),e.jsxs("div",{className:"learning-cta-buttons",children:[e.jsxs(c,{to:"/tools",className:"btn btn-primary",children:[e.jsx("i",{className:"fa-solid fa-wrench"})," ",n?"도구 가이드":"Tool Guide"]}),e.jsxs(c,{to:"/community",className:"btn btn-secondary",children:[e.jsx("i",{className:"fa-solid fa-comments"})," ",n?"커뮤니티":"Community"]})]})]})]})]})]})}function l(p){return p.replace(/\*\*(.+?)\*\*/g,"<strong>$1</strong>").replace(/`(.+?)`/g,"<code>$1</code>").replace(/\[(.+?)\]\((.+?)\)/g,'<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>').replace(/- \[ \]/g,'<span class="check-box">&#9744;</span>').replace(/- \[x\]/g,'<span class="check-box checked">&#9745;</span>')}function M(p){const n=[],u=/```(?:\w*)\n([\s\S]*?)```/g;let f,y=0;for(;(f=u.exec(p))!==null;)n.push(e.jsx("pre",{className:"code-block",children:e.jsx("code",{children:f[1].trim()})},`code-${y++}`));return n}export{U as default};
+\`\`\``}]}],v=[{id:"basic",icon:"fa-graduation-cap",titleKo:"기본학습자료",titleEn:"Basic Materials",descKo:"생성형 AI 개념과 프롬프트 엔지니어링 기초",descEn:"Generative AI concepts and prompt engineering basics",color:"#1B5E20",topics:F},{id:"document",icon:"fa-file-lines",titleKo:"문서행정 자동화",titleEn:"Document Automation",descKo:"1일차 — 공문서, PPT, Excel 자동화",descEn:"Day 1 — Documents, PPT, Excel automation",color:"#1565C0",topics:L,day:1},{id:"hr",icon:"fa-users-gear",titleKo:"인사행정 자동화",titleEn:"HR Automation",descKo:"2일차 — 인사·근태, 보고자료, 업무자동화",descEn:"Day 2 — HR, attendance, reports, workflow",color:"#6A1B9A",topics:O,day:2}];function q(){const{language:p}=D(),i=p==="ko",u=k(),[c,f]=d.useState("basic"),[T,h]=d.useState(""),[C,K]=d.useState({}),[A,l]=d.useState(!1),a=v.find(t=>t.id===c)||v[0],P=a.day?N.filter(t=>t.day===a.day):[];d.useEffect(()=>{if(u.hash){const t=u.hash.slice(1);for(const n of v)if(n.topics.some(o=>o.id===t)){f(n.id),h(t),setTimeout(()=>{var o;return(o=document.getElementById(t))==null?void 0:o.scrollIntoView({behavior:"smooth",block:"start"})},150);return}}},[u.hash]),d.useEffect(()=>{a.topics.length&&h(a.topics[0].id)},[c]),d.useEffect(()=>{function t(){for(let n=a.topics.length-1;n>=0;n--){const o=document.getElementById(a.topics[n].id);if(o&&o.getBoundingClientRect().top<=150){h(a.topics[n].id);break}}}return window.addEventListener("scroll",t,{passive:!0}),()=>window.removeEventListener("scroll",t)},[c]);function R(t){K(n=>({...n,[t]:!n[t]}))}function w(t){var n;h(t),l(!1),(n=document.getElementById(t))==null||n.scrollIntoView({behavior:"smooth",block:"start"})}return e.jsxs("div",{className:"learning-page",children:[e.jsx(M,{title:i?"학습자료":"Learning Materials"}),e.jsx("div",{className:"category-tabs-bar",children:e.jsx("div",{className:"category-tabs-inner",children:v.map(t=>e.jsxs("button",{className:`category-tab ${c===t.id?"active":""}`,style:c===t.id?{borderColor:t.color,color:t.color}:void 0,onClick:()=>{f(t.id),l(!1),window.scrollTo({top:0})},children:[e.jsx("i",{className:`fa-solid ${t.icon}`}),e.jsx("span",{className:"category-tab-label",children:i?t.titleKo:t.titleEn})]},t.id))})}),e.jsx("button",{className:"sidebar-toggle",onClick:()=>l(!A),children:e.jsx("i",{className:`fa-solid ${A?"fa-xmark":"fa-list"}`})}),e.jsxs("div",{className:"learning-layout",children:[e.jsx("aside",{className:`learning-sidebar ${A?"open":""}`,children:e.jsxs("div",{className:"sidebar-inner",children:[e.jsxs("div",{className:"sidebar-header",style:{color:a.color},children:[e.jsx("i",{className:`fa-solid ${a.icon}`}),e.jsx("span",{children:i?a.titleKo:a.titleEn})]}),e.jsxs("div",{className:"sidebar-group",children:[e.jsx("div",{className:"sidebar-group-title",children:i?"학습 주제":"Topics"}),a.topics.map(t=>e.jsxs("button",{className:`sidebar-item ${T===t.id?"active":""}`,onClick:()=>w(t.id),children:[e.jsx("i",{className:`fa-solid ${t.icon}`}),e.jsx("span",{children:i?t.titleKo:t.titleEn})]},t.id))]}),P.length>0&&e.jsxs("div",{className:"sidebar-group",children:[e.jsx("div",{className:"sidebar-group-title",children:i?`${a.day}일차 교시별 상세`:`Day ${a.day} Session Details`}),P.map(t=>e.jsxs(y,{to:`/day${t.day}/${t.period}`,className:"sidebar-item sidebar-session",onClick:()=>l(!1),children:[e.jsx("span",{className:"sidebar-period",children:t.period}),e.jsx("span",{children:i?t.title:t.titleEn})]},t.id))]}),e.jsxs("div",{className:"sidebar-group",children:[e.jsx("div",{className:"sidebar-group-title",children:i?"바로가기":"Quick Links"}),e.jsxs(y,{to:"/tools",className:"sidebar-item",onClick:()=>l(!1),children:[e.jsx("i",{className:"fa-solid fa-wrench"}),e.jsx("span",{children:i?"도구 가이드":"Tool Guide"})]}),e.jsxs(y,{to:"/community",className:"sidebar-item",onClick:()=>l(!1),children:[e.jsx("i",{className:"fa-solid fa-comments"}),e.jsx("span",{children:i?"커뮤니티":"Community"})]})]})]})}),A&&e.jsx("div",{className:"sidebar-overlay",onClick:()=>l(!1)}),e.jsxs("div",{className:"learning-content",children:[e.jsxs("div",{className:"learning-content-header",children:[e.jsxs("div",{className:"cat-badge",style:{background:a.color},children:[e.jsx("i",{className:`fa-solid ${a.icon}`})," ",i?a.titleKo:a.titleEn]}),e.jsx("h1",{children:i?a.titleKo:a.titleEn}),e.jsx("p",{children:i?a.descKo:a.descEn})]}),a.topics.map(t=>e.jsxs("section",{id:t.id,className:"topic-section",children:[e.jsxs("div",{className:"topic-header",children:[e.jsx("div",{className:"topic-icon",style:{background:a.color},children:e.jsx("i",{className:`fa-solid ${t.icon}`})}),e.jsxs("div",{className:"topic-header-text",children:[e.jsx("h2",{children:i?t.titleKo:t.titleEn}),e.jsx("p",{children:i?t.descKo:t.descEn})]})]}),t.sessions.length>0&&e.jsxs("div",{className:"topic-sessions",children:[e.jsxs("span",{className:"topic-sessions-label",children:[e.jsx("i",{className:"fa-solid fa-book-open"})," ",i?"관련 교시":"Sessions",":"]}),t.sessions.map((n,o)=>e.jsxs(y,{to:`/day${n.day}/${n.period}`,className:"topic-session-link",children:[i?`${n.day}일차 ${n.period}교시`:`Day ${n.day}-${n.period}`,e.jsxs("span",{className:"topic-session-title",children:[" ",i?n.titleKo:n.titleEn]})]},o))]}),e.jsx("div",{className:"topic-content",children:t.sections.map((n,o)=>{const E=`${t.id}-${o}`,I=C[E];return e.jsxs("div",{className:`accordion-item ${I?"open":""}`,children:[e.jsxs("button",{className:"accordion-header",onClick:()=>R(E),children:[e.jsx("span",{children:i?n.titleKo:n.titleEn}),e.jsx("i",{className:`fa-solid fa-chevron-${I?"up":"down"}`})]}),I&&e.jsx("div",{className:"accordion-body",children:e.jsxs("div",{className:"accordion-content",children:[(i?n.contentKo:n.contentEn).split(`
+`).map((s,r)=>{if(s.startsWith("|")){const b=s.split("|").filter(g=>g.trim());if(b.every(g=>/^[-:\s]+$/.test(g.trim())))return null;const x=(i?n.contentKo:n.contentEn).split(`
+`)[r+1],S=(x==null?void 0:x.trim().startsWith("|---"))?"th":"td";return e.jsx("table",{children:e.jsx("tbody",{children:e.jsx("tr",{children:b.map((g,j)=>e.jsx(S,{dangerouslySetInnerHTML:{__html:m(g.trim())}},j))})})},r)}return s.startsWith("```")?null:s.startsWith("**")&&s.endsWith("**")?e.jsx("h4",{dangerouslySetInnerHTML:{__html:m(s)}},r):s.trim()?s.startsWith(">")?e.jsx("blockquote",{dangerouslySetInnerHTML:{__html:m(s.slice(1).trim())}},r):s.startsWith("- [")?e.jsx("div",{className:"checklist-item",dangerouslySetInnerHTML:{__html:m(s)}},r):s.startsWith("- ")||s.startsWith("* ")?e.jsx("li",{dangerouslySetInnerHTML:{__html:m(s.slice(2))}},r):/^\d+\.\s/.test(s)?e.jsx("li",{className:"ol-item",dangerouslySetInnerHTML:{__html:m(s.replace(/^\d+\.\s/,""))}},r):e.jsx("p",{dangerouslySetInnerHTML:{__html:m(s)}},r):e.jsx("br",{},r)}),W(i?n.contentKo:n.contentEn)]})})]},E)})})]},t.id))]})]})]})}function m(p){return p.replace(/\*\*(.+?)\*\*/g,"<strong>$1</strong>").replace(/`(.+?)`/g,"<code>$1</code>").replace(/\[(.+?)\]\((.+?)\)/g,'<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>').replace(/- \[ \]/g,'<span class="check-box">&#9744;</span>').replace(/- \[x\]/g,'<span class="check-box checked">&#9745;</span>')}function W(p){const i=[],u=/```(?:\w*)\n([\s\S]*?)```/g;let c,f=0;for(;(c=u.exec(p))!==null;)i.push(e.jsx("pre",{className:"code-block",children:e.jsx("code",{children:c[1].trim()})},`c-${f++}`));return i}export{q as default};
