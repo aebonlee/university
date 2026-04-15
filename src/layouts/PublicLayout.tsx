@@ -7,6 +7,9 @@ const Home = lazy(() => import('../pages/Home'));
 const SessionPage = lazy(() => import('../pages/SessionPage'));
 const LearningMaterials = lazy(() => import('../pages/LearningMaterials'));
 const ToolsGuide = lazy(() => import('../pages/ToolsGuide'));
+const PromptEvalHub = lazy(() => import('../pages/prompt-eval/PromptEvalHub'));
+const PromptPractice = lazy(() => import('../pages/prompt-eval/PromptPractice'));
+const PromptWorkshop = lazy(() => import('../pages/prompt-eval/PromptWorkshop'));
 const Login = lazy(() => import('../pages/Login'));
 const Register = lazy(() => import('../pages/Register'));
 const ForgotPassword = lazy(() => import('../pages/ForgotPassword'));
@@ -43,6 +46,9 @@ export default function PublicLayout() {
             <Route path="/materials/:category" element={<LearningMaterials />} />
             <Route path="/day1/:period" element={<SessionPage />} />
             <Route path="/day2/:period" element={<SessionPage />} />
+            <Route path="/prompt-eval" element={<PromptEvalHub />} />
+            <Route path="/prompt-eval/practice" element={<PromptPractice />} />
+            <Route path="/prompt-eval/workshop" element={<PromptWorkshop />} />
             <Route path="/tools" element={<ToolsGuide />} />
 
             <Route path="/login" element={<Login />} />

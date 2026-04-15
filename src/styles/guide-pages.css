@@ -1,54 +1,518 @@
 /* ============================================
-   University AI Education - Guide Pages
+   University AI Education - Guide Pages (Sidebar + Content)
    ============================================ */
 
 .guide-page {
-    padding: calc(var(--nav-height) + 40px) 0 80px;
+    padding-top: var(--nav-height);
+    min-height: 100vh;
+}
+.guide-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    gap: 0;
 }
 
-.guide-content {
-    max-width: 800px;
-    margin: 0 auto;
+/* ── Sidebar ── */
+.guide-sidebar {
+    position: sticky;
+    top: var(--nav-height);
+    height: calc(100vh - var(--nav-height));
+    overflow-y: auto;
+    padding: 32px 24px;
+    border-right: 1px solid var(--border-light);
+    background: var(--bg-light-gray);
 }
-.guide-content h1 {
+.guide-sidebar::-webkit-scrollbar {
+    width: 4px;
+}
+.guide-sidebar::-webkit-scrollbar-thumb {
+    background: var(--border-medium);
+    border-radius: 4px;
+}
+.guide-sidebar-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 16px;
+    padding-left: 12px;
+}
+.guide-nav {
+    list-style: none;
+}
+.guide-nav-item {
+    margin-bottom: 2px;
+}
+.guide-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    transition: var(--transition-base);
+    cursor: pointer;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    font-family: inherit;
+}
+.guide-nav-link:hover {
+    background: var(--bg-medium-gray);
+    color: var(--text-primary);
+}
+.guide-nav-link.active {
+    background: var(--primary-blue);
+    color: var(--text-white);
+    font-weight: 600;
+}
+.guide-nav-link .nav-icon {
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* ── Sidebar Groups (collapsible accordion) ── */
+.guide-nav-group {
+    margin-bottom: 6px;
+}
+.guide-nav-group-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+    padding: 9px 12px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-secondary);
+    background: var(--bg-medium-gray);
+    border: none;
+    border-left: 3px solid var(--border-medium);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    cursor: pointer;
+    transition: var(--transition-base);
+    font-family: inherit;
+    text-align: left;
+}
+.guide-nav-group-toggle:hover {
+    background: var(--bg-medium-gray);
+    border-left-color: var(--primary-blue);
+    color: var(--text-primary);
+}
+.guide-nav-group-toggle.active {
+    color: var(--primary-blue);
+    font-weight: 700;
+    background: rgba(66, 153, 225, 0.08);
+    border-left-color: var(--primary-blue);
+}
+.guide-nav-group-toggle .group-chevron {
+    font-size: 9px;
+    opacity: 0.4;
+    flex-shrink: 0;
+}
+.guide-nav-sub-list {
+    list-style: none;
+    padding-left: 4px;
+    margin-top: 2px;
+    margin-bottom: 6px;
+    border-left: 1px solid var(--border-light);
+    margin-left: 14px;
+}
+.guide-nav-link.guide-nav-sub {
+    padding-left: 14px;
+    font-size: 13px;
+    position: relative;
+}
+.guide-nav-link.guide-nav-sub::before {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 50%;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--border-medium);
+    transform: translateY(-50%);
+}
+.guide-nav-link.guide-nav-sub.active::before {
+    background: var(--text-white);
+}
+
+/* ── Content Area ── */
+.guide-content {
+    padding: 40px 48px;
+    max-width: 900px;
+}
+.guide-content-header {
+    margin-bottom: 40px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border-light);
+}
+.guide-content-header h1 {
     font-size: 32px;
     font-weight: 800;
     color: var(--text-primary);
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 }
-.guide-content h2 {
+.guide-content-header p {
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+/* ── Content Sections ── */
+.guide-section {
+    margin-bottom: 48px;
+}
+.guide-section h2 {
     font-size: 24px;
     font-weight: 700;
     color: var(--text-primary);
-    margin: 40px 0 16px;
-    padding-bottom: 8px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
     border-bottom: 2px solid var(--primary-blue);
 }
-.guide-content h3 {
-    font-size: 18px;
+.guide-section h3 {
+    font-size: 20px;
     font-weight: 600;
     color: var(--text-primary);
-    margin: 28px 0 12px;
+    margin-top: 32px;
+    margin-bottom: 12px;
 }
-.guide-content p {
+.guide-section p {
     font-size: 15px;
     color: var(--text-secondary);
     line-height: 1.8;
     margin-bottom: 16px;
 }
-.guide-content ul,
-.guide-content ol {
+.guide-section ul,
+.guide-section ol {
     padding-left: 24px;
     margin-bottom: 16px;
 }
-.guide-content li {
+.guide-section li {
     font-size: 15px;
     color: var(--text-secondary);
     line-height: 1.8;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 }
 
-/* Tool Cards on Guide Page */
+/* ── Tables ── */
+.guide-section .table-responsive {
+    overflow-x: auto;
+    margin: 16px 0 24px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-light);
+}
+.guide-section .table-responsive table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    min-width: 400px;
+}
+.guide-section .table-responsive th {
+    background: var(--bg-light-gray);
+    font-weight: 700;
+    color: var(--text-primary);
+    white-space: nowrap;
+    text-align: left;
+    padding: 12px 16px;
+    border-bottom: 2px solid var(--border-medium);
+}
+.guide-section .table-responsive td {
+    padding: 10px 16px;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border-light);
+    line-height: 1.6;
+}
+.guide-section .table-responsive tr:last-child td {
+    border-bottom: none;
+}
+.guide-section .table-responsive tr:hover td {
+    background: var(--bg-light-gray);
+}
+
+/* ── Markdown Body ── */
+.markdown-body strong {
+    color: var(--text-primary);
+    font-weight: 700;
+}
+.markdown-body code {
+    background: var(--bg-medium-gray);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 13px;
+    color: var(--primary-blue);
+}
+
+/* ── Section Navigation ── */
+.guide-section-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-light);
+}
+.guide-section-nav button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary-blue);
+    background: var(--bg-light-gray);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: var(--transition-base);
+    font-family: inherit;
+}
+.guide-section-nav button:hover {
+    background: var(--primary-blue);
+    color: var(--text-white);
+    border-color: var(--primary-blue);
+}
+.guide-section-nav button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* ── Sidebar Footer (CTA Links) ── */
+.guide-sidebar-footer {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-light);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.guide-sidebar-cta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    transition: var(--transition-base);
+    border: 1px solid transparent;
+}
+.guide-sidebar-cta i {
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+    flex-shrink: 0;
+}
+.guide-sidebar-cta div {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+.guide-sidebar-cta strong {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+.guide-sidebar-cta span {
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-top: 2px;
+}
+.guide-sidebar-cta.workshop {
+    background: linear-gradient(135deg, rgba(66,153,225,0.08), rgba(128,90,213,0.06));
+    border-color: rgba(66,153,225,0.18);
+    color: var(--text-primary);
+}
+.guide-sidebar-cta.workshop i {
+    color: var(--primary-blue);
+}
+.guide-sidebar-cta.workshop span {
+    color: var(--text-light);
+}
+.guide-sidebar-cta.workshop:hover {
+    background: linear-gradient(135deg, rgba(66,153,225,0.14), rgba(128,90,213,0.10));
+    border-color: rgba(66,153,225,0.3);
+}
+.guide-sidebar-cta.practice {
+    background: linear-gradient(135deg, rgba(56,161,105,0.08), rgba(56,161,105,0.04));
+    border-color: rgba(56,161,105,0.18);
+    color: var(--text-primary);
+}
+.guide-sidebar-cta.practice i {
+    color: #38a169;
+}
+.guide-sidebar-cta.practice span {
+    color: var(--text-light);
+}
+.guide-sidebar-cta.practice:hover {
+    background: linear-gradient(135deg, rgba(56,161,105,0.14), rgba(56,161,105,0.08));
+    border-color: rgba(56,161,105,0.3);
+}
+
+/* ── Inline Code / Code Block ── */
+.inline-code {
+    background: var(--bg-medium-gray);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Fira Code', 'Consolas', monospace;
+    font-size: 13px;
+    color: var(--primary-blue);
+}
+.code-block-wrapper {
+    margin: 16px 0;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-light);
+    overflow: hidden;
+}
+.code-block-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+    background: var(--bg-medium-gray);
+    border-bottom: 1px solid var(--border-light);
+}
+.code-block-lang {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-light);
+    text-transform: uppercase;
+}
+.code-copy-btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    font-size: 12px;
+    color: var(--text-light);
+    background: transparent;
+    border: 1px solid var(--border-light);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition-base);
+    font-family: inherit;
+}
+.code-copy-btn:hover {
+    color: var(--primary-blue);
+    border-color: var(--primary-blue);
+}
+.code-copy-btn.copied {
+    color: #38a169;
+    border-color: #38a169;
+}
+.code-block-content {
+    background: #1a202c;
+    padding: 16px 20px;
+    overflow-x: auto;
+}
+.code-block-content pre {
+    margin: 0;
+}
+.code-block-content code {
+    color: #e2e8f0;
+    font-family: 'Fira Code', 'Consolas', monospace;
+    font-size: 13px;
+    line-height: 1.7;
+    white-space: pre;
+}
+.code-block-content .token.comment { color: #718096; font-style: italic; }
+.code-block-content .token.string { color: #68d391; }
+.code-block-content .token.keyword { color: #90cdf4; font-weight: 600; }
+.code-block-content .token.builtin { color: #fbd38d; }
+.code-block-content .token.function { color: #b794f4; }
+.code-block-content .token.number { color: #fc8181; }
+.code-block-content .token.operator { color: #cbd5e0; }
+.code-block-content .token.decorator { color: #f6ad55; }
+.code-block-content .code-line-highlight { background: rgba(66,153,225,0.15); display: block; }
+
+/* ── TipBox ── */
+.tip-box {
+    display: flex;
+    gap: 12px;
+    padding: 16px;
+    margin: 16px 0;
+    border-radius: var(--radius-md);
+    border-left: 4px solid;
+}
+.tip-box.tip { background: rgba(56,161,105,0.06); border-color: #38a169; }
+.tip-box.warning { background: rgba(214,158,46,0.06); border-color: #d69e2e; }
+.tip-box.important { background: rgba(66,153,225,0.06); border-color: #4299e1; }
+.tip-box.danger { background: rgba(229,62,62,0.06); border-color: #e53e3e; }
+.tip-box-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+.tip-box.tip .tip-box-icon { color: #38a169; }
+.tip-box.warning .tip-box-icon { color: #d69e2e; }
+.tip-box.important .tip-box-icon { color: #4299e1; }
+.tip-box.danger .tip-box-icon { color: #e53e3e; }
+.tip-box-content {
+    flex: 1;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+.tip-box-content strong {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--text-primary);
+}
+
+/* ── Prompt Practice CTA Banner ── */
+.prompt-practice-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 24px;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, rgba(66,153,225,0.08), rgba(128,90,213,0.04));
+    border: 1px solid rgba(66,153,225,0.15);
+    border-radius: var(--radius-md);
+}
+.prompt-practice-cta-text h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+.prompt-practice-cta-text p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
+}
+.prompt-practice-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: var(--primary-blue);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: var(--transition-base);
+}
+.prompt-practice-cta-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* ── Tool Cards on Guide Page ── */
 .tool-guide-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -87,7 +551,7 @@
     margin-top: 12px;
 }
 
-/* About Page */
+/* ── About Page ── */
 .about-page {
     padding: calc(var(--nav-height) + 40px) 0 80px;
 }

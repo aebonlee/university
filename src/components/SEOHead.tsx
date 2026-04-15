@@ -4,9 +4,10 @@ import { SITE_CONFIG } from '../config/site';
 interface SEOHeadProps {
   title?: string;
   description?: string;
+  path?: string;
 }
 
-export default function SEOHead({ title, description }: SEOHeadProps) {
+export default function SEOHead({ title, description, path }: SEOHeadProps) {
   useEffect(() => {
     document.title = title ? `${title} — ${SITE_CONFIG.name}` : SITE_CONFIG.name;
 
@@ -23,7 +24,7 @@ export default function SEOHead({ title, description }: SEOHeadProps) {
     const desc = description || SITE_CONFIG.description;
     setMeta('og:title', document.title);
     setMeta('og:description', desc);
-    setMeta('og:url', SITE_CONFIG.url);
+    setMeta('og:url', path ? `${SITE_CONFIG.url}${path}` : SITE_CONFIG.url);
 
     let descMeta = document.querySelector('meta[name="description"]') as HTMLMetaElement;
     if (descMeta) descMeta.setAttribute('content', desc);

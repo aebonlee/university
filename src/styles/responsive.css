@@ -23,6 +23,41 @@
     .learning-content {
         padding: 40px 32px 80px;
     }
+
+    /* Guide sidebar hidden on tablet */
+    .guide-layout {
+        grid-template-columns: 1fr;
+    }
+    .guide-sidebar {
+        display: none;
+    }
+    .guide-content {
+        padding: 32px;
+    }
+
+    /* Practice sidebar hidden on tablet */
+    .practice-layout {
+        grid-template-columns: 1fr;
+    }
+    .practice-sidebar {
+        display: none;
+    }
+
+    /* Workshop sidebar hidden on tablet */
+    .workshop-layout {
+        grid-template-columns: 1fr;
+    }
+    .workshop-sidebar {
+        display: none;
+    }
+
+    /* Session sidebar hidden on tablet */
+    .session-layout {
+        grid-template-columns: 1fr;
+    }
+    .session-sidebar {
+        display: none;
+    }
 }
 
 @media (max-width: 768px) {

@@ -70,8 +70,54 @@
 
 /* Session Detail Page */
 .session-detail {
-    padding: calc(var(--nav-height) + 40px) 0 80px;
+    padding-top: var(--nav-height);
 }
+
+/* Session Layout: Sidebar + Content */
+.session-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    min-height: calc(100vh - var(--nav-height));
+}
+.session-sidebar {
+    position: sticky;
+    top: var(--nav-height);
+    height: calc(100vh - var(--nav-height));
+    overflow-y: auto;
+    border-right: 1px solid var(--border-light);
+    background: var(--bg-white);
+    z-index: 10;
+}
+.session-sidebar::-webkit-scrollbar {
+    width: 4px;
+}
+.session-sidebar::-webkit-scrollbar-thumb {
+    background: #C8E6C9;
+    border-radius: 4px;
+}
+.session-sidebar .sidebar-item.active {
+    background: #E8F5E9;
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+.session-sidebar .sidebar-item.active .sidebar-period {
+    background: var(--primary-blue);
+    color: var(--text-white);
+}
+.session-sidebar .sidebar-session-title {
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.session-content-area {
+    flex: 1;
+    min-width: 0;
+    padding: 40px 48px 80px;
+}
+
 .session-detail-header {
     text-align: center;
     margin-bottom: 48px;

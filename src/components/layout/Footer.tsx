@@ -23,6 +23,7 @@ export default function Footer() {
               <li><Link to="/materials/basic">{language === 'ko' ? '기본학습자료' : 'Basic Materials'}</Link></li>
               <li><Link to="/materials/document">{language === 'ko' ? '문서행정 자동화' : 'Document Automation'}</Link></li>
               <li><Link to="/materials/hr">{language === 'ko' ? '인사행정 자동화' : 'HR Automation'}</Link></li>
+              <li><Link to="/prompt-eval">{language === 'ko' ? '프롬프트 실습' : 'Prompt Lab'}</Link></li>
               <li><Link to="/tools">{language === 'ko' ? '도구 가이드' : 'Tool Guide'}</Link></li>
               <li><Link to="/community">{language === 'ko' ? '커뮤니티' : 'Community'}</Link></li>
               <li><Link to="/about">{language === 'ko' ? '소개' : 'About'}</Link></li>
