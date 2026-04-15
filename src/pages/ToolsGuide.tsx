@@ -45,34 +45,75 @@ export default function ToolsGuide() {
           ))}
         </div>
 
-        <div className="guide-content" style={{ marginTop: 64 }}>
-          <h2>{isKo ? 'AI 도구 활용 팁' : 'AI Tool Usage Tips'}</h2>
+        {/* AI 도구 활용 팁 */}
+        <div className="section-header" style={{ marginTop: 64 }}>
+          <h2 className="section-title">{isKo ? 'AI 도구 활용 팁' : 'AI Tool Usage Tips'}</h2>
+          <p className="section-subtitle">{isKo ? '효과적인 AI 활용을 위한 핵심 가이드' : 'Essential guide for effective AI usage'}</p>
+        </div>
 
-          <h3>{isKo ? '1. 용도별 도구 선택' : '1. Choose Tool by Purpose'}</h3>
-          <ul>
-            <li>{isKo ? '공문서·보고서 작성 → ChatGPT 또는 Claude' : 'Official documents & reports → ChatGPT or Claude'}</li>
-            <li>{isKo ? '정보 검색·팩트체크 → Gemini 또는 Perplexity' : 'Information search & fact-check → Gemini or Perplexity'}</li>
-            <li>{isKo ? 'PPT 자동 생성 → Gamma' : 'Auto PPT generation → Gamma'}</li>
-            <li>{isKo ? '디자인·시각화 → Canva' : 'Design & visualization → Canva'}</li>
-            <li>{isKo ? '긴 문서 분석 → Claude (200K 토큰 지원)' : 'Long document analysis → Claude (200K tokens)'}</li>
-          </ul>
+        <div className="tool-tips-grid">
+          {/* 1. 용도별 도구 선택 */}
+          <div className="tool-tip-card">
+            <div className="tool-tip-header">
+              <div className="tool-tip-icon"><i className="fa-solid fa-crosshairs" /></div>
+              <h3>{isKo ? '용도별 도구 선택' : 'Choose Tool by Purpose'}</h3>
+            </div>
+            <div className="tool-tip-body">
+              <div className="tool-tip-row">
+                <span className="tool-tip-label">{isKo ? '공문서·보고서 작성' : 'Documents & Reports'}</span>
+                <span className="tool-tip-value">ChatGPT / Claude</span>
+              </div>
+              <div className="tool-tip-row">
+                <span className="tool-tip-label">{isKo ? '정보 검색·팩트체크' : 'Search & Fact-check'}</span>
+                <span className="tool-tip-value">Gemini / Perplexity</span>
+              </div>
+              <div className="tool-tip-row">
+                <span className="tool-tip-label">{isKo ? 'PPT 자동 생성' : 'Auto PPT Generation'}</span>
+                <span className="tool-tip-value">Gamma</span>
+              </div>
+              <div className="tool-tip-row">
+                <span className="tool-tip-label">{isKo ? '디자인·시각화' : 'Design & Visualization'}</span>
+                <span className="tool-tip-value">Canva</span>
+              </div>
+              <div className="tool-tip-row">
+                <span className="tool-tip-label">{isKo ? '긴 문서 분석' : 'Long Document Analysis'}</span>
+                <span className="tool-tip-value">Claude <small>(200K)</small></span>
+              </div>
+            </div>
+          </div>
 
-          <h3>{isKo ? '2. AI 활용 주의사항' : '2. AI Usage Precautions'}</h3>
-          <ul>
-            <li>{isKo ? '개인정보(주민번호, 계좌번호 등)를 AI에 입력하지 마세요' : 'Do not input personal information into AI'}</li>
-            <li>{isKo ? 'AI 생성 결과는 반드시 사실 여부를 확인하세요' : 'Always verify AI-generated results'}</li>
-            <li>{isKo ? '기밀 업무 자료는 AI에 입력하지 마세요' : 'Do not input confidential work data into AI'}</li>
-            <li>{isKo ? 'AI는 도구입니다 — 최종 판단은 사람이 합니다' : 'AI is a tool — final judgment is yours'}</li>
-          </ul>
+          {/* 2. AI 활용 주의사항 */}
+          <div className="tool-tip-card warning">
+            <div className="tool-tip-header">
+              <div className="tool-tip-icon warning"><i className="fa-solid fa-triangle-exclamation" /></div>
+              <h3>{isKo ? 'AI 활용 주의사항' : 'AI Usage Precautions'}</h3>
+            </div>
+            <div className="tool-tip-body">
+              <ul className="tool-tip-list">
+                <li><i className="fa-solid fa-xmark" /> {isKo ? '개인정보(주민번호, 계좌번호 등)를 AI에 입력하지 마세요' : 'Never input personal info (SSN, account numbers) into AI'}</li>
+                <li><i className="fa-solid fa-check" /> {isKo ? 'AI 생성 결과는 반드시 사실 여부를 확인하세요' : 'Always verify AI-generated results for accuracy'}</li>
+                <li><i className="fa-solid fa-xmark" /> {isKo ? '기밀 업무 자료는 AI에 입력하지 마세요' : 'Never input confidential work data into AI'}</li>
+                <li><i className="fa-solid fa-user" /> {isKo ? 'AI는 도구입니다 — 최종 판단은 사람이 합니다' : 'AI is a tool — final judgment is always yours'}</li>
+              </ul>
+            </div>
+          </div>
 
-          <h3>{isKo ? '3. 효과적인 활용 순서' : '3. Effective Usage Order'}</h3>
-          <ol>
-            <li>{isKo ? '업무 목적과 결과물 형태를 먼저 정의합니다' : 'Define purpose and output format first'}</li>
-            <li>{isKo ? '적합한 AI 도구를 선택합니다' : 'Select appropriate AI tool'}</li>
-            <li>{isKo ? 'RCF 프레임워크로 프롬프트를 작성합니다' : 'Write prompt using RCF framework'}</li>
-            <li>{isKo ? '결과를 검토하고 필요시 프롬프트를 개선합니다' : 'Review results and improve prompt if needed'}</li>
-            <li>{isKo ? '최종 결과물에 반영하고 검수합니다' : 'Apply to final output and verify'}</li>
-          </ol>
+          {/* 3. 효과적인 활용 순서 */}
+          <div className="tool-tip-card steps">
+            <div className="tool-tip-header">
+              <div className="tool-tip-icon steps"><i className="fa-solid fa-list-ol" /></div>
+              <h3>{isKo ? '효과적인 활용 순서' : 'Effective Usage Steps'}</h3>
+            </div>
+            <div className="tool-tip-body">
+              <div className="tool-tip-steps">
+                <div className="tool-tip-step"><span className="step-num">1</span>{isKo ? '업무 목적과 결과물 형태를 먼저 정의합니다' : 'Define purpose and output format first'}</div>
+                <div className="tool-tip-step"><span className="step-num">2</span>{isKo ? '적합한 AI 도구를 선택합니다' : 'Select appropriate AI tool'}</div>
+                <div className="tool-tip-step"><span className="step-num">3</span>{isKo ? 'RCF 프레임워크로 프롬프트를 작성합니다' : 'Write prompt using RCF framework'}</div>
+                <div className="tool-tip-step"><span className="step-num">4</span>{isKo ? '결과를 검토하고 필요시 프롬프트를 개선합니다' : 'Review results and improve prompt if needed'}</div>
+                <div className="tool-tip-step"><span className="step-num">5</span>{isKo ? '최종 결과물에 반영하고 검수합니다' : 'Apply to final output and verify'}</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

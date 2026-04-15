@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { Link, useParams, useLocation } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
-import { CURRICULUM } from '../config/site';
 import SEOHead from '../components/SEOHead';
 
 /* ─── Types ─── */
@@ -17,7 +16,6 @@ interface Topic {
   titleEn: string;
   descKo: string;
   descEn: string;
-  sessions: { day: number; period: number; titleKo: string; titleEn: string }[];
   sections: TopicSection[];
 }
 interface Category {
@@ -27,7 +25,6 @@ interface Category {
   descKo: string;
   descEn: string;
   topics: Topic[];
-  day?: number;
 }
 
 /* ─── Category 1: 기본학습자료 ─── */
@@ -38,7 +35,6 @@ const BASIC_TOPICS: Topic[] = [
     titleEn: 'Generative AI Basics',
     descKo: '생성형 AI의 개념, 동작 원리, 주요 서비스 비교 및 대학 행정 활용 전략',
     descEn: 'Generative AI concepts, principles, service comparison, and university administration strategies',
-    sessions: [{ day: 1, period: 1, titleKo: '생성형 AI의 이해와 활용 전략', titleEn: 'Understanding Generative AI' }],
     sections: [
       {
         titleKo: '생성형 AI란?',
@@ -132,7 +128,6 @@ const BASIC_TOPICS: Topic[] = [
     titleEn: 'Prompt Engineering',
     descKo: 'RCF 프레임워크를 활용한 효과적인 프롬프트 작성법과 개선 기법',
     descEn: 'Effective prompt writing using the RCF framework and improvement techniques',
-    sessions: [{ day: 1, period: 2, titleKo: '프롬프트 엔지니어링 기초', titleEn: 'Prompt Engineering Basics' }],
     sections: [
       {
         titleKo: 'RCF 프레임워크',
@@ -295,10 +290,6 @@ const DOC_TOPICS: Topic[] = [
     titleEn: 'Official Documents & Reports',
     descKo: '공문서, 회의록, 보고서를 AI로 빠르게 작성하고 검토하는 방법',
     descEn: 'Quickly write and review official documents, meeting minutes, and reports with AI',
-    sessions: [
-      { day: 1, period: 3, titleKo: 'AI 활용 공문서 작성', titleEn: 'AI-Powered Official Document Writing' },
-      { day: 1, period: 4, titleKo: '회의록·보고서 자동화', titleEn: 'Meeting Minutes & Report Automation' },
-    ],
     sections: [
       {
         titleKo: '대학 행정 공문서 유형',
@@ -392,10 +383,6 @@ const DOC_TOPICS: Topic[] = [
     titleEn: 'PPT Report Creation',
     descKo: 'AI 기반 PPT 구조 설계, Gamma·Canva 활용, 데이터 시각화 기법',
     descEn: 'AI-based PPT structure design, Gamma/Canva usage, data visualization',
-    sessions: [
-      { day: 1, period: 5, titleKo: 'PPT 보고자료 제작 (1)', titleEn: 'PPT Report Creation (1)' },
-      { day: 1, period: 6, titleKo: 'PPT 보고자료 제작 (2)', titleEn: 'PPT Report Creation (2)' },
-    ],
     sections: [
       {
         titleKo: 'AI 기반 PPT 제작 도구',
@@ -487,7 +474,6 @@ PPT structure design and content generation
     titleEn: 'Excel Data Analysis',
     descKo: 'AI 활용 수식 생성, 데이터 정리, 피벗 테이블, VBA 매크로 기초',
     descEn: 'AI-powered formula generation, data cleaning, pivot tables, VBA basics',
-    sessions: [{ day: 1, period: 7, titleKo: 'Excel 데이터 분석 자동화', titleEn: 'Excel Data Analysis Automation' }],
     sections: [
       {
         titleKo: 'AI 활용 수식 생성',
@@ -591,11 +577,6 @@ const HR_TOPICS: Topic[] = [
     titleEn: 'HR & Attendance Management',
     descKo: '채용공고, 인사발령, 근태 관리, 근로계약서 등 인사 업무의 AI 활용',
     descEn: 'AI usage for job postings, appointments, attendance, and employment contracts',
-    sessions: [
-      { day: 2, period: 1, titleKo: '인사·근태 관리 AI 활용', titleEn: 'HR & Attendance AI Application' },
-      { day: 2, period: 2, titleKo: '인사 관련 문서 작성', titleEn: 'HR Document Creation' },
-      { day: 2, period: 3, titleKo: '근태 데이터 Excel 분석', titleEn: 'Attendance Data Excel Analysis' },
-    ],
     sections: [
       {
         titleKo: '인사 업무 AI 활용 영역',
@@ -687,7 +668,6 @@ Write a personnel appointment notice for:
     titleEn: 'HR Report Presentation',
     descKo: '인사 현황 PPT 시각화, 데이터 기반 스토리텔링, 경영진 보고자료',
     descEn: 'HR status PPT visualization, data-driven storytelling, executive reports',
-    sessions: [{ day: 2, period: 4, titleKo: '인사행정 보고자료 제작', titleEn: 'HR Report Presentation' }],
     sections: [
       {
         titleKo: '인사 데이터 시각화 & 스토리텔링',
@@ -745,10 +725,6 @@ Write a personnel appointment notice for:
     titleEn: 'Work Automation Design',
     descKo: '프롬프트 라이브러리 구축, 워크플로우 설계, ROI 계산',
     descEn: 'Prompt library building, workflow design, ROI calculation',
-    sessions: [
-      { day: 2, period: 5, titleKo: '업무 템플릿 설계', titleEn: 'Work Template Design' },
-      { day: 2, period: 6, titleKo: '업무 자동화 워크플로우', titleEn: 'Work Automation Workflow' },
-    ],
     sections: [
       {
         titleKo: '프롬프트 라이브러리 & 가이드라인',
@@ -865,18 +841,16 @@ const CATEGORIES: Category[] = [
     titleKo: '문서행정 자동화',
     titleEn: 'Document Automation',
     descKo: '1일차 - 공문서, PPT, Excel 자동화',
-    descEn: 'Day 1 - Documents, PPT, Excel automation',
+    descEn: 'Documents, PPT, Excel automation',
     topics: DOC_TOPICS,
-    day: 1,
   },
   {
     id: 'hr',
     titleKo: '인사행정 자동화',
     titleEn: 'HR Automation',
-    descKo: '2일차 - 인사·근태, 보고자료, 업무자동화',
-    descEn: 'Day 2 - HR, attendance, reports, workflow',
+    descKo: '인사·근태, 보고자료, 업무자동화',
+    descEn: 'HR, attendance, reports, workflow',
     topics: HR_TOPICS,
-    day: 2,
   },
 ];
 
@@ -888,7 +862,6 @@ export default function LearningMaterials() {
   const location = useLocation();
 
   const cat = CATEGORIES.find(c => c.id === category) || CATEGORIES[0];
-  const sessions = cat.day ? CURRICULUM.filter(s => s.day === cat.day) : [];
 
   // Hash-based scroll
   useEffect(() => {
@@ -930,25 +903,6 @@ export default function LearningMaterials() {
               ))}
             </div>
 
-            {/* Day Sessions */}
-            {sessions.length > 0 && (
-              <div className="sidebar-group">
-                <div className="sidebar-group-title">
-                  {isKo ? `${cat.day}일차 교시별 상세` : `Day ${cat.day} Sessions`}
-                </div>
-                {sessions.map(s => (
-                  <Link
-                    key={s.id}
-                    to={`/day${s.day}/${s.period}`}
-                    className="sidebar-item sidebar-session"
-                  >
-                    <span className="sidebar-period">{s.period}</span>
-                    <span>{isKo ? s.title : s.titleEn}</span>
-                  </Link>
-                ))}
-              </div>
-            )}
-
             {/* Quick Links */}
             <div className="sidebar-group">
               <div className="sidebar-group-title">{isKo ? '바로가기' : 'Quick Links'}</div>
@@ -978,21 +932,7 @@ export default function LearningMaterials() {
                 </div>
               </div>
 
-              {topic.sessions.length > 0 && (
-                <div className="topic-sessions">
-                  <span className="topic-sessions-label">
-                    {isKo ? '관련 교시' : 'Sessions'}:
-                  </span>
-                  {topic.sessions.map((s, i) => (
-                    <Link key={i} to={`/day${s.day}/${s.period}`} className="topic-session-link">
-                      {isKo ? `${s.day}일차 ${s.period}교시` : `Day ${s.day}-${s.period}`}
-                      <span className="topic-session-title"> {isKo ? s.titleKo : s.titleEn}</span>
-                    </Link>
-                  ))}
-                </div>
-              )}
-
-              {/* All sections expanded (no accordion) */}
+              {/* All sections expanded */}
               <div className="topic-content">
                 {topic.sections.map((section, idx) => (
                   <div key={idx} className="section-block">

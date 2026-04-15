@@ -51,13 +51,6 @@
         display: none;
     }
 
-    /* Session sidebar hidden on tablet */
-    .session-layout {
-        grid-template-columns: 1fr;
-    }
-    .session-sidebar {
-        display: none;
-    }
 }
 
 @media (max-width: 768px) {
@@ -86,8 +79,6 @@
     .board-header { flex-direction: column; gap: 12px; align-items: flex-start; }
     .board-filters { flex-direction: column; }
     .post-meta { display: none; }
-
-    .session-detail-header h1 { font-size: 24px; }
 
     .community-hub-grid { grid-template-columns: 1fr; }
     .comment-form { flex-direction: column; }

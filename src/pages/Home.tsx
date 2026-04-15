@@ -1,9 +1,26 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
-import { CURRICULUM } from '../config/site';
+import { CURRICULUM, SessionInfo } from '../config/site';
 import SEOHead from '../components/SEOHead';
 import FeatureCard from '../components/FeatureCard';
+
+/* Map session to materials topic anchor */
+function sessionLink(s: SessionInfo): string {
+  if (s.day === 1) {
+    if (s.period <= 2) {
+      return s.period === 1 ? '/materials/basic#ai-basics' : '/materials/basic#prompt-engineering';
+    }
+    if (s.period <= 4) return '/materials/document#document-automation';
+    if (s.period <= 6) return '/materials/document#ppt-creation';
+    if (s.period === 7) return '/materials/document#excel-analysis';
+    return '/materials/document';
+  }
+  if (s.period <= 3) return '/materials/hr#hr-administration';
+  if (s.period === 4) return '/materials/hr#hr-report';
+  if (s.period <= 6) return '/materials/hr#work-automation';
+  return '/materials/hr';
+}
 
 const TOOLS = [
   { name: 'ChatGPT', icon: 'fa-robot', desc: 'OpenAI' },
@@ -88,7 +105,7 @@ export default function Home() {
           </div>
           <div className="curriculum-summary-grid">
             {daySessions.map(session => (
-              <Link to={`/day${session.day}/${session.period}`} className="curriculum-card" key={session.id}>
+              <Link to={sessionLink(session)} className="curriculum-card" key={session.id}>
                 <div className="curriculum-card-header">
                   <div className="curriculum-card-period">{session.period}</div>
                   <h4>{isKo ? session.title : session.titleEn}</h4>

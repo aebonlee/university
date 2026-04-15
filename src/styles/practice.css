@@ -1,5 +1,5 @@
 /* ============================================
-   Copilot Master - Prompt Practice Page
+   University AI Education - Prompt Practice Page
    ============================================ */
 
 /* ── Layout ── */
@@ -8,33 +8,36 @@
   min-height: 100vh;
 }
 .practice-layout {
-  display: grid;
-  grid-template-columns: 260px 1fr;
+  display: flex;
+  min-height: calc(100vh - var(--nav-height));
   max-width: var(--container-max);
   margin: 0 auto;
-  gap: 0;
+  padding: 0 40px;
 }
 
 /* ── Sidebar ── */
 .practice-sidebar {
+  width: 250px;
+  flex-shrink: 0;
   position: sticky;
   top: var(--nav-height);
   height: calc(100vh - var(--nav-height));
   overflow-y: auto;
-  padding: 32px 20px;
+  padding: 20px 0;
   border-right: 1px solid var(--border-light);
-  background: var(--bg-light-gray);
+  background: var(--bg-white);
 }
 .practice-sidebar h3 {
-  font-size: 13px;
+  padding: 8px 20px 16px;
+  font-size: 17px;
   font-weight: 700;
-  color: var(--text-light);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 20px;
+  color: var(--primary-blue);
+  border-bottom: 2px solid var(--primary-blue);
+  margin-bottom: 8px;
 }
 .practice-progress {
-  margin-bottom: 28px;
+  margin-bottom: 20px;
+  padding: 0 20px;
 }
 .practice-progress-bar {
   width: 100%;
@@ -63,13 +66,12 @@
 .practice-step {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 12px 14px;
-  margin-bottom: 4px;
-  font-size: 14px;
+  gap: 10px;
+  padding: 9px 20px;
+  margin-bottom: 2px;
+  font-size: 13px;
   font-weight: 500;
-  color: var(--text-light);
-  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
   cursor: pointer;
   transition: var(--transition-base);
   border: none;
@@ -77,18 +79,20 @@
   width: 100%;
   text-align: left;
   font-family: inherit;
+  line-height: 1.4;
 }
 .practice-step:hover {
-  background: var(--bg-medium-gray);
-  color: var(--text-secondary);
+  background: #E8F5E9;
+  color: var(--primary-blue);
 }
 .practice-step.active {
-  background: var(--primary-blue);
-  color: #fff;
+  background: #E8F5E9;
+  color: var(--primary-blue);
   font-weight: 600;
+  border-left: 3px solid #4CAF50;
 }
 .practice-step.completed {
-  color: #38a169;
+  color: #2E7D32;
 }
 .practice-step-icon {
   width: 24px;
@@ -102,16 +106,19 @@
   flex-shrink: 0;
 }
 .practice-step.active .practice-step-icon {
-  background: rgba(255,255,255,0.2);
+  background: #C8E6C9;
+  color: #1B5E20;
 }
 .practice-step.completed .practice-step-icon {
-  background: #c6f6d5;
-  color: #276749;
+  background: #C8E6C9;
+  color: #1B5E20;
 }
 
 /* ── Content Area ── */
 .practice-content {
-  padding: 40px 48px;
+  flex: 1;
+  min-width: 0;
+  padding: 40px 0 80px 40px;
   max-width: 860px;
 }
 .practice-header {
@@ -173,11 +180,11 @@
 }
 .quiz-option:hover {
   border-color: var(--primary-blue);
-  background: rgba(66, 153, 225, 0.04);
+  background: #F1F8E9;
 }
 .quiz-option.selected {
   border-color: var(--primary-blue);
-  background: rgba(66, 153, 225, 0.08);
+  background: #E8F5E9;
   color: var(--text-primary);
   font-weight: 500;
 }
@@ -318,7 +325,7 @@
 }
 .write-scenario {
   padding: 16px 20px;
-  background: linear-gradient(135deg, rgba(66,153,225,0.06), rgba(66,153,225,0.02));
+  background: linear-gradient(135deg, #F1F8E9, transparent);
   border-left: 3px solid var(--primary-blue);
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   margin-bottom: 16px;
@@ -438,7 +445,7 @@
   color: #fff;
 }
 .practice-btn-primary:hover {
-  background: #2b6cb0;
+  background: #1B5E20;
 }
 .practice-btn-secondary {
   background: var(--bg-light-gray);
@@ -473,7 +480,7 @@
 }
 .result-grade.grade-S { background: linear-gradient(135deg, #ffd700, #ffb300); color: #fff; }
 .result-grade.grade-A { background: linear-gradient(135deg, #38a169, #2f855a); color: #fff; }
-.result-grade.grade-B { background: linear-gradient(135deg, #4299e1, #2b6cb0); color: #fff; }
+.result-grade.grade-B { background: linear-gradient(135deg, #4CAF50, #1B5E20); color: #fff; }
 .result-grade.grade-C { background: linear-gradient(135deg, #ed8936, #c05621); color: #fff; }
 .result-grade.grade-D { background: linear-gradient(135deg, #a0aec0, #718096); color: #fff; }
 .result-total {
@@ -736,8 +743,8 @@
   color: #c53030;
 }
 .result-eval-grade-tag.total {
-  background: rgba(66,153,225,0.1);
-  color: #2b6cb0;
+  background: #E8F5E9;
+  color: #1B5E20;
 }
 
 /* Write SCORE analysis */
@@ -934,7 +941,7 @@
 }
 .result-recommend-item:hover {
   border-color: var(--primary-blue);
-  background: rgba(66,153,225,0.03);
+  background: #FAFFF9;
 }
 .result-recommend-icon {
   width: 40px;
@@ -1006,8 +1013,8 @@
 .prompt-practice-cta {
   margin: 32px 0;
   padding: 28px 32px;
-  background: linear-gradient(135deg, rgba(66,153,225,0.08), rgba(128,90,213,0.08));
-  border: 1px solid rgba(66,153,225,0.2);
+  background: linear-gradient(135deg, #E8F5E9, rgba(128,90,213,0.08));
+  border: 1px solid #C8E6C9;
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
@@ -1042,7 +1049,7 @@
   transition: var(--transition-base);
 }
 .prompt-practice-cta-btn:hover {
-  background: #2b6cb0;
+  background: #1B5E20;
 }
 
 /* ============================================
@@ -1051,32 +1058,33 @@
 
 /* ── Workshop Layout ── */
 .workshop-layout {
-  display: grid;
-  grid-template-columns: 260px 1fr;
+  display: flex;
+  min-height: calc(100vh - var(--nav-height));
   max-width: var(--container-max);
   margin: 0 auto;
+  padding: 0 40px;
   padding-top: var(--nav-height);
-  min-height: 100vh;
 }
 
 /* ── Workshop Sidebar ── */
 .workshop-sidebar {
+  width: 250px;
+  flex-shrink: 0;
   position: sticky;
   top: var(--nav-height);
   height: calc(100vh - var(--nav-height));
   overflow-y: auto;
-  padding: 28px 16px;
+  padding: 20px 0;
   border-right: 1px solid var(--border-light);
-  background: var(--bg-light-gray);
+  background: var(--bg-white);
 }
 .workshop-sidebar h3 {
-  font-size: 12px;
+  padding: 8px 20px 16px;
+  font-size: 17px;
   font-weight: 700;
-  color: var(--text-light);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 14px;
-  padding: 0 8px;
+  color: var(--primary-blue);
+  border-bottom: 2px solid var(--primary-blue);
+  margin-bottom: 8px;
 }
 .workshop-scenario-list {
   list-style: none;
@@ -1087,10 +1095,9 @@
   align-items: center;
   gap: 10px;
   width: 100%;
-  padding: 10px 12px;
+  padding: 9px 20px;
   border: none;
   background: none;
-  border-radius: var(--radius-sm);
   font-size: 13px;
   font-weight: 500;
   color: var(--text-secondary);
@@ -1098,6 +1105,7 @@
   transition: var(--transition-base);
   text-align: left;
   font-family: inherit;
+  line-height: 1.4;
 }
 .workshop-scenario-btn i {
   width: 18px;
@@ -1105,13 +1113,14 @@
   font-size: 12px;
 }
 .workshop-scenario-btn:hover {
-  background: var(--bg-medium-gray);
-  color: var(--text-primary);
+  background: #E8F5E9;
+  color: var(--primary-blue);
 }
 .workshop-scenario-btn.active {
-  background: var(--primary-blue);
-  color: #fff;
+  background: #E8F5E9;
+  color: var(--primary-blue);
   font-weight: 600;
+  border-left: 3px solid #4CAF50;
 }
 .workshop-sidebar-divider {
   height: 1px;
@@ -1136,7 +1145,7 @@
 }
 .workshop-sidebar-link:hover {
   color: var(--primary-blue);
-  background: rgba(66, 153, 225, 0.06);
+  background: #E8F5E9;
 }
 .workshop-sidebar-link i {
   width: 18px;
@@ -1199,8 +1208,8 @@
 .workshop-score-ref {
   margin-bottom: 24px;
   padding: 18px 22px;
-  background: rgba(66, 153, 225, 0.04);
-  border: 1px solid rgba(66, 153, 225, 0.12);
+  background: #F1F8E9;
+  border: 1px solid #C8E6C9;
   border-radius: var(--radius-md);
 }
 .workshop-score-ref h4 {
@@ -1268,7 +1277,7 @@
 .workshop-textarea:focus {
   outline: none;
   border-color: var(--primary-blue);
-  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
+  box-shadow: 0 0 0 3px #E8F5E9;
 }
 .workshop-textarea::placeholder {
   color: var(--text-light);
@@ -1537,7 +1546,7 @@
   transition: var(--transition-base);
 }
 .workshop-history-load:hover {
-  background: rgba(66, 153, 225, 0.06);
+  background: #F1F8E9;
   border-color: var(--primary-blue);
 }
 .workshop-history-text {
