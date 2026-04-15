@@ -166,19 +166,6 @@ html[data-color="red"] .hero-title-highlight { color: #EF9A9A; }
     gap: 12px;
     margin-bottom: 12px;
 }
-.curriculum-card-period {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: var(--primary-gradient);
-    color: var(--text-white);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    font-weight: 700;
-    flex-shrink: 0;
-}
 .curriculum-card h4 {
     font-size: 15px;
     font-weight: 600;

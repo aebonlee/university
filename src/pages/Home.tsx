@@ -8,18 +8,29 @@ import FeatureCard from '../components/FeatureCard';
 /* Map session to materials topic anchor */
 function sessionLink(s: SessionInfo): string {
   if (s.day === 1) {
-    if (s.period <= 2) {
-      return s.period === 1 ? '/materials/basic#ai-basics' : '/materials/basic#prompt-engineering';
-    }
-    if (s.period <= 4) return '/materials/document#document-automation';
-    if (s.period <= 6) return '/materials/document#ppt-creation';
-    if (s.period === 7) return '/materials/document#excel-analysis';
-    return '/materials/document';
+    const day1Map: Record<number, string> = {
+      1: '/materials/basic#ai-basics',
+      2: '/materials/basic#prompt-engineering',
+      3: '/materials/document#official-documents',
+      4: '/materials/document#meeting-reports',
+      5: '/materials/document#ppt-structure',
+      6: '/materials/document#ppt-design',
+      7: '/materials/document#excel-analysis',
+      8: '/materials/document#doc-practice',
+    };
+    return day1Map[s.period] || '/materials/document';
   }
-  if (s.period <= 3) return '/materials/hr#hr-administration';
-  if (s.period === 4) return '/materials/hr#hr-report';
-  if (s.period <= 6) return '/materials/hr#work-automation';
-  return '/materials/hr';
+  const day2Map: Record<number, string> = {
+    1: '/materials/hr#hr-ai',
+    2: '/materials/hr#hr-documents',
+    3: '/materials/hr#attendance-excel',
+    4: '/materials/hr#hr-report',
+    5: '/materials/hr#work-template',
+    6: '/materials/hr#work-automation',
+    7: '/materials/hr#hr-practice',
+    8: '/materials/hr#results-sharing',
+  };
+  return day2Map[s.period] || '/materials/hr';
 }
 
 const TOOLS = [
@@ -107,7 +118,6 @@ export default function Home() {
             {daySessions.map(session => (
               <Link to={sessionLink(session)} className="curriculum-card" key={session.id}>
                 <div className="curriculum-card-header">
-                  <div className="curriculum-card-period">{session.period}</div>
                   <h4>{isKo ? session.title : session.titleEn}</h4>
                 </div>
                 <p>{session.description}</p>
