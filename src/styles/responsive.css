@@ -13,32 +13,12 @@
     .tool-guide-grid { grid-template-columns: repeat(2, 1fr); }
     .session-grid { grid-template-columns: 1fr; }
 
-    /* Category tabs responsive */
-    .category-tab-label { font-size: 13px; }
-
-    /* Learning sidebar -> overlay mode on tablet */
+    /* Learning sidebar hidden on tablet */
     .learning-sidebar {
-        position: fixed;
-        left: -300px;
-        top: calc(var(--nav-height) + 52px);
-        height: calc(100vh - var(--nav-height) - 52px);
-        transition: left 0.3s ease;
-        box-shadow: none;
-        z-index: 200;
+        display: none;
     }
-    .learning-sidebar.open {
-        left: 0;
-        box-shadow: 4px 0 20px rgba(0,0,0,0.15);
-    }
-    .sidebar-toggle {
-        display: flex;
-    }
-    .sidebar-overlay {
-        display: block;
-        position: fixed;
-        inset: 0;
-        background: rgba(0,0,0,0.3);
-        z-index: 199;
+    .learning-layout {
+        max-width: 100%;
     }
     .learning-content {
         padding: 40px 32px 80px;
@@ -78,19 +58,11 @@
     .comment-form { flex-direction: column; }
     .comment-form button { align-self: flex-end; }
 
-    .category-tab { padding: 10px 8px; font-size: 12px; gap: 5px; }
-    .category-tab i { font-size: 14px; }
-    .category-tab-label { font-size: 12px; }
-
-    .topic-header { flex-direction: column; gap: 12px; }
-    .topic-icon { width: 44px; height: 44px; font-size: 20px; }
     .topic-header-text h2 { font-size: 20px; }
     .topic-session-title { display: none; }
     .learning-content { padding: 32px 20px 80px; }
     .learning-content-header h1 { font-size: 26px; }
-    .learning-cta { padding: 32px 20px; }
-    .learning-cta-buttons { flex-direction: column; }
-    .accordion-body { padding: 16px; }
+    .section-block-body { padding: 16px; }
 }
 
 @media (max-width: 480px) {

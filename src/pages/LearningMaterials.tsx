@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Link, useParams, useLocation } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { CURRICULUM } from '../config/site';
 import SEOHead from '../components/SEOHead';
@@ -13,7 +13,6 @@ interface TopicSection {
 }
 interface Topic {
   id: string;
-  icon: string;
   titleKo: string;
   titleEn: string;
   descKo: string;
@@ -23,21 +22,18 @@ interface Topic {
 }
 interface Category {
   id: string;
-  icon: string;
   titleKo: string;
   titleEn: string;
   descKo: string;
   descEn: string;
-  color: string;
   topics: Topic[];
-  day?: number; // 관련 일차
+  day?: number;
 }
 
 /* ─── Category 1: 기본학습자료 ─── */
 const BASIC_TOPICS: Topic[] = [
   {
     id: 'ai-basics',
-    icon: 'fa-brain',
     titleKo: '생성형 AI 기초',
     titleEn: 'Generative AI Basics',
     descKo: '생성형 AI의 개념, 동작 원리, 주요 서비스 비교 및 대학 행정 활용 전략',
@@ -132,7 +128,6 @@ const BASIC_TOPICS: Topic[] = [
   },
   {
     id: 'prompt-engineering',
-    icon: 'fa-pen-fancy',
     titleKo: '프롬프트 엔지니어링',
     titleEn: 'Prompt Engineering',
     descKo: 'RCF 프레임워크를 활용한 효과적인 프롬프트 작성법과 개선 기법',
@@ -296,7 +291,6 @@ Gradually improve prompts based on initial results.
 const DOC_TOPICS: Topic[] = [
   {
     id: 'document-automation',
-    icon: 'fa-file-lines',
     titleKo: '공문서·보고서 작성',
     titleEn: 'Official Documents & Reports',
     descKo: '공문서, 회의록, 보고서를 AI로 빠르게 작성하고 검토하는 방법',
@@ -394,7 +388,6 @@ const DOC_TOPICS: Topic[] = [
   },
   {
     id: 'ppt-creation',
-    icon: 'fa-chart-pie',
     titleKo: 'PPT 보고자료 제작',
     titleEn: 'PPT Report Creation',
     descKo: 'AI 기반 PPT 구조 설계, Gamma·Canva 활용, 데이터 시각화 기법',
@@ -490,7 +483,6 @@ PPT structure design and content generation
   },
   {
     id: 'excel-analysis',
-    icon: 'fa-table',
     titleKo: 'Excel 데이터 분석',
     titleEn: 'Excel Data Analysis',
     descKo: 'AI 활용 수식 생성, 데이터 정리, 피벗 테이블, VBA 매크로 기초',
@@ -595,7 +587,6 @@ Include comments for beginners.
 const HR_TOPICS: Topic[] = [
   {
     id: 'hr-administration',
-    icon: 'fa-users-gear',
     titleKo: '인사·근태 관리',
     titleEn: 'HR & Attendance Management',
     descKo: '채용공고, 인사발령, 근태 관리, 근로계약서 등 인사 업무의 AI 활용',
@@ -692,7 +683,6 @@ Write a personnel appointment notice for:
   },
   {
     id: 'hr-report',
-    icon: 'fa-chart-line',
     titleKo: '인사 보고자료 제작',
     titleEn: 'HR Report Presentation',
     descKo: '인사 현황 PPT 시각화, 데이터 기반 스토리텔링, 경영진 보고자료',
@@ -751,7 +741,6 @@ Write a personnel appointment notice for:
   },
   {
     id: 'work-automation',
-    icon: 'fa-gears',
     titleKo: '업무 자동화 설계',
     titleEn: 'Work Automation Design',
     descKo: '프롬프트 라이브러리 구축, 워크플로우 설계, ROI 계산',
@@ -865,33 +854,27 @@ Example: (2.5h - 0.8h) x 4 x 12 x 30,000 KRW = 2,448,000 KRW/year
 const CATEGORIES: Category[] = [
   {
     id: 'basic',
-    icon: 'fa-graduation-cap',
     titleKo: '기본학습자료',
     titleEn: 'Basic Materials',
     descKo: '생성형 AI 개념과 프롬프트 엔지니어링 기초',
     descEn: 'Generative AI concepts and prompt engineering basics',
-    color: '#1B5E20',
     topics: BASIC_TOPICS,
   },
   {
     id: 'document',
-    icon: 'fa-file-lines',
     titleKo: '문서행정 자동화',
     titleEn: 'Document Automation',
-    descKo: '1일차 — 공문서, PPT, Excel 자동화',
-    descEn: 'Day 1 — Documents, PPT, Excel automation',
-    color: '#1565C0',
+    descKo: '1일차 - 공문서, PPT, Excel 자동화',
+    descEn: 'Day 1 - Documents, PPT, Excel automation',
     topics: DOC_TOPICS,
     day: 1,
   },
   {
     id: 'hr',
-    icon: 'fa-users-gear',
     titleKo: '인사행정 자동화',
     titleEn: 'HR Automation',
-    descKo: '2일차 — 인사·근태, 보고자료, 업무자동화',
-    descEn: 'Day 2 — HR, attendance, reports, workflow',
-    color: '#6A1B9A',
+    descKo: '2일차 - 인사·근태, 보고자료, 업무자동화',
+    descEn: 'Day 2 - HR, attendance, reports, workflow',
     topics: HR_TOPICS,
     day: 2,
   },
@@ -901,108 +884,49 @@ const CATEGORIES: Category[] = [
 export default function LearningMaterials() {
   const { language } = useLanguage();
   const isKo = language === 'ko';
+  const { category } = useParams<{ category: string }>();
   const location = useLocation();
-  const [activeCategory, setActiveCategory] = useState('basic');
-  const [activeTopic, setActiveTopic] = useState('');
-  const [openSections, setOpenSections] = useState<Record<string, boolean>>({});
-  const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  const cat = CATEGORIES.find(c => c.id === activeCategory) || CATEGORIES[0];
+  const cat = CATEGORIES.find(c => c.id === category) || CATEGORIES[0];
   const sessions = cat.day ? CURRICULUM.filter(s => s.day === cat.day) : [];
 
-  // Hash-based navigation
+  // Hash-based scroll
   useEffect(() => {
     if (location.hash) {
       const id = location.hash.slice(1);
-      for (const c of CATEGORIES) {
-        if (c.topics.some(t => t.id === id)) {
-          setActiveCategory(c.id);
-          setActiveTopic(id);
-          setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 150);
-          return;
-        }
-      }
+      setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 150);
+    } else {
+      window.scrollTo({ top: 0 });
     }
-  }, [location.hash]);
-
-  // Set first topic active when switching category
-  useEffect(() => {
-    if (cat.topics.length) setActiveTopic(cat.topics[0].id);
-  }, [activeCategory]);
-
-  // Track active topic on scroll
-  useEffect(() => {
-    function onScroll() {
-      for (let i = cat.topics.length - 1; i >= 0; i--) {
-        const el = document.getElementById(cat.topics[i].id);
-        if (el && el.getBoundingClientRect().top <= 150) {
-          setActiveTopic(cat.topics[i].id);
-          break;
-        }
-      }
-    }
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, [activeCategory]);
-
-  function toggleSection(key: string) {
-    setOpenSections(prev => ({ ...prev, [key]: !prev[key] }));
-  }
-
-  function scrollToTopic(topicId: string) {
-    setActiveTopic(topicId);
-    setSidebarOpen(false);
-    document.getElementById(topicId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
+  }, [location.hash, category]);
 
   return (
     <div className="learning-page">
-      <SEOHead title={isKo ? '학습자료' : 'Learning Materials'} />
-
-      {/* ─── Category Tabs ─── */}
-      <div className="category-tabs-bar">
-        <div className="category-tabs-inner">
-          {CATEGORIES.map(c => (
-            <button
-              key={c.id}
-              className={`category-tab ${activeCategory === c.id ? 'active' : ''}`}
-              style={activeCategory === c.id ? { borderColor: c.color, color: c.color } : undefined}
-              onClick={() => { setActiveCategory(c.id); setSidebarOpen(false); window.scrollTo({ top: 0 }); }}
-            >
-              <i className={`fa-solid ${c.icon}`} />
-              <span className="category-tab-label">{isKo ? c.titleKo : c.titleEn}</span>
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* Mobile sidebar toggle */}
-      <button className="sidebar-toggle" onClick={() => setSidebarOpen(!sidebarOpen)}>
-        <i className={`fa-solid ${sidebarOpen ? 'fa-xmark' : 'fa-list'}`} />
-      </button>
+      <SEOHead title={isKo ? cat.titleKo : cat.titleEn} />
 
       <div className="learning-layout">
         {/* ─── Left Sidebar ─── */}
-        <aside className={`learning-sidebar ${sidebarOpen ? 'open' : ''}`}>
+        <aside className="learning-sidebar">
           <div className="sidebar-inner">
-            {/* Category Title */}
-            <div className="sidebar-header" style={{ color: cat.color }}>
-              <i className={`fa-solid ${cat.icon}`} />
-              <span>{isKo ? cat.titleKo : cat.titleEn}</span>
+            <div className="sidebar-header">
+              {isKo ? cat.titleKo : cat.titleEn}
             </div>
 
             {/* Topics */}
             <div className="sidebar-group">
               <div className="sidebar-group-title">{isKo ? '학습 주제' : 'Topics'}</div>
               {cat.topics.map(topic => (
-                <button
+                <a
                   key={topic.id}
-                  className={`sidebar-item ${activeTopic === topic.id ? 'active' : ''}`}
-                  onClick={() => scrollToTopic(topic.id)}
+                  href={`#${topic.id}`}
+                  className="sidebar-item"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById(topic.id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }}
                 >
-                  <i className={`fa-solid ${topic.icon}`} />
-                  <span>{isKo ? topic.titleKo : topic.titleEn}</span>
-                </button>
+                  {isKo ? topic.titleKo : topic.titleEn}
+                </a>
               ))}
             </div>
 
@@ -1010,16 +934,13 @@ export default function LearningMaterials() {
             {sessions.length > 0 && (
               <div className="sidebar-group">
                 <div className="sidebar-group-title">
-                  {isKo
-                    ? `${cat.day}일차 교시별 상세`
-                    : `Day ${cat.day} Session Details`}
+                  {isKo ? `${cat.day}일차 교시별 상세` : `Day ${cat.day} Sessions`}
                 </div>
                 {sessions.map(s => (
                   <Link
                     key={s.id}
                     to={`/day${s.day}/${s.period}`}
                     className="sidebar-item sidebar-session"
-                    onClick={() => setSidebarOpen(false)}
                   >
                     <span className="sidebar-period">{s.period}</span>
                     <span>{isKo ? s.title : s.titleEn}</span>
@@ -1031,26 +952,19 @@ export default function LearningMaterials() {
             {/* Quick Links */}
             <div className="sidebar-group">
               <div className="sidebar-group-title">{isKo ? '바로가기' : 'Quick Links'}</div>
-              <Link to="/tools" className="sidebar-item" onClick={() => setSidebarOpen(false)}>
-                <i className="fa-solid fa-wrench" />
-                <span>{isKo ? '도구 가이드' : 'Tool Guide'}</span>
+              <Link to="/tools" className="sidebar-item">
+                {isKo ? '도구 가이드' : 'Tool Guide'}
               </Link>
-              <Link to="/community" className="sidebar-item" onClick={() => setSidebarOpen(false)}>
-                <i className="fa-solid fa-comments" />
-                <span>{isKo ? '커뮤니티' : 'Community'}</span>
+              <Link to="/community" className="sidebar-item">
+                {isKo ? '커뮤니티' : 'Community'}
               </Link>
             </div>
           </div>
         </aside>
 
-        {sidebarOpen && <div className="sidebar-overlay" onClick={() => setSidebarOpen(false)} />}
-
-        {/* ─── Main Content ─── */}
+        {/* ─── Main Content (all expanded) ─── */}
         <div className="learning-content">
           <div className="learning-content-header">
-            <div className="cat-badge" style={{ background: cat.color }}>
-              <i className={`fa-solid ${cat.icon}`} /> {isKo ? cat.titleKo : cat.titleEn}
-            </div>
             <h1>{isKo ? cat.titleKo : cat.titleEn}</h1>
             <p>{isKo ? cat.descKo : cat.descEn}</p>
           </div>
@@ -1058,9 +972,6 @@ export default function LearningMaterials() {
           {cat.topics.map(topic => (
             <section key={topic.id} id={topic.id} className="topic-section">
               <div className="topic-header">
-                <div className="topic-icon" style={{ background: cat.color }}>
-                  <i className={`fa-solid ${topic.icon}`} />
-                </div>
                 <div className="topic-header-text">
                   <h2>{isKo ? topic.titleKo : topic.titleEn}</h2>
                   <p>{isKo ? topic.descKo : topic.descEn}</p>
@@ -1070,7 +981,7 @@ export default function LearningMaterials() {
               {topic.sessions.length > 0 && (
                 <div className="topic-sessions">
                   <span className="topic-sessions-label">
-                    <i className="fa-solid fa-book-open" /> {isKo ? '관련 교시' : 'Sessions'}:
+                    {isKo ? '관련 교시' : 'Sessions'}:
                   </span>
                   {topic.sessions.map((s, i) => (
                     <Link key={i} to={`/day${s.day}/${s.period}`} className="topic-session-link">
@@ -1081,54 +992,127 @@ export default function LearningMaterials() {
                 </div>
               )}
 
+              {/* All sections expanded (no accordion) */}
               <div className="topic-content">
-                {topic.sections.map((section, idx) => {
-                  const key = `${topic.id}-${idx}`;
-                  const isOpen = openSections[key];
-                  return (
-                    <div key={key} className={`accordion-item ${isOpen ? 'open' : ''}`}>
-                      <button className="accordion-header" onClick={() => toggleSection(key)}>
-                        <span>{isKo ? section.titleKo : section.titleEn}</span>
-                        <i className={`fa-solid fa-chevron-${isOpen ? 'up' : 'down'}`} />
-                      </button>
-                      {isOpen && (
-                        <div className="accordion-body">
-                          <div className="accordion-content">
-                            {(isKo ? section.contentKo : section.contentEn).split('\n').map((line, li) => {
-                              if (line.startsWith('|')) {
-                                const cells = line.split('|').filter(c => c.trim());
-                                if (cells.every(c => /^[-:\s]+$/.test(c.trim()))) return null;
-                                const nextLine = (isKo ? section.contentKo : section.contentEn).split('\n')[li + 1];
-                                const isHeader = nextLine?.trim().startsWith('|---');
-                                const Tag = isHeader ? 'th' as const : 'td' as const;
-                                return (
-                                  <table key={li}><tbody><tr>
-                                    {cells.map((cell, ci) => <Tag key={ci} dangerouslySetInnerHTML={{ __html: fmt(cell.trim()) }} />)}
-                                  </tr></tbody></table>
-                                );
-                              }
-                              if (line.startsWith('```')) return null;
-                              if (line.startsWith('**') && line.endsWith('**')) return <h4 key={li} dangerouslySetInnerHTML={{ __html: fmt(line) }} />;
-                              if (!line.trim()) return <br key={li} />;
-                              if (line.startsWith('>')) return <blockquote key={li} dangerouslySetInnerHTML={{ __html: fmt(line.slice(1).trim()) }} />;
-                              if (line.startsWith('- [')) return <div key={li} className="checklist-item" dangerouslySetInnerHTML={{ __html: fmt(line) }} />;
-                              if (line.startsWith('- ') || line.startsWith('* ')) return <li key={li} dangerouslySetInnerHTML={{ __html: fmt(line.slice(2)) }} />;
-                              if (/^\d+\.\s/.test(line)) return <li key={li} className="ol-item" dangerouslySetInnerHTML={{ __html: fmt(line.replace(/^\d+\.\s/, '')) }} />;
-                              return <p key={li} dangerouslySetInnerHTML={{ __html: fmt(line) }} />;
-                            })}
-                            {codeBlocks(isKo ? section.contentKo : section.contentEn)}
-                          </div>
-                        </div>
-                      )}
+                {topic.sections.map((section, idx) => (
+                  <div key={idx} className="section-block">
+                    <h3 className="section-block-title">{isKo ? section.titleKo : section.titleEn}</h3>
+                    <div className="section-block-body">
+                      {renderContent(isKo ? section.contentKo : section.contentEn)}
                     </div>
-                  );
-                })}
+                  </div>
+                ))}
               </div>
             </section>
           ))}
         </div>
       </div>
     </div>
+  );
+}
+
+/* ─── Render helpers ─── */
+function renderContent(content: string) {
+  const lines = content.split('\n');
+  const elements: React.ReactNode[] = [];
+  let i = 0;
+
+  while (i < lines.length) {
+    const line = lines[i];
+
+    // Code blocks
+    if (line.startsWith('```')) {
+      const codeLines: string[] = [];
+      i++;
+      while (i < lines.length && !lines[i].startsWith('```')) {
+        codeLines.push(lines[i]);
+        i++;
+      }
+      i++; // skip closing ```
+      elements.push(<pre key={`code-${i}`} className="code-block"><code>{codeLines.join('\n')}</code></pre>);
+      continue;
+    }
+
+    // Table rows
+    if (line.startsWith('|')) {
+      const tableRows: string[] = [];
+      while (i < lines.length && lines[i].startsWith('|')) {
+        tableRows.push(lines[i]);
+        i++;
+      }
+      elements.push(renderTable(tableRows, `tbl-${i}`));
+      continue;
+    }
+
+    // Bold heading line
+    if (line.startsWith('**') && line.endsWith('**')) {
+      elements.push(<h4 key={i} dangerouslySetInnerHTML={{ __html: fmt(line) }} />);
+      i++;
+      continue;
+    }
+
+    // Blockquote
+    if (line.startsWith('>')) {
+      elements.push(<blockquote key={i} dangerouslySetInnerHTML={{ __html: fmt(line.slice(1).trim()) }} />);
+      i++;
+      continue;
+    }
+
+    // Checklist
+    if (line.startsWith('- [')) {
+      elements.push(<div key={i} className="checklist-item" dangerouslySetInnerHTML={{ __html: fmt(line) }} />);
+      i++;
+      continue;
+    }
+
+    // Unordered list
+    if (line.startsWith('- ') || line.startsWith('* ')) {
+      elements.push(<li key={i} dangerouslySetInnerHTML={{ __html: fmt(line.slice(2)) }} />);
+      i++;
+      continue;
+    }
+
+    // Ordered list
+    if (/^\d+\.\s/.test(line)) {
+      elements.push(<li key={i} className="ol-item" dangerouslySetInnerHTML={{ __html: fmt(line.replace(/^\d+\.\s/, '')) }} />);
+      i++;
+      continue;
+    }
+
+    // Empty line
+    if (!line.trim()) {
+      i++;
+      continue;
+    }
+
+    // Normal paragraph
+    elements.push(<p key={i} dangerouslySetInnerHTML={{ __html: fmt(line) }} />);
+    i++;
+  }
+
+  return elements;
+}
+
+function renderTable(rows: string[], key: string) {
+  const parsed = rows
+    .filter(r => !r.trim().match(/^\|[-:\s|]+\|$/))
+    .map(r => r.split('|').filter(c => c.trim()).map(c => c.trim()));
+
+  if (parsed.length === 0) return null;
+  const header = parsed[0];
+  const body = parsed.slice(1);
+
+  return (
+    <table key={key}>
+      <thead>
+        <tr>{header.map((h, i) => <th key={i} dangerouslySetInnerHTML={{ __html: fmt(h) }} />)}</tr>
+      </thead>
+      <tbody>
+        {body.map((row, ri) => (
+          <tr key={ri}>{row.map((cell, ci) => <td key={ci} dangerouslySetInnerHTML={{ __html: fmt(cell) }} />)}</tr>
+        ))}
+      </tbody>
+    </table>
   );
 }
 
@@ -1139,14 +1123,4 @@ function fmt(t: string): string {
     .replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
     .replace(/- \[ \]/g, '<span class="check-box">&#9744;</span>')
     .replace(/- \[x\]/g, '<span class="check-box checked">&#9745;</span>');
-}
-
-function codeBlocks(content: string) {
-  const out: React.ReactNode[] = [];
-  const re = /```(?:\w*)\n([\s\S]*?)```/g;
-  let m, i = 0;
-  while ((m = re.exec(content)) !== null) {
-    out.push(<pre key={`c-${i++}`} className="code-block"><code>{m[1].trim()}</code></pre>);
-  }
-  return out;
 }

@@ -6,7 +6,9 @@ import { useAuth } from '../../contexts/AuthContext';
 import { signOut } from '../../utils/auth';
 
 const NAV_ITEMS = [
-  { path: '/materials', ko: '학습자료', en: 'Materials' },
+  { path: '/materials/basic', ko: '기본학습자료', en: 'Basic Materials' },
+  { path: '/materials/document', ko: '문서행정 자동화', en: 'Document Automation' },
+  { path: '/materials/hr', ko: '인사행정 자동화', en: 'HR Automation' },
   { path: '/tools', ko: '도구 가이드', en: 'Tool Guide' },
   { path: '/community', ko: '커뮤니티', en: 'Community' },
   { path: '/about', ko: 'About', en: 'About' },

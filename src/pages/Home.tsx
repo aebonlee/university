@@ -50,7 +50,7 @@ export default function Home() {
           </h1>
           <p className="hero-description">{t('hero.description')}</p>
           <div className="hero-actions">
-            <Link to="/materials" className="btn btn-primary-large">{t('hero.cta')}</Link>
+            <Link to="/materials/basic" className="btn btn-primary-large">{t('hero.cta')}</Link>
             <Link to="/tools" className="btn btn-secondary" style={{ borderColor: '#fff', color: '#fff' }}>{t('hero.ctaSecondary')}</Link>
           </div>
         </div>
@@ -161,7 +161,7 @@ export default function Home() {
         <div className="container">
           <h2>{t('cta.title')}</h2>
           <p>{t('cta.description')}</p>
-          <Link to="/materials" className="btn btn-primary-large">{t('cta.button')}</Link>
+          <Link to="/materials/basic" className="btn btn-primary-large">{t('cta.button')}</Link>
         </div>
       </section>
     </>

@@ -128,20 +128,6 @@ html[data-theme="dark"] .session-source {
     background: #1E293B;
 }
 
-/* Category Tabs dark */
-html[data-theme="dark"] .category-tabs-bar {
-    background: #0F172A;
-    border-color: #334155;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-}
-html[data-theme="dark"] .category-tab {
-    color: #64748B;
-}
-html[data-theme="dark"] .category-tab:hover {
-    background: #1E293B;
-    color: #F1F5F9;
-}
-
 /* Learning Materials dark */
 html[data-theme="dark"] .learning-sidebar {
     background: #0F172A;
@@ -150,15 +136,11 @@ html[data-theme="dark"] .learning-sidebar {
 html[data-theme="dark"] .sidebar-header {
     border-color: #334155;
 }
-html[data-theme="dark"] .sidebar-item:hover,
-html[data-theme="dark"] .sidebar-item.active {
+html[data-theme="dark"] .sidebar-item:hover {
     background: #1E293B;
 }
 html[data-theme="dark"] .sidebar-period {
     background: #334155;
-}
-html[data-theme="dark"] .sidebar-toggle {
-    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
 }
 html[data-theme="dark"] .topic-sessions {
     background: #1E293B;
@@ -167,32 +149,23 @@ html[data-theme="dark"] .topic-session-link {
     background: #0F172A;
     border-color: #334155;
 }
-html[data-theme="dark"] .accordion-header {
-    background: #1E293B;
-}
-html[data-theme="dark"] .accordion-header:hover {
-    background: #334155;
-}
-html[data-theme="dark"] .accordion-item.open .accordion-header {
-    background: #334155;
-    border-color: #475569;
-}
-html[data-theme="dark"] .accordion-item {
+html[data-theme="dark"] .section-block {
     border-color: #334155;
 }
-html[data-theme="dark"] .accordion-body {
-    background: #0F172A;
-}
-html[data-theme="dark"] .accordion-content th {
-    background: #334155;
-}
-html[data-theme="dark"] .accordion-content th,
-html[data-theme="dark"] .accordion-content td {
+html[data-theme="dark"] .section-block-title {
+    background: #1E293B;
     border-color: #334155;
 }
-html[data-theme="dark"] .accordion-content blockquote {
+html[data-theme="dark"] .section-block-body th {
+    background: #334155;
+}
+html[data-theme="dark"] .section-block-body th,
+html[data-theme="dark"] .section-block-body td {
+    border-color: #334155;
+}
+html[data-theme="dark"] .section-block-body blockquote {
     background: #1E293B;
 }
-html[data-theme="dark"] .accordion-content code {
+html[data-theme="dark"] .section-block-body code {
     background: #334155;
 }

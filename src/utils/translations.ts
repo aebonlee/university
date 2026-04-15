@@ -30,7 +30,7 @@ const translations = {
       ],
     },
     curriculum: {
-      title: '커리큘럼',
+      title: '학습자료',
       subtitle: '2일 과정 (16교시) 실습 중심 교육',
       day1: '1일차: 문서행정 자동화',
       day2: '2일차: 인사행정 자동화',
@@ -145,7 +145,7 @@ const translations = {
       ],
     },
     curriculum: {
-      title: 'Curriculum',
+      title: 'Learning Materials',
       subtitle: '2-Day Course (16 Sessions) Practice-Oriented',
       day1: 'Day 1: Document Administration Automation',
       day2: 'Day 2: HR Administration Automation',

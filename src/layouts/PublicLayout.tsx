@@ -1,10 +1,9 @@
 import { Suspense, lazy } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 
 const Home = lazy(() => import('../pages/Home'));
-const Curriculum = lazy(() => import('../pages/Curriculum'));
 const SessionPage = lazy(() => import('../pages/SessionPage'));
 const LearningMaterials = lazy(() => import('../pages/LearningMaterials'));
 const ToolsGuide = lazy(() => import('../pages/ToolsGuide'));
@@ -39,10 +38,11 @@ export default function PublicLayout() {
         <Suspense fallback={<LoadingFallback />}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/curriculum" element={<Curriculum />} />
+            <Route path="/curriculum" element={<Navigate to="/materials/basic" replace />} />
+            <Route path="/materials" element={<Navigate to="/materials/basic" replace />} />
+            <Route path="/materials/:category" element={<LearningMaterials />} />
             <Route path="/day1/:period" element={<SessionPage />} />
             <Route path="/day2/:period" element={<SessionPage />} />
-            <Route path="/materials" element={<LearningMaterials />} />
             <Route path="/tools" element={<ToolsGuide />} />
 
             <Route path="/login" element={<Login />} />
