@@ -1,4 +1,4 @@
-import{j as a,M as d,r as P}from"./markdown-X-y-aifN.js";import{u as p}from"./index-32h9D_zJ.js";import{C as m,S as x}from"./SEOHead-BkjqMOtS.js";import{f as u,L as r}from"./vendor-j2q2Hh8J.js";import"./supabase-ClMXFR6t.js";const T={1:`## 학습 목표
+import{j as a,M as d,r as P}from"./markdown-X-y-aifN.js";import{u as p}from"./index-DkXERZcS.js";import{C as m,S as x}from"./SEOHead-BkjqMOtS.js";import{f as u,L as r}from"./vendor-j2q2Hh8J.js";import"./supabase-ClMXFR6t.js";const T={1:`## 학습 목표
 
 - 생성형 AI의 개념과 동작 원리를 이해합니다
 - 주요 AI 서비스(ChatGPT, Gemini, Claude)의 특징을 비교합니다
