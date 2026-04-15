@@ -6,6 +6,7 @@ import Footer from '../components/layout/Footer';
 const Home = lazy(() => import('../pages/Home'));
 const Curriculum = lazy(() => import('../pages/Curriculum'));
 const SessionPage = lazy(() => import('../pages/SessionPage'));
+const LearningMaterials = lazy(() => import('../pages/LearningMaterials'));
 const ToolsGuide = lazy(() => import('../pages/ToolsGuide'));
 const Login = lazy(() => import('../pages/Login'));
 const Register = lazy(() => import('../pages/Register'));
@@ -41,6 +42,7 @@ export default function PublicLayout() {
             <Route path="/curriculum" element={<Curriculum />} />
             <Route path="/day1/:period" element={<SessionPage />} />
             <Route path="/day2/:period" element={<SessionPage />} />
+            <Route path="/materials" element={<LearningMaterials />} />
             <Route path="/tools" element={<ToolsGuide />} />
 
             <Route path="/login" element={<Login />} />

@@ -1,0 +1,461 @@
+/* ============================================
+   University AI Education - Learning Materials
+   Sidebar Layout
+   ============================================ */
+
+.learning-page {
+    padding-top: var(--nav-height);
+}
+
+/* Layout: Sidebar + Content */
+.learning-layout {
+    display: flex;
+    min-height: calc(100vh - var(--nav-height));
+}
+
+/* ─── Left Sidebar ─── */
+.learning-sidebar {
+    width: 280px;
+    flex-shrink: 0;
+    position: sticky;
+    top: var(--nav-height);
+    height: calc(100vh - var(--nav-height));
+    overflow-y: auto;
+    border-right: 1px solid var(--border-light);
+    background: var(--bg-white);
+    z-index: 10;
+}
+.sidebar-inner {
+    padding: 20px 0;
+}
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 20px 16px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary-blue);
+    border-bottom: 1px solid var(--border-light);
+    margin-bottom: 8px;
+}
+.sidebar-header i {
+    font-size: 16px;
+}
+
+/* Sidebar Group */
+.sidebar-group {
+    margin-bottom: 4px;
+}
+.sidebar-group-title {
+    padding: 14px 20px 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-light);
+}
+
+/* Sidebar Items */
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 8px 20px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    text-align: left;
+    transition: var(--transition-base);
+    line-height: 1.4;
+}
+.sidebar-item:hover {
+    background: var(--bg-light-gray);
+    color: var(--primary-blue);
+}
+.sidebar-item.active {
+    background: var(--bg-light-gray);
+    color: var(--primary-blue);
+    font-weight: 600;
+    border-right: 3px solid var(--primary-blue);
+}
+.sidebar-item i {
+    font-size: 13px;
+    width: 18px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* Session links in sidebar */
+.sidebar-session {
+    padding-left: 24px;
+    font-size: 12.5px;
+}
+.sidebar-period {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--bg-light-gray);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-light);
+    flex-shrink: 0;
+}
+.sidebar-session:hover .sidebar-period {
+    background: var(--primary-blue);
+    color: var(--text-white);
+}
+
+/* Sidebar scrollbar */
+.learning-sidebar::-webkit-scrollbar {
+    width: 4px;
+}
+.learning-sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+.learning-sidebar::-webkit-scrollbar-thumb {
+    background: var(--border-light);
+    border-radius: 4px;
+}
+
+/* Mobile sidebar toggle */
+.sidebar-toggle {
+    display: none;
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 100;
+    padding: 12px 20px;
+    border-radius: var(--radius-full);
+    background: var(--primary-blue);
+    color: var(--text-white);
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: var(--shadow-lg);
+    gap: 8px;
+    align-items: center;
+}
+.sidebar-toggle i {
+    font-size: 16px;
+}
+.sidebar-overlay {
+    display: none;
+}
+
+/* ─── Main Content Area ─── */
+.learning-content {
+    flex: 1;
+    min-width: 0;
+    padding: 40px 48px 80px;
+    max-width: 900px;
+}
+
+.learning-content-header {
+    margin-bottom: 40px;
+}
+.learning-content-header h1 {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+.learning-content-header p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+/* ─── Topic Sections ─── */
+.topic-section {
+    scroll-margin-top: calc(var(--nav-height) + 20px);
+    margin-bottom: 48px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--border-light);
+}
+.topic-section:last-of-type {
+    border-bottom: none;
+}
+
+.topic-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+.topic-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-lg);
+    background: var(--primary-gradient);
+    color: var(--text-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+}
+.topic-header-text {
+    flex: 1;
+}
+.topic-header-text h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+}
+.topic-header-text p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Related Sessions */
+.topic-sessions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    padding: 12px 16px;
+    background: var(--bg-light-gray);
+    border-radius: var(--radius-md);
+}
+.topic-sessions-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
+.topic-sessions-label i {
+    margin-right: 4px;
+}
+.topic-session-link {
+    display: inline-flex;
+    align-items: center;
+    font-size: 13px;
+    color: var(--primary-blue);
+    text-decoration: none;
+    padding: 4px 10px;
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-sm);
+    transition: var(--transition-base);
+}
+.topic-session-link:hover {
+    background: var(--primary-blue);
+    color: var(--text-white);
+    border-color: var(--primary-blue);
+}
+.topic-session-title {
+    color: var(--text-light);
+    margin-left: 2px;
+}
+.topic-session-link:hover .topic-session-title {
+    color: rgba(255,255,255,0.8);
+}
+
+/* ─── Accordion ─── */
+.topic-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.accordion-item {
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: var(--transition-base);
+}
+.accordion-item.open {
+    border-color: var(--primary-blue);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 14px 20px;
+    background: var(--bg-white);
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-align: left;
+    transition: var(--transition-base);
+}
+.accordion-header:hover {
+    background: var(--bg-light-gray);
+}
+.accordion-item.open .accordion-header {
+    background: var(--bg-light-gray);
+    border-bottom: 1px solid var(--border-light);
+}
+.accordion-header i {
+    font-size: 12px;
+    color: var(--text-light);
+    transition: var(--transition-base);
+}
+
+.accordion-body {
+    padding: 24px;
+    background: var(--bg-white);
+    animation: slideDown 0.2s ease;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Markdown Content ─── */
+.accordion-content h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 20px 0 10px;
+}
+.accordion-content h4:first-child {
+    margin-top: 0;
+}
+.accordion-content p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 4px;
+}
+.accordion-content li {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 4px;
+    list-style: disc;
+    margin-left: 20px;
+}
+.accordion-content li.ol-item {
+    list-style: decimal;
+}
+.accordion-content strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+.accordion-content code {
+    background: var(--bg-light-gray);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Fira Code', 'Consolas', monospace;
+    font-size: 13px;
+    color: var(--primary-blue);
+}
+.accordion-content blockquote {
+    border-left: 4px solid var(--primary-blue);
+    padding: 10px 16px;
+    margin: 12px 0;
+    background: var(--bg-light-gray);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+.accordion-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 4px;
+}
+.accordion-content th,
+.accordion-content td {
+    padding: 8px 12px;
+    border: 1px solid var(--border-light);
+    text-align: left;
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+.accordion-content th {
+    background: var(--bg-light-gray);
+    font-weight: 600;
+    color: var(--text-primary);
+}
+.accordion-content .code-block {
+    background: #1E293B;
+    color: #E2E8F0;
+    padding: 16px 20px;
+    border-radius: var(--radius-md);
+    overflow-x: auto;
+    margin: 12px 0;
+    font-size: 13px;
+    line-height: 1.6;
+}
+.accordion-content .code-block code {
+    background: transparent;
+    color: #E2E8F0;
+    padding: 0;
+    font-size: 13px;
+    white-space: pre-wrap;
+}
+.accordion-content .checklist-item {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 4px;
+    padding-left: 4px;
+}
+.accordion-content .check-box {
+    margin-right: 6px;
+    color: var(--text-light);
+}
+.accordion-content a {
+    color: var(--primary-blue);
+    text-decoration: none;
+}
+.accordion-content a:hover {
+    text-decoration: underline;
+}
+
+/* ─── Bottom CTA ─── */
+.learning-cta {
+    text-align: center;
+    margin-top: 48px;
+    padding: 48px;
+    background: var(--primary-gradient);
+    border-radius: var(--radius-xl);
+    color: var(--text-white);
+}
+.learning-cta h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+.learning-cta p {
+    font-size: 16px;
+    opacity: 0.9;
+    margin-bottom: 28px;
+}
+.learning-cta-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+.learning-cta .btn-primary {
+    background: var(--text-white);
+    color: var(--primary-blue);
+}
+.learning-cta .btn-primary:hover {
+    background: rgba(255,255,255,0.9);
+}
+.learning-cta .btn-secondary {
+    background: rgba(255,255,255,0.2);
+    color: var(--text-white);
+    border: 1px solid rgba(255,255,255,0.4);
+}
+.learning-cta .btn-secondary:hover {
+    background: rgba(255,255,255,0.3);
+}

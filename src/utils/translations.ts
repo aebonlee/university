@@ -4,6 +4,7 @@ const translations = {
       home: '홈',
       curriculum: '커리큘럼',
       tools: '도구 가이드',
+      materials: '학습자료',
       community: '커뮤니티',
       about: 'About',
       login: '로그인',
@@ -15,7 +16,7 @@ const translations = {
       title: '생성형 AI 기반',
       titleHighlight: '문서·인사행정 실무 자동화',
       description: 'ChatGPT, Gemini, Claude 등 생성형 AI를 활용하여 공문서 작성, 보고자료 제작, 인사·근태 관리까지 — 2일 16교시 실무 중심 교육 과정',
-      cta: '커리큘럼 보기',
+      cta: '학습자료 보기',
       ctaSecondary: '도구 가이드',
     },
     features: {
@@ -57,7 +58,7 @@ const translations = {
     cta: {
       title: '지금 시작하세요',
       description: 'AI 기반 업무 자동화로 생산성을 높이세요',
-      button: '커리큘럼 확인하기',
+      button: '학습자료 확인하기',
     },
     auth: {
       loginTitle: '로그인',
@@ -118,6 +119,7 @@ const translations = {
       home: 'Home',
       curriculum: 'Curriculum',
       tools: 'Tool Guide',
+      materials: 'Materials',
       community: 'Community',
       about: 'About',
       login: 'Login',
@@ -129,7 +131,7 @@ const translations = {
       title: 'Generative AI-Based',
       titleHighlight: 'Document & HR Administration Automation',
       description: 'Practical course using ChatGPT, Gemini, Claude — from official document writing to HR management in 2 days (16 sessions)',
-      cta: 'View Curriculum',
+      cta: 'View Materials',
       ctaSecondary: 'Tool Guide',
     },
     features: {
@@ -171,7 +173,7 @@ const translations = {
     cta: {
       title: 'Get Started Now',
       description: 'Boost your productivity with AI-powered automation',
-      button: 'View Curriculum',
+      button: 'View Materials',
     },
     auth: {
       loginTitle: 'Login',

@@ -127,3 +127,58 @@ html[data-theme="dark"] .post-detail-body blockquote {
 html[data-theme="dark"] .session-source {
     background: #1E293B;
 }
+
+/* Learning Materials dark */
+html[data-theme="dark"] .learning-sidebar {
+    background: #0F172A;
+    border-color: #334155;
+}
+html[data-theme="dark"] .sidebar-header {
+    border-color: #334155;
+}
+html[data-theme="dark"] .sidebar-item:hover,
+html[data-theme="dark"] .sidebar-item.active {
+    background: #1E293B;
+}
+html[data-theme="dark"] .sidebar-period {
+    background: #334155;
+}
+html[data-theme="dark"] .sidebar-toggle {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+}
+html[data-theme="dark"] .topic-sessions {
+    background: #1E293B;
+}
+html[data-theme="dark"] .topic-session-link {
+    background: #0F172A;
+    border-color: #334155;
+}
+html[data-theme="dark"] .accordion-header {
+    background: #1E293B;
+}
+html[data-theme="dark"] .accordion-header:hover {
+    background: #334155;
+}
+html[data-theme="dark"] .accordion-item.open .accordion-header {
+    background: #334155;
+    border-color: #475569;
+}
+html[data-theme="dark"] .accordion-item {
+    border-color: #334155;
+}
+html[data-theme="dark"] .accordion-body {
+    background: #0F172A;
+}
+html[data-theme="dark"] .accordion-content th {
+    background: #334155;
+}
+html[data-theme="dark"] .accordion-content th,
+html[data-theme="dark"] .accordion-content td {
+    border-color: #334155;
+}
+html[data-theme="dark"] .accordion-content blockquote {
+    background: #1E293B;
+}
+html[data-theme="dark"] .accordion-content code {
+    background: #334155;
+}
