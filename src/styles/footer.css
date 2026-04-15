@@ -1,0 +1,99 @@
+/* ============================================
+   University AI Education - Footer
+   ============================================ */
+
+.footer {
+    background: #0F172A;
+    color: #CBD5E0;
+    padding: 60px 0 32px;
+}
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+.footer-logo {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+.brand-claude { color: #81C784; }
+.brand-master { color: #FFB74D; }
+.footer-description {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #94A3B8;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #F1F5F9;
+    margin-bottom: 16px;
+}
+.footer-link-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+.footer-link-list a {
+    font-size: 14px;
+    color: #94A3B8;
+    transition: color 0.2s ease;
+}
+.footer-link-list a:hover { color: #F1F5F9; }
+
+.footer-contact p {
+    font-size: 14px;
+    color: #94A3B8;
+    margin-bottom: 6px;
+}
+.footer-email {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.footer-email-icon {
+    color: #81C784;
+}
+.footer-email a {
+    color: #94A3B8;
+    transition: color 0.2s ease;
+}
+.footer-email a:hover { color: #F1F5F9; }
+.business-hours {
+    font-size: 13px !important;
+    color: #64748B !important;
+    margin-top: 8px !important;
+}
+
+.footer-family {
+    margin-top: 16px;
+}
+.footer-family select {
+    padding: 8px 12px;
+    font-size: 13px;
+    background: #1E293B;
+    color: #94A3B8;
+    border: 1px solid #334155;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    width: 100%;
+    font-family: inherit;
+}
+
+.footer-bottom {
+    padding-top: 24px;
+    border-top: 1px solid #1E293B;
+    text-align: center;
+}
+.footer-bottom p {
+    font-size: 13px;
+    color: #64748B;
+}
+.footer-bottom-info {
+    margin-top: 4px;
+}

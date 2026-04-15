@@ -1,0 +1,57 @@
+/* ============================================
+   University AI Education - Responsive
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .nav-links { display: none; }
+    .mobile-menu-toggle { display: flex; }
+
+    .features-grid,
+    .highlights-grid { grid-template-columns: repeat(2, 1fr); }
+    .curriculum-summary-grid { grid-template-columns: repeat(2, 1fr); }
+    .tools-grid { grid-template-columns: repeat(3, 1fr); }
+    .tool-guide-grid { grid-template-columns: repeat(2, 1fr); }
+    .session-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+    .container { padding: 0 20px; }
+    .navbar-inner { padding: 0 20px; }
+
+    .hero-title { font-size: 32px; }
+    .hero-title-highlight { font-size: 36px; }
+    .hero-description { font-size: 16px; }
+    .hero-actions { flex-direction: column; align-items: center; }
+
+    .section-title { font-size: 28px; }
+    .section-subtitle { font-size: 15px; }
+
+    .features-grid,
+    .highlights-grid { grid-template-columns: 1fr; }
+    .curriculum-summary-grid { grid-template-columns: 1fr; }
+    .tools-grid { grid-template-columns: repeat(3, 1fr); }
+    .outputs-grid { grid-template-columns: 1fr; }
+    .tool-guide-grid { grid-template-columns: 1fr; }
+
+    .footer-content { grid-template-columns: 1fr; gap: 32px; }
+
+    .auth-card { padding: 32px 24px; }
+
+    .board-header { flex-direction: column; gap: 12px; align-items: flex-start; }
+    .board-filters { flex-direction: column; }
+    .post-meta { display: none; }
+
+    .session-detail-header h1 { font-size: 24px; }
+
+    .community-hub-grid { grid-template-columns: 1fr; }
+    .comment-form { flex-direction: column; }
+    .comment-form button { align-self: flex-end; }
+}
+
+@media (max-width: 480px) {
+    .hero-title { font-size: 28px; }
+    .hero-title-highlight { font-size: 30px; }
+    .tools-grid { grid-template-columns: repeat(2, 1fr); }
+    .curriculum-tabs { flex-direction: column; align-items: center; }
+    .navbar-logo { font-size: 18px; }
+}

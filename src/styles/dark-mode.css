@@ -1,0 +1,129 @@
+/* ============================================
+   University AI Education - Dark Mode
+   ============================================ */
+
+html[data-theme="dark"] {
+    --bg-white: #0F172A;
+    --bg-light-gray: #1E293B;
+    --bg-medium-gray: #334155;
+
+    --text-primary: #F1F5F9;
+    --text-secondary: #94A3B8;
+    --text-light: #64748B;
+
+    --border-light: #334155;
+    --border-medium: #475569;
+
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.25);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.3);
+
+    --glass-bg: rgba(15, 23, 42, 0.85);
+    --glass-border: rgba(51, 65, 85, 0.5);
+}
+
+/* Navbar dark */
+html[data-theme="dark"] .navbar.scrolled {
+    background: rgba(15, 23, 42, 0.95);
+}
+html[data-theme="dark"] .color-picker-dropdown,
+html[data-theme="dark"] .user-menu-dropdown {
+    background: rgba(30, 41, 59, 0.95);
+}
+html[data-theme="dark"] .color-picker-btn,
+html[data-theme="dark"] .theme-toggle,
+html[data-theme="dark"] .lang-toggle {
+    background: #1E293B;
+    border-color: #334155;
+}
+html[data-theme="dark"] .mobile-menu {
+    background: #0F172A;
+}
+html[data-theme="dark"] .mobile-menu-toggle span {
+    background: #F1F5F9;
+}
+
+/* Cards dark */
+html[data-theme="dark"] .card,
+html[data-theme="dark"] .curriculum-card,
+html[data-theme="dark"] .session-card,
+html[data-theme="dark"] .tool-card,
+html[data-theme="dark"] .output-card,
+html[data-theme="dark"] .board-card,
+html[data-theme="dark"] .tool-guide-card {
+    background: #1E293B;
+    border-color: #334155;
+}
+
+/* Auth dark */
+html[data-theme="dark"] .auth-card {
+    background: #1E293B;
+    border-color: #334155;
+}
+html[data-theme="dark"] .social-btn {
+    background: #1E293B;
+    border-color: #334155;
+    color: #F1F5F9;
+}
+html[data-theme="dark"] .social-btn:hover {
+    background: #334155;
+}
+html[data-theme="dark"] .social-btn.kakao {
+    background: #FEE500;
+    color: #3C1E1E;
+}
+
+/* Forms dark */
+html[data-theme="dark"] .form-input,
+html[data-theme="dark"] .form-select,
+html[data-theme="dark"] .form-textarea,
+html[data-theme="dark"] .board-search {
+    background: #1E293B;
+    border-color: #334155;
+    color: #F1F5F9;
+}
+
+/* Community dark */
+html[data-theme="dark"] .post-list {
+    border-color: #334155;
+}
+html[data-theme="dark"] .post-item {
+    border-color: #334155;
+}
+html[data-theme="dark"] .post-item:hover {
+    background: #1E293B;
+}
+html[data-theme="dark"] .comment-item {
+    background: #1E293B;
+}
+html[data-theme="dark"] .comment-form textarea {
+    background: #1E293B;
+    border-color: #334155;
+    color: #F1F5F9;
+}
+
+/* Toast dark */
+html[data-theme="dark"] .toast {
+    background: #1E293B;
+    border-color: #334155;
+}
+
+/* Table dark */
+html[data-theme="dark"] .session-content th {
+    background: #334155;
+}
+html[data-theme="dark"] .session-content th,
+html[data-theme="dark"] .session-content td {
+    border-color: #334155;
+}
+
+/* Blockquote dark */
+html[data-theme="dark"] .session-content blockquote,
+html[data-theme="dark"] .post-detail-body blockquote {
+    background: #1E293B;
+}
+
+/* Session source dark */
+html[data-theme="dark"] .session-source {
+    background: #1E293B;
+}

@@ -1,0 +1,43 @@
+export const SITE_CONFIG = {
+  name: 'University AI Education',
+  nameKo: '생성형 AI 기반 문서·인사행정 실무 자동화',
+  description: '전남대학교 직원·조교 대상 2일 과정(16교시) AI 실무 자동화 교육 플랫폼',
+  url: 'https://university.dreamitbiz.com',
+  base: '/',
+  author: 'DreamIT Biz',
+  email: 'aebon@dreamitbiz.com',
+  github: 'https://github.com/aebonlee/university',
+};
+
+export interface SessionInfo {
+  id: number;
+  day: number;
+  period: number;
+  title: string;
+  titleEn: string;
+  description: string;
+  tools: string[];
+  icon: string;
+  source?: string;
+}
+
+export const CURRICULUM: SessionInfo[] = [
+  // === Day 1: 문서행정 자동화 ===
+  { id: 1, day: 1, period: 1, title: '생성형 AI의 이해와 활용 전략', titleEn: 'Understanding Generative AI', description: 'AI 개념, 주요 서비스 비교, 대학 행정 활용 사례', tools: ['ChatGPT', 'Gemini', 'Claude'], icon: 'fa-brain', source: 'claude.dreamitbiz.com, ai-prompt.dreamitbiz.com' },
+  { id: 2, day: 1, period: 2, title: '프롬프트 엔지니어링 기초', titleEn: 'Prompt Engineering Basics', description: '효과적인 프롬프트 작성법, 역할·맥락·형식 지정', tools: ['ChatGPT', 'Claude'], icon: 'fa-pen-fancy', source: 'claude.dreamitbiz.com' },
+  { id: 3, day: 1, period: 3, title: 'AI 활용 공문서 작성', titleEn: 'AI-Powered Official Document Writing', description: '공문서 초안, 기안문, 통보문 자동 생성', tools: ['ChatGPT', 'Claude', 'HWP'], icon: 'fa-file-lines', source: 'ai-prompt.dreamitbiz.com, copilot.dreamitbiz.com' },
+  { id: 4, day: 1, period: 4, title: '회의록·보고서 자동화', titleEn: 'Meeting Minutes & Report Automation', description: '회의록 요약, 업무보고서, 결과보고서 작성', tools: ['ChatGPT', 'Claude', 'HWP'], icon: 'fa-clipboard-list', source: 'ai-prompt.dreamitbiz.com' },
+  { id: 5, day: 1, period: 5, title: 'PPT 보고자료 제작 (1)', titleEn: 'PPT Report Creation (1)', description: 'AI 기반 PPT 구조 설계, 슬라이드 초안 생성', tools: ['ChatGPT', 'Gamma', 'PowerPoint'], icon: 'fa-presentation-screen', source: 'copilot.dreamitbiz.com' },
+  { id: 6, day: 1, period: 6, title: 'PPT 보고자료 제작 (2)', titleEn: 'PPT Report Creation (2)', description: '시각자료 생성, 데이터 시각화, 디자인 완성', tools: ['Gamma', 'Canva', 'PowerPoint'], icon: 'fa-chart-pie', source: 'copilot.dreamitbiz.com' },
+  { id: 7, day: 1, period: 7, title: 'Excel 데이터 분석 자동화', titleEn: 'Excel Data Analysis Automation', description: 'AI 활용 수식 생성, 데이터 정리·분석', tools: ['ChatGPT', 'Claude', 'Excel'], icon: 'fa-table', source: 'autowork.dreamitbiz.com, copilot.dreamitbiz.com' },
+  { id: 8, day: 1, period: 8, title: '1일차 종합 실습', titleEn: 'Day 1 Comprehensive Practice', description: '실제 업무 시나리오 기반 종합 실습 및 결과 공유', tools: ['ChatGPT', 'Claude', 'HWP', 'Excel'], icon: 'fa-laptop-code', source: '' },
+  // === Day 2: 인사행정 자동화 ===
+  { id: 9, day: 2, period: 1, title: '인사·근태 관리 AI 활용', titleEn: 'HR & Attendance AI Application', description: 'AI 기반 인사 업무 효율화, 근태 데이터 분석', tools: ['ChatGPT', 'Claude', 'Excel'], icon: 'fa-users-gear', source: 'autowork.dreamitbiz.com' },
+  { id: 10, day: 2, period: 2, title: '인사 관련 문서 작성', titleEn: 'HR Document Creation', description: '채용공고, 인사발령, 근로계약서 AI 작성', tools: ['ChatGPT', 'Claude', 'HWP'], icon: 'fa-file-contract', source: 'autowork.dreamitbiz.com' },
+  { id: 11, day: 2, period: 3, title: '근태 데이터 Excel 분석', titleEn: 'Attendance Data Excel Analysis', description: '출퇴근 데이터 정리, 통계 분석, 보고서 생성', tools: ['ChatGPT', 'Claude', 'Excel'], icon: 'fa-chart-bar', source: 'autowork.dreamitbiz.com' },
+  { id: 12, day: 2, period: 4, title: '인사행정 보고자료 제작', titleEn: 'HR Report Presentation', description: '인사 현황 PPT, 통계 시각화, 경영진 보고자료', tools: ['ChatGPT', 'Gamma', 'PowerPoint'], icon: 'fa-chart-line', source: 'copilot.dreamitbiz.com' },
+  { id: 13, day: 2, period: 5, title: '업무 템플릿 설계', titleEn: 'Work Template Design', description: 'AI 활용 반복 업무 템플릿, 프롬프트 라이브러리 구축', tools: ['ChatGPT', 'Claude'], icon: 'fa-drafting-compass', source: 'autowork.dreamitbiz.com, claude.dreamitbiz.com' },
+  { id: 14, day: 2, period: 6, title: '업무 자동화 워크플로우', titleEn: 'Work Automation Workflow', description: '반복 업무 자동화 설계, AI 연계 워크플로우', tools: ['ChatGPT', 'Claude', 'Excel'], icon: 'fa-gears', source: 'autowork.dreamitbiz.com' },
+  { id: 15, day: 2, period: 7, title: '2일차 종합 실습', titleEn: 'Day 2 Comprehensive Practice', description: '인사행정 시나리오 종합 실습, 포트폴리오 완성', tools: ['ChatGPT', 'Claude', 'HWP', 'Excel', 'PPT'], icon: 'fa-laptop-code', source: '' },
+  { id: 16, day: 2, period: 8, title: '결과 공유 및 마무리', titleEn: 'Results Sharing & Wrap-up', description: '실습 결과 발표, 피드백, 향후 활용 계획', tools: [], icon: 'fa-graduation-cap', source: '' },
+];
