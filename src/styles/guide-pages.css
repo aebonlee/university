@@ -756,13 +756,14 @@
     z-index: 1;
 }
 .instructor-hero-photo {
+    display: block;
+    margin: 0 auto 20px;
     width: 140px;
     height: 140px;
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid #fff;
     box-shadow: 0 8px 32px rgba(46,125,50,0.25);
-    margin-bottom: 20px;
     position: relative;
     z-index: 1;
 }
