@@ -128,6 +128,20 @@ html[data-theme="dark"] .session-source {
     background: #1E293B;
 }
 
+/* Category Tabs dark */
+html[data-theme="dark"] .category-tabs-bar {
+    background: #0F172A;
+    border-color: #334155;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+html[data-theme="dark"] .category-tab {
+    color: #64748B;
+}
+html[data-theme="dark"] .category-tab:hover {
+    background: #1E293B;
+    color: #F1F5F9;
+}
+
 /* Learning Materials dark */
 html[data-theme="dark"] .learning-sidebar {
     background: #0F172A;

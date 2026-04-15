@@ -1,9 +1,16 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { CURRICULUM } from '../config/site';
 import SEOHead from '../components/SEOHead';
 
+/* ─── Types ─── */
+interface TopicSection {
+  titleKo: string;
+  titleEn: string;
+  contentKo: string;
+  contentEn: string;
+}
 interface Topic {
   id: string;
   icon: string;
@@ -12,15 +19,22 @@ interface Topic {
   descKo: string;
   descEn: string;
   sessions: { day: number; period: number; titleKo: string; titleEn: string }[];
-  sections: {
-    titleKo: string;
-    titleEn: string;
-    contentKo: string;
-    contentEn: string;
-  }[];
+  sections: TopicSection[];
+}
+interface Category {
+  id: string;
+  icon: string;
+  titleKo: string;
+  titleEn: string;
+  descKo: string;
+  descEn: string;
+  color: string;
+  topics: Topic[];
+  day?: number; // 관련 일차
 }
 
-const TOPICS: Topic[] = [
+/* ─── Category 1: 기본학습자료 ─── */
+const BASIC_TOPICS: Topic[] = [
   {
     id: 'ai-basics',
     icon: 'fa-brain',
@@ -28,9 +42,7 @@ const TOPICS: Topic[] = [
     titleEn: 'Generative AI Basics',
     descKo: '생성형 AI의 개념, 동작 원리, 주요 서비스 비교 및 대학 행정 활용 전략',
     descEn: 'Generative AI concepts, principles, service comparison, and university administration strategies',
-    sessions: [
-      { day: 1, period: 1, titleKo: '생성형 AI의 이해와 활용 전략', titleEn: 'Understanding Generative AI' },
-    ],
+    sessions: [{ day: 1, period: 1, titleKo: '생성형 AI의 이해와 활용 전략', titleEn: 'Understanding Generative AI' }],
     sections: [
       {
         titleKo: '생성형 AI란?',
@@ -125,9 +137,7 @@ const TOPICS: Topic[] = [
     titleEn: 'Prompt Engineering',
     descKo: 'RCF 프레임워크를 활용한 효과적인 프롬프트 작성법과 개선 기법',
     descEn: 'Effective prompt writing using the RCF framework and improvement techniques',
-    sessions: [
-      { day: 1, period: 2, titleKo: '프롬프트 엔지니어링 기초', titleEn: 'Prompt Engineering Basics' },
-    ],
+    sessions: [{ day: 1, period: 2, titleKo: '프롬프트 엔지니어링 기초', titleEn: 'Prompt Engineering Basics' }],
     sections: [
       {
         titleKo: 'RCF 프레임워크',
@@ -164,7 +174,7 @@ You are a university administration expert proficient in official document writi
 **C - Context**
 Provide background and specific conditions.
 \`\`\`
-The Academic Affairs Office of Chonnam National University needs to write a course registration notice for the 2nd semester of 2024.
+The Academic Affairs Office needs to write a course registration notice for the 2nd semester of 2024.
 \`\`\`
 
 **F - Format**
@@ -241,11 +251,7 @@ Gradually improve prompts based on initial results.
 \`\`\`
 [역할] {부서} 보고서 작성 전문가
 [작업] {보고서 유형} 작성
-[포함 사항]
-- 현황 요약
-- 주요 성과 (수치 포함)
-- 문제점 및 개선방안
-- 향후 계획
+[포함 사항] 현황 요약, 주요 성과, 문제점 및 개선방안, 향후 계획
 [분량] {페이지 수}
 [어조] {어조 지정}
 \`\`\``,
@@ -277,22 +283,22 @@ Gradually improve prompts based on initial results.
 \`\`\`
 [Role] {department} report writing expert
 [Task] Write a {report type}
-[Include]
-- Status summary
-- Key achievements (with numbers)
-- Issues and improvements
-- Future plans
+[Include] Status summary, Key achievements, Issues and improvements, Future plans
 [Length] {pages}
 [Tone] {tone}
 \`\`\``,
       },
     ],
   },
+];
+
+/* ─── Category 2: 문서행정 자동화 (Day 1) ─── */
+const DOC_TOPICS: Topic[] = [
   {
     id: 'document-automation',
     icon: 'fa-file-lines',
-    titleKo: '문서 작성 자동화',
-    titleEn: 'Document Writing Automation',
+    titleKo: '공문서·보고서 작성',
+    titleEn: 'Official Documents & Reports',
     descKo: '공문서, 회의록, 보고서를 AI로 빠르게 작성하고 검토하는 방법',
     descEn: 'Quickly write and review official documents, meeting minutes, and reports with AI',
     sessions: [
@@ -388,15 +394,14 @@ Gradually improve prompts based on initial results.
   },
   {
     id: 'ppt-creation',
-    icon: 'fa-presentation-screen',
+    icon: 'fa-chart-pie',
     titleKo: 'PPT 보고자료 제작',
     titleEn: 'PPT Report Creation',
     descKo: 'AI 기반 PPT 구조 설계, Gamma·Canva 활용, 데이터 시각화 기법',
-    descEn: 'AI-based PPT structure design, Gamma/Canva usage, and data visualization techniques',
+    descEn: 'AI-based PPT structure design, Gamma/Canva usage, data visualization',
     sessions: [
       { day: 1, period: 5, titleKo: 'PPT 보고자료 제작 (1)', titleEn: 'PPT Report Creation (1)' },
       { day: 1, period: 6, titleKo: 'PPT 보고자료 제작 (2)', titleEn: 'PPT Report Creation (2)' },
-      { day: 2, period: 4, titleKo: '인사행정 보고자료 제작', titleEn: 'HR Report Presentation' },
     ],
     sections: [
       {
@@ -448,8 +453,8 @@ PPT structure design and content generation
 - Recommend data visualization methods`,
       },
       {
-        titleKo: 'PPT 디자인 원칙',
-        titleEn: 'PPT Design Principles',
+        titleKo: 'PPT 디자인 원칙 & 시각화',
+        titleEn: 'PPT Design Principles & Visualization',
         contentKo: `**4대 디자인 원칙**
 - **일관성**: 같은 폰트, 같은 색상 체계 유지
 - **간결성**: 슬라이드당 텍스트 50단어 이내
@@ -464,14 +469,7 @@ PPT structure design and content generation
 | 추이 | 꺾은선 차트 | 시간에 따른 변화 |
 | 비율 | 원형/도넛 차트 | 전체 대비 비율 |
 | 분포 | 히트맵/산점도 | 데이터 분포 패턴 |
-| 구성 | 누적 막대 | 항목별 구성 비교 |
-
-**PPT 최종 점검 체크리스트**
-- [ ] 전체 스토리라인이 논리적인가?
-- [ ] 각 슬라이드의 핵심 메시지가 명확한가?
-- [ ] 데이터 출처가 모두 표기되었는가?
-- [ ] 폰트/색상이 일관적인가?
-- [ ] 발표 시간에 적합한 분량인가?`,
+| 구성 | 누적 막대 | 항목별 구성 비교 |`,
         contentEn: `**4 Design Principles**
 - **Consistency**: Maintain same fonts and color scheme
 - **Simplicity**: Under 50 words per slide
@@ -486,14 +484,7 @@ PPT structure design and content generation
 | Trend | Line chart | Changes over time |
 | Ratio | Pie/Donut chart | Proportions of whole |
 | Distribution | Heatmap/Scatter | Data distribution patterns |
-| Composition | Stacked bar | Compare compositions |
-
-**PPT Final Checklist**
-- [ ] Is the overall storyline logical?
-- [ ] Is each slide's key message clear?
-- [ ] Are all data sources cited?
-- [ ] Are fonts/colors consistent?
-- [ ] Is the volume suitable for presentation time?`,
+| Composition | Stacked bar | Compare compositions |`,
       },
     ],
   },
@@ -503,11 +494,8 @@ PPT structure design and content generation
     titleKo: 'Excel 데이터 분석',
     titleEn: 'Excel Data Analysis',
     descKo: 'AI 활용 수식 생성, 데이터 정리, 피벗 테이블, VBA 매크로 기초',
-    descEn: 'AI-powered formula generation, data cleaning, pivot tables, and VBA macro basics',
-    sessions: [
-      { day: 1, period: 7, titleKo: 'Excel 데이터 분석 자동화', titleEn: 'Excel Data Analysis Automation' },
-      { day: 2, period: 3, titleKo: '근태 데이터 Excel 분석', titleEn: 'Attendance Data Excel Analysis' },
-    ],
+    descEn: 'AI-powered formula generation, data cleaning, pivot tables, VBA basics',
+    sessions: [{ day: 1, period: 7, titleKo: 'Excel 데이터 분석 자동화', titleEn: 'Excel Data Analysis Automation' }],
     sections: [
       {
         titleKo: 'AI 활용 수식 생성',
@@ -554,11 +542,9 @@ Include explanations for each formula.
 \`\`\``,
       },
       {
-        titleKo: '피벗 테이블 & 차트',
-        titleEn: 'Pivot Tables & Charts',
+        titleKo: '피벗 테이블 & VBA 매크로',
+        titleEn: 'Pivot Tables & VBA Macros',
         contentKo: `**피벗 테이블 활용 가이드**
-
-AI에 데이터 분석 목표를 설명하면 피벗 테이블 설정 방법을 안내받을 수 있습니다.
 
 | 분석 목표 | 행(Row) | 열(Column) | 값(Value) |
 |-----------|---------|-----------|-----------|
@@ -570,10 +556,8 @@ AI에 데이터 분석 목표를 설명하면 피벗 테이블 설정 방법을 
 - 부서별 평균 근무시간 → **가로 막대 차트**
 - 월별 지각률 추이 → **꺾은선 차트**
 - 연차 사용 현황 → **원형 차트**
-- 초과근무 Top 10 → **세로 막대 차트**
 
 **VBA 매크로 기초**
-반복 작업은 AI에 요청하여 VBA 코드를 생성할 수 있습니다.
 \`\`\`
 Excel VBA로 다음 작업을 자동화하는 매크로를 작성해 주세요:
 1. Sheet1의 A열 데이터를 읽기
@@ -582,8 +566,6 @@ Excel VBA로 다음 작업을 자동화하는 매크로를 작성해 주세요:
 주석 포함하여 초보자도 이해할 수 있도록 작성해 주세요.
 \`\`\``,
         contentEn: `**Pivot Table Usage Guide**
-
-Explain your data analysis goals to AI and get pivot table setup guidance.
 
 | Analysis Goal | Row | Column | Value |
 |--------------|-----|--------|-------|
@@ -595,10 +577,8 @@ Explain your data analysis goals to AI and get pivot table setup guidance.
 - Avg hours by department → **Horizontal bar chart**
 - Monthly tardiness trend → **Line chart**
 - Leave usage → **Pie chart**
-- Overtime Top 10 → **Vertical bar chart**
 
 **VBA Macro Basics**
-AI can generate VBA code for repetitive tasks.
 \`\`\`
 Write a VBA macro to:
 1. Read data from Sheet1 column A
@@ -609,16 +589,21 @@ Include comments for beginners.
       },
     ],
   },
+];
+
+/* ─── Category 3: 인사행정 자동화 (Day 2) ─── */
+const HR_TOPICS: Topic[] = [
   {
     id: 'hr-administration',
     icon: 'fa-users-gear',
-    titleKo: '인사행정 AI 활용',
-    titleEn: 'HR Administration with AI',
+    titleKo: '인사·근태 관리',
+    titleEn: 'HR & Attendance Management',
     descKo: '채용공고, 인사발령, 근태 관리, 근로계약서 등 인사 업무의 AI 활용',
-    descEn: 'AI usage for job postings, appointments, attendance management, and employment contracts',
+    descEn: 'AI usage for job postings, appointments, attendance, and employment contracts',
     sessions: [
       { day: 2, period: 1, titleKo: '인사·근태 관리 AI 활용', titleEn: 'HR & Attendance AI Application' },
       { day: 2, period: 2, titleKo: '인사 관련 문서 작성', titleEn: 'HR Document Creation' },
+      { day: 2, period: 3, titleKo: '근태 데이터 Excel 분석', titleEn: 'Attendance Data Excel Analysis' },
     ],
     sections: [
       {
@@ -664,8 +649,8 @@ Organization intro, position, duties, qualifications, conditions, process, docum
 \`\`\``,
       },
       {
-        titleKo: '인사 문서 작성',
-        titleEn: 'HR Document Writing',
+        titleKo: '인사 문서 작성 & 근로계약서',
+        titleEn: 'HR Documents & Employment Contracts',
         contentKo: `**인사발령 통보문 프롬프트**
 \`\`\`
 다음 인사 이동 정보로 인사발령 공문을 작성해 주세요:
@@ -706,33 +691,87 @@ Write a personnel appointment notice for:
     ],
   },
   {
+    id: 'hr-report',
+    icon: 'fa-chart-line',
+    titleKo: '인사 보고자료 제작',
+    titleEn: 'HR Report Presentation',
+    descKo: '인사 현황 PPT 시각화, 데이터 기반 스토리텔링, 경영진 보고자료',
+    descEn: 'HR status PPT visualization, data-driven storytelling, executive reports',
+    sessions: [{ day: 2, period: 4, titleKo: '인사행정 보고자료 제작', titleEn: 'HR Report Presentation' }],
+    sections: [
+      {
+        titleKo: '인사 데이터 시각화 & 스토리텔링',
+        titleEn: 'HR Data Visualization & Storytelling',
+        contentKo: `**인사 데이터 시각화 매핑**
+
+| 데이터 | 추천 차트 | 핵심 포인트 |
+|--------|----------|------------|
+| 인력 현황 | 인포그래픽 숫자 | 전체 인원, 신규, 퇴직, 순증감 |
+| 부서별 인원 | 트리맵/막대 | 비율과 규모 동시 표현 |
+| 채용 달성률 | 도넛 차트 | 목표 대비 달성 % |
+| 이직 추이 | 꺾은선 차트 | 월별/분기별 트렌드 |
+| 근태 현황 | 히트맵/막대 | 부서별 비교 |
+
+**보고서 스토리라인 구조**
+1. **현황 제시**: 숫자로 현재 상태 요약
+2. **트렌드 분석**: 시간에 따른 변화 추이
+3. **원인 진단**: 주요 이슈의 원인 분석
+4. **개선 방안**: 데이터 기반 해결책 제시
+5. **실행 계획**: 구체적 액션 아이템과 일정
+
+**효과적인 데이터 발표 팁**
+- "숫자 → 의미 → 시사점" 순서로 설명
+- 비교 기준 명시 (전년 대비, 목표 대비)
+- 핵심 수치는 크게, 보조 수치는 작게
+- 긍정적 결과는 녹색, 주의 필요는 빨간색`,
+        contentEn: `**HR Data Visualization Mapping**
+
+| Data | Chart Type | Key Points |
+|------|-----------|------------|
+| Workforce | Infographic numbers | Total, new, resigned, net change |
+| By department | Treemap/Bar | Ratio and scale |
+| Hiring rate | Donut chart | Target vs actual % |
+| Turnover trend | Line chart | Monthly/quarterly |
+| Attendance | Heatmap/Bar | Department comparison |
+
+**Report Storyline Structure**
+1. **Present status**: Summarize with numbers
+2. **Trend analysis**: Changes over time
+3. **Root cause**: Analyze key issues
+4. **Solutions**: Data-driven proposals
+5. **Action plan**: Specific items and timeline
+
+**Effective Data Presentation Tips**
+- Explain: "Number → Meaning → Implications"
+- Specify comparison basis (vs last year, vs target)
+- Key figures large, supplementary figures small
+- Positive results in green, caution in red`,
+      },
+    ],
+  },
+  {
     id: 'work-automation',
     icon: 'fa-gears',
     titleKo: '업무 자동화 설계',
     titleEn: 'Work Automation Design',
-    descKo: '반복 업무 자동화 워크플로우 설계, 프롬프트 라이브러리 구축, ROI 계산',
-    descEn: 'Repetitive task automation workflow design, prompt library building, and ROI calculation',
+    descKo: '프롬프트 라이브러리 구축, 워크플로우 설계, ROI 계산',
+    descEn: 'Prompt library building, workflow design, ROI calculation',
     sessions: [
       { day: 2, period: 5, titleKo: '업무 템플릿 설계', titleEn: 'Work Template Design' },
       { day: 2, period: 6, titleKo: '업무 자동화 워크플로우', titleEn: 'Work Automation Workflow' },
     ],
     sections: [
       {
-        titleKo: '프롬프트 라이브러리 구축',
-        titleEn: 'Building a Prompt Library',
+        titleKo: '프롬프트 라이브러리 & 가이드라인',
+        titleEn: 'Prompt Library & Guidelines',
         contentKo: `**업무 템플릿 설계 원칙**
 1. **재사용성**: 다양한 상황에 적용 가능하도록 변수({변수}) 활용
 2. **커스터마이징**: 변수 부분만 수정하면 완성
 3. **표준화**: 일관된 형식과 품질 보장
 4. **공유 가능**: 팀원과 쉽게 공유
 
-**프롬프트 관리 시스템**
-1. 공유 문서에 프롬프트 모음 관리
-2. 카테고리 분류: 공문서 / 보고서 / 데이터분석 / 인사 / 기타
-3. 버전 관리: 프롬프트 개선 이력 기록
-4. 효과성 평가: 주기적으로 프롬프트 품질 평가
-
 **AI 활용 가이드라인**
+
 | 항목 | 가이드라인 |
 |------|-----------|
 | 개인정보 | 실명, 주민번호 등 개인정보 입력 금지 |
@@ -746,13 +785,8 @@ Write a personnel appointment notice for:
 3. **Standardization**: Ensure consistent format and quality
 4. **Shareable**: Easy to share with team members
 
-**Prompt Management System**
-1. Manage prompt collection in shared documents
-2. Category classification: Documents / Reports / Data Analysis / HR / Other
-3. Version control: Record prompt improvement history
-4. Effectiveness evaluation: Periodic quality assessment
-
 **AI Usage Guidelines**
+
 | Item | Guideline |
 |------|-----------|
 | Personal info | Never input names, SSN, etc. |
@@ -765,6 +799,7 @@ Write a personnel appointment notice for:
         titleKo: '워크플로우 설계 & ROI',
         titleEn: 'Workflow Design & ROI',
         contentKo: `**자동화 대상 업무 선정 기준**
+
 | 기준 | 설명 |
 |------|------|
 | 반복 빈도 | 주 1회 이상 반복되는 업무 |
@@ -793,6 +828,7 @@ Write a personnel appointment notice for:
 예시: (2.5h - 0.8h) x 4회 x 12개월 x 30,000원 = 연간 2,448,000원 절감
 \`\`\``,
         contentEn: `**Automation Target Selection Criteria**
+
 | Criterion | Description |
 |-----------|-------------|
 | Frequency | Tasks repeated weekly or more |
@@ -825,44 +861,89 @@ Example: (2.5h - 0.8h) x 4 x 12 x 30,000 KRW = 2,448,000 KRW/year
   },
 ];
 
+/* ─── 3 Categories ─── */
+const CATEGORIES: Category[] = [
+  {
+    id: 'basic',
+    icon: 'fa-graduation-cap',
+    titleKo: '기본학습자료',
+    titleEn: 'Basic Materials',
+    descKo: '생성형 AI 개념과 프롬프트 엔지니어링 기초',
+    descEn: 'Generative AI concepts and prompt engineering basics',
+    color: '#1B5E20',
+    topics: BASIC_TOPICS,
+  },
+  {
+    id: 'document',
+    icon: 'fa-file-lines',
+    titleKo: '문서행정 자동화',
+    titleEn: 'Document Automation',
+    descKo: '1일차 — 공문서, PPT, Excel 자동화',
+    descEn: 'Day 1 — Documents, PPT, Excel automation',
+    color: '#1565C0',
+    topics: DOC_TOPICS,
+    day: 1,
+  },
+  {
+    id: 'hr',
+    icon: 'fa-users-gear',
+    titleKo: '인사행정 자동화',
+    titleEn: 'HR Automation',
+    descKo: '2일차 — 인사·근태, 보고자료, 업무자동화',
+    descEn: 'Day 2 — HR, attendance, reports, workflow',
+    color: '#6A1B9A',
+    topics: HR_TOPICS,
+    day: 2,
+  },
+];
+
+/* ─── Component ─── */
 export default function LearningMaterials() {
   const { language } = useLanguage();
   const isKo = language === 'ko';
   const location = useLocation();
+  const [activeCategory, setActiveCategory] = useState('basic');
+  const [activeTopic, setActiveTopic] = useState('');
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({});
-  const [activeTopic, setActiveTopic] = useState(TOPICS[0].id);
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const contentRef = useRef<HTMLDivElement>(null);
 
-  const day1 = CURRICULUM.filter(s => s.day === 1);
-  const day2 = CURRICULUM.filter(s => s.day === 2);
+  const cat = CATEGORIES.find(c => c.id === activeCategory) || CATEGORIES[0];
+  const sessions = cat.day ? CURRICULUM.filter(s => s.day === cat.day) : [];
 
-  // Scroll to hash on load
+  // Hash-based navigation
   useEffect(() => {
     if (location.hash) {
       const id = location.hash.slice(1);
-      setActiveTopic(id);
-      setTimeout(() => {
-        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 100);
+      for (const c of CATEGORIES) {
+        if (c.topics.some(t => t.id === id)) {
+          setActiveCategory(c.id);
+          setActiveTopic(id);
+          setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 150);
+          return;
+        }
+      }
     }
   }, [location.hash]);
+
+  // Set first topic active when switching category
+  useEffect(() => {
+    if (cat.topics.length) setActiveTopic(cat.topics[0].id);
+  }, [activeCategory]);
 
   // Track active topic on scroll
   useEffect(() => {
     function onScroll() {
-      const sections = TOPICS.map(t => document.getElementById(t.id)).filter(Boolean);
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const el = sections[i];
+      for (let i = cat.topics.length - 1; i >= 0; i--) {
+        const el = document.getElementById(cat.topics[i].id);
         if (el && el.getBoundingClientRect().top <= 150) {
-          setActiveTopic(TOPICS[i].id);
+          setActiveTopic(cat.topics[i].id);
           break;
         }
       }
     }
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+  }, [activeCategory]);
 
   function toggleSection(key: string) {
     setOpenSections(prev => ({ ...prev, [key]: !prev[key] }));
@@ -878,25 +959,42 @@ export default function LearningMaterials() {
     <div className="learning-page">
       <SEOHead title={isKo ? '학습자료' : 'Learning Materials'} />
 
+      {/* ─── Category Tabs ─── */}
+      <div className="category-tabs-bar">
+        <div className="category-tabs-inner">
+          {CATEGORIES.map(c => (
+            <button
+              key={c.id}
+              className={`category-tab ${activeCategory === c.id ? 'active' : ''}`}
+              style={activeCategory === c.id ? { borderColor: c.color, color: c.color } : undefined}
+              onClick={() => { setActiveCategory(c.id); setSidebarOpen(false); window.scrollTo({ top: 0 }); }}
+            >
+              <i className={`fa-solid ${c.icon}`} />
+              <span className="category-tab-label">{isKo ? c.titleKo : c.titleEn}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+
       {/* Mobile sidebar toggle */}
       <button className="sidebar-toggle" onClick={() => setSidebarOpen(!sidebarOpen)}>
-        <i className={`fa-solid ${sidebarOpen ? 'fa-xmark' : 'fa-bars'}`} />
-        <span>{isKo ? '학습자료 목차' : 'Contents'}</span>
+        <i className={`fa-solid ${sidebarOpen ? 'fa-xmark' : 'fa-list'}`} />
       </button>
 
       <div className="learning-layout">
-        {/* Left Sidebar */}
+        {/* ─── Left Sidebar ─── */}
         <aside className={`learning-sidebar ${sidebarOpen ? 'open' : ''}`}>
           <div className="sidebar-inner">
-            <div className="sidebar-header">
-              <i className="fa-solid fa-book" />
-              <span>{isKo ? '학습자료' : 'Materials'}</span>
+            {/* Category Title */}
+            <div className="sidebar-header" style={{ color: cat.color }}>
+              <i className={`fa-solid ${cat.icon}`} />
+              <span>{isKo ? cat.titleKo : cat.titleEn}</span>
             </div>
 
             {/* Topics */}
             <div className="sidebar-group">
-              <div className="sidebar-group-title">{isKo ? '주제별 학습' : 'By Topic'}</div>
-              {TOPICS.map(topic => (
+              <div className="sidebar-group-title">{isKo ? '학습 주제' : 'Topics'}</div>
+              {cat.topics.map(topic => (
                 <button
                   key={topic.id}
                   className={`sidebar-item ${activeTopic === topic.id ? 'active' : ''}`}
@@ -908,41 +1006,27 @@ export default function LearningMaterials() {
               ))}
             </div>
 
-            {/* Day 1 Sessions */}
-            <div className="sidebar-group">
-              <div className="sidebar-group-title">
-                {isKo ? '1일차: 문서행정 자동화' : 'Day 1: Document Automation'}
+            {/* Day Sessions */}
+            {sessions.length > 0 && (
+              <div className="sidebar-group">
+                <div className="sidebar-group-title">
+                  {isKo
+                    ? `${cat.day}일차 교시별 상세`
+                    : `Day ${cat.day} Session Details`}
+                </div>
+                {sessions.map(s => (
+                  <Link
+                    key={s.id}
+                    to={`/day${s.day}/${s.period}`}
+                    className="sidebar-item sidebar-session"
+                    onClick={() => setSidebarOpen(false)}
+                  >
+                    <span className="sidebar-period">{s.period}</span>
+                    <span>{isKo ? s.title : s.titleEn}</span>
+                  </Link>
+                ))}
               </div>
-              {day1.map(s => (
-                <Link
-                  key={s.id}
-                  to={`/day1/${s.period}`}
-                  className="sidebar-item sidebar-session"
-                  onClick={() => setSidebarOpen(false)}
-                >
-                  <span className="sidebar-period">{s.period}</span>
-                  <span>{isKo ? s.title : s.titleEn}</span>
-                </Link>
-              ))}
-            </div>
-
-            {/* Day 2 Sessions */}
-            <div className="sidebar-group">
-              <div className="sidebar-group-title">
-                {isKo ? '2일차: 인사행정 자동화' : 'Day 2: HR Automation'}
-              </div>
-              {day2.map(s => (
-                <Link
-                  key={s.id}
-                  to={`/day2/${s.period}`}
-                  className="sidebar-item sidebar-session"
-                  onClick={() => setSidebarOpen(false)}
-                >
-                  <span className="sidebar-period">{s.period}</span>
-                  <span>{isKo ? s.title : s.titleEn}</span>
-                </Link>
-              ))}
-            </div>
+            )}
 
             {/* Quick Links */}
             <div className="sidebar-group">
@@ -959,25 +1043,22 @@ export default function LearningMaterials() {
           </div>
         </aside>
 
-        {/* Sidebar overlay for mobile */}
         {sidebarOpen && <div className="sidebar-overlay" onClick={() => setSidebarOpen(false)} />}
 
-        {/* Main Content */}
-        <div className="learning-content" ref={contentRef}>
+        {/* ─── Main Content ─── */}
+        <div className="learning-content">
           <div className="learning-content-header">
-            <h1>{isKo ? '학습자료' : 'Learning Materials'}</h1>
-            <p>
-              {isKo
-                ? '2일 16교시 교육 내용을 주제별로 정리한 핵심 학습자료입니다. 왼쪽 메뉴에서 주제를 선택하거나 교시별 상세 페이지로 이동할 수 있습니다.'
-                : 'Key learning materials organized by topic. Select a topic from the left menu or navigate to detailed session pages.'}
-            </p>
+            <div className="cat-badge" style={{ background: cat.color }}>
+              <i className={`fa-solid ${cat.icon}`} /> {isKo ? cat.titleKo : cat.titleEn}
+            </div>
+            <h1>{isKo ? cat.titleKo : cat.titleEn}</h1>
+            <p>{isKo ? cat.descKo : cat.descEn}</p>
           </div>
 
-          {/* Topics */}
-          {TOPICS.map(topic => (
+          {cat.topics.map(topic => (
             <section key={topic.id} id={topic.id} className="topic-section">
               <div className="topic-header">
-                <div className="topic-icon">
+                <div className="topic-icon" style={{ background: cat.color }}>
                   <i className={`fa-solid ${topic.icon}`} />
                 </div>
                 <div className="topic-header-text">
@@ -986,20 +1067,20 @@ export default function LearningMaterials() {
                 </div>
               </div>
 
-              {/* Related Sessions */}
-              <div className="topic-sessions">
-                <span className="topic-sessions-label">
-                  <i className="fa-solid fa-book-open" /> {isKo ? '관련 교시' : 'Related Sessions'}:
-                </span>
-                {topic.sessions.map((s, i) => (
-                  <Link key={i} to={`/day${s.day}/${s.period}`} className="topic-session-link">
-                    {isKo ? `${s.day}일차 ${s.period}교시` : `Day ${s.day} Session ${s.period}`}
-                    <span className="topic-session-title"> - {isKo ? s.titleKo : s.titleEn}</span>
-                  </Link>
-                ))}
-              </div>
+              {topic.sessions.length > 0 && (
+                <div className="topic-sessions">
+                  <span className="topic-sessions-label">
+                    <i className="fa-solid fa-book-open" /> {isKo ? '관련 교시' : 'Sessions'}:
+                  </span>
+                  {topic.sessions.map((s, i) => (
+                    <Link key={i} to={`/day${s.day}/${s.period}`} className="topic-session-link">
+                      {isKo ? `${s.day}일차 ${s.period}교시` : `Day ${s.day}-${s.period}`}
+                      <span className="topic-session-title"> {isKo ? s.titleKo : s.titleEn}</span>
+                    </Link>
+                  ))}
+                </div>
+              )}
 
-              {/* Accordion Sections */}
               <div className="topic-content">
                 {topic.sections.map((section, idx) => {
                   const key = `${topic.id}-${idx}`;
@@ -1012,29 +1093,30 @@ export default function LearningMaterials() {
                       </button>
                       {isOpen && (
                         <div className="accordion-body">
-                          <div className="accordion-content markdown-content">
+                          <div className="accordion-content">
                             {(isKo ? section.contentKo : section.contentEn).split('\n').map((line, li) => {
                               if (line.startsWith('|')) {
                                 const cells = line.split('|').filter(c => c.trim());
                                 if (cells.every(c => /^[-:\s]+$/.test(c.trim()))) return null;
-                                const isHeader = li > 0 && (isKo ? section.contentKo : section.contentEn).split('\n')[li + 1]?.trim().startsWith('|---');
+                                const nextLine = (isKo ? section.contentKo : section.contentEn).split('\n')[li + 1];
+                                const isHeader = nextLine?.trim().startsWith('|---');
                                 const Tag = isHeader ? 'th' as const : 'td' as const;
                                 return (
                                   <table key={li}><tbody><tr>
-                                    {cells.map((cell, ci) => <Tag key={ci} dangerouslySetInnerHTML={{ __html: formatInlineMarkdown(cell.trim()) }} />)}
+                                    {cells.map((cell, ci) => <Tag key={ci} dangerouslySetInnerHTML={{ __html: fmt(cell.trim()) }} />)}
                                   </tr></tbody></table>
                                 );
                               }
                               if (line.startsWith('```')) return null;
-                              if (line.startsWith('**') && line.endsWith('**')) return <h4 key={li} dangerouslySetInnerHTML={{ __html: formatInlineMarkdown(line) }} />;
+                              if (line.startsWith('**') && line.endsWith('**')) return <h4 key={li} dangerouslySetInnerHTML={{ __html: fmt(line) }} />;
                               if (!line.trim()) return <br key={li} />;
-                              if (line.startsWith('>')) return <blockquote key={li} dangerouslySetInnerHTML={{ __html: formatInlineMarkdown(line.slice(1).trim()) }} />;
-                              if (line.startsWith('- [')) return <div key={li} className="checklist-item" dangerouslySetInnerHTML={{ __html: formatInlineMarkdown(line) }} />;
-                              if (line.startsWith('- ') || line.startsWith('* ')) return <li key={li} dangerouslySetInnerHTML={{ __html: formatInlineMarkdown(line.slice(2)) }} />;
-                              if (/^\d+\.\s/.test(line)) return <li key={li} className="ol-item" dangerouslySetInnerHTML={{ __html: formatInlineMarkdown(line.replace(/^\d+\.\s/, '')) }} />;
-                              return <p key={li} dangerouslySetInnerHTML={{ __html: formatInlineMarkdown(line) }} />;
+                              if (line.startsWith('>')) return <blockquote key={li} dangerouslySetInnerHTML={{ __html: fmt(line.slice(1).trim()) }} />;
+                              if (line.startsWith('- [')) return <div key={li} className="checklist-item" dangerouslySetInnerHTML={{ __html: fmt(line) }} />;
+                              if (line.startsWith('- ') || line.startsWith('* ')) return <li key={li} dangerouslySetInnerHTML={{ __html: fmt(line.slice(2)) }} />;
+                              if (/^\d+\.\s/.test(line)) return <li key={li} className="ol-item" dangerouslySetInnerHTML={{ __html: fmt(line.replace(/^\d+\.\s/, '')) }} />;
+                              return <p key={li} dangerouslySetInnerHTML={{ __html: fmt(line) }} />;
                             })}
-                            {renderCodeBlocks(isKo ? section.contentKo : section.contentEn)}
+                            {codeBlocks(isKo ? section.contentKo : section.contentEn)}
                           </div>
                         </div>
                       )}
@@ -1044,32 +1126,14 @@ export default function LearningMaterials() {
               </div>
             </section>
           ))}
-
-          {/* Bottom CTA */}
-          <div className="learning-cta">
-            <h3>{isKo ? '실습을 통해 학습을 완성하세요' : 'Complete Your Learning Through Practice'}</h3>
-            <p>
-              {isKo
-                ? '학습자료를 참고하여 각 교시의 실습 과제를 수행해 보세요'
-                : 'Refer to these materials while completing practice assignments'}
-            </p>
-            <div className="learning-cta-buttons">
-              <Link to="/tools" className="btn btn-primary">
-                <i className="fa-solid fa-wrench" /> {isKo ? '도구 가이드' : 'Tool Guide'}
-              </Link>
-              <Link to="/community" className="btn btn-secondary">
-                <i className="fa-solid fa-comments" /> {isKo ? '커뮤니티' : 'Community'}
-              </Link>
-            </div>
-          </div>
         </div>
       </div>
     </div>
   );
 }
 
-function formatInlineMarkdown(text: string): string {
-  return text
+function fmt(t: string): string {
+  return t
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
     .replace(/`(.+?)`/g, '<code>$1</code>')
     .replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
@@ -1077,17 +1141,12 @@ function formatInlineMarkdown(text: string): string {
     .replace(/- \[x\]/g, '<span class="check-box checked">&#9745;</span>');
 }
 
-function renderCodeBlocks(content: string): React.ReactNode[] {
-  const blocks: React.ReactNode[] = [];
-  const regex = /```(?:\w*)\n([\s\S]*?)```/g;
-  let match;
-  let i = 0;
-  while ((match = regex.exec(content)) !== null) {
-    blocks.push(
-      <pre key={`code-${i++}`} className="code-block">
-        <code>{match[1].trim()}</code>
-      </pre>
-    );
+function codeBlocks(content: string) {
+  const out: React.ReactNode[] = [];
+  const re = /```(?:\w*)\n([\s\S]*?)```/g;
+  let m, i = 0;
+  while ((m = re.exec(content)) !== null) {
+    out.push(<pre key={`c-${i++}`} className="code-block"><code>{m[1].trim()}</code></pre>);
   }
-  return blocks;
+  return out;
 }
