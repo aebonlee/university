@@ -6,6 +6,7 @@
 import { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
 import { useLanguage } from '../contexts/LanguageContext';
 import SEOHead from './SEOHead';
 import CodeBlock from './CodeBlock';
@@ -149,7 +150,7 @@ export default function GuidePage({ seoTitle, seoTitleEn, seoDescription, path, 
           </div>
           <div className="guide-section">
             <div className="markdown-body">
-              <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents as any}>
+              <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} components={markdownComponents as any}>
                 {isKo ? active.section.content : active.section.contentEn}
               </ReactMarkdown>
             </div>

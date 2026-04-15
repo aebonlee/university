@@ -7,7 +7,20 @@ export default {
     {
       title: '프로필',
       titleEn: 'Profile',
-      content: `### 이애본 (李愛本, Ph.D)
+      content: `<div class="instructor-hero">
+<div class="instructor-hero-label">이애본 박사 프로필</div>
+<div class="instructor-hero-initials">이</div>
+<div class="instructor-hero-name">이애본</div>
+<div class="instructor-hero-title">한신대학교 겸임교수 · 한국직업능력개발센터장</div>
+<div class="instructor-hero-quote">IT 교육 및 인적자원개발(HRD) 분야 26년 이상의 전문가로서, 75개 이상의 AI 교육 사이트를 운영하며 대학교·공공기관·기업을 대상으로 생성형 AI 활용 역량 강화 교육을 제공하고 있습니다.</div>
+<div class="instructor-hero-stats">
+<div class="instructor-stat"><div class="instructor-stat-number">26<span style="font-size:16px">년+</span></div><div class="instructor-stat-label">교육 경력</div></div>
+<div class="instructor-stat"><div class="instructor-stat-number">75<span style="font-size:16px">+</span></div><div class="instructor-stat-label">교육 사이트</div></div>
+<div class="instructor-stat"><div class="instructor-stat-number">20<span style="font-size:16px">+</span></div><div class="instructor-stat-label">전문 자격</div></div>
+</div>
+</div>
+
+### 이애본 (李愛本, Ph.D)
 
 **한신대학교 겸임교수 · 한국직업능력개발센터장**
 
@@ -28,7 +41,20 @@ IT 교육 및 인적자원개발(HRD) 분야에서 **26년 이상**의 경력을
 - **이메일**: aebon@dreamitbiz.com
 - **전화**: 010-3700-0629
 - **홈페이지**: [www.dreamitbiz.com](https://www.dreamitbiz.com)`,
-      contentEn: `### Aebon Lee (Ph.D)
+      contentEn: `<div class="instructor-hero">
+<div class="instructor-hero-label">Dr. Aebon Lee Profile</div>
+<div class="instructor-hero-initials">A</div>
+<div class="instructor-hero-name">Aebon Lee</div>
+<div class="instructor-hero-title">Adjunct Professor, Hanshin Univ. · Director, Korea Vocational Skills Development Center</div>
+<div class="instructor-hero-quote">An expert with 26+ years in IT education and HRD, operating 75+ AI education sites and providing generative AI competency training for universities, public institutions, and corporations.</div>
+<div class="instructor-hero-stats">
+<div class="instructor-stat"><div class="instructor-stat-number">26<span style="font-size:16px">yr+</span></div><div class="instructor-stat-label">Experience</div></div>
+<div class="instructor-stat"><div class="instructor-stat-number">75<span style="font-size:16px">+</span></div><div class="instructor-stat-label">Edu Sites</div></div>
+<div class="instructor-stat"><div class="instructor-stat-number">20<span style="font-size:16px">+</span></div><div class="instructor-stat-label">Certifications</div></div>
+</div>
+</div>
+
+### Aebon Lee (Ph.D)
 
 **Adjunct Professor, Hanshin University · Director, Korea Vocational Skills Development Center**
 
