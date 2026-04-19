@@ -50,3 +50,18 @@ export async function getSession() {
   const { data: { session }, error } = await supabase.auth.getSession();
   return { session, error };
 }
+
+/** 프로필 업데이트 */
+export async function updateProfile(
+  userId: string,
+  updates: Record<string, unknown>
+): Promise<any> {
+  const { data, error } = await supabase
+    .from('user_profiles')
+    .update({ ...updates, updated_at: new Date().toISOString() })
+    .eq('id', userId)
+    .select()
+    .single();
+  if (error) throw error;
+  return data;
+}
