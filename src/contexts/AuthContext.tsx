@@ -3,6 +3,7 @@ import { supabase, setSharedSession, getSharedSession, clearSharedSession } from
 import { isAdmin as isAdminEmail } from '../config/admin';
 import ProfileCompleteModal from '../components/ProfileCompleteModal';
 
+import PaymentNudgePopup from '../components/PaymentNudgePopup';
 interface AuthContextType {
   user: any;
   loading: boolean;
@@ -100,6 +101,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       {needsProfileCompletion && user && (
         <ProfileCompleteModal user={user} onComplete={refreshProfile} />
       )}
+    {!!user && !needsProfileCompletion && (
+      <PaymentNudgePopup user={user} siteSlug="university" />
+    )}
     </AuthContext.Provider>
   );
 }
