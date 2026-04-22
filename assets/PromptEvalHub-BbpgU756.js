@@ -1,4 +1,4 @@
-import{j as e}from"./markdown-uD28ob7P.js";import{u as r}from"./index-Cka4Tily.js";import{G as n}from"./GuidePage-B-lEZHBr.js";/* empty css                 */import{L as i}from"./vendor-j2q2Hh8J.js";import"./supabase-ClMXFR6t.js";import"./SEOHead-BQ9xiFHC.js";const a={id:"prompt-basics",icon:"fa-lightbulb",title:"프롬프트 기초",titleEn:"Prompt Fundamentals",sections:[{title:"프롬프트란 무엇인가",titleEn:"What is a Prompt",content:`AI 모델에게 원하는 결과를 얻기 위해 전달하는 입력 텍스트를 **프롬프트(Prompt)**라고 합니다.
+import{j as e}from"./markdown-uD28ob7P.js";import{u as r}from"./index-B77jS8-H.js";import{G as n}from"./GuidePage-8dADJa4p.js";/* empty css                 */import{L as i}from"./vendor-j2q2Hh8J.js";import"./supabase-ClMXFR6t.js";import"./SEOHead-BQ9xiFHC.js";const a={id:"prompt-basics",icon:"fa-lightbulb",title:"프롬프트 기초",titleEn:"Prompt Fundamentals",sections:[{title:"프롬프트란 무엇인가",titleEn:"What is a Prompt",content:`AI 모델에게 원하는 결과를 얻기 위해 전달하는 입력 텍스트를 **프롬프트(Prompt)**라고 합니다.
 
 ### 프롬프트의 정의
 

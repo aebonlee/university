@@ -1,4 +1,4 @@
-import{j as t}from"./markdown-uD28ob7P.js";import{G as e}from"./GuidePage-B-lEZHBr.js";import"./vendor-j2q2Hh8J.js";import"./index-Cka4Tily.js";import"./supabase-ClMXFR6t.js";import"./SEOHead-BQ9xiFHC.js";const i={id:"about-site",icon:"fa-building-columns",title:"사이트 소개",titleEn:"About This Site",sections:[{title:"교육 과정 소개",titleEn:"Course Introduction",content:`**"생성형 AI 기반 문서·인사행정 실무 자동화"**는 전남대학교 직원 및 조교를 대상으로 한 **2일 과정(16교시)** 실무 중심 교육 프로그램입니다.
+import{j as t}from"./markdown-uD28ob7P.js";import{G as e}from"./GuidePage-8dADJa4p.js";import"./vendor-j2q2Hh8J.js";import"./index-B77jS8-H.js";import"./supabase-ClMXFR6t.js";import"./SEOHead-BQ9xiFHC.js";const i={id:"about-site",icon:"fa-building-columns",title:"사이트 소개",titleEn:"About This Site",sections:[{title:"교육 과정 소개",titleEn:"Course Introduction",content:`**"생성형 AI 기반 문서·인사행정 실무 자동화"**는 전남대학교 직원 및 조교를 대상으로 한 **2일 과정(16교시)** 실무 중심 교육 프로그램입니다.
 
 ChatGPT, Gemini, Claude 등 최신 생성형 AI를 활용하여 공문서 작성, 보고서 제작, PPT 제작, Excel 데이터 분석, 인사·근태 관리 업무를 효율화하는 방법을 학습합니다.
 
