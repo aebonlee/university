@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Link, useParams, useLocation } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import SEOHead from '../components/SEOHead';
+import CopyBlock from '../components/CopyBlock';
 
 /* ─── Types ─── */
 interface TopicSection {
@@ -320,6 +321,246 @@ const DOC_TOPICS: Topic[] = [
 3. Review AI-generated draft
 4. Transfer to standard HWP format
 5. Final check with review checklist`,
+      },
+      {
+        titleKo: '문서 유형별 실습 프롬프트',
+        titleEn: 'Practice Prompts by Document Type',
+        contentKo: `아래 프롬프트를 **복사** 버튼으로 복사해 ChatGPT·Claude 등에 붙여넣고 직접 실습해 보세요. \`[  ]\` 안의 정보를 우리 부서 상황에 맞게 바꾸면 바로 활용할 수 있습니다.
+
+**① 기안문 — 예산 신청**
+\`\`\`
+[역할] 당신은 대학 교무처의 행정 담당자입니다.
+[맥락] 아래 행사를 기획하고 필요한 예산을 신청하는 기안문을 작성해야 합니다.
+- 행사명: 2026학년도 2학기 신입생 오리엔테이션
+- 일시: 2026년 9월 2일(화) 10:00~16:00
+- 장소: 대학본부 대강당
+- 소요 예산: 총 500만 원 (강사료 200 / 다과 150 / 인쇄물 100 / 기타 50)
+[형식] 공문서 기안문 형식으로, 「제목 → 기안 배경 → 세부 추진 내용 → 예산 내역(표) → 협조 요청」 순서로 작성해 주세요. 어조는 정중한 공문체로.
+\`\`\`
+
+**② 통보문 — 합격·등록 안내**
+\`\`\`
+[역할] 당신은 대학 입학처의 행정 담당자입니다.
+[맥락] 편입학 전형 합격자에게 합격 사실과 등록 절차를 안내하는 통보문을 작성해야 합니다.
+- 전형명: 2026학년도 일반편입학
+- 등록 기간: 2026년 8월 12일(수)~14일(금)
+- 납부 방법: 대학 지정 은행 가상계좌
+- 문의: 입학처 (062-000-0000)
+[형식] 공문서 통보문 형식으로, 「인사말 → 합격 안내 → 등록 절차(번호 목록) → 유의사항 → 문의처」 순서로 작성. 정중하고 축하하는 어조로.
+\`\`\`
+
+**③ 협조문 — 강의실·장비 협조 요청**
+\`\`\`
+[역할] 당신은 대학 교무처 학사팀 담당자입니다.
+[맥락] 계절학기 운영을 위해 정보전산원에 강의실과 전산장비 협조를 요청하는 협조문을 작성해야 합니다.
+- 요청 부서: 정보전산원
+- 요청 내용: 컴퓨터실 2실(각 40석), 프로젝터·마이크 대여
+- 사용 기간: 2026년 8월 3일(월)~21일(금), 평일 09:00~18:00
+[형식] 공문서 협조문 형식으로, 「협조 배경 → 요청 사항(표) → 사용 기간 → 협조 요청 문구」 순서로 작성. 정중한 협조 요청 어조로.
+\`\`\`
+
+**④ 회신문 — 민원 질의 답변**
+\`\`\`
+[역할] 당신은 대학 학생지원처 담당자입니다.
+[맥락] 재학생이 '휴학 중 장학금 수혜 가능 여부'를 질의한 민원에 회신문을 작성해야 합니다.
+- 질의 요지: 일반휴학 상태에서 성적우수 장학금을 받을 수 있는지
+- 회신 내용: 휴학 중에는 교내 장학금 수혜가 불가하며, 복학 학기부터 신청 가능
+- 근거: 학칙 및 장학금 지급 규정
+[형식] 공문서 회신문 형식으로, 「질의 요지 확인 → 회신 내용 → 근거 규정 → 추가 안내」 순서로 작성. 정중하고 명확한 안내 어조로.
+\`\`\`
+
+> 💡 **실습 팁**: AI가 만든 초안을 그대로 쓰지 말고, ① 사실 정보(날짜·금액·부서) 확인 → ② 기관 공문 서식에 맞게 편집 → ③ 검토 체크리스트로 최종 확인의 3단계를 꼭 거치세요.`,
+        contentEn: `Copy each prompt with the **Copy** button, paste it into ChatGPT/Claude, and try it yourself. Replace the details in \`[  ]\` with your own department's situation.
+
+**① Proposal — Budget Request**
+\`\`\`
+[Role] You are an administrator in a university's academic affairs office.
+[Context] Write a proposal document requesting a budget for the event below.
+- Event: Fall 2026 New Student Orientation
+- Date: Sep 2, 2026 (Tue) 10:00–16:00
+- Venue: Main Hall, University HQ
+- Budget: KRW 5M total (Speakers 2.0 / Refreshments 1.5 / Printing 1.0 / Misc 0.5)
+[Format] Official proposal format, in order: Title → Background → Details → Budget table → Cooperation request. Formal official tone.
+\`\`\`
+
+**② Notice — Admission & Registration**
+\`\`\`
+[Role] You are an administrator in a university admissions office.
+[Context] Write a notice informing transfer-admission passers of their acceptance and registration steps.
+- Program: 2026 General Transfer Admission
+- Registration: Aug 12–14, 2026
+- Payment: Virtual account at the designated bank
+- Inquiries: Admissions Office (062-000-0000)
+[Format] Official notice, in order: Greeting → Acceptance → Registration steps (numbered) → Notes → Contact. Warm, congratulatory tone.
+\`\`\`
+
+**③ Cooperation — Room & Equipment Request**
+\`\`\`
+[Role] You are a staff member in a university academic affairs team.
+[Context] Write a cooperation request to the IT center for classrooms and equipment for the seasonal term.
+- To: IT Center
+- Request: 2 computer labs (40 seats each), projector & mic rental
+- Period: Aug 3–21, 2026, weekdays 09:00–18:00
+[Format] Official cooperation format, in order: Background → Requests (table) → Period → Cooperation request. Polite, cooperative tone.
+\`\`\`
+
+**④ Response — Reply to Inquiry**
+\`\`\`
+[Role] You are a staff member in a university student support office.
+[Context] Write a reply to a student's inquiry about scholarship eligibility during a leave of absence.
+- Inquiry: Whether a merit scholarship can be received during a general leave of absence
+- Reply: Not eligible during leave; can apply from the semester of return
+- Basis: University regulations and scholarship rules
+[Format] Official response format, in order: Restate inquiry → Reply → Basis → Additional guidance. Clear, courteous tone.
+\`\`\`
+
+> 💡 **Practice tip**: Don't use the AI draft as-is. Always follow 3 steps: (1) verify facts (dates, amounts, departments) → (2) reformat to your institution's template → (3) final check with the review checklist.`,
+      },
+      {
+        titleKo: '추가 실습 문제 (난이도별)',
+        titleEn: 'More Practice (by Level)',
+        contentKo: `진도에 맞춰 골라 연습하세요. **🟢 기초**는 그대로 복사해 실행, **🟡 응용**은 정보를 바꿔 실행, **🔴 심화**는 프롬프트를 직접 설계합니다. 먼저 끝낸 학습자는 심화로, 익숙하지 않은 학습자는 기초부터 충분히 연습하면 됩니다.
+
+**🟢 기초 — 그대로 복사해 실행해 보세요**
+
+*① 행사 안내문*
+\`\`\`
+[역할] 대학 총무처 담당자
+[맥락] 전 교직원에게 '2026 하반기 소방 대피 훈련' 실시를 안내해야 합니다.
+- 일시: 2026년 10월 15일(목) 14:00
+- 장소: 각 건물 → 대운동장 집결
+[형식] 공문 안내문. 인사말 → 훈련 개요 → 행동 요령(번호) → 협조 당부 순서로, 정중한 공문체.
+\`\`\`
+
+*② 회의 참석 요청 통보문*
+\`\`\`
+[역할] 대학 기획처 담당자
+[맥락] 각 부서장에게 '2026학년도 2학기 학사운영 협의회' 참석을 요청하는 통보문을 작성하세요.
+- 일시: 2026년 8월 20일(수) 15:00 / 장소: 본부 3층 회의실
+- 안건: 학사일정 조정, 강의실 배정
+[형식] 공문 통보문. 목적 → 일시·장소 → 안건 → 참석 요청 순서.
+\`\`\`
+
+*③ 자료 제출 협조문*
+\`\`\`
+[역할] 대학 교무처 담당자
+[맥락] 각 학과에 '2026학년도 강의계획서 제출'을 요청하는 협조문을 작성하세요.
+- 제출 기한: 2026년 8월 25일(월)
+- 제출 방법: 학사시스템 업로드
+[형식] 공문 협조문. 협조 배경 → 제출 대상·기한 → 방법 → 협조 당부 순서.
+\`\`\`
+
+**🟡 응용 — \`[  ]\`를 우리 부서 상황으로 바꿔 실행하세요**
+
+*④ 출장 신청 기안문*
+\`\`\`
+[역할] 대학 [우리 부서] 담당자
+[맥락] 아래 국내 출장을 신청하는 기안문을 작성하세요.
+- 출장자: [이름/직급] / 목적: [연수·회의·현장점검 등]
+- 기간: [출발일~도착일] / 장소: [기관·도시]
+- 소요 경비: 교통비 [ ] / 숙박비 [ ] / 일비 [ ]
+[형식] 공문 기안문. 제목 → 출장 목적 → 출장 개요(표) → 경비 내역 → 결재 요청 순서.
+\`\`\`
+
+*⑤ 규정 개정 통보문*
+\`\`\`
+[역할] 대학 [주관 부서] 담당자
+[맥락] 전 교직원에게 '[규정명] 개정' 사항을 통보하는 공문을 작성하세요.
+- 개정 사유: [ ] / 주요 변경: [기존] → [개정]
+- 시행일: [ ]
+[형식] 공문 통보문. 개정 배경 → 주요 개정 내용(표: 조항/기존/개정) → 시행일 → 문의처 순서.
+\`\`\`
+
+*⑥ 타 기관 협조 공문*
+\`\`\`
+[역할] 대학 [우리 부서] 담당자
+[맥락] [상대 기관]에 [협조 내용]을 요청하는 대외 공문을 작성하세요.
+- 요청 사항: [ ] / 필요 기간: [ ]
+- 근거·배경: [ ]
+[형식] 대외 공문 형식(수신·발신 포함). 인사말 → 협조 요청 배경 → 요청 사항 → 회신 요청 순서, 격식 있는 어조.
+\`\`\`
+
+**🔴 심화 — 프롬프트를 직접 설계해 보세요**
+
+*⑦ 감사 지적사항 대응 공문 설계*
+> RCF(역할–맥락–형식)를 스스로 적용해, '내부감사에서 지적된 [예: 예산 집행 절차 미비]에 대한 개선계획 보고 공문'을 만드는 프롬프트를 직접 작성해 실행하세요. 지적사항·원인·개선대책·이행일정이 포함되도록 형식을 지정하는 것이 핵심입니다.
+
+*⑧ 문서 세트 한 번에 생성*
+> '위원회 위촉'과 관련해 **위촉장 + 위촉 안내 통보문 + 회의 개최 협조문 3종**을 한 번의 대화로 일관되게 생성하도록 프롬프트를 설계하세요. 위원 명단·위촉 기간 등 공통 정보를 먼저 제시하고, 3개 문서의 형식을 각각 지정하는 것이 관건입니다.
+
+*⑨ 회신문 + FAQ 자동화*
+> 자주 들어오는 민원 유형([예: 증명서 발급, 등록금 분할납부])을 골라, 회신문 초안과 함께 **예상 추가질문 FAQ 5개**까지 한 번에 생성하는 프롬프트를 설계하세요.
+
+> 💡 강사님께: 심화 과제는 정답 문서가 아니라 **'좋은 프롬프트를 설계했는가'**로 피드백하면 학습 효과가 큽니다.`,
+        contentEn: `Pick by your pace. **🟢 Basic** — copy and run as-is; **🟡 Applied** — change the details and run; **🔴 Advanced** — design the prompt yourself. Early finishers move to Advanced; others practice Basic thoroughly.
+
+**🟢 Basic — copy and run as-is**
+
+*① Event Notice*
+\`\`\`
+[Role] University general affairs staff
+[Context] Notify all staff of the "Fall 2026 Fire Evacuation Drill."
+- When: Oct 15, 2026 (Thu) 14:00 / Assemble at the main field
+[Format] Official notice: greeting → overview → action steps (numbered) → cooperation request. Formal tone.
+\`\`\`
+
+*② Meeting Attendance Request*
+\`\`\`
+[Role] University planning office staff
+[Context] Request department heads to attend the "Fall 2026 Academic Operations Council."
+- When: Aug 20, 2026 (Wed) 15:00 / HQ 3F meeting room
+- Agenda: schedule adjustment, room assignment
+[Format] Official notice: purpose → time/place → agenda → attendance request.
+\`\`\`
+
+*③ Document Submission Request*
+\`\`\`
+[Role] University academic affairs staff
+[Context] Ask each department to submit "2026 course syllabi."
+- Deadline: Aug 25, 2026 / Method: upload to the academic system
+[Format] Cooperation request: background → target & deadline → method → request.
+\`\`\`
+
+**🟡 Applied — replace \`[  ]\` with your own situation**
+
+*④ Business Trip Request*
+\`\`\`
+[Role] University [your dept] staff
+[Context] Write a proposal requesting the domestic trip below.
+- Traveler: [name/title] / Purpose: [training, meeting, inspection...]
+- Period: [dates] / Place: [org/city]
+- Costs: transport [ ] / lodging [ ] / per diem [ ]
+[Format] Proposal: title → purpose → overview (table) → costs → approval request.
+\`\`\`
+
+*⑤ Regulation Amendment Notice*
+\`\`\`
+[Role] University [dept] staff
+[Context] Notify all staff of the "[regulation]" amendment.
+- Reason: [ ] / Change: [old] → [new] / Effective: [ ]
+[Format] Notice: background → key changes (table: clause/old/new) → effective date → contact.
+\`\`\`
+
+*⑥ Inter-agency Cooperation Letter*
+\`\`\`
+[Role] University [your dept] staff
+[Context] Request [cooperation] from [external org].
+- Request: [ ] / Period: [ ] / Basis: [ ]
+[Format] Formal external letter (with sender/recipient): greeting → background → request → reply request.
+\`\`\`
+
+**🔴 Advanced — design the prompt yourself**
+
+*⑦ Audit Response Letter*
+> Apply RCF yourself to create a prompt for an "improvement-plan report on an internal-audit finding [e.g., incomplete budget-execution process]." The key is specifying a format that includes the finding, cause, corrective action, and timeline.
+
+*⑧ Generate a Document Set at Once*
+> Design a prompt that generates **an appointment letter + notice + meeting-cooperation request (3 documents)** consistently in one conversation for a committee appointment. Provide shared info first, then specify each document's format.
+
+*⑨ Response + FAQ Automation*
+> Pick a common inquiry type [e.g., certificate issuance, tuition installment] and design a prompt that produces a reply draft **plus 5 anticipated follow-up FAQ**.
+
+> 💡 For instructors: for advanced tasks, give feedback on **"was a good prompt designed?"** rather than on the output document — it's far more effective for learning.`,
       },
       {
         titleKo: 'AI 생성 문서 검토 체크리스트',
@@ -1880,7 +2121,7 @@ export default function LearningMaterials() {
                   <div key={idx} className="section-block">
                     <h3 className="section-block-title">{isKo ? section.titleKo : section.titleEn}</h3>
                     <div className="section-block-body">
-                      {renderContent(isKo ? section.contentKo : section.contentEn)}
+                      {renderContent(isKo ? section.contentKo : section.contentEn, isKo)}
                     </div>
                   </div>
                 ))}
@@ -1894,7 +2135,7 @@ export default function LearningMaterials() {
 }
 
 /* ─── Render helpers ─── */
-function renderContent(content: string) {
+function renderContent(content: string, isKo = true) {
   const lines = content.split('\n');
   const elements: React.ReactNode[] = [];
   let i = 0;
@@ -1902,7 +2143,7 @@ function renderContent(content: string) {
   while (i < lines.length) {
     const line = lines[i];
 
-    // Code blocks
+    // Code blocks → 복사 가능한 프롬프트 블록
     if (line.startsWith('```')) {
       const codeLines: string[] = [];
       i++;
@@ -1911,7 +2152,7 @@ function renderContent(content: string) {
         i++;
       }
       i++; // skip closing ```
-      elements.push(<pre key={`code-${i}`} className="code-block"><code>{codeLines.join('\n')}</code></pre>);
+      elements.push(<CopyBlock key={`code-${i}`} code={codeLines.join('\n')} isKo={isKo} />);
       continue;
     }
 

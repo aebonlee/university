@@ -341,3 +341,69 @@
 .section-block-body a:hover {
     text-decoration: underline;
 }
+
+/* ─── 복사 가능한 프롬프트 블록 ─── */
+.section-block-body .prompt-block {
+    margin: 14px 0;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid #2E7D32;
+    background: #1B3A1E;
+}
+.section-block-body .prompt-block-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 14px;
+    background: #14301A;
+    border-bottom: 1px solid #2E7D32;
+}
+.section-block-body .prompt-block-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #A5D6A7;
+    letter-spacing: 0.02em;
+}
+.section-block-body .prompt-copy-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #E8F5E9;
+    background: rgba(165, 214, 167, 0.14);
+    border: 1px solid rgba(165, 214, 167, 0.35);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.section-block-body .prompt-copy-btn:hover {
+    background: rgba(165, 214, 167, 0.26);
+    border-color: rgba(165, 214, 167, 0.6);
+}
+.section-block-body .prompt-copy-btn.copied {
+    color: #1B3A1E;
+    background: #A5D6A7;
+    border-color: #A5D6A7;
+}
+.section-block-body .prompt-block-body {
+    margin: 0;
+    padding: 16px 20px;
+    background: #1B3A1E;
+    color: #A5D6A7;
+    overflow-x: auto;
+    font-size: 13px;
+    line-height: 1.7;
+}
+.section-block-body .prompt-block-body code {
+    background: transparent;
+    color: #A5D6A7;
+    padding: 0;
+    font-size: 13px;
+    white-space: pre-wrap;
+    border: none;
+}

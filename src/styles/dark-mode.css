@@ -169,3 +169,126 @@ html[data-theme="dark"] .section-block-body blockquote {
 html[data-theme="dark"] .section-block-body code {
     background: #334155;
 }
+
+/* ============================================
+   Prompt Workshop / Practice — 다크모드 콘텐츠 영역
+   (밝은 배경·글자 하드코딩 → 다크 대응)
+   ============================================ */
+
+/* ── Workshop: 시나리오 하위 콘텐츠 영역 전반 ── */
+html[data-theme="dark"] .workshop-textarea,
+html[data-theme="dark"] .workshop-result-header,
+html[data-theme="dark"] .workshop-score-card,
+html[data-theme="dark"] .workshop-tips,
+html[data-theme="dark"] .workshop-history-item,
+html[data-theme="dark"] .workshop-history-load {
+  background: var(--bg-light-gray);
+  border-color: var(--border-light);
+}
+html[data-theme="dark"] .workshop-textarea {
+  border-color: #3E5C43;
+}
+html[data-theme="dark"] .workshop-textarea::placeholder {
+  color: var(--text-light);
+}
+
+/* SCORE 평가 기준 박스 */
+html[data-theme="dark"] .workshop-score-ref {
+  background: rgba(129, 199, 132, 0.10);
+  border-color: rgba(129, 199, 132, 0.28);
+  border-left-color: #4CAF50;
+}
+
+/* 힌트(노란 박스) */
+html[data-theme="dark"] .workshop-hint {
+  background: rgba(255, 143, 0, 0.12);
+  color: var(--text-secondary);
+}
+
+/* 시나리오 버튼 hover/active, 사이드바 링크 */
+html[data-theme="dark"] .workshop-scenario-btn:hover,
+html[data-theme="dark"] .workshop-scenario-btn.active,
+html[data-theme="dark"] .workshop-sidebar-link:hover,
+html[data-theme="dark"] .workshop-history-load:hover {
+  background: rgba(129, 199, 132, 0.14);
+  color: var(--primary-blue-light);
+}
+html[data-theme="dark"] .workshop-scenario-btn.active {
+  color: var(--primary-blue-light);
+}
+
+/* 구분선·스크롤바·모바일 경계 */
+html[data-theme="dark"] .workshop-sidebar-divider,
+html[data-theme="dark"] .workshop-sidebar::-webkit-scrollbar-thumb {
+  background: var(--border-light);
+}
+@media (max-width: 768px) {
+  html[data-theme="dark"] .workshop-sidebar {
+    border-bottom-color: var(--border-light);
+  }
+}
+
+/* ── Practice: 퀴즈/평가/작성/결과 카드 전반 ── */
+html[data-theme="dark"] .quiz-card,
+html[data-theme="dark"] .eval-card,
+html[data-theme="dark"] .write-card,
+html[data-theme="dark"] .quiz-option,
+html[data-theme="dark"] .eval-grade-btn,
+html[data-theme="dark"] .result-card,
+html[data-theme="dark"] .result-detail-section,
+html[data-theme="dark"] .result-comment-box,
+html[data-theme="dark"] .result-feedback-card,
+html[data-theme="dark"] .result-recommend,
+html[data-theme="dark"] .result-history,
+html[data-theme="dark"] .write-textarea {
+  background: var(--bg-light-gray);
+  border-color: var(--border-light);
+}
+
+/* 퀴즈 옵션 hover/선택 (연녹 → 다크 녹색 틴트) */
+html[data-theme="dark"] .quiz-option:hover {
+  background: rgba(129, 199, 132, 0.10);
+}
+html[data-theme="dark"] .quiz-option.selected {
+  background: rgba(129, 199, 132, 0.16);
+}
+
+/* 사이드바 스텝 hover/active/완료 */
+html[data-theme="dark"] .practice-step:hover,
+html[data-theme="dark"] .practice-step.active {
+  background: rgba(129, 199, 132, 0.14);
+  color: var(--primary-blue-light);
+}
+html[data-theme="dark"] .practice-step.completed {
+  color: #81C784;
+}
+html[data-theme="dark"] .practice-step.active .practice-step-icon,
+html[data-theme="dark"] .practice-step.completed .practice-step-icon {
+  background: rgba(129, 199, 132, 0.22);
+  color: #A5D6A7;
+}
+
+/* 작성 단계: 시나리오 배너·힌트 */
+html[data-theme="dark"] .write-scenario {
+  background: linear-gradient(135deg, rgba(129, 199, 132, 0.14), transparent);
+}
+html[data-theme="dark"] .write-hint,
+html[data-theme="dark"] .result-quiz-explain {
+  background: rgba(255, 143, 0, 0.12);
+  border-color: rgba(255, 143, 0, 0.3);
+}
+
+/* 추천 항목 hover, CTA */
+html[data-theme="dark"] .result-recommend-item:hover {
+  background: rgba(129, 199, 132, 0.10);
+}
+html[data-theme="dark"] .prompt-practice-cta {
+  background: linear-gradient(135deg, rgba(129, 199, 132, 0.14), rgba(128, 90, 213, 0.10));
+  border-color: rgba(129, 199, 132, 0.28);
+}
+
+/* 총점 total 태그 (연녹 배경+진녹 글자 → 다크) */
+html[data-theme="dark"] .result-eval-grade-tag.total {
+  background: rgba(129, 199, 132, 0.20);
+  color: #A5D6A7;
+}
