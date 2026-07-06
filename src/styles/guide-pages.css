@@ -1116,3 +1116,137 @@ html[data-theme="dark"] .aioni-banner {
     .model-provider-grid { grid-template-columns: 1fr; }
     .aioni-banner { flex-direction: column; align-items: flex-start; }
 }
+
+/* ─── 도구 가이드: 서브헤딩 ─── */
+.tools-subheading {
+    margin: 28px 0 4px;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+.tools-subnote {
+    margin: 0 0 14px;
+    font-size: 13.5px;
+    color: var(--text-secondary);
+}
+
+/* ─── 알림 채널 카드 ─── */
+.channel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 14px;
+}
+.channel-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px 18px;
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+}
+.channel-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    background: rgba(27, 94, 32, 0.08);
+    color: var(--primary-blue);
+}
+.channel-text strong {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+.channel-text p {
+    margin: 0;
+    font-size: 12.5px;
+    color: var(--text-secondary);
+    line-height: 1.55;
+}
+.channel-tag {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--accent-amber);
+    background: var(--accent-amber-light);
+    border-radius: 999px;
+    padding: 1px 7px;
+}
+
+/* ─── Labs 기능 카드 ─── */
+.labs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 12px;
+}
+.labs-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.labs-card:hover {
+    border-color: var(--primary-blue);
+    box-shadow: var(--shadow-sm);
+}
+.labs-icon {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    background: rgba(27, 94, 32, 0.08);
+    color: var(--primary-blue);
+}
+.labs-text { min-width: 0; }
+.labs-text strong {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    flex-wrap: wrap;
+    font-size: 13.5px;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+.labs-text p {
+    margin: 0;
+    font-size: 12.5px;
+    color: var(--text-secondary);
+    line-height: 1.55;
+}
+.labs-badge {
+    font-size: 9.5px;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    border-radius: 999px;
+    padding: 1px 7px;
+    color: #fff;
+    background: var(--primary-blue);
+}
+.labs-badge.new { background: #4CAF50; }
+.labs-badge.beta { background: #FF8F00; }
+.labs-badge.update { background: #1565C0; }
+
+html[data-theme="dark"] .channel-icon,
+html[data-theme="dark"] .labs-icon {
+    background: rgba(129, 199, 132, 0.14);
+    color: var(--primary-blue-light);
+}
+@media (max-width: 640px) {
+    .channel-grid, .labs-grid { grid-template-columns: 1fr; }
+}
