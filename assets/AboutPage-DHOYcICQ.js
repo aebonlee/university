@@ -1,4 +1,4 @@
-import{j as t}from"./markdown-uD28ob7P.js";import{G as e}from"./GuidePage-B3ggKFgk.js";import"./vendor-j2q2Hh8J.js";import"./index-DLhVjZRV.js";import"./supabase-ClMXFR6t.js";import"./SEOHead-BQ9xiFHC.js";const i={id:"about-site",icon:"fa-building-columns",title:"사이트 소개",titleEn:"About This Site",sections:[{title:"교육 과정 소개",titleEn:"Course Introduction",content:`**"생성형 AI 기반 문서·인사행정 실무 자동화"**는 전남대학교 직원 및 조교를 대상으로 한 **2일 과정(16교시)** 실무 중심 교육 프로그램입니다.
+import{j as t}from"./markdown-uD28ob7P.js";import{G as e}from"./GuidePage-B_c8AQJb.js";import"./vendor-j2q2Hh8J.js";import"./index-CbMdSp3c.js";import"./supabase-ClMXFR6t.js";import"./SEOHead-CXt37xNM.js";const i={id:"about-site",icon:"fa-building-columns",title:"사이트 소개",titleEn:"About This Site",sections:[{title:"교육 과정 소개",titleEn:"Course Introduction",content:`**"생성형 AI 기반 문서·인사행정 실무 자동화"**는 전남대학교 직원 및 조교를 대상으로 한 **2일 과정(16교시)** 실무 중심 교육 프로그램입니다.
 
 ChatGPT, Gemini, Claude 등 최신 생성형 AI를 활용하여 공문서 작성, 보고서 제작, PPT 제작, Excel 데이터 분석, 인사·근태 관리 업무를 효율화하는 방법을 학습합니다.
 
@@ -383,7 +383,7 @@ A vocational education expert with over **20 years** of experience in the IT fie
 | 학위 | 학교 | 전공 | 연도 |
 |------|------|------|------|
 | **박사수료** | 경기대학교 대학원 | 직업학과 | 2024 |
-| **석사** | 가천대학교 | (관련 분야) | 2014 |
+| **석사** | 가천대학교 | — | 2014 |
 | **석사** | 국제문화대학원대학교 | 교육학 | 2012 |
 | **학사** | 부산외국어대학교 | 공학 | 1994 |
 
@@ -407,7 +407,7 @@ A vocational education expert with over **20 years** of experience in the IT fie
 | Degree | University | Major | Year |
 |--------|-----------|-------|------|
 | **Ph.D Coursework** | Kyonggi University | Vocational Studies | 2024 |
-| **Master's** | Gachon University | (Related Field) | 2014 |
+| **Master's** | Gachon University | — | 2014 |
 | **Master's** | International Graduate University of Culture | Education | 2012 |
 | **Bachelor's** | Busan University of Foreign Studies | Engineering | 1994 |
 
