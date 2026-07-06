@@ -20,6 +20,7 @@ const AdminDashboard = lazy(() => import('../pages/admin/AdminDashboard'));
 const AdminUsers = lazy(() => import('../pages/admin/AdminUsers'));
 const AboutPage = lazy(() => import('../pages/AboutPage'));
 const RecommendedSites = lazy(() => import('../pages/RecommendedSites'));
+const Appendix = lazy(() => import('../pages/appendix/Appendix'));
 const NotFound = lazy(() => import('../pages/NotFound'));
 
 const AuthGuard = lazy(() => import('../components/AuthGuard'));
@@ -65,6 +66,7 @@ export default function PublicLayout() {
 
             <Route path="/about" element={<AboutPage />} />
             <Route path="/recommended" element={<RecommendedSites />} />
+            <Route path="/appendix" element={<Appendix />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
