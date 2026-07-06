@@ -1035,11 +1035,14 @@ html[data-theme="dark"] .guide-nav-sub-list {
 }
 
 .model-provider-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 16px;
 }
 .model-provider-card {
+    flex: 1 1 340px;
+    max-width: 420px;
     padding: 20px 22px;
     background: var(--bg-white);
     border: 1px solid var(--border-light);
@@ -1174,10 +1177,10 @@ html[data-theme="dark"] .aioni-banner {
 .channel-tag {
     font-size: 10px;
     font-weight: 700;
-    color: var(--accent-amber);
-    background: var(--accent-amber-light);
+    color: #fff;
+    background: var(--accent-amber);
     border-radius: 999px;
-    padding: 1px 7px;
+    padding: 2px 8px;
 }
 
 /* ─── Labs 기능 카드 ─── */

@@ -80,7 +80,7 @@ const PADLETS = [
 
 const OUTPUTS = [
   { icon: 'fa-file-lines', title: '공문서 초안', titleEn: 'Official Documents', desc: '기안문, 통보문, 협조문 등', descEn: 'Drafts, notices, cooperation letters' },
-  { icon: 'fa-presentation-screen', title: 'PPT 보고자료', titleEn: 'PPT Reports', desc: '업무보고, 현황보고, 성과보고', descEn: 'Business, status, performance reports' },
+  { icon: 'fa-file-powerpoint', title: 'PPT 보고자료', titleEn: 'PPT Reports', desc: '업무보고, 현황보고, 성과보고', descEn: 'Business, status, performance reports' },
   { icon: 'fa-table', title: 'Excel 분석표', titleEn: 'Excel Analysis', desc: '근태 분석, 인사 통계, 데이터 정리', descEn: 'Attendance, HR stats, data cleanup' },
   { icon: 'fa-clipboard-list', title: '회의록·보고서', titleEn: 'Minutes & Reports', desc: '회의록 요약, 업무 보고서 작성', descEn: 'Meeting minutes, work reports' },
   { icon: 'fa-drafting-compass', title: '업무 템플릿', titleEn: 'Work Templates', desc: '프롬프트 라이브러리, 자동화 템플릿', descEn: 'Prompt library, automation templates' },

@@ -15,6 +15,8 @@ import TipBox from './TipBox';
 interface Section {
   title: string;
   titleEn: string;
+  navTitle?: string;   // 사이드바 목차 전용 제목(없으면 title 사용)
+  navTitleEn?: string;
   content: string;
   contentEn: string;
 }
@@ -118,7 +120,7 @@ export default function GuidePage({ seoTitle, seoTitleEn, seoDescription, path, 
                                 className={`guide-nav-link guide-nav-sub ${globalIdx === activeIndex ? 'active' : ''}`}
                                 onClick={() => handleSelect(globalIdx)}
                               >
-                                {isKo ? sec.title : sec.titleEn}
+                                {isKo ? (sec.navTitle || sec.title) : (sec.navTitleEn || sec.titleEn)}
                               </button>
                             </li>
                           );
