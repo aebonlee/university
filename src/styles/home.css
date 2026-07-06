@@ -299,3 +299,143 @@ html[data-color="red"] .hero-title-highlight { color: #EF9A9A; }
     opacity: 0.9;
     margin-bottom: 32px;
 }
+
+/* ─── Padlet 실습 안내 ─── */
+.padlet-section {
+    padding: 64px 0;
+    background: var(--bg-light-gray);
+}
+
+.padlet-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    max-width: 900px;
+    margin: 0 auto 32px;
+    padding: 16px 20px;
+    background: rgba(27, 94, 32, 0.06);
+    border: 1px solid rgba(27, 94, 32, 0.18);
+    border-radius: 12px;
+}
+.padlet-notice i {
+    color: var(--primary-blue);
+    font-size: 18px;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+.padlet-notice p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+.padlet-notice strong { color: var(--text-primary); }
+
+.padlet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.padlet-card {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+.padlet-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-blue);
+}
+.padlet-card--current {
+    border: 2px solid var(--primary-blue);
+    background: rgba(27, 94, 32, 0.04);
+    box-shadow: 0 6px 20px rgba(27, 94, 32, 0.10);
+}
+
+.padlet-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+.padlet-card-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    background: rgba(27, 94, 32, 0.08);
+    color: var(--primary-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+.padlet-badge {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+    color: var(--text-secondary);
+    background: var(--bg-light-gray);
+    border: 1px solid var(--border-light);
+}
+.padlet-badge--current {
+    color: #fff;
+    background: var(--primary-blue);
+    border-color: var(--primary-blue);
+}
+
+.padlet-card h3 {
+    font-size: 17px;
+    font-weight: 700;
+    margin: 0 0 4px;
+    color: var(--text-primary);
+}
+.padlet-card-sub {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--primary-blue);
+    margin: 0 0 10px;
+}
+.padlet-card-desc {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin: 0 0 18px;
+    flex-grow: 1;
+}
+.padlet-card-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary-blue);
+    background: transparent;
+    border: 1.5px solid var(--primary-blue);
+    border-radius: 10px;
+    transition: background 0.2s, color 0.2s;
+}
+.padlet-card:hover .padlet-card-btn {
+    background: var(--primary-blue);
+    color: #fff;
+}
+.padlet-card--current .padlet-card-btn {
+    background: var(--primary-blue);
+    color: #fff;
+}
+.padlet-card-btn i { font-size: 11px; }
+
+@media (max-width: 640px) {
+    .padlet-grid { grid-template-columns: 1fr; }
+}

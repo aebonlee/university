@@ -45,6 +45,39 @@ const TOOLS = [
   { name: 'Perplexity', icon: 'fa-magnifying-glass', desc: 'AI 검색' },
 ];
 
+const PADLETS = [
+  {
+    url: 'https://padlet.com/aebon/cnu2603',
+    current: true,
+    badgeKo: '이번 과정', badgeEn: 'This Course',
+    labelKo: '이번 교육 실습 보드', labelEn: 'This Course Practice Board',
+    titleKo: '생성형 AI A to Z 특강', titleEn: 'Generative AI A to Z',
+    descKo: '이번 과정에서 실습 결과물을 올리고 함께 공유하는 보드입니다. 공문서·PPT·Excel 결과물과 질문을 여기에 등록하세요.',
+    descEn: 'The board for this course — upload and share your practice results, documents, slides, and questions here.',
+    icon: 'fa-bolt',
+  },
+  {
+    url: 'https://padlet.com/aebon/cnu0421',
+    current: false,
+    badgeKo: '지난 1회차 · 1일차', badgeEn: 'Prev. Round · Day 1',
+    labelKo: '문서행정 자동화', labelEn: 'Document Admin Automation',
+    titleKo: '2026.04.21 실습 보드', titleEn: 'Practice Board (Apr 21, 2026)',
+    descKo: '지난 1회차 문서행정 자동화 수업의 실습 자료 보관용 보드입니다. 참고용으로 열람하세요.',
+    descEn: 'Archive board from the previous round’s document-admin session. Available for reference.',
+    icon: 'fa-file-lines',
+  },
+  {
+    url: 'https://padlet.com/aebon/cnu0423',
+    current: false,
+    badgeKo: '지난 1회차 · 2일차', badgeEn: 'Prev. Round · Day 2',
+    labelKo: '인사행정 자동화', labelEn: 'HR Admin Automation',
+    titleKo: '2026.04.23 실습 보드', titleEn: 'Practice Board (Apr 23, 2026)',
+    descKo: '지난 1회차 인사행정 자동화 수업의 실습 자료 보관용 보드입니다. 참고용으로 열람하세요.',
+    descEn: 'Archive board from the previous round’s HR-admin session. Available for reference.',
+    icon: 'fa-users-gear',
+  },
+];
+
 const OUTPUTS = [
   { icon: 'fa-file-lines', title: '공문서 초안', titleEn: 'Official Documents', desc: '기안문, 통보문, 협조문 등', descEn: 'Drafts, notices, cooperation letters' },
   { icon: 'fa-presentation-screen', title: 'PPT 보고자료', titleEn: 'PPT Reports', desc: '업무보고, 현황보고, 성과보고', descEn: 'Business, status, performance reports' },
@@ -80,6 +113,66 @@ export default function Home() {
           <div className="hero-actions">
             <Link to="/materials/basic" className="btn btn-primary-large">{t('hero.cta')}</Link>
             <Link to="/tools" className="btn btn-secondary" style={{ borderColor: '#fff', color: '#fff' }}>{t('hero.ctaSecondary')}</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Padlet 실습 안내 */}
+      <section className="padlet-section">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title">
+              <i className="fa-solid fa-clipboard-list" style={{ marginRight: 10 }} />
+              {isKo ? '실습 패들렛(Padlet) 안내' : 'Practice Padlet Guide'}
+            </h2>
+            <p className="section-subtitle">
+              {isKo
+                ? '실습 중 만든 공문서·PPT·Excel 결과물과 질문을 패들렛에 올려 함께 공유합니다.'
+                : 'Share your practice outputs — documents, slides, Excel, and questions — on Padlet.'}
+            </p>
+          </div>
+
+          <div className="padlet-notice">
+            <i className="fa-solid fa-circle-info" />
+            <p>
+              {isKo ? (
+                <>
+                  <strong>이번 과정 수강생은 아래 ‘이번 교육 실습 보드’를 사용</strong>하세요.
+                  지난 1회차 보드는 참고 자료로 열람할 수 있습니다. 버튼을 누르면 새 창에서 패들렛이 열립니다.
+                </>
+              ) : (
+                <>
+                  <strong>Students in this course should use the “This Course Practice Board” below.</strong>{' '}
+                  The previous round’s boards are available for reference. Each button opens Padlet in a new tab.
+                </>
+              )}
+            </p>
+          </div>
+
+          <div className="padlet-grid">
+            {PADLETS.map(p => (
+              <a
+                key={p.url}
+                href={p.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`padlet-card${p.current ? ' padlet-card--current' : ''}`}
+              >
+                <div className="padlet-card-top">
+                  <div className="padlet-card-icon"><i className={`fa-solid ${p.icon}`} /></div>
+                  <span className={`padlet-badge${p.current ? ' padlet-badge--current' : ''}`}>
+                    {isKo ? p.badgeKo : p.badgeEn}
+                  </span>
+                </div>
+                <h3>{isKo ? p.labelKo : p.labelEn}</h3>
+                <p className="padlet-card-sub">{isKo ? p.titleKo : p.titleEn}</p>
+                <p className="padlet-card-desc">{isKo ? p.descKo : p.descEn}</p>
+                <span className="padlet-card-btn">
+                  {isKo ? '패들렛 열기' : 'Open Padlet'}
+                  <i className="fa-solid fa-arrow-up-right-from-square" />
+                </span>
+              </a>
+            ))}
           </div>
         </div>
       </section>
