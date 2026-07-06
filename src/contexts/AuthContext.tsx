@@ -24,7 +24,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     if (isAdminEmail(currentUser.email)) { setAdminFlag(true); return; }
     try {
       const { data } = await supabase
-        .from('univ_profiles')
+        .from('user_profiles')
         .select('role')
         .eq('id', currentUser.id)
         .single();

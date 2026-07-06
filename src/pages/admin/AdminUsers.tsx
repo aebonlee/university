@@ -13,7 +13,12 @@ export default function AdminUsers() {
   useEffect(() => {
     (async () => {
       try {
-        const { data } = await supabase.from('univ_profiles').select('*').order('created_at', { ascending: false });
+        // 공유 user_profiles에서 이 사이트(university)를 방문한 수강생만 조회
+        const { data } = await supabase
+          .from('user_profiles')
+          .select('*')
+          .contains('visited_sites', ['university.dreamitbiz.com'])
+          .order('created_at', { ascending: false });
         setUsers(data || []);
       } catch { /* ignore */ }
       setLoading(false);
