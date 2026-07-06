@@ -1,4 +1,4 @@
-import{j as e}from"./markdown-uD28ob7P.js";import{G as t}from"./GuidePage-CqMfyy_i.js";/* empty css                 */import"./vendor-j2q2Hh8J.js";import"./index-CJKnTxpq.js";import"./supabase-ClMXFR6t.js";import"./SEOHead-CXt37xNM.js";const a={id:"glossary",icon:"fa-book-bookmark",title:"용어 해설",titleEn:"Glossary",sections:[{title:"생성형 AI 기본 용어",titleEn:"Generative AI Basics",content:`교육에서 자주 등장하는 핵심 용어를 모았습니다. 모르는 말이 나오면 여기에서 찾아보세요.
+import{j as e}from"./markdown-uD28ob7P.js";import{G as t}from"./GuidePage-ZSHSijv0.js";/* empty css                 */import"./vendor-j2q2Hh8J.js";import"./index-ClbLHYgC.js";import"./supabase-ClMXFR6t.js";import"./SEOHead-8LPucjEe.js";const a={id:"glossary",icon:"fa-book-bookmark",title:"용어 해설",titleEn:"Glossary",sections:[{title:"생성형 AI 기본 용어",titleEn:"Generative AI Basics",content:`교육에서 자주 등장하는 핵심 용어를 모았습니다. 모르는 말이 나오면 여기에서 찾아보세요.
 
 | 용어 | 쉬운 설명 |
 |------|-----------|
@@ -1165,7 +1165,7 @@ Converting markdown to Word can leave **checkboxes (☐), bullets (•), or left
 
 > **Rule of thumb**: reasoning models are overkill for quick summaries (slow, costly) but win on complex decisions. Weigh **task difficulty vs latency/cost**. "Chat" = chat-tuned; plain numbers = standard.
 
-> **Security**: 전남대GPT is campus-only, safer than public services — but still minimize sensitive data (IDs, unpublished research).`},{title:"제공사별 모델 (2026.07.07 기준)",titleEn:"Models by Provider (as of 2026-07-07)",content:`> 회사마다 **설계 철학과 강점**이 다릅니다. 아래는 아키텍처·용도 관점의 **상세 안내**입니다. (구체 수치·벤치마크는 자주 바뀌어 생략 — 잘 모르면 Auto)
+> **Security**: 전남대GPT is campus-only, safer than public services — but still minimize sensitive data (IDs, unpublished research).`},{title:"제공사별 모델 (2026.07.07 기준)",titleEn:"Models by Provider (as of 2026-07-07)",navTitle:"제공사별 모델",navTitleEn:"Models by Provider",content:`> 회사마다 **설계 철학과 강점**이 다릅니다. 아래는 아키텍처·용도 관점의 **상세 안내**입니다. (구체 수치·벤치마크는 자주 바뀌어 생략 — 잘 모르면 Auto)
 
 ### Upstage · Solar — 국산 파운데이션 (한국어·문서 특화)
 한국 스타트업 Upstage의 자체 개발 모델. **한국어 토크나이징·문맥**에 최적화돼 교내 한글 문서·공문에 강하고, **Document AI**(OCR·표/정보 추출) 계열이 강점. 국내 데이터 주권 관점에서도 선호됩니다.
