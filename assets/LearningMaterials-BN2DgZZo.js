@@ -1,4 +1,4 @@
-import{j as e}from"./markdown-uD28ob7P.js";import{f as u,u as g,b as h,L as d}from"./vendor-j2q2Hh8J.js";import{u as P}from"./index-C-XbqnWn.js";import{S as A}from"./SEOHead-CXt37xNM.js";import"./supabase-ClMXFR6t.js";const f=[{id:"ai-basics",titleKo:"생성형 AI의 이해와 활용 전략",titleEn:"Understanding Generative AI",descKo:"AI 개념, 주요 서비스 비교, 대학 행정 활용 사례",descEn:"AI concepts, major service comparison, university administration use cases",sections:[{titleKo:"생성형 AI란?",titleEn:"What is Generative AI?",contentKo:`생성형 AI(Generative AI)는 텍스트, 이미지, 코드 등 새로운 콘텐츠를 생성할 수 있는 인공지능입니다.
+import{j as t}from"./markdown-uD28ob7P.js";import{b as p,f as g,u as h,L as d}from"./vendor-j2q2Hh8J.js";import{u as f}from"./index-jSZC1zBt.js";import{S as P}from"./SEOHead-CXt37xNM.js";import"./supabase-ClMXFR6t.js";function A({code:r,isKo:a=!0}){const[o,s]=p.useState(!1),n=async()=>{try{await navigator.clipboard.writeText(r)}catch{const e=document.createElement("textarea");e.value=r,e.style.position="fixed",e.style.opacity="0",document.body.appendChild(e),e.select(),document.execCommand("copy"),document.body.removeChild(e)}s(!0),setTimeout(()=>s(!1),2e3)};return t.jsxs("div",{className:"prompt-block",children:[t.jsxs("div",{className:"prompt-block-header",children:[t.jsxs("span",{className:"prompt-block-label",children:[t.jsx("i",{className:"fa-solid fa-wand-magic-sparkles"}),a?"프롬프트":"Prompt"]}),t.jsxs("button",{type:"button",className:`prompt-copy-btn ${o?"copied":""}`,onClick:n,children:[t.jsx("i",{className:`fa-solid ${o?"fa-check":"fa-copy"}`}),o?a?"복사됨":"Copied":a?"복사":"Copy"]})]}),t.jsx("pre",{className:"prompt-block-body",children:t.jsx("code",{children:r})})]})}const y=[{id:"ai-basics",titleKo:"생성형 AI의 이해와 활용 전략",titleEn:"Understanding Generative AI",descKo:"AI 개념, 주요 서비스 비교, 대학 행정 활용 사례",descEn:"AI concepts, major service comparison, university administration use cases",sections:[{titleKo:"생성형 AI란?",titleEn:"What is Generative AI?",contentKo:`생성형 AI(Generative AI)는 텍스트, 이미지, 코드 등 새로운 콘텐츠를 생성할 수 있는 인공지능입니다.
 
 **핵심 개념**
 - **LLM (Large Language Model)**: 대규모 텍스트 데이터로 학습한 언어 모델
@@ -195,7 +195,7 @@ Gradually improve prompts based on initial results.
 [Include] Status summary, Key achievements, Issues and improvements, Future plans
 [Length] {pages}
 [Tone] {tone}
-\`\`\``}]}],I=[{id:"official-documents",titleKo:"AI 활용 공문서 작성",titleEn:"AI-Powered Official Document Writing",descKo:"공문서 초안, 기안문, 통보문 자동 생성 | 활용 도구: ChatGPT, Claude, HWP",descEn:"Auto-generate official document drafts, proposals, and notices | Tools: ChatGPT, Claude, HWP",sections:[{titleKo:"대학 행정 공문서 유형",titleEn:"University Administrative Document Types",contentKo:`| 유형 | 설명 | 예시 |
+\`\`\``}]}],v=[{id:"official-documents",titleKo:"AI 활용 공문서 작성",titleEn:"AI-Powered Official Document Writing",descKo:"공문서 초안, 기안문, 통보문 자동 생성 | 활용 도구: ChatGPT, Claude, HWP",descEn:"Auto-generate official document drafts, proposals, and notices | Tools: ChatGPT, Claude, HWP",sections:[{titleKo:"대학 행정 공문서 유형",titleEn:"University Administrative Document Types",contentKo:`| 유형 | 설명 | 예시 |
 |------|------|------|
 | **기안문** | 업무를 기획·제안하는 문서 | 예산 신청, 행사 기획안 |
 | **통보문** | 결정 사항을 알리는 문서 | 합격 통보, 일정 안내 |
@@ -219,7 +219,235 @@ Gradually improve prompts based on initial results.
 2. Write prompt using RCF framework
 3. Review AI-generated draft
 4. Transfer to standard HWP format
-5. Final check with review checklist`},{titleKo:"AI 생성 문서 검토 체크리스트",titleEn:"AI Document Review Checklist",contentKo:`AI가 생성한 문서는 반드시 아래 항목을 확인한 후 사용해야 합니다.
+5. Final check with review checklist`},{titleKo:"문서 유형별 실습 프롬프트",titleEn:"Practice Prompts by Document Type",contentKo:`아래 프롬프트를 **복사** 버튼으로 복사해 ChatGPT·Claude 등에 붙여넣고 직접 실습해 보세요. \`[  ]\` 안의 정보를 우리 부서 상황에 맞게 바꾸면 바로 활용할 수 있습니다.
+
+**① 기안문 — 예산 신청**
+\`\`\`
+[역할] 당신은 대학 교무처의 행정 담당자입니다.
+[맥락] 아래 행사를 기획하고 필요한 예산을 신청하는 기안문을 작성해야 합니다.
+- 행사명: 2026학년도 2학기 신입생 오리엔테이션
+- 일시: 2026년 9월 2일(화) 10:00~16:00
+- 장소: 대학본부 대강당
+- 소요 예산: 총 500만 원 (강사료 200 / 다과 150 / 인쇄물 100 / 기타 50)
+[형식] 공문서 기안문 형식으로, 「제목 → 기안 배경 → 세부 추진 내용 → 예산 내역(표) → 협조 요청」 순서로 작성해 주세요. 어조는 정중한 공문체로.
+\`\`\`
+
+**② 통보문 — 합격·등록 안내**
+\`\`\`
+[역할] 당신은 대학 입학처의 행정 담당자입니다.
+[맥락] 편입학 전형 합격자에게 합격 사실과 등록 절차를 안내하는 통보문을 작성해야 합니다.
+- 전형명: 2026학년도 일반편입학
+- 등록 기간: 2026년 8월 12일(수)~14일(금)
+- 납부 방법: 대학 지정 은행 가상계좌
+- 문의: 입학처 (062-000-0000)
+[형식] 공문서 통보문 형식으로, 「인사말 → 합격 안내 → 등록 절차(번호 목록) → 유의사항 → 문의처」 순서로 작성. 정중하고 축하하는 어조로.
+\`\`\`
+
+**③ 협조문 — 강의실·장비 협조 요청**
+\`\`\`
+[역할] 당신은 대학 교무처 학사팀 담당자입니다.
+[맥락] 계절학기 운영을 위해 정보전산원에 강의실과 전산장비 협조를 요청하는 협조문을 작성해야 합니다.
+- 요청 부서: 정보전산원
+- 요청 내용: 컴퓨터실 2실(각 40석), 프로젝터·마이크 대여
+- 사용 기간: 2026년 8월 3일(월)~21일(금), 평일 09:00~18:00
+[형식] 공문서 협조문 형식으로, 「협조 배경 → 요청 사항(표) → 사용 기간 → 협조 요청 문구」 순서로 작성. 정중한 협조 요청 어조로.
+\`\`\`
+
+**④ 회신문 — 민원 질의 답변**
+\`\`\`
+[역할] 당신은 대학 학생지원처 담당자입니다.
+[맥락] 재학생이 '휴학 중 장학금 수혜 가능 여부'를 질의한 민원에 회신문을 작성해야 합니다.
+- 질의 요지: 일반휴학 상태에서 성적우수 장학금을 받을 수 있는지
+- 회신 내용: 휴학 중에는 교내 장학금 수혜가 불가하며, 복학 학기부터 신청 가능
+- 근거: 학칙 및 장학금 지급 규정
+[형식] 공문서 회신문 형식으로, 「질의 요지 확인 → 회신 내용 → 근거 규정 → 추가 안내」 순서로 작성. 정중하고 명확한 안내 어조로.
+\`\`\`
+
+> 💡 **실습 팁**: AI가 만든 초안을 그대로 쓰지 말고, ① 사실 정보(날짜·금액·부서) 확인 → ② 기관 공문 서식에 맞게 편집 → ③ 검토 체크리스트로 최종 확인의 3단계를 꼭 거치세요.`,contentEn:`Copy each prompt with the **Copy** button, paste it into ChatGPT/Claude, and try it yourself. Replace the details in \`[  ]\` with your own department's situation.
+
+**① Proposal — Budget Request**
+\`\`\`
+[Role] You are an administrator in a university's academic affairs office.
+[Context] Write a proposal document requesting a budget for the event below.
+- Event: Fall 2026 New Student Orientation
+- Date: Sep 2, 2026 (Tue) 10:00–16:00
+- Venue: Main Hall, University HQ
+- Budget: KRW 5M total (Speakers 2.0 / Refreshments 1.5 / Printing 1.0 / Misc 0.5)
+[Format] Official proposal format, in order: Title → Background → Details → Budget table → Cooperation request. Formal official tone.
+\`\`\`
+
+**② Notice — Admission & Registration**
+\`\`\`
+[Role] You are an administrator in a university admissions office.
+[Context] Write a notice informing transfer-admission passers of their acceptance and registration steps.
+- Program: 2026 General Transfer Admission
+- Registration: Aug 12–14, 2026
+- Payment: Virtual account at the designated bank
+- Inquiries: Admissions Office (062-000-0000)
+[Format] Official notice, in order: Greeting → Acceptance → Registration steps (numbered) → Notes → Contact. Warm, congratulatory tone.
+\`\`\`
+
+**③ Cooperation — Room & Equipment Request**
+\`\`\`
+[Role] You are a staff member in a university academic affairs team.
+[Context] Write a cooperation request to the IT center for classrooms and equipment for the seasonal term.
+- To: IT Center
+- Request: 2 computer labs (40 seats each), projector & mic rental
+- Period: Aug 3–21, 2026, weekdays 09:00–18:00
+[Format] Official cooperation format, in order: Background → Requests (table) → Period → Cooperation request. Polite, cooperative tone.
+\`\`\`
+
+**④ Response — Reply to Inquiry**
+\`\`\`
+[Role] You are a staff member in a university student support office.
+[Context] Write a reply to a student's inquiry about scholarship eligibility during a leave of absence.
+- Inquiry: Whether a merit scholarship can be received during a general leave of absence
+- Reply: Not eligible during leave; can apply from the semester of return
+- Basis: University regulations and scholarship rules
+[Format] Official response format, in order: Restate inquiry → Reply → Basis → Additional guidance. Clear, courteous tone.
+\`\`\`
+
+> 💡 **Practice tip**: Don't use the AI draft as-is. Always follow 3 steps: (1) verify facts (dates, amounts, departments) → (2) reformat to your institution's template → (3) final check with the review checklist.`},{titleKo:"추가 실습 문제 (난이도별)",titleEn:"More Practice (by Level)",contentKo:`진도에 맞춰 골라 연습하세요. **🟢 기초**는 그대로 복사해 실행, **🟡 응용**은 정보를 바꿔 실행, **🔴 심화**는 프롬프트를 직접 설계합니다. 먼저 끝낸 학습자는 심화로, 익숙하지 않은 학습자는 기초부터 충분히 연습하면 됩니다.
+
+**🟢 기초 — 그대로 복사해 실행해 보세요**
+
+*① 행사 안내문*
+\`\`\`
+[역할] 대학 총무처 담당자
+[맥락] 전 교직원에게 '2026 하반기 소방 대피 훈련' 실시를 안내해야 합니다.
+- 일시: 2026년 10월 15일(목) 14:00
+- 장소: 각 건물 → 대운동장 집결
+[형식] 공문 안내문. 인사말 → 훈련 개요 → 행동 요령(번호) → 협조 당부 순서로, 정중한 공문체.
+\`\`\`
+
+*② 회의 참석 요청 통보문*
+\`\`\`
+[역할] 대학 기획처 담당자
+[맥락] 각 부서장에게 '2026학년도 2학기 학사운영 협의회' 참석을 요청하는 통보문을 작성하세요.
+- 일시: 2026년 8월 20일(수) 15:00 / 장소: 본부 3층 회의실
+- 안건: 학사일정 조정, 강의실 배정
+[형식] 공문 통보문. 목적 → 일시·장소 → 안건 → 참석 요청 순서.
+\`\`\`
+
+*③ 자료 제출 협조문*
+\`\`\`
+[역할] 대학 교무처 담당자
+[맥락] 각 학과에 '2026학년도 강의계획서 제출'을 요청하는 협조문을 작성하세요.
+- 제출 기한: 2026년 8월 25일(월)
+- 제출 방법: 학사시스템 업로드
+[형식] 공문 협조문. 협조 배경 → 제출 대상·기한 → 방법 → 협조 당부 순서.
+\`\`\`
+
+**🟡 응용 — \`[  ]\`를 우리 부서 상황으로 바꿔 실행하세요**
+
+*④ 출장 신청 기안문*
+\`\`\`
+[역할] 대학 [우리 부서] 담당자
+[맥락] 아래 국내 출장을 신청하는 기안문을 작성하세요.
+- 출장자: [이름/직급] / 목적: [연수·회의·현장점검 등]
+- 기간: [출발일~도착일] / 장소: [기관·도시]
+- 소요 경비: 교통비 [ ] / 숙박비 [ ] / 일비 [ ]
+[형식] 공문 기안문. 제목 → 출장 목적 → 출장 개요(표) → 경비 내역 → 결재 요청 순서.
+\`\`\`
+
+*⑤ 규정 개정 통보문*
+\`\`\`
+[역할] 대학 [주관 부서] 담당자
+[맥락] 전 교직원에게 '[규정명] 개정' 사항을 통보하는 공문을 작성하세요.
+- 개정 사유: [ ] / 주요 변경: [기존] → [개정]
+- 시행일: [ ]
+[형식] 공문 통보문. 개정 배경 → 주요 개정 내용(표: 조항/기존/개정) → 시행일 → 문의처 순서.
+\`\`\`
+
+*⑥ 타 기관 협조 공문*
+\`\`\`
+[역할] 대학 [우리 부서] 담당자
+[맥락] [상대 기관]에 [협조 내용]을 요청하는 대외 공문을 작성하세요.
+- 요청 사항: [ ] / 필요 기간: [ ]
+- 근거·배경: [ ]
+[형식] 대외 공문 형식(수신·발신 포함). 인사말 → 협조 요청 배경 → 요청 사항 → 회신 요청 순서, 격식 있는 어조.
+\`\`\`
+
+**🔴 심화 — 프롬프트를 직접 설계해 보세요**
+
+*⑦ 감사 지적사항 대응 공문 설계*
+> RCF(역할–맥락–형식)를 스스로 적용해, '내부감사에서 지적된 [예: 예산 집행 절차 미비]에 대한 개선계획 보고 공문'을 만드는 프롬프트를 직접 작성해 실행하세요. 지적사항·원인·개선대책·이행일정이 포함되도록 형식을 지정하는 것이 핵심입니다.
+
+*⑧ 문서 세트 한 번에 생성*
+> '위원회 위촉'과 관련해 **위촉장 + 위촉 안내 통보문 + 회의 개최 협조문 3종**을 한 번의 대화로 일관되게 생성하도록 프롬프트를 설계하세요. 위원 명단·위촉 기간 등 공통 정보를 먼저 제시하고, 3개 문서의 형식을 각각 지정하는 것이 관건입니다.
+
+*⑨ 회신문 + FAQ 자동화*
+> 자주 들어오는 민원 유형([예: 증명서 발급, 등록금 분할납부])을 골라, 회신문 초안과 함께 **예상 추가질문 FAQ 5개**까지 한 번에 생성하는 프롬프트를 설계하세요.
+
+> 💡 강사님께: 심화 과제는 정답 문서가 아니라 **'좋은 프롬프트를 설계했는가'**로 피드백하면 학습 효과가 큽니다.`,contentEn:`Pick by your pace. **🟢 Basic** — copy and run as-is; **🟡 Applied** — change the details and run; **🔴 Advanced** — design the prompt yourself. Early finishers move to Advanced; others practice Basic thoroughly.
+
+**🟢 Basic — copy and run as-is**
+
+*① Event Notice*
+\`\`\`
+[Role] University general affairs staff
+[Context] Notify all staff of the "Fall 2026 Fire Evacuation Drill."
+- When: Oct 15, 2026 (Thu) 14:00 / Assemble at the main field
+[Format] Official notice: greeting → overview → action steps (numbered) → cooperation request. Formal tone.
+\`\`\`
+
+*② Meeting Attendance Request*
+\`\`\`
+[Role] University planning office staff
+[Context] Request department heads to attend the "Fall 2026 Academic Operations Council."
+- When: Aug 20, 2026 (Wed) 15:00 / HQ 3F meeting room
+- Agenda: schedule adjustment, room assignment
+[Format] Official notice: purpose → time/place → agenda → attendance request.
+\`\`\`
+
+*③ Document Submission Request*
+\`\`\`
+[Role] University academic affairs staff
+[Context] Ask each department to submit "2026 course syllabi."
+- Deadline: Aug 25, 2026 / Method: upload to the academic system
+[Format] Cooperation request: background → target & deadline → method → request.
+\`\`\`
+
+**🟡 Applied — replace \`[  ]\` with your own situation**
+
+*④ Business Trip Request*
+\`\`\`
+[Role] University [your dept] staff
+[Context] Write a proposal requesting the domestic trip below.
+- Traveler: [name/title] / Purpose: [training, meeting, inspection...]
+- Period: [dates] / Place: [org/city]
+- Costs: transport [ ] / lodging [ ] / per diem [ ]
+[Format] Proposal: title → purpose → overview (table) → costs → approval request.
+\`\`\`
+
+*⑤ Regulation Amendment Notice*
+\`\`\`
+[Role] University [dept] staff
+[Context] Notify all staff of the "[regulation]" amendment.
+- Reason: [ ] / Change: [old] → [new] / Effective: [ ]
+[Format] Notice: background → key changes (table: clause/old/new) → effective date → contact.
+\`\`\`
+
+*⑥ Inter-agency Cooperation Letter*
+\`\`\`
+[Role] University [your dept] staff
+[Context] Request [cooperation] from [external org].
+- Request: [ ] / Period: [ ] / Basis: [ ]
+[Format] Formal external letter (with sender/recipient): greeting → background → request → reply request.
+\`\`\`
+
+**🔴 Advanced — design the prompt yourself**
+
+*⑦ Audit Response Letter*
+> Apply RCF yourself to create a prompt for an "improvement-plan report on an internal-audit finding [e.g., incomplete budget-execution process]." The key is specifying a format that includes the finding, cause, corrective action, and timeline.
+
+*⑧ Generate a Document Set at Once*
+> Design a prompt that generates **an appointment letter + notice + meeting-cooperation request (3 documents)** consistently in one conversation for a committee appointment. Provide shared info first, then specify each document's format.
+
+*⑨ Response + FAQ Automation*
+> Pick a common inquiry type [e.g., certificate issuance, tuition installment] and design a prompt that produces a reply draft **plus 5 anticipated follow-up FAQ**.
+
+> 💡 For instructors: for advanced tasks, give feedback on **"was a good prompt designed?"** rather than on the output document — it's far more effective for learning.`},{titleKo:"AI 생성 문서 검토 체크리스트",titleEn:"AI Document Review Checklist",contentKo:`AI가 생성한 문서는 반드시 아래 항목을 확인한 후 사용해야 합니다.
 
 - [ ] **형식**: 문서 형식(기안문/통보문/협조문)이 올바른가?
 - [ ] **수신처**: 수신처와 발신처가 정확한가?
@@ -629,7 +857,7 @@ Complete the following 4 deliverables using AI in order.
 **Submission Format**
 - File naming: \`[Name]_TaskNumber_Title.extension\`
 - Example: \`HongGilDong_01_DeptEvalNotice.hwp\`
-- Submit: Shared folder or LMS upload`}]}],y=[{id:"hr-ai",titleKo:"인사·근태 관리 AI 활용",titleEn:"HR & Attendance AI Application",descKo:"AI 기반 인사 업무 효율화, 근태 데이터 분석 | 활용 도구: ChatGPT, Claude, Excel",descEn:"AI-based HR efficiency, attendance data analysis | Tools: ChatGPT, Claude, Excel",sections:[{titleKo:"인사 업무 AI 활용 영역",titleEn:"AI Applications in HR",contentKo:`| 업무 영역 | AI 활용 방안 | 예상 효과 |
+- Submit: Shared folder or LMS upload`}]}],I=[{id:"hr-ai",titleKo:"인사·근태 관리 AI 활용",titleEn:"HR & Attendance AI Application",descKo:"AI 기반 인사 업무 효율화, 근태 데이터 분석 | 활용 도구: ChatGPT, Claude, Excel",descEn:"AI-based HR efficiency, attendance data analysis | Tools: ChatGPT, Claude, Excel",sections:[{titleKo:"인사 업무 AI 활용 영역",titleEn:"AI Applications in HR",contentKo:`| 업무 영역 | AI 활용 방안 | 예상 효과 |
 |-----------|-------------|-----------|
 | **채용** | 공고 작성, 면접 질문 생성, 평가 기준 수립 | 작성 시간 70% 단축 |
 | **인사발령** | 발령 문서 자동 생성, 표준화 | 오류 감소, 일관성 확보 |
@@ -1337,6 +1565,6 @@ Complete the following 5 deliverables using AI in order.
 - [ ] Can visualize data for report materials
 - [ ] Can design automation workflows for repetitive tasks
 - [ ] Understand privacy principles when using AI
-- [ ] Have established a specific plan for applying AI to work`}]}],m=[{id:"basic",titleKo:"기본학습자료",titleEn:"Basic Materials",descKo:"생성형 AI 개념과 프롬프트 엔지니어링 기초",descEn:"Generative AI concepts and prompt engineering basics",topics:f},{id:"document",titleKo:"문서행정 자동화",titleEn:"Document Automation",descKo:"1일차 - 공문서, PPT, Excel 자동화",descEn:"Documents, PPT, Excel automation",topics:I},{id:"hr",titleKo:"인사행정 자동화",titleEn:"HR Automation",descKo:"인사·근태, 보고자료, 업무자동화",descEn:"HR, attendance, reports, workflow",topics:y}];function b(){const{language:l}=P(),a=l==="ko",{category:s}=u(),t=g(),i=m.find(n=>n.id===s)||m[0];return h.useEffect(()=>{if(t.hash){const n=t.hash.slice(1);setTimeout(()=>{var o;return(o=document.getElementById(n))==null?void 0:o.scrollIntoView({behavior:"smooth",block:"start"})},150)}else window.scrollTo({top:0})},[t.hash,s]),e.jsxs("div",{className:"learning-page",children:[e.jsx(A,{title:a?i.titleKo:i.titleEn}),e.jsxs("div",{className:"learning-layout",children:[e.jsx("aside",{className:"learning-sidebar",children:e.jsxs("div",{className:"sidebar-inner",children:[e.jsx("div",{className:"sidebar-header",children:a?i.titleKo:i.titleEn}),e.jsxs("div",{className:"sidebar-group",children:[e.jsx("div",{className:"sidebar-group-title",children:a?"학습 주제":"Topics"}),i.topics.map(n=>e.jsx("a",{href:`#${n.id}`,className:"sidebar-item",onClick:o=>{var c;o.preventDefault(),(c=document.getElementById(n.id))==null||c.scrollIntoView({behavior:"smooth",block:"start"})},children:a?n.titleKo:n.titleEn},n.id))]}),e.jsxs("div",{className:"sidebar-group",children:[e.jsx("div",{className:"sidebar-group-title",children:a?"바로가기":"Quick Links"}),e.jsx(d,{to:"/tools",className:"sidebar-item",children:a?"도구 가이드":"Tool Guide"}),e.jsx(d,{to:"/community",className:"sidebar-item",children:a?"커뮤니티":"Community"})]})]})}),e.jsxs("div",{className:"learning-content",children:[e.jsxs("div",{className:"learning-content-header",children:[e.jsx("h1",{children:a?i.titleKo:i.titleEn}),e.jsx("p",{children:a?i.descKo:i.descEn})]}),i.topics.map(n=>e.jsxs("section",{id:n.id,className:"topic-section",children:[e.jsx("div",{className:"topic-header",children:e.jsxs("div",{className:"topic-header-text",children:[e.jsx("h2",{children:a?n.titleKo:n.titleEn}),e.jsx("p",{children:a?n.descKo:n.descEn})]})}),e.jsx("div",{className:"topic-content",children:n.sections.map((o,c)=>e.jsxs("div",{className:"section-block",children:[e.jsx("h3",{className:"section-block-title",children:a?o.titleKo:o.titleEn}),e.jsx("div",{className:"section-block-body",children:T(a?o.contentKo:o.contentEn)})]},c))})]},n.id))]})]})]})}function T(l){const a=l.split(`
-`),s=[];let t=0;for(;t<a.length;){const i=a[t];if(i.startsWith("```")){const n=[];for(t++;t<a.length&&!a[t].startsWith("```");)n.push(a[t]),t++;t++,s.push(e.jsx("pre",{className:"code-block",children:e.jsx("code",{children:n.join(`
-`)})},`code-${t}`));continue}if(i.startsWith("|")){const n=[];for(;t<a.length&&a[t].startsWith("|");)n.push(a[t]),t++;s.push(v(n,`tbl-${t}`));continue}if(i.startsWith("**")&&i.endsWith("**")){s.push(e.jsx("h4",{dangerouslySetInnerHTML:{__html:r(i)}},t)),t++;continue}if(i.startsWith(">")){s.push(e.jsx("blockquote",{dangerouslySetInnerHTML:{__html:r(i.slice(1).trim())}},t)),t++;continue}if(i.startsWith("- [")){s.push(e.jsx("div",{className:"checklist-item",dangerouslySetInnerHTML:{__html:r(i)}},t)),t++;continue}if(i.startsWith("- ")||i.startsWith("* ")){s.push(e.jsx("li",{dangerouslySetInnerHTML:{__html:r(i.slice(2))}},t)),t++;continue}if(/^\d+\.\s/.test(i)){s.push(e.jsx("li",{className:"ol-item",dangerouslySetInnerHTML:{__html:r(i.replace(/^\d+\.\s/,""))}},t)),t++;continue}if(!i.trim()){t++;continue}s.push(e.jsx("p",{dangerouslySetInnerHTML:{__html:r(i)}},t)),t++}return s}function v(l,a){const s=l.filter(n=>!n.trim().match(/^\|[-:\s|]+\|$/)).map(n=>n.split("|").filter(o=>o.trim()).map(o=>o.trim()));if(s.length===0)return null;const t=s[0],i=s.slice(1);return e.jsxs("table",{children:[e.jsx("thead",{children:e.jsx("tr",{children:t.map((n,o)=>e.jsx("th",{dangerouslySetInnerHTML:{__html:r(n)}},o))})}),e.jsx("tbody",{children:i.map((n,o)=>e.jsx("tr",{children:n.map((c,p)=>e.jsx("td",{dangerouslySetInnerHTML:{__html:r(c)}},p))},o))})]},a)}function r(l){return l.replace(/\*\*(.+?)\*\*/g,"<strong>$1</strong>").replace(/`(.+?)`/g,"<code>$1</code>").replace(/\[(.+?)\]\((.+?)\)/g,'<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>').replace(/- \[ \]/g,'<span class="check-box">&#9744;</span>').replace(/- \[x\]/g,'<span class="check-box checked">&#9745;</span>')}export{b as default};
+- [ ] Have established a specific plan for applying AI to work`}]}],m=[{id:"basic",titleKo:"기본학습자료",titleEn:"Basic Materials",descKo:"생성형 AI 개념과 프롬프트 엔지니어링 기초",descEn:"Generative AI concepts and prompt engineering basics",topics:y},{id:"document",titleKo:"문서행정 자동화",titleEn:"Document Automation",descKo:"1일차 - 공문서, PPT, Excel 자동화",descEn:"Documents, PPT, Excel automation",topics:v},{id:"hr",titleKo:"인사행정 자동화",titleEn:"HR Automation",descKo:"인사·근태, 보고자료, 업무자동화",descEn:"HR, attendance, reports, workflow",topics:I}];function R(){const{language:r}=f(),a=r==="ko",{category:o}=g(),s=h(),n=m.find(e=>e.id===o)||m[0];return p.useEffect(()=>{if(s.hash){const e=s.hash.slice(1);setTimeout(()=>{var i;return(i=document.getElementById(e))==null?void 0:i.scrollIntoView({behavior:"smooth",block:"start"})},150)}else window.scrollTo({top:0})},[s.hash,o]),t.jsxs("div",{className:"learning-page",children:[t.jsx(P,{title:a?n.titleKo:n.titleEn}),t.jsxs("div",{className:"learning-layout",children:[t.jsx("aside",{className:"learning-sidebar",children:t.jsxs("div",{className:"sidebar-inner",children:[t.jsx("div",{className:"sidebar-header",children:a?n.titleKo:n.titleEn}),t.jsxs("div",{className:"sidebar-group",children:[t.jsx("div",{className:"sidebar-group-title",children:a?"학습 주제":"Topics"}),n.topics.map(e=>t.jsx("a",{href:`#${e.id}`,className:"sidebar-item",onClick:i=>{var c;i.preventDefault(),(c=document.getElementById(e.id))==null||c.scrollIntoView({behavior:"smooth",block:"start"})},children:a?e.titleKo:e.titleEn},e.id))]}),t.jsxs("div",{className:"sidebar-group",children:[t.jsx("div",{className:"sidebar-group-title",children:a?"바로가기":"Quick Links"}),t.jsx(d,{to:"/tools",className:"sidebar-item",children:a?"도구 가이드":"Tool Guide"}),t.jsx(d,{to:"/community",className:"sidebar-item",children:a?"커뮤니티":"Community"})]})]})}),t.jsxs("div",{className:"learning-content",children:[t.jsxs("div",{className:"learning-content-header",children:[t.jsx("h1",{children:a?n.titleKo:n.titleEn}),t.jsx("p",{children:a?n.descKo:n.descEn})]}),n.topics.map(e=>t.jsxs("section",{id:e.id,className:"topic-section",children:[t.jsx("div",{className:"topic-header",children:t.jsxs("div",{className:"topic-header-text",children:[t.jsx("h2",{children:a?e.titleKo:e.titleEn}),t.jsx("p",{children:a?e.descKo:e.descEn})]})}),t.jsx("div",{className:"topic-content",children:e.sections.map((i,c)=>t.jsxs("div",{className:"section-block",children:[t.jsx("h3",{className:"section-block-title",children:a?i.titleKo:i.titleEn}),t.jsx("div",{className:"section-block-body",children:T(a?i.contentKo:i.contentEn,a)})]},c))})]},e.id))]})]})]})}function T(r,a=!0){const o=r.split(`
+`),s=[];let n=0;for(;n<o.length;){const e=o[n];if(e.startsWith("```")){const i=[];for(n++;n<o.length&&!o[n].startsWith("```");)i.push(o[n]),n++;n++,s.push(t.jsx(A,{code:i.join(`
+`),isKo:a},`code-${n}`));continue}if(e.startsWith("|")){const i=[];for(;n<o.length&&o[n].startsWith("|");)i.push(o[n]),n++;s.push(C(i,`tbl-${n}`));continue}if(e.startsWith("**")&&e.endsWith("**")){s.push(t.jsx("h4",{dangerouslySetInnerHTML:{__html:l(e)}},n)),n++;continue}if(e.startsWith(">")){s.push(t.jsx("blockquote",{dangerouslySetInnerHTML:{__html:l(e.slice(1).trim())}},n)),n++;continue}if(e.startsWith("- [")){s.push(t.jsx("div",{className:"checklist-item",dangerouslySetInnerHTML:{__html:l(e)}},n)),n++;continue}if(e.startsWith("- ")||e.startsWith("* ")){s.push(t.jsx("li",{dangerouslySetInnerHTML:{__html:l(e.slice(2))}},n)),n++;continue}if(/^\d+\.\s/.test(e)){s.push(t.jsx("li",{className:"ol-item",dangerouslySetInnerHTML:{__html:l(e.replace(/^\d+\.\s/,""))}},n)),n++;continue}if(!e.trim()){n++;continue}s.push(t.jsx("p",{dangerouslySetInnerHTML:{__html:l(e)}},n)),n++}return s}function C(r,a){const o=r.filter(e=>!e.trim().match(/^\|[-:\s|]+\|$/)).map(e=>e.split("|").filter(i=>i.trim()).map(i=>i.trim()));if(o.length===0)return null;const s=o[0],n=o.slice(1);return t.jsxs("table",{children:[t.jsx("thead",{children:t.jsx("tr",{children:s.map((e,i)=>t.jsx("th",{dangerouslySetInnerHTML:{__html:l(e)}},i))})}),t.jsx("tbody",{children:n.map((e,i)=>t.jsx("tr",{children:e.map((c,u)=>t.jsx("td",{dangerouslySetInnerHTML:{__html:l(c)}},u))},i))})]},a)}function l(r){return r.replace(/\*\*(.+?)\*\*/g,"<strong>$1</strong>").replace(/`(.+?)`/g,"<code>$1</code>").replace(/\[(.+?)\]\((.+?)\)/g,'<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>').replace(/- \[ \]/g,'<span class="check-box">&#9744;</span>').replace(/- \[x\]/g,'<span class="check-box checked">&#9745;</span>')}export{R as default};
