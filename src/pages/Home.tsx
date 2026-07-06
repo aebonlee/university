@@ -34,15 +34,22 @@ function sessionLink(s: SessionInfo): string {
 }
 
 const TOOLS = [
+  // 대화형 AI
   { name: 'ChatGPT', icon: 'fa-robot', desc: 'OpenAI' },
   { name: 'Gemini', icon: 'fa-gem', desc: 'Google' },
   { name: 'Claude', icon: 'fa-brain', desc: 'Anthropic' },
-  { name: 'HWP', icon: 'fa-file-word', desc: '한글 문서' },
+  { name: 'Copilot', icon: 'fa-microchip', desc: 'Microsoft' },
+  // AI 검색·분석
+  { name: 'Perplexity', icon: 'fa-magnifying-glass', desc: 'AI 검색' },
+  { name: 'NotebookLM', icon: 'fa-book-open-reader', desc: 'Google' },
+  // 문서·오피스
+  { name: 'HWP', icon: 'fa-file-lines', desc: '한글 문서' },
+  { name: 'Word', icon: 'fa-file-word', desc: 'MS Office' },
   { name: 'PowerPoint', icon: 'fa-file-powerpoint', desc: 'MS Office' },
   { name: 'Excel', icon: 'fa-file-excel', desc: 'MS Office' },
+  // 디자인·PPT
   { name: 'Gamma', icon: 'fa-wand-magic-sparkles', desc: 'AI PPT' },
   { name: 'Canva', icon: 'fa-palette', desc: '디자인' },
-  { name: 'Perplexity', icon: 'fa-magnifying-glass', desc: 'AI 검색' },
 ];
 
 const PADLETS = [
