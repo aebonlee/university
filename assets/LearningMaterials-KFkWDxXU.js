@@ -1,4 +1,4 @@
-import{j as e}from"./markdown-uD28ob7P.js";import{b as h,f as v,u as P,L as d}from"./vendor-j2q2Hh8J.js";import{u as A}from"./index-CaX84Oza.js";import{S as E}from"./SEOHead-CXt37xNM.js";import"./supabase-ClMXFR6t.js";function f({code:s,isKo:a=!0}){const[i,r]=h.useState(!1),n=async()=>{try{await navigator.clipboard.writeText(s)}catch{const t=document.createElement("textarea");t.value=s,t.style.position="fixed",t.style.opacity="0",document.body.appendChild(t),t.select(),document.execCommand("copy"),document.body.removeChild(t)}r(!0),setTimeout(()=>r(!1),2e3)};return e.jsxs("div",{className:"prompt-block",children:[e.jsxs("div",{className:"prompt-block-header",children:[e.jsxs("span",{className:"prompt-block-label",children:[e.jsx("i",{className:"fa-solid fa-wand-magic-sparkles"}),a?"프롬프트":"Prompt"]}),e.jsxs("button",{type:"button",className:`prompt-copy-btn ${i?"copied":""}`,onClick:n,children:[e.jsx("i",{className:`fa-solid ${i?"fa-check":"fa-copy"}`}),i?a?"복사됨":"Copied":a?"복사":"Copy"]})]}),e.jsx("pre",{className:"prompt-block-body",children:e.jsx("code",{children:s})})]})}const u={"meeting-reports":[{level:"basic",titleKo:"회의록 요약",titleEn:"Meeting Minutes Summary",promptKo:`[역할] 대학 행정 담당자
+import{j as e}from"./markdown-uD28ob7P.js";import{b as g,f as v,u as E,L as d}from"./vendor-j2q2Hh8J.js";import{u as P}from"./index-BxLZlRK5.js";import{S as A}from"./SEOHead-CXt37xNM.js";import"./supabase-ClMXFR6t.js";function h({code:s,isKo:a=!0}){const[i,r]=g.useState(!1),o=async()=>{try{await navigator.clipboard.writeText(s)}catch{const t=document.createElement("textarea");t.value=s,t.style.position="fixed",t.style.opacity="0",document.body.appendChild(t),t.select(),document.execCommand("copy"),document.body.removeChild(t)}r(!0),setTimeout(()=>r(!1),2e3)};return e.jsxs("div",{className:"prompt-block",children:[e.jsxs("div",{className:"prompt-block-header",children:[e.jsxs("span",{className:"prompt-block-label",children:[e.jsx("i",{className:"fa-solid fa-wand-magic-sparkles"}),a?"프롬프트":"Prompt"]}),e.jsxs("button",{type:"button",className:`prompt-copy-btn ${i?"copied":""}`,onClick:o,children:[e.jsx("i",{className:`fa-solid ${i?"fa-check":"fa-copy"}`}),i?a?"복사됨":"Copied":a?"복사":"Copy"]})]}),e.jsx("pre",{className:"prompt-block-body",children:e.jsx("code",{children:s})})]})}const u={"meeting-reports":[{level:"basic",titleKo:"회의록 요약",titleEn:"Meeting Minutes Summary",promptKo:`[역할] 대학 행정 담당자
 [맥락] 아래 회의 녹취 내용을 정리해 회의록으로 만들어 주세요.
 - (여기에 녹취 텍스트를 붙여넣기)
 [형식] 「회의 개요(일시·장소·참석자) → 안건별 논의 요약 → 결정사항 → 담당·기한」 표 포함. 간결한 공문체.`,promptEn:`[Role] University administrator
@@ -29,7 +29,31 @@ import{j as e}from"./markdown-uD28ob7P.js";import{b as h,f as v,u as P,L as d}fr
 [형식] 「안건 목록 → 각 안건 결정사항 → 후속조치(담당/기한)」. 실행 항목은 체크리스트로.`,promptEn:`[Role] Meeting secretary
 [Context] Extract agenda, decisions, and follow-ups from the discussion below.
 - (paste discussion)
-[Format] Agenda → decisions per item → follow-ups (owner/deadline) as a checklist.`},{level:"advanced",titleKo:"회의록 → 산출물 3종 동시 생성",titleEn:"Minutes → 3 Outputs at Once",promptKo:"[심화 과제] 하나의 회의 녹취를 입력하면 ① 공식 회의록 ② 참석자용 할 일 목록 ③ 전 직원 공지문 초안을 한 번에 일관되게 생성하는 프롬프트를 직접 설계해 실행하세요. 세 산출물의 형식·어조를 각각 지정하는 것이 핵심입니다.",promptEn:"[Advanced] Design a prompt that, from one transcript, produces ① formal minutes ② a to-do list for attendees ③ a staff announcement draft — consistently, in one pass. The key is specifying each output's format and tone."}],"ppt-structure":[{level:"basic",titleKo:"업무보고 PPT 목차 설계",titleEn:"Report PPT Outline",promptKo:`[역할] 대학 행정 담당자
+[Format] Agenda → decisions per item → follow-ups (owner/deadline) as a checklist.`},{level:"advanced",titleKo:"회의록 → 산출물 3종 동시 생성",titleEn:"Minutes → 3 Outputs at Once",promptKo:"[심화 과제] 하나의 회의 녹취를 입력하면 ① 공식 회의록 ② 참석자용 할 일 목록 ③ 전 직원 공지문 초안을 한 번에 일관되게 생성하는 프롬프트를 직접 설계해 실행하세요. 세 산출물의 형식·어조를 각각 지정하는 것이 핵심입니다.",promptEn:"[Advanced] Design a prompt that, from one transcript, produces ① formal minutes ② a to-do list for attendees ③ a staff announcement draft — consistently, in one pass. The key is specifying each output's format and tone."},{level:"basic",titleKo:"간담회·워크숍 결과 정리",titleEn:"Workshop Result Notes",promptKo:`[역할] 행정 담당자
+[맥락] 아래 간담회/워크숍에서 나온 의견을 정리해 주세요.
+- (참석자 발언·메모 붙여넣기)
+[형식] 주요 의견 그룹화 → 공통 제안 → 반대/유의 의견 → 후속 검토 사항.`,promptEn:`[Role] Administrator
+[Context] Organize opinions from the workshop below.
+- (paste remarks/notes)
+[Format] Group key opinions → common proposals → concerns → items to review.`},{level:"basic",titleKo:"월간 업무보고",titleEn:"Monthly Work Report",promptKo:`[역할] 부서 담당자
+[맥락] 이번 달 업무 실적을 월간 보고로 정리해 주세요.
+- 주요 실적: [ ] / 미흡 사항: [ ] / 다음 달 계획: [ ]
+[형식] 실적 요약(표) → 정성 평가 → 다음 달 중점 과제. 경영진이 3분에 읽을 분량.`,promptEn:`[Role] Dept staff
+[Context] Compile this month's results into a monthly report.
+- Results/gaps/next-month plan: [ ]
+[Format] Results table → qualitative note → next-month priorities. 3-min read.`},{level:"applied",titleKo:"회의 요약 → 이메일 공유문",titleEn:"Minutes → Share Email",promptKo:`[역할] 회의 주관자
+[맥락] 아래 회의록을 참석하지 못한 동료에게 공유할 이메일로 바꿔 주세요.
+- (회의록 붙여넣기)
+[형식] 제목 → 인사 → 핵심 결정 3줄 → 각자 할 일 → 다음 회의 안내. 간결한 업무 이메일체.`,promptEn:`[Role] Meeting host
+[Context] Turn the minutes into a share email for absent colleagues.
+- (paste minutes)
+[Format] Subject → greeting → 3 key decisions → action items → next meeting. Concise business tone.`},{level:"applied",titleKo:"보고서 → 1페이지 요약",titleEn:"Report → 1-Page Brief",promptKo:`[역할] 보고 담당자
+[맥락] 아래 장문 보고서를 경영진용 1페이지 요약으로 압축해 주세요.
+- (보고서 본문 붙여넣기)
+[형식] 핵심 결론(맨 위) → 배경 3줄 → 주요 수치 → 의사결정 요청 사항.`,promptEn:`[Role] Reporting staff
+[Context] Compress the long report into a 1-page executive brief.
+- (paste report)
+[Format] Conclusion first → 3-line background → key figures → decision request.`},{level:"advanced",titleKo:"주간회의 누적 요약·이슈 추적",titleEn:"Weekly Rollup & Issue Tracking",promptKo:"[심화 과제] 매주 열리는 회의의 회의록을 누적해, 지난주 결정사항의 이행 여부를 추적하고 미결 이슈를 다음 회의 안건으로 자동 정리하는 프롬프트를 설계하세요. 이행완료/지연/신규 이슈를 구분해 표시하도록 지정하는 것이 핵심입니다.",promptEn:"[Advanced] Design a prompt that accumulates weekly minutes, tracks whether last week's decisions were done, and rolls unresolved issues into the next agenda. Mark done/delayed/new distinctly."}],"ppt-structure":[{level:"basic",titleKo:"업무보고 PPT 목차 설계",titleEn:"Report PPT Outline",promptKo:`[역할] 대학 행정 담당자
 [맥락] [주제] 업무보고 발표 PPT의 목차(슬라이드 구성)를 설계해 주세요.
 - 발표 시간: 10분 / 청중: 부서장
 [형식] 슬라이드 번호 → 제목 → 핵심 메시지 표. 표지·목차·본문·결론 흐름 포함.`,promptEn:`[Role] University administrator
@@ -53,7 +77,31 @@ import{j as e}from"./markdown-uD28ob7P.js";import{b as h,f as v,u as P,L as d}fr
 [형식] 어떤 슬라이드에 어떤 차트·표를 배치할지, 슬라이드별 메시지와 함께 제시.`,promptEn:`[Role] Report staff
 [Context] Propose a slide structure explaining the situation from the data below.
 - (paste data)
-[Format] Which chart/table on which slide, with each slide's message.`},{level:"advanced",titleKo:"청중별 2버전 구조",titleEn:"Two Versions by Audience",promptKo:"[심화 과제] 같은 내용을 ① 경영진용(3분·핵심만) ② 실무진용(10분·상세)의 두 버전 PPT 구조로 동시에 설계하는 프롬프트를 만드세요. 청중에 따라 강조점과 슬라이드 수가 어떻게 달라지는지 명시하도록 지정하는 것이 핵심입니다.",promptEn:"[Advanced] Design a prompt that structures the same content in two versions — ① executives (3 min, essentials) ② staff (10 min, detailed). Specify how emphasis and slide count differ by audience."}],"ppt-design":[{level:"basic",titleKo:"슬라이드 시각화 아이디어",titleEn:"Slide Visualization Ideas",promptKo:`[역할] 발표 디자인 담당자
+[Format] Which chart/table on which slide, with each slide's message.`},{level:"advanced",titleKo:"청중별 2버전 구조",titleEn:"Two Versions by Audience",promptKo:"[심화 과제] 같은 내용을 ① 경영진용(3분·핵심만) ② 실무진용(10분·상세)의 두 버전 PPT 구조로 동시에 설계하는 프롬프트를 만드세요. 청중에 따라 강조점과 슬라이드 수가 어떻게 달라지는지 명시하도록 지정하는 것이 핵심입니다.",promptEn:"[Advanced] Design a prompt that structures the same content in two versions — ① executives (3 min, essentials) ② staff (10 min, detailed). Specify how emphasis and slide count differ by audience."},{level:"basic",titleKo:"사업설명회 발표 구조",titleEn:"Program Briefing Structure",promptKo:`[역할] 대학 행정 담당자
+[맥락] [사업/제도] 설명회 발표 PPT 구조를 설계해 주세요.
+- 청중: 신청 대상자 / 목표: 신청 유도
+[형식] 개요 → 지원 내용 → 신청 방법 → 자주 묻는 질문 → 문의처. 슬라이드별 메시지 포함.`,promptEn:`[Role] University administrator
+[Context] Structure a briefing deck for a [program].
+- Audience: applicants / Goal: drive applications
+[Format] Overview → benefits → how to apply → FAQ → contact, with per-slide message.`},{level:"basic",titleKo:"교육·오리엔테이션 슬라이드 흐름",titleEn:"Orientation Slide Flow",promptKo:`[역할] 교육 담당자
+[맥락] [대상] 오리엔테이션 슬라이드 흐름을 설계해 주세요.
+- 소요: [시간] / 다룰 내용: [ ]
+[형식] 환영 → 일정 안내 → 주요 정보 → 실습/활동 → 마무리(Q&A). 지루하지 않게 완급 조절 제안.`,promptEn:`[Role] Training staff
+[Context] Design an orientation slide flow for [audience].
+- Duration: [ ] / Topics: [ ]
+[Format] Welcome → schedule → key info → activity → wrap-up (Q&A), with pacing tips.`},{level:"applied",titleKo:"문제해결형 발표 구조",titleEn:"Problem-Solving Structure",promptKo:`[역할] [우리 부서] 발표자
+[맥락] [문제 상황]을 다루는 문제해결형 발표 구조를 설계해 주세요.
+- 문제: [ ] / 제안하고 싶은 해법: [ ]
+[형식] 현황(문제 규모) → 원인 분석 → 대안 비교 → 권고안 → 기대효과. 근거 슬라이드 위치 명시.`,promptEn:`[Role] [Your dept] presenter
+[Context] Structure a problem-solving talk on [problem].
+- Problem: [ ] / Proposed solution: [ ]
+[Format] Situation → root cause → options → recommendation → expected impact, with evidence slides.`},{level:"applied",titleKo:"3분 브리핑 구조",titleEn:"3-Minute Briefing",promptKo:`[역할] 실무 담당자
+[맥락] [주제]를 상급자에게 3분 안에 브리핑할 슬라이드 구조를 설계해 주세요.
+- 핵심 요청/결론: [ ]
+[형식] 3~4장으로 압축: 결론 → 근거 → 요청. 각 장에 딱 한 문장의 핵심 메시지.`,promptEn:`[Role] Staff
+[Context] Structure a 3-minute briefing on [topic] for a manager.
+- Ask/conclusion: [ ]
+[Format] 3–4 slides: conclusion → evidence → ask. One key line per slide.`},{level:"advanced",titleKo:"발표 목적별 구조 분기 설계",titleEn:"Purpose-Branching Structure",promptKo:"[심화 과제] 같은 주제라도 발표 목적(정보 전달 / 설득 / 보고)에 따라 슬라이드 구조가 달라지도록, 목적을 입력하면 그에 맞는 구조를 제안하는 프롬프트를 설계하세요. 목적별로 강조 요소와 순서가 어떻게 바뀌는지 규칙을 명시하는 것이 핵심입니다.",promptEn:"[Advanced] Design a prompt where the same topic yields a different slide structure by purpose (inform / persuade / report) — input the purpose, get a matching structure. Specify how emphasis and order change by purpose."}],"ppt-design":[{level:"basic",titleKo:"슬라이드 시각화 아이디어",titleEn:"Slide Visualization Ideas",promptKo:`[역할] 발표 디자인 담당자
 [맥락] 아래 슬라이드 내용을 시각적으로 표현할 아이디어를 제안해 주세요.
 - (슬라이드 텍스트 붙여넣기)
 [형식] 도표·아이콘·이미지 유형을 슬라이드별로 3안씩 추천, 이유 포함.`,promptEn:`[Role] Presentation designer
@@ -179,7 +227,34 @@ import{j as e}from"./markdown-uD28ob7P.js";import{b as h,f as v,u as P,L as d}fr
 [형식] 고정 문구는 그대로, 바뀌는 부분은 [ ] 자리표시자로 표시한 템플릿.`,promptEn:`[Role] Administrator
 [Context] Turn the monthly [document type] into a reusable template.
 - Changing values: [dates, targets, numbers]
-[Format] Fixed text as-is; variable parts as [ ] placeholders.`},{level:"advanced",titleKo:"업무 1건 End-to-End 설계",titleEn:"End-to-End Task Design",promptKo:"[심화 과제] 우리 부서 실제 업무 1건을 골라, 기안문 작성 → 보고 PPT 구조 → Excel 집계표까지 한 흐름으로 AI를 활용해 처리하는 프롬프트 세트를 직접 설계하세요. 각 단계의 입력·출력이 다음 단계로 자연스럽게 이어지도록 구성하는 것이 핵심입니다.",promptEn:"[Advanced] Pick one real task and design a prompt set to handle it end-to-end: proposal → report PPT structure → Excel summary. The key is chaining each step's output into the next."}],"hr-ai":[{level:"basic",titleKo:"근태 데이터 요약",titleEn:"Attendance Summary",promptKo:`[역할] 인사 담당자
+[Format] Fixed text as-is; variable parts as [ ] placeholders.`},{level:"advanced",titleKo:"업무 1건 End-to-End 설계",titleEn:"End-to-End Task Design",promptKo:"[심화 과제] 우리 부서 실제 업무 1건을 골라, 기안문 작성 → 보고 PPT 구조 → Excel 집계표까지 한 흐름으로 AI를 활용해 처리하는 프롬프트 세트를 직접 설계하세요. 각 단계의 입력·출력이 다음 단계로 자연스럽게 이어지도록 구성하는 것이 핵심입니다.",promptEn:"[Advanced] Pick one real task and design a prompt set to handle it end-to-end: proposal → report PPT structure → Excel summary. The key is chaining each step's output into the next."},{level:"basic",titleKo:"민원 답변 공문",titleEn:"Civil Inquiry Reply",promptKo:`[역할] 대학 행정 담당자
+[맥락] 아래 민원에 대한 답변 공문을 작성해 주세요.
+- 민원 내용: [주차 공간 부족 개선 요청 등]
+- 조치/계획: [ ]
+[형식] 민원 요지 확인 → 검토 결과 → 조치/계획 → 추가 안내. 정중한 어조.`,promptEn:`[Role] University administrator
+[Context] Write a reply to the civil inquiry below.
+- Inquiry: [e.g., parking shortage] / Action: [ ]
+[Format] Restate → review result → action/plan → guidance. Courteous tone.`},{level:"basic",titleKo:"공지사항 게시문",titleEn:"Announcement Post",promptKo:`[역할] 행정 담당자
+[맥락] 아래 내용을 홈페이지/게시판 공지문으로 작성해 주세요.
+- 공지 주제: [ ] / 기간·대상: [ ]
+[형식] 제목(눈에 띄게) → 핵심 안내 → 상세 내용 → 문의처. 읽기 쉬운 단락 구성.`,promptEn:`[Role] Administrator
+[Context] Write a website/board announcement.
+- Topic: [ ] / Period·target: [ ]
+[Format] Eye-catching title → key notice → details → contact. Easy-to-read paragraphs.`},{level:"applied",titleKo:"규정 개정 문서 세트",titleEn:"Regulation Amendment Set",promptKo:`[역할] 주관 부서 담당자
+[맥락] [규정] 개정에 필요한 문서 세트를 작성해 주세요.
+- ① 개정안(신구대조표) ② 개정 안내문 ③ 시행 공지
+- 개정 사유·주요 변경: [ ]
+[형식] 세 문서를 일관된 정보로. 신구대조표는 조항/기존/개정 3열 표.`,promptEn:`[Role] Owning dept staff
+[Context] Write a document set for a [regulation] amendment.
+- ① amendment (old/new table) ② notice ③ effective announcement
+- Reason·changes: [ ]
+[Format] Consistent info; old/new table in 3 columns (clause/old/new).`},{level:"applied",titleKo:"감사 대응 소명 공문",titleEn:"Audit Response Statement",promptKo:`[역할] 피감 부서 담당자
+[맥락] 감사에서 지적된 사항에 대한 소명 공문을 작성해 주세요.
+- 지적 사항: [ ] / 실제 경위: [ ] / 개선 조치: [ ]
+[형식] 지적 사항 확인 → 사실 관계(경위) → 개선 조치·재발방지 → 향후 이행 계획. 사실 중심 어조.`,promptEn:`[Role] Audited dept staff
+[Context] Write a response statement to an audit finding.
+- Finding/context/corrective action: [ ]
+[Format] Restate finding → facts → corrective action → future plan. Fact-based tone.`},{level:"advanced",titleKo:"연간 반복 공문 캘린더 설계",titleEn:"Annual Recurring-Doc Calendar",promptKo:"[심화 과제] 우리 부서가 매년 정해진 시기에 반복 발송하는 공문들을 월별 캘린더로 정리하고, 각 공문의 재사용 템플릿까지 함께 생성하는 프롬프트를 설계하세요. 발송 시기·대상·변경값을 함께 관리하도록 지정하는 것이 핵심입니다.",promptEn:"[Advanced] Design a prompt that maps our dept's yearly recurring documents onto a monthly calendar and also generates a reusable template for each. The key is tracking timing, recipients, and variable values together."}],"hr-ai":[{level:"basic",titleKo:"근태 데이터 요약",titleEn:"Attendance Summary",promptKo:`[역할] 인사 담당자
 [맥락] 아래 근태 데이터를 요약해 주세요.
 - (출퇴근/지각/연차 데이터 붙여넣기)
 [형식] 총원·평균 근무시간·지각/결근 건수·연차 사용률을 표로 요약.`,promptEn:`[Role] HR staff
@@ -203,7 +278,31 @@ import{j as e}from"./markdown-uD28ob7P.js";import{b as h,f as v,u as P,L as d}fr
 [형식] 핵심 변경 요약(표) → 자주 묻는 질문 3개 → 문의처. 이해하기 쉬운 어조.`,promptEn:`[Role] HR staff
 [Context] Announce a [policy] change to all staff clearly.
 - Before/after: [ ] / Effective: [ ]
-[Format] Key changes (table) → 3 FAQs → contact. Plain, clear tone.`},{level:"advanced",titleKo:"근태 이상패턴 탐지 설계",titleEn:"Anomaly Detection Design",promptKo:"[심화 과제] 근태 데이터에서 이상 패턴(반복 지각, 특정 요일 결근, 과다 초과근무 등)을 자동으로 탐지하고 조치 방안까지 제안하는 프롬프트를 설계하세요. 판별 기준과 개인정보 유의사항을 함께 지정하는 것이 핵심입니다.",promptEn:"[Advanced] Design a prompt that auto-detects anomaly patterns in attendance (repeated lateness, weekday absences, excess overtime) and proposes actions. The key is specifying detection criteria and privacy caveats."}],"hr-documents":[{level:"basic",titleKo:"채용공고 작성",titleEn:"Job Posting",promptKo:`[역할] 인사 담당자
+[Format] Key changes (table) → 3 FAQs → contact. Plain, clear tone.`},{level:"advanced",titleKo:"근태 이상패턴 탐지 설계",titleEn:"Anomaly Detection Design",promptKo:"[심화 과제] 근태 데이터에서 이상 패턴(반복 지각, 특정 요일 결근, 과다 초과근무 등)을 자동으로 탐지하고 조치 방안까지 제안하는 프롬프트를 설계하세요. 판별 기준과 개인정보 유의사항을 함께 지정하는 것이 핵심입니다.",promptEn:"[Advanced] Design a prompt that auto-detects anomaly patterns in attendance (repeated lateness, weekday absences, excess overtime) and proposes actions. The key is specifying detection criteria and privacy caveats."},{level:"basic",titleKo:"신규 입사자 온보딩 안내",titleEn:"New Hire Onboarding Guide",promptKo:`[역할] 인사 담당자
+[맥락] 신규 입사자에게 첫 주에 필요한 것들을 안내하는 문서를 작성해 주세요.
+- 제출 서류, 시스템 계정, 부서 소개, 근무 규칙 등
+[형식] 체크리스트 형식 + 담당자/기한. 친절하고 환영하는 어조.`,promptEn:`[Role] HR staff
+[Context] Write a first-week onboarding guide for a new hire.
+- Documents, system accounts, dept intro, work rules
+[Format] Checklist + owner/deadline. Warm, welcoming tone.`},{level:"basic",titleKo:"인사 제도 쉬운 설명",titleEn:"Explain HR Policy Simply",promptKo:`[역할] 인사 담당자
+[맥락] 아래 인사 제도를 직원이 이해하기 쉽게 풀어 설명해 주세요.
+- 제도: [연금·성과급·유연근무 등]
+[형식] 한 줄 정의 → 대상·조건 → 예시 → 자주 묻는 질문 2개. 전문용어 최소화.`,promptEn:`[Role] HR staff
+[Context] Explain the HR policy below in plain terms.
+- Policy: [pension/bonus/flex work...]
+[Format] One-line definition → who/conditions → example → 2 FAQs. Minimal jargon.`},{level:"applied",titleKo:"부서별 인력현황 분석",titleEn:"Headcount Analysis by Dept",promptKo:`[역할] 인사 담당자
+[맥락] 아래 인력 데이터로 부서별 현황을 분석해 주세요.
+- (부서·직급·정원·현원 데이터)
+[형식] 부서별 충원율 표 + 인력 과부족 부서 강조 + 충원/재배치 제언.`,promptEn:`[Role] HR staff
+[Context] Analyze headcount by department from the data.
+- (dept/rank/quota/actual)
+[Format] Fill-rate table + flag over/under-staffed depts + hiring/reassignment advice.`},{level:"applied",titleKo:"복지제도 안내 답변 세트",titleEn:"Benefits Q&A Set",promptKo:`[역할] 인사 담당자
+[맥락] 직원 문의가 잦은 복지제도에 대한 표준 답변 세트를 만들어 주세요.
+- 항목: [경조사비·건강검진·교육비 지원 등]
+[형식] 항목별 「대상 / 지원 내용 / 신청 방법 / 유의사항」. 챗봇·안내데스크에서 바로 활용 가능하게.`,promptEn:`[Role] HR staff
+[Context] Build a standard Q&A set for common benefit questions.
+- Items: [family events/health checkup/education support...]
+[Format] Per item: eligibility / benefit / how to apply / notes. Ready for a chatbot/help desk.`},{level:"advanced",titleKo:"월간 인사 인사이트 리포트 설계",titleEn:"Monthly HR Insight Report",promptKo:"[심화 과제] 채용·근태·이직 등 여러 인사 데이터를 종합해 매달 경영진에게 제공할 인사 인사이트 리포트를 설계하세요. 핵심 지표 선정 → 전월 대비 변화 → 주목할 시그널 → 제언까지 자동 생성하도록 구성하는 것이 핵심입니다.",promptEn:"[Advanced] Design a monthly HR insight report combining hiring/attendance/turnover data for executives. Auto-generate: key metrics → MoM change → notable signals → recommendations."}],"hr-documents":[{level:"basic",titleKo:"채용공고 작성",titleEn:"Job Posting",promptKo:`[역할] 인사 담당자
 [맥락] 아래 조건으로 채용공고를 작성해 주세요.
 - 직무: 행정직원(계약직) / 자격: 관련 경력 2년 이상
 - 근무: [부서·기간] / 마감: [ ]
@@ -229,7 +328,31 @@ import{j as e}from"./markdown-uD28ob7P.js";import{b as h,f as v,u as P,L as d}fr
 [형식] 격식 있는 위촉장 형식. 위촉 취지·기간·역할·기관장 직인 자리 포함.`,promptEn:`[Role] HR staff
 [Context] Write an appointment letter for [committee/role].
 - Appointee: [name/affiliation] / Term: [ ] / Role: [ ]
-[Format] Formal letter: purpose, term, role, seal placeholder.`},{level:"advanced",titleKo:"채용 문서 세트 일관 생성",titleEn:"Consistent Hiring Document Set",promptKo:"[심화 과제] 하나의 채용 건에 대해 채용공고 + 서류심사 안내 + 최종 합격 통보문 3종을 공통 정보(직무·일정) 기반으로 일관되게 생성하는 프롬프트를 설계하세요. 문서 간 날짜·명칭이 어긋나지 않도록 지정하는 것이 핵심입니다.",promptEn:"[Advanced] Design a prompt that generates a hiring set — posting + screening notice + final acceptance — consistently from shared info (role/schedule). The key is keeping dates/names aligned across documents."}],"attendance-excel":[{level:"basic",titleKo:"지각·결근 집계 수식",titleEn:"Late/Absence Formula",promptKo:`[역할] 인사 담당자
+[Format] Formal letter: purpose, term, role, seal placeholder.`},{level:"advanced",titleKo:"채용 문서 세트 일관 생성",titleEn:"Consistent Hiring Document Set",promptKo:"[심화 과제] 하나의 채용 건에 대해 채용공고 + 서류심사 안내 + 최종 합격 통보문 3종을 공통 정보(직무·일정) 기반으로 일관되게 생성하는 프롬프트를 설계하세요. 문서 간 날짜·명칭이 어긋나지 않도록 지정하는 것이 핵심입니다.",promptEn:"[Advanced] Design a prompt that generates a hiring set — posting + screening notice + final acceptance — consistently from shared info (role/schedule). The key is keeping dates/names aligned across documents."},{level:"basic",titleKo:"재직·경력 증명서 문구",titleEn:"Employment/Career Certificate",promptKo:`[역할] 인사 담당자
+[맥락] 아래 정보로 재직증명서(또는 경력증명서) 문구를 작성해 주세요.
+- 성명·부서·직급·재직 기간·용도: [ ]
+[형식] 증명서 표준 문구 형식. 발급 목적·증명 내용·발급일·기관장 명의 포함.`,promptEn:`[Role] HR staff
+[Context] Draft an employment/career certificate.
+- Name/dept/rank/period/purpose: [ ]
+[Format] Standard certificate wording: purpose, statement, issue date, issuer.`},{level:"basic",titleKo:"표창장·감사장",titleEn:"Award/Appreciation Letter",promptKo:`[역할] 인사 담당자
+[맥락] 아래 공적에 대한 표창장(또는 감사장) 문구를 작성해 주세요.
+- 수상자·공적 내용·시상 사유: [ ]
+[형식] 격식 있는 표창장 문구. 공적 요약 → 표창 문구 → 수여자·일자.`,promptEn:`[Role] HR staff
+[Context] Write an award/appreciation letter for the achievement below.
+- Recipient/achievement/reason: [ ]
+[Format] Formal wording: achievement → citation → issuer·date.`},{level:"applied",titleKo:"인사평가 결과 통보문",titleEn:"Performance Result Notice",promptKo:`[역할] 인사 담당자
+[맥락] 인사평가 결과를 대상자에게 통보하는 문서를 작성해 주세요.
+- 평가 기간·등급·주요 강점·개선점: [ ]
+[형식] 결과 요약 → 강점 → 개선 방향 → 이의신청 안내. 존중하는 어조.`,promptEn:`[Role] HR staff
+[Context] Write a performance-result notice to an employee.
+- Period/grade/strengths/improvements: [ ]
+[Format] Result → strengths → improvement direction → appeal info. Respectful tone.`},{level:"applied",titleKo:"전보·파견 명령서",titleEn:"Transfer/Dispatch Order",promptKo:`[역할] 인사 담당자
+[맥락] 아래 전보 또는 파견 명령서를 작성해 주세요.
+- 대상·현소속·전보(파견)처·기간·사유: [ ]
+[형식] 공문 명령서 형식. 발령 내용(표) → 근무 조건 → 유의사항 → 결재란.`,promptEn:`[Role] HR staff
+[Context] Write a transfer/dispatch order.
+- Name/current/destination/period/reason: [ ]
+[Format] Official order: appointment (table) → conditions → notes → approval.`},{level:"advanced",titleKo:"직원 생애주기 문서 패키지",titleEn:"Employee Lifecycle Package",promptKo:"[심화 과제] 입사 → 재직(발령·평가·복지) → 퇴직에 이르는 직원 생애주기 단계별로 필요한 인사 문서 목록을 정의하고, 각 단계 대표 문서의 템플릿을 일관된 서식으로 생성하는 프롬프트를 설계하세요. 단계별 필수 문서를 빠짐없이 정리하는 것이 핵심입니다.",promptEn:"[Advanced] Design a prompt that defines the HR documents needed at each employee-lifecycle stage (hire → tenure → exit) and generates a consistent template for each stage's key document. The key is completeness per stage."}],"attendance-excel":[{level:"basic",titleKo:"지각·결근 집계 수식",titleEn:"Late/Absence Formula",promptKo:`[역할] 인사 담당자
 [맥락] 근태 표에서 다음을 계산하는 Excel 수식을 알려 주세요.
 - 직원별 지각 횟수 / 부서별 결근 합계
 [형식] 각 수식 + 한 줄 설명. 구버전 대체 수식이 있으면 함께.`,promptEn:`[Role] HR staff
@@ -253,7 +376,31 @@ import{j as e}from"./markdown-uD28ob7P.js";import{b as h,f as v,u as P,L as d}fr
 [형식] 이상 유형 → 판별 조건부 서식/수식 → 처리 방법 표.`,promptEn:`[Role] Data staff
 [Context] Rules to filter anomalies (negative hours, >24h, etc.).
 - (paste data)
-[Format] Type → conditional format/formula → handling (table).`},{level:"advanced",titleKo:"근태 대시보드 지표 설계",titleEn:"Attendance Dashboard Design",promptKo:"[심화 과제] 부서장이 한눈에 보는 근태 대시보드에 넣을 핵심 지표(KPI)를 정의하고, 각 지표를 어떤 차트로 표현할지, 어떤 수식으로 계산할지까지 프롬프트로 설계하세요. 지표 선정 근거를 함께 지정하는 것이 핵심입니다.",promptEn:"[Advanced] Design a prompt defining key attendance KPIs for a manager dashboard, which chart shows each, and the formula behind it. The key is justifying the KPI selection."}],"hr-report":[{level:"basic",titleKo:"인사 현황 요약",titleEn:"HR Status Summary",promptKo:`[역할] 인사 담당자
+[Format] Type → conditional format/formula → handling (table).`},{level:"advanced",titleKo:"근태 대시보드 지표 설계",titleEn:"Attendance Dashboard Design",promptKo:"[심화 과제] 부서장이 한눈에 보는 근태 대시보드에 넣을 핵심 지표(KPI)를 정의하고, 각 지표를 어떤 차트로 표현할지, 어떤 수식으로 계산할지까지 프롬프트로 설계하세요. 지표 선정 근거를 함께 지정하는 것이 핵심입니다.",promptEn:"[Advanced] Design a prompt defining key attendance KPIs for a manager dashboard, which chart shows each, and the formula behind it. The key is justifying the KPI selection."},{level:"basic",titleKo:"연차 사용 현황 집계",titleEn:"Leave Usage Tally",promptKo:`[역할] 인사 담당자
+[맥락] 직원별 연차 사용 현황을 집계하는 방법을 알려 주세요.
+- 데이터: [부여일수·사용일수·잔여] 열 구성
+[형식] 개인별 사용률·잔여 집계 수식 + 잔여 과다(소진 독려 대상) 표시 방법.`,promptEn:`[Role] HR staff
+[Context] How to tally leave usage per employee.
+- Columns: granted/used/remaining
+[Format] Usage-rate/remaining formulas + how to flag high-remaining employees.`},{level:"basic",titleKo:"근무일수 계산(주말·공휴일 제외)",titleEn:"Working Days (excl. holidays)",promptKo:`[역할] 데이터 담당자
+[맥락] 두 날짜 사이의 실제 근무일수를 계산하는 수식을 알려 주세요.
+- 주말과 공휴일(별도 목록)을 제외
+[형식] NETWORKDAYS 계열 수식과 공휴일 목록 지정 방법. 반차 처리 팁도.`,promptEn:`[Role] Data staff
+[Context] Formula for actual working days between two dates.
+- Exclude weekends and holidays (separate list)
+[Format] NETWORKDAYS-family formula + how to set the holiday list; half-day tip.`},{level:"applied",titleKo:"유연근무 시간 정산",titleEn:"Flex-Time Settlement",promptKo:`[역할] 인사 담당자
+[맥락] 유연근무제 직원의 월 근무시간을 정산하는 방법을 설계해 주세요.
+- (일자별 출퇴근·의무근무시간 데이터)
+[형식] 일별 근무시간 산출 → 월 합계 → 의무시간 대비 과부족 → 정산 결과표.`,promptEn:`[Role] HR staff
+[Context] Design a monthly flex-time settlement.
+- (daily punch + required hours)
+[Format] Daily hours → monthly total → vs required → settlement table.`},{level:"applied",titleKo:"부서별 출근율 비교",titleEn:"Attendance Rate by Dept",promptKo:`[역할] 인사 담당자
+[맥락] 아래 데이터로 부서별 출근율을 비교 분석해 주세요.
+- (부서·근무일·출근일 데이터) / 기간: [ ]
+[형식] 부서별 출근율 집계표 + 상·하위 부서 + 시각화(막대) 추천 + 해석.`,promptEn:`[Role] HR staff
+[Context] Compare attendance rate by department.
+- (dept/workdays/present) / Period: [ ]
+[Format] Rate table + top/bottom depts + chart (bar) recommendation + interpretation.`},{level:"advanced",titleKo:"휴가 집중기 인력공백 분석",titleEn:"Peak-Leave Coverage Analysis",promptKo:"[심화 과제] 연차·휴가가 특정 시기에 몰릴 때 발생하는 부서별 인력 공백을 사전에 파악하고, 업무 연속성을 위한 대응(대체 인력·업무 조정)을 제안하는 분석을 프롬프트로 설계하세요. 시기·부서·최소 필요 인력을 함께 고려하도록 지정하는 것이 핵심입니다.",promptEn:"[Advanced] Design an analysis that foresees per-dept coverage gaps when leave concentrates in certain periods and proposes continuity measures (backup staff, task shifts). Consider timing, dept, and minimum staffing."}],"hr-report":[{level:"basic",titleKo:"인사 현황 요약",titleEn:"HR Status Summary",promptKo:`[역할] 인사 담당자
 [맥락] 아래 인사 데이터로 현황 요약을 만들어 주세요.
 - (정원·현원·직급·근속 데이터)
 [형식] 핵심 지표 요약(표) + 한 문단 총평.`,promptEn:`[Role] HR staff
@@ -277,7 +424,31 @@ import{j as e}from"./markdown-uD28ob7P.js";import{b as h,f as v,u as P,L as d}fr
 [형식] 지표별 추천 차트와 배치, 강조 색상 가이드.`,promptEn:`[Role] Report staff
 [Context] Recommend visuals for the HR stats below.
 - (age/gender/rank distribution)
-[Format] Chart per metric, layout, and accent-color guide.`},{level:"advanced",titleKo:"분기 인사보고 2버전 설계",titleEn:"Quarterly Report, Two Versions",promptKo:"[심화 과제] 분기 인사보고서를 ① 1페이지 요약본 ② 상세 보고본 두 버전으로, 동일 데이터에서 일관되게 생성하는 프롬프트를 설계하세요. 요약본은 의사결정 포인트만, 상세본은 근거까지 담도록 지정하는 것이 핵심입니다.",promptEn:"[Advanced] Design a prompt that generates a quarterly HR report in two versions — ① 1-page summary ② detailed — consistently from the same data. Summary carries decision points only; detailed adds the evidence."}],"work-template":[{level:"basic",titleKo:"반복 공문 템플릿",titleEn:"Recurring Doc Template",promptKo:`[역할] 행정 담당자
+[Format] Chart per metric, layout, and accent-color guide.`},{level:"advanced",titleKo:"분기 인사보고 2버전 설계",titleEn:"Quarterly Report, Two Versions",promptKo:"[심화 과제] 분기 인사보고서를 ① 1페이지 요약본 ② 상세 보고본 두 버전으로, 동일 데이터에서 일관되게 생성하는 프롬프트를 설계하세요. 요약본은 의사결정 포인트만, 상세본은 근거까지 담도록 지정하는 것이 핵심입니다.",promptEn:"[Advanced] Design a prompt that generates a quarterly HR report in two versions — ① 1-page summary ② detailed — consistently from the same data. Summary carries decision points only; detailed adds the evidence."},{level:"basic",titleKo:"교육 이수 현황 보고",titleEn:"Training Completion Report",promptKo:`[역할] 인사 담당자
+[맥락] 아래 교육 이수 데이터를 현황 보고로 정리해 주세요.
+- (교육명·대상·이수·미이수 데이터)
+[형식] 교육별 이수율 표 + 미이수자 안내 방안 + 다음 차수 계획 제언.`,promptEn:`[Role] HR staff
+[Context] Summarize training completion into a status report.
+- (course/target/completed/not)
+[Format] Completion-rate table + follow-up for non-completers + next-round plan.`},{level:"basic",titleKo:"인력 충원 필요 보고 문구",titleEn:"Staffing-Need Report Lines",promptKo:`[역할] 인사 담당자
+[맥락] 특정 부서의 인력 충원 필요성을 보고할 슬라이드 문구를 작성해 주세요.
+- 부서·현 인력·업무량 근거: [ ]
+[형식] 슬라이드 제목 + 근거 bullet 3개 + 요청 사항 한 줄.`,promptEn:`[Role] HR staff
+[Context] Write slide lines reporting a dept's staffing need.
+- Dept/current staff/workload basis: [ ]
+[Format] Title + 3 evidence bullets + one-line ask.`},{level:"applied",titleKo:"이직·퇴직 분석 보고",titleEn:"Turnover Analysis Report",promptKo:`[역할] 인사 담당자
+[맥락] 아래 퇴직 데이터를 분석해 보고자료로 만들어 주세요.
+- (기간·부서·사유·근속 데이터)
+[형식] 퇴직률 추이 → 주요 사유 → 부서별 특징 → 대응 제언. 시각화 포인트 표시.`,promptEn:`[Role] HR staff
+[Context] Analyze the turnover data into a report.
+- (period/dept/reason/tenure)
+[Format] Turnover trend → key reasons → dept patterns → recommendations, with viz points.`},{level:"applied",titleKo:"인건비 현황 보고자료",titleEn:"Labor Cost Report",promptKo:`[역할] 인사 담당자
+[맥락] 아래 인건비 데이터를 경영진 보고자료로 정리해 주세요.
+- (부서·항목·예산·집행 데이터)
+[형식] 예산 대비 집행률 표 → 증감 요인 → 유의 부서 → 향후 전망. 핵심 수치 강조.`,promptEn:`[Role] HR staff
+[Context] Compile the labor-cost data into an executive report.
+- (dept/item/budget/spend)
+[Format] Execution-rate table → change drivers → watch depts → outlook, key figures highlighted.`},{level:"advanced",titleKo:"연간 인사백서 설계",titleEn:"Annual HR Yearbook Design",promptKo:"[심화 과제] 한 해의 인사 활동(채용·교육·평가·복지·조직)을 종합한 연간 인사백서의 목차를 설계하고, 각 장에 넣을 데이터·표·서술 문단을 생성하는 프롬프트를 설계하세요. 장별로 '수치 → 해석 → 시사점' 구조를 일관되게 유지하도록 지정하는 것이 핵심입니다.",promptEn:`[Advanced] Design a prompt for an annual HR yearbook: outline the chapters covering the year's HR activities (hiring/training/appraisal/benefits/org) and generate each chapter's data, tables, and narrative. Keep a consistent "numbers → interpretation → implications" structure.`}],"work-template":[{level:"basic",titleKo:"반복 공문 템플릿",titleEn:"Recurring Doc Template",promptKo:`[역할] 행정 담당자
 [맥락] 자주 쓰는 [공문 유형]의 재사용 템플릿을 만들어 주세요.
 - 매번 바뀌는 값: [ ]
 [형식] 고정 문구 + [ ] 자리표시자. 작성 시 유의사항 한 줄 첨부.`,promptEn:`[Role] Administrator
@@ -301,7 +472,31 @@ import{j as e}from"./markdown-uD28ob7P.js";import{b as h,f as v,u as P,L as d}fr
 [형식] 단계별 체크 항목 + 담당/기한 열. 빠지기 쉬운 항목 표시.`,promptEn:`[Role] Administrator
 [Context] Make a checklist to prevent misses in [procedure].
 - Procedure: [ ]
-[Format] Step checklist + owner/deadline; flag easy-to-miss items.`},{level:"advanced",titleKo:"부서 공용 프롬프트 가이드",titleEn:"Team Prompt Guide",promptKo:"[심화 과제] 부서원 누구나 같은 품질로 쓸 수 있는 공용 프롬프트 가이드라인을 설계하세요. 업무 유형 분류 → 유형별 표준 프롬프트 → 사용 규칙(개인정보·검토 절차)까지 포함하도록 지정하는 것이 핵심입니다.",promptEn:"[Advanced] Design a shared team prompt guideline anyone can use for consistent quality: task taxonomy → standard prompt per type → usage rules (privacy, review). The key is including the rules."}],"work-automation":[{level:"basic",titleKo:"반복 업무 단계 분해",titleEn:"Break Down a Task",promptKo:`[역할] 업무 개선 담당자
+[Format] Step checklist + owner/deadline; flag easy-to-miss items.`},{level:"advanced",titleKo:"부서 공용 프롬프트 가이드",titleEn:"Team Prompt Guide",promptKo:"[심화 과제] 부서원 누구나 같은 품질로 쓸 수 있는 공용 프롬프트 가이드라인을 설계하세요. 업무 유형 분류 → 유형별 표준 프롬프트 → 사용 규칙(개인정보·검토 절차)까지 포함하도록 지정하는 것이 핵심입니다.",promptEn:"[Advanced] Design a shared team prompt guideline anyone can use for consistent quality: task taxonomy → standard prompt per type → usage rules (privacy, review). The key is including the rules."},{level:"basic",titleKo:"이메일 회신 템플릿",titleEn:"Email Reply Template",promptKo:`[역할] 행정 담당자
+[맥락] 자주 받는 [문의 유형]에 대한 이메일 회신 템플릿을 만들어 주세요.
+- 문의 유형: [일정 문의·자료 요청 등]
+[형식] 인사 → 답변 본문(자리표시자) → 안내 → 맺음말. 정중한 업무 이메일체.`,promptEn:`[Role] Administrator
+[Context] Create an email reply template for a common [inquiry type].
+- Type: [schedule/data request...]
+[Format] Greeting → body (placeholders) → guidance → closing. Polite business tone.`},{level:"basic",titleKo:"업무 인수인계서 양식",titleEn:"Handover Document Form",promptKo:`[역할] 행정 담당자
+[맥락] 담당 업무를 후임자에게 넘길 인수인계서 양식을 만들어 주세요.
+- 업무 범위: [ ]
+[형식] 「담당 업무 목록 → 진행중 사안 → 주요 연락처 → 파일 위치 → 유의사항」 표.`,promptEn:`[Role] Administrator
+[Context] Make a handover form for a successor.
+- Scope: [ ]
+[Format] Task list → in-progress items → key contacts → file locations → notes (table).`},{level:"applied",titleKo:"프로젝트 진행보고 템플릿",titleEn:"Project Status Template",promptKo:`[역할] 사업 담당자
+[맥락] [프로젝트]의 정기 진행보고 템플릿을 설계해 주세요.
+- 보고 주기: [주간/월간]
+[형식] 「전체 진척률 → 이번 기간 완료 → 진행중 → 이슈/리스크 → 다음 계획」. 매번 채우기만 하면 되게.`,promptEn:`[Role] Project staff
+[Context] Design a periodic status-report template for [project].
+- Cadence: [weekly/monthly]
+[Format] Overall progress → done → in progress → issues/risks → next. Fill-in-the-blank.`},{level:"applied",titleKo:"회의 준비·진행 템플릿",titleEn:"Meeting Prep/Run Template",promptKo:`[역할] 회의 주관자
+[맥락] 회의를 효율적으로 준비하고 진행할 템플릿을 만들어 주세요.
+- 회의 유형: [정기회의·킥오프 등]
+[형식] 사전(안건·자료·참석자) / 진행(시간배분·역할) / 사후(회의록·후속조치) 3부 체크리스트.`,promptEn:`[Role] Meeting host
+[Context] Make a template to prep and run meetings efficiently.
+- Type: [regular/kickoff...]
+[Format] Before (agenda/materials/attendees) / During (timing/roles) / After (minutes/follow-up).`},{level:"advanced",titleKo:"신입 업무 매뉴얼 자동 생성",titleEn:"New-Staff Manual Generator",promptKo:"[심화 과제] 우리 부서 업무를 처음 맡는 사람이 바로 따라 할 수 있는 업무 매뉴얼을, 업무 목록만 입력하면 각 업무의 목적·절차·주의사항·관련 양식까지 일관된 형식으로 생성하는 프롬프트를 설계하세요. 초보자가 이해할 수준으로 서술하도록 지정하는 것이 핵심입니다.",promptEn:"[Advanced] Design a prompt that, from just a task list, generates a beginner-ready work manual — each task's purpose, steps, cautions, and related forms — in a consistent format. The key is writing at a novice level."}],"work-automation":[{level:"basic",titleKo:"반복 업무 단계 분해",titleEn:"Break Down a Task",promptKo:`[역할] 업무 개선 담당자
 [맥락] 아래 반복 업무를 단계별로 분해하고, 각 단계에서 AI가 도울 수 있는 부분을 표시해 주세요.
 - 업무: [ ]
 [형식] 단계 → 현재 방식 → AI 활용 가능성(상/중/하) 표.`,promptEn:`[Role] Improvement lead
@@ -353,7 +548,31 @@ import{j as e}from"./markdown-uD28ob7P.js";import{b as h,f as v,u as P,L as d}fr
 [형식] ① Excel 집계 방법(수식/피벗) ② 그 결과를 보여줄 PPT 슬라이드 구조.`,promptEn:`[Role] HR staff
 [Context] Build an Excel summary and a report PPT structure from the HR data.
 - (HR data)
-[Format] ① Excel method (formula/pivot) ② PPT slide structure showing it.`},{level:"advanced",titleKo:"인사 업무 End-to-End 포트폴리오",titleEn:"HR End-to-End Portfolio",promptKo:"[심화 과제] 실제 인사 업무 1건을 골라, 데이터 분석 → 문서 작성 → 보고자료 제작까지 AI로 처리하는 전 과정을 프롬프트 세트로 설계하고, 결과물을 포트폴리오로 정리하세요. 각 단계 산출물이 다음 단계 입력으로 이어지도록 구성하는 것이 핵심입니다.",promptEn:"[Advanced] Pick one real HR task and design a prompt set covering the whole flow — data analysis → document writing → report — then compile the outputs as a portfolio. The key is chaining each step's output into the next."}]},m={basic:{ko:"🟢 기초 — 그대로 복사해 실행",en:"🟢 Basic — copy and run as-is",badge:"basic"},applied:{ko:"🟡 응용 — [  ]를 바꿔 실행",en:"🟡 Applied — change [  ] and run",badge:"applied"},advanced:{ko:"🔴 심화 — 직접 설계",en:"🔴 Advanced — design it yourself",badge:"advanced"}},C=[{id:"ai-basics",titleKo:"생성형 AI의 이해와 활용 전략",titleEn:"Understanding Generative AI",descKo:"AI 개념, 주요 서비스 비교, 대학 행정 활용 사례",descEn:"AI concepts, major service comparison, university administration use cases",sections:[{titleKo:"생성형 AI란?",titleEn:"What is Generative AI?",contentKo:`생성형 AI(Generative AI)는 텍스트, 이미지, 코드 등 새로운 콘텐츠를 생성할 수 있는 인공지능입니다.
+[Format] ① Excel method (formula/pivot) ② PPT slide structure showing it.`},{level:"advanced",titleKo:"인사 업무 End-to-End 포트폴리오",titleEn:"HR End-to-End Portfolio",promptKo:"[심화 과제] 실제 인사 업무 1건을 골라, 데이터 분석 → 문서 작성 → 보고자료 제작까지 AI로 처리하는 전 과정을 프롬프트 세트로 설계하고, 결과물을 포트폴리오로 정리하세요. 각 단계 산출물이 다음 단계 입력으로 이어지도록 구성하는 것이 핵심입니다.",promptEn:"[Advanced] Pick one real HR task and design a prompt set covering the whole flow — data analysis → document writing → report — then compile the outputs as a portfolio. The key is chaining each step's output into the next."},{level:"basic",titleKo:"인사 공지문 작성",titleEn:"HR Announcement",promptKo:`[역할] 인사 담당자
+[맥락] 전 직원 대상 인사 공지문을 작성해 주세요.
+- 공지 내용: [정기 인사발령·평가 일정 안내 등]
+[형식] 제목 → 핵심 안내 → 일정/대상 → 문의처. 명확하고 간결하게.`,promptEn:`[Role] HR staff
+[Context] Write an all-staff HR announcement.
+- Topic: [regular appointments/appraisal schedule...]
+[Format] Title → key notice → schedule/target → contact. Clear and concise.`},{level:"basic",titleKo:"근태 이상 사례 정리",titleEn:"Attendance Issue Notes",promptKo:`[역할] 인사 담당자
+[맥락] 아래 근태 이상 사례들을 관리 대장으로 정리해 주세요.
+- (사례 데이터: 대상·유형·발생일)
+[형식] 유형별 분류 표 + 반복 사례 표시 + 조치 필요/완료 상태. ※ 개인정보 취급 주의 문구.`,promptEn:`[Role] HR staff
+[Context] Organize the attendance issues into a log.
+- (cases: person/type/date)
+[Format] Type table + repeat flags + action needed/done. Add a privacy-handling note.`},{level:"applied",titleKo:"인사평가 피드백 문서",titleEn:"Appraisal Feedback Document",promptKo:`[역할] 평가 담당자
+[맥락] 아래 평가 결과를 바탕으로 피드백 면담용 문서를 작성해 주세요.
+- 강점·개선점·목표: [ ]
+[형식] 강점 인정 → 구체적 개선 사례 → 다음 기간 목표(SMART) → 지원 방안. 성장 중심 어조.`,promptEn:`[Role] Appraiser
+[Context] Write a feedback-session document from the results.
+- Strengths/improvements/goals: [ ]
+[Format] Recognize strengths → concrete improvements → next-period goals (SMART) → support. Growth-oriented tone.`},{level:"applied",titleKo:"인력운영 개선 제안서",titleEn:"Workforce Improvement Proposal",promptKo:`[역할] 인사 기획 담당자
+[맥락] 아래 현황을 근거로 인력운영 개선 제안서를 작성해 주세요.
+- 문제 현황: [업무 편중·공백 등] / 제안 방향: [ ]
+[형식] 현황·문제 → 원인 → 개선 제안(대안 비교) → 기대효과 → 실행 일정.`,promptEn:`[Role] HR planning staff
+[Context] Write a workforce-improvement proposal from the situation.
+- Problem: [workload imbalance/gaps...] / Direction: [ ]
+[Format] Situation → cause → proposal (options) → expected impact → timeline.`},{level:"advanced",titleKo:"인사팀 1개월 업무 종합 시뮬레이션",titleEn:"One-Month HR Ops Simulation",promptKo:"[심화 과제] 인사팀의 한 달치 대표 업무(채용 1건·평가 정리·근태 분석·복지 안내·보고 1건)를 골라, 각 업무를 AI로 처리하는 프롬프트를 순서대로 설계하고 하나의 업무 흐름으로 엮으세요. 업무 간 데이터·문서가 재활용되도록 연결하는 것이 핵심입니다.",promptEn:"[Advanced] Pick one month's representative HR tasks (a hire, appraisal compilation, attendance analysis, benefits notice, one report), design an AI prompt for each in sequence, and weave them into one workflow. The key is reusing data/documents across tasks."}]},m={basic:{ko:"🟢 기초 — 그대로 복사해 실행",en:"🟢 Basic — copy and run as-is",badge:"basic"},applied:{ko:"🟡 응용 — [  ]를 바꿔 실행",en:"🟡 Applied — change [  ] and run",badge:"applied"},advanced:{ko:"🔴 심화 — 직접 설계",en:"🔴 Advanced — design it yourself",badge:"advanced"}},b=[{id:"ai-basics",titleKo:"생성형 AI의 이해와 활용 전략",titleEn:"Understanding Generative AI",descKo:"AI 개념, 주요 서비스 비교, 대학 행정 활용 사례",descEn:"AI concepts, major service comparison, university administration use cases",sections:[{titleKo:"생성형 AI란?",titleEn:"What is Generative AI?",contentKo:`생성형 AI(Generative AI)는 텍스트, 이미지, 코드 등 새로운 콘텐츠를 생성할 수 있는 인공지능입니다.
 
 **핵심 개념**
 - **LLM (Large Language Model)**: 대규모 텍스트 데이터로 학습한 언어 모델
@@ -550,7 +769,7 @@ Gradually improve prompts based on initial results.
 [Include] Status summary, Key achievements, Issues and improvements, Future plans
 [Length] {pages}
 [Tone] {tone}
-\`\`\``}]}],b=[{id:"official-documents",titleKo:"AI 활용 공문서 작성",titleEn:"AI-Powered Official Document Writing",descKo:"공문서 초안, 기안문, 통보문 자동 생성 | 활용 도구: ChatGPT, Claude, HWP",descEn:"Auto-generate official document drafts, proposals, and notices | Tools: ChatGPT, Claude, HWP",sections:[{titleKo:"대학 행정 공문서 유형",titleEn:"University Administrative Document Types",contentKo:`| 유형 | 설명 | 예시 |
+\`\`\``}]}],C=[{id:"official-documents",titleKo:"AI 활용 공문서 작성",titleEn:"AI-Powered Official Document Writing",descKo:"공문서 초안, 기안문, 통보문 자동 생성 | 활용 도구: ChatGPT, Claude, HWP",descEn:"Auto-generate official document drafts, proposals, and notices | Tools: ChatGPT, Claude, HWP",sections:[{titleKo:"대학 행정 공문서 유형",titleEn:"University Administrative Document Types",contentKo:`| 유형 | 설명 | 예시 |
 |------|------|------|
 | **기안문** | 업무를 기획·제안하는 문서 | 예산 신청, 행사 기획안 |
 | **통보문** | 결정 사항을 알리는 문서 | 합격 통보, 일정 안내 |
@@ -1212,7 +1431,7 @@ Complete the following 4 deliverables using AI in order.
 **Submission Format**
 - File naming: \`[Name]_TaskNumber_Title.extension\`
 - Example: \`HongGilDong_01_DeptEvalNotice.hwp\`
-- Submit: Shared folder or LMS upload`}]}],T=[{id:"hr-ai",titleKo:"인사·근태 관리 AI 활용",titleEn:"HR & Attendance AI Application",descKo:"AI 기반 인사 업무 효율화, 근태 데이터 분석 | 활용 도구: ChatGPT, Claude, Excel",descEn:"AI-based HR efficiency, attendance data analysis | Tools: ChatGPT, Claude, Excel",sections:[{titleKo:"인사 업무 AI 활용 영역",titleEn:"AI Applications in HR",contentKo:`| 업무 영역 | AI 활용 방안 | 예상 효과 |
+- Submit: Shared folder or LMS upload`}]}],R=[{id:"hr-ai",titleKo:"인사·근태 관리 AI 활용",titleEn:"HR & Attendance AI Application",descKo:"AI 기반 인사 업무 효율화, 근태 데이터 분석 | 활용 도구: ChatGPT, Claude, Excel",descEn:"AI-based HR efficiency, attendance data analysis | Tools: ChatGPT, Claude, Excel",sections:[{titleKo:"인사 업무 AI 활용 영역",titleEn:"AI Applications in HR",contentKo:`| 업무 영역 | AI 활용 방안 | 예상 효과 |
 |-----------|-------------|-----------|
 | **채용** | 공고 작성, 면접 질문 생성, 평가 기준 수립 | 작성 시간 70% 단축 |
 | **인사발령** | 발령 문서 자동 생성, 표준화 | 오류 감소, 일관성 확보 |
@@ -1920,6 +2139,6 @@ Complete the following 5 deliverables using AI in order.
 - [ ] Can visualize data for report materials
 - [ ] Can design automation workflows for repetitive tasks
 - [ ] Understand privacy principles when using AI
-- [ ] Have established a specific plan for applying AI to work`}]}],g=[{id:"basic",titleKo:"기본학습자료",titleEn:"Basic Materials",descKo:"생성형 AI 개념과 프롬프트 엔지니어링 기초",descEn:"Generative AI concepts and prompt engineering basics",topics:C},{id:"document",titleKo:"문서행정 자동화",titleEn:"Document Automation",descKo:"1일차 - 공문서, PPT, Excel 자동화",descEn:"Documents, PPT, Excel automation",topics:b},{id:"hr",titleKo:"인사행정 자동화",titleEn:"HR Automation",descKo:"인사·근태, 보고자료, 업무자동화",descEn:"HR, attendance, reports, workflow",topics:T}];function S(){const{language:s}=A(),a=s==="ko",{category:i}=v(),r=P(),n=g.find(t=>t.id===i)||g[0];return h.useEffect(()=>{if(r.hash){const t=r.hash.slice(1);setTimeout(()=>{var o;return(o=document.getElementById(t))==null?void 0:o.scrollIntoView({behavior:"smooth",block:"start"})},150)}else window.scrollTo({top:0})},[r.hash,i]),e.jsxs("div",{className:"learning-page",children:[e.jsx(E,{title:a?n.titleKo:n.titleEn}),e.jsxs("div",{className:"learning-layout",children:[e.jsx("aside",{className:"learning-sidebar",children:e.jsxs("div",{className:"sidebar-inner",children:[e.jsx("div",{className:"sidebar-header",children:a?n.titleKo:n.titleEn}),e.jsxs("div",{className:"sidebar-group",children:[e.jsx("div",{className:"sidebar-group-title",children:a?"학습 주제":"Topics"}),n.topics.map(t=>e.jsx("a",{href:`#${t.id}`,className:"sidebar-item",onClick:o=>{var l;o.preventDefault(),(l=document.getElementById(t.id))==null||l.scrollIntoView({behavior:"smooth",block:"start"})},children:a?t.titleKo:t.titleEn},t.id))]}),e.jsxs("div",{className:"sidebar-group",children:[e.jsx("div",{className:"sidebar-group-title",children:a?"바로가기":"Quick Links"}),e.jsx(d,{to:"/tools",className:"sidebar-item",children:a?"도구 가이드":"Tool Guide"}),e.jsx(d,{to:"/community",className:"sidebar-item",children:a?"커뮤니티":"Community"})]})]})}),e.jsxs("div",{className:"learning-content",children:[e.jsxs("div",{className:"learning-content-header",children:[e.jsx("h1",{children:a?n.titleKo:n.titleEn}),e.jsx("p",{children:a?n.descKo:n.descEn})]}),n.topics.map(t=>e.jsxs("section",{id:t.id,className:"topic-section",children:[e.jsx("div",{className:"topic-header",children:e.jsxs("div",{className:"topic-header-text",children:[e.jsx("h2",{children:a?t.titleKo:t.titleEn}),e.jsx("p",{children:a?t.descKo:t.descEn})]})}),e.jsxs("div",{className:"topic-content",children:[t.sections.map((o,l)=>e.jsxs("div",{className:"section-block",children:[e.jsx("h3",{className:"section-block-title",children:a?o.titleKo:o.titleEn}),e.jsx("div",{className:"section-block-body",children:I(a?o.contentKo:o.contentEn,a)})]},l)),u[t.id]&&e.jsxs("div",{className:"section-block",children:[e.jsxs("h3",{className:"section-block-title",children:[e.jsx("i",{className:"fa-solid fa-dumbbell",style:{marginRight:8,color:"var(--primary-blue)"}}),a?"실습 문제 (난이도별)":"Practice (by Level)"]}),e.jsxs("div",{className:"section-block-body",children:[e.jsx("p",{className:"practice-bank-intro",children:a?"진도에 맞춰 골라 연습하세요. 각 프롬프트는 복사 버튼으로 복사해 ChatGPT·Claude 등에 붙여넣고 실습할 수 있습니다.":"Pick by your pace. Copy each prompt and paste it into ChatGPT/Claude to practice."}),["basic","applied","advanced"].map(o=>{const l=u[t.id].filter(c=>c.level===o);return l.length===0?null:e.jsxs("div",{className:"practice-bank-level",children:[e.jsx("h4",{className:`practice-bank-level-title ${m[o].badge}`,children:a?m[o].ko:m[o].en}),l.map((c,y)=>e.jsxs("div",{className:"practice-bank-item",children:[e.jsx("div",{className:"practice-bank-item-title",children:a?c.titleKo:c.titleEn}),e.jsx(f,{code:a?c.promptKo:c.promptEn,isKo:a})]},y))]},o)})]})]})]})]},t.id))]})]})]})}function I(s,a=!0){const i=s.split(`
-`),r=[];let n=0;for(;n<i.length;){const t=i[n];if(t.startsWith("```")){const o=[];for(n++;n<i.length&&!i[n].startsWith("```");)o.push(i[n]),n++;n++,r.push(e.jsx(f,{code:o.join(`
-`),isKo:a},`code-${n}`));continue}if(t.startsWith("|")){const o=[];for(;n<i.length&&i[n].startsWith("|");)o.push(i[n]),n++;r.push(R(o,`tbl-${n}`));continue}if(t.startsWith("**")&&t.endsWith("**")){r.push(e.jsx("h4",{dangerouslySetInnerHTML:{__html:p(t)}},n)),n++;continue}if(t.startsWith(">")){r.push(e.jsx("blockquote",{dangerouslySetInnerHTML:{__html:p(t.slice(1).trim())}},n)),n++;continue}if(t.startsWith("- [")){r.push(e.jsx("div",{className:"checklist-item",dangerouslySetInnerHTML:{__html:p(t)}},n)),n++;continue}if(t.startsWith("- ")||t.startsWith("* ")){r.push(e.jsx("li",{dangerouslySetInnerHTML:{__html:p(t.slice(2))}},n)),n++;continue}if(/^\d+\.\s/.test(t)){r.push(e.jsx("li",{className:"ol-item",dangerouslySetInnerHTML:{__html:p(t.replace(/^\d+\.\s/,""))}},n)),n++;continue}if(!t.trim()){n++;continue}r.push(e.jsx("p",{dangerouslySetInnerHTML:{__html:p(t)}},n)),n++}return r}function R(s,a){const i=s.filter(t=>!t.trim().match(/^\|[-:\s|]+\|$/)).map(t=>t.split("|").filter(o=>o.trim()).map(o=>o.trim()));if(i.length===0)return null;const r=i[0],n=i.slice(1);return e.jsxs("table",{children:[e.jsx("thead",{children:e.jsx("tr",{children:r.map((t,o)=>e.jsx("th",{dangerouslySetInnerHTML:{__html:p(t)}},o))})}),e.jsx("tbody",{children:n.map((t,o)=>e.jsx("tr",{children:t.map((l,c)=>e.jsx("td",{dangerouslySetInnerHTML:{__html:p(l)}},c))},o))})]},a)}function p(s){return s.replace(/\*\*(.+?)\*\*/g,"<strong>$1</strong>").replace(/`(.+?)`/g,"<code>$1</code>").replace(/\[(.+?)\]\((.+?)\)/g,'<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>').replace(/- \[ \]/g,'<span class="check-box">&#9744;</span>').replace(/- \[x\]/g,'<span class="check-box checked">&#9745;</span>')}export{S as default};
+- [ ] Have established a specific plan for applying AI to work`}]}],f=[{id:"basic",titleKo:"기본학습자료",titleEn:"Basic Materials",descKo:"생성형 AI 개념과 프롬프트 엔지니어링 기초",descEn:"Generative AI concepts and prompt engineering basics",topics:b},{id:"document",titleKo:"문서행정 자동화",titleEn:"Document Automation",descKo:"1일차 - 공문서, PPT, Excel 자동화",descEn:"Documents, PPT, Excel automation",topics:C},{id:"hr",titleKo:"인사행정 자동화",titleEn:"HR Automation",descKo:"인사·근태, 보고자료, 업무자동화",descEn:"HR, attendance, reports, workflow",topics:R}];function F(){const{language:s}=P(),a=s==="ko",{category:i}=v(),r=E(),o=f.find(t=>t.id===i)||f[0];return g.useEffect(()=>{if(r.hash){const t=r.hash.slice(1);setTimeout(()=>{var n;return(n=document.getElementById(t))==null?void 0:n.scrollIntoView({behavior:"smooth",block:"start"})},150)}else window.scrollTo({top:0})},[r.hash,i]),e.jsxs("div",{className:"learning-page",children:[e.jsx(A,{title:a?o.titleKo:o.titleEn}),e.jsxs("div",{className:"learning-layout",children:[e.jsx("aside",{className:"learning-sidebar",children:e.jsxs("div",{className:"sidebar-inner",children:[e.jsx("div",{className:"sidebar-header",children:a?o.titleKo:o.titleEn}),e.jsxs("div",{className:"sidebar-group",children:[e.jsx("div",{className:"sidebar-group-title",children:a?"학습 주제":"Topics"}),o.topics.map(t=>e.jsx("a",{href:`#${t.id}`,className:"sidebar-item",onClick:n=>{var l;n.preventDefault(),(l=document.getElementById(t.id))==null||l.scrollIntoView({behavior:"smooth",block:"start"})},children:a?t.titleKo:t.titleEn},t.id))]}),e.jsxs("div",{className:"sidebar-group",children:[e.jsx("div",{className:"sidebar-group-title",children:a?"바로가기":"Quick Links"}),e.jsx(d,{to:"/tools",className:"sidebar-item",children:a?"도구 가이드":"Tool Guide"}),e.jsx(d,{to:"/community",className:"sidebar-item",children:a?"커뮤니티":"Community"})]})]})}),e.jsxs("div",{className:"learning-content",children:[e.jsxs("div",{className:"learning-content-header",children:[e.jsx("h1",{children:a?o.titleKo:o.titleEn}),e.jsx("p",{children:a?o.descKo:o.descEn})]}),o.topics.map(t=>e.jsxs("section",{id:t.id,className:"topic-section",children:[e.jsx("div",{className:"topic-header",children:e.jsxs("div",{className:"topic-header-text",children:[e.jsx("h2",{children:a?t.titleKo:t.titleEn}),e.jsx("p",{children:a?t.descKo:t.descEn})]})}),e.jsxs("div",{className:"topic-content",children:[t.sections.map((n,l)=>e.jsxs("div",{className:"section-block",children:[e.jsx("h3",{className:"section-block-title",children:a?n.titleKo:n.titleEn}),e.jsx("div",{className:"section-block-body",children:T(a?n.contentKo:n.contentEn,a)})]},l)),u[t.id]&&e.jsxs("div",{className:"section-block",children:[e.jsxs("h3",{className:"section-block-title",children:[e.jsx("i",{className:"fa-solid fa-dumbbell",style:{marginRight:8,color:"var(--primary-blue)"}}),a?"실습 문제 (난이도별)":"Practice (by Level)"]}),e.jsxs("div",{className:"section-block-body",children:[e.jsx("p",{className:"practice-bank-intro",children:a?"진도에 맞춰 골라 연습하세요. 각 프롬프트는 복사 버튼으로 복사해 ChatGPT·Claude 등에 붙여넣고 실습할 수 있습니다.":"Pick by your pace. Copy each prompt and paste it into ChatGPT/Claude to practice."}),["basic","applied","advanced"].map(n=>{const l=u[t.id].filter(p=>p.level===n);return l.length===0?null:e.jsxs("div",{className:"practice-bank-level",children:[e.jsx("h4",{className:`practice-bank-level-title ${m[n].badge}`,children:a?m[n].ko:m[n].en}),l.map((p,y)=>e.jsxs("div",{className:"practice-bank-item",children:[e.jsx("div",{className:"practice-bank-item-title",children:a?p.titleKo:p.titleEn}),e.jsx(h,{code:a?p.promptKo:p.promptEn,isKo:a})]},y))]},n)})]})]})]})]},t.id))]})]})]})}function T(s,a=!0){const i=s.split(`
+`),r=[];let o=0;for(;o<i.length;){const t=i[o];if(t.startsWith("```")){const n=[];for(o++;o<i.length&&!i[o].startsWith("```");)n.push(i[o]),o++;o++,r.push(e.jsx(h,{code:n.join(`
+`),isKo:a},`code-${o}`));continue}if(t.startsWith("|")){const n=[];for(;o<i.length&&i[o].startsWith("|");)n.push(i[o]),o++;r.push(K(n,`tbl-${o}`));continue}if(t.startsWith("**")&&t.endsWith("**")){r.push(e.jsx("h4",{dangerouslySetInnerHTML:{__html:c(t)}},o)),o++;continue}if(t.startsWith(">")){r.push(e.jsx("blockquote",{dangerouslySetInnerHTML:{__html:c(t.slice(1).trim())}},o)),o++;continue}if(t.startsWith("- [")){r.push(e.jsx("div",{className:"checklist-item",dangerouslySetInnerHTML:{__html:c(t)}},o)),o++;continue}if(t.startsWith("- ")||t.startsWith("* ")){r.push(e.jsx("li",{dangerouslySetInnerHTML:{__html:c(t.slice(2))}},o)),o++;continue}if(/^\d+\.\s/.test(t)){r.push(e.jsx("li",{className:"ol-item",dangerouslySetInnerHTML:{__html:c(t.replace(/^\d+\.\s/,""))}},o)),o++;continue}if(!t.trim()){o++;continue}r.push(e.jsx("p",{dangerouslySetInnerHTML:{__html:c(t)}},o)),o++}return r}function K(s,a){const i=s.filter(t=>!t.trim().match(/^\|[-:\s|]+\|$/)).map(t=>t.split("|").filter(n=>n.trim()).map(n=>n.trim()));if(i.length===0)return null;const r=i[0],o=i.slice(1);return e.jsxs("table",{children:[e.jsx("thead",{children:e.jsx("tr",{children:r.map((t,n)=>e.jsx("th",{dangerouslySetInnerHTML:{__html:c(t)}},n))})}),e.jsx("tbody",{children:o.map((t,n)=>e.jsx("tr",{children:t.map((l,p)=>e.jsx("td",{dangerouslySetInnerHTML:{__html:c(l)}},p))},n))})]},a)}function c(s){return s.replace(/\*\*(.+?)\*\*/g,"<strong>$1</strong>").replace(/`(.+?)`/g,"<code>$1</code>").replace(/\[(.+?)\]\((.+?)\)/g,'<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>').replace(/- \[ \]/g,'<span class="check-box">&#9744;</span>').replace(/- \[x\]/g,'<span class="check-box checked">&#9745;</span>')}export{F as default};
