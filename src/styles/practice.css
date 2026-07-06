@@ -344,9 +344,9 @@
   color: var(--text-light);
   margin-bottom: 16px;
   padding: 8px 12px;
-  background: #fffbeb;
+  background: #EEF5FD;
   border-radius: var(--radius-sm);
-  border: 1px solid #fbd38d;
+  border: 1px solid #BBDEFB;
 }
 .write-textarea {
   width: 100%;
@@ -680,7 +680,7 @@
   color: var(--text-light);
   line-height: 1.6;
   padding: 8px 12px;
-  background: #fffbeb;
+  background: #EEF5FD;
   border-radius: var(--radius-sm);
 }
 
@@ -1200,8 +1200,8 @@
   align-items: flex-start;
   gap: 12px;
   padding: 14px 16px;
-  background: #FFF8E1;
-  border-left: 4px solid #FF8F00;
+  background: #E3F2FD;
+  border-left: 4px solid #1565C0;
   border-radius: var(--radius-md);
   margin-bottom: 20px;
   font-size: 14px;
@@ -1209,7 +1209,7 @@
   line-height: 1.7;
 }
 .workshop-hint i {
-  color: #FF8F00;
+  color: #1565C0;
   margin-top: 2px;
   flex-shrink: 0;
 }

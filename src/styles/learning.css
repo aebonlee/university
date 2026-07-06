@@ -290,7 +290,7 @@ html[data-theme="dark"] .sidebar-item.active {
     border: 1px solid #C8E6C9;
 }
 .section-block-body blockquote {
-    border-left: 4px solid #FF8F00;
+    border-left: 4px solid #1565C0;
     padding: 10px 16px;
     margin: 12px 0;
     background: #FFF8E1;

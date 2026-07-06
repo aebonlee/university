@@ -23,8 +23,9 @@
     --primary-blue-dark: #0D3B13;
     --primary-blue-light: #2E7D32;
 
-    --accent-amber: #FF8F00;
-    --accent-amber-light: #FFA726;
+    /* 브랜드 보조색 = 파랑 (기본 녹색 테마의 액센트). 변수명은 호환 위해 유지 */
+    --accent-amber: #1565C0;
+    --accent-amber-light: #E3F2FD;
 
     --bg-white: #FFFFFF;
     --bg-light-gray: #F5F7FA;
@@ -76,6 +77,9 @@ html[data-color="blue"] {
     --hero-bg: linear-gradient(135deg, #1565C0 0%, #0D47A1 50%, #1A3A5F 100%);
     --hero-bg-dark: linear-gradient(135deg, #0D3B70 0%, #0D47A1 50%, #142D58 100%);
     --highlight-gradient: linear-gradient(135deg, #90CAF9 0%, #BBDEFB 50%, #FFFFFF 100%);
+    /* 파랑 테마: 보조색을 녹색으로 → 파랑(주) + 녹색(보조) 2색 유지 */
+    --accent-amber: #2E7D32;
+    --accent-amber-light: #E8F5E9;
 }
 
 /* Color Theme: Purple */

@@ -491,7 +491,7 @@ html[data-theme="dark"] .guide-nav-sub-list {
     font-size: 14px;
 }
 .tip-box.tip { background: #E8F5E9; border-color: #4CAF50; }
-.tip-box.warning { background: #FFF8E1; border-color: #FF8F00; }
+.tip-box.warning { background: #E3F2FD; border-color: #1565C0; }
 .tip-box.important { background: #E3F2FD; border-color: #1976D2; }
 .tip-box.danger { background: #FFEBEE; border-color: #D32F2F; }
 .tip-box-icon {
@@ -500,7 +500,7 @@ html[data-theme="dark"] .guide-nav-sub-list {
     margin-top: 2px;
 }
 .tip-box.tip .tip-box-icon { color: #2E7D32; }
-.tip-box.warning .tip-box-icon { color: #FF8F00; }
+.tip-box.warning .tip-box-icon { color: #1565C0; }
 .tip-box.important .tip-box-icon { color: #1976D2; }
 .tip-box.danger .tip-box-icon { color: #D32F2F; }
 .tip-box-content {
@@ -645,8 +645,8 @@ html[data-theme="dark"] .guide-nav-sub-list {
     flex-shrink: 0;
 }
 .tool-tip-icon.warning {
-    background: #FFF8E1;
-    color: #E65100;
+    background: #E3F2FD;
+    color: #1565C0;
 }
 .tool-tip-icon.steps {
     background: #E3F2FD;
@@ -1242,7 +1242,7 @@ html[data-theme="dark"] .aioni-banner {
     background: var(--primary-blue);
 }
 .labs-badge.new { background: #4CAF50; }
-.labs-badge.beta { background: #FF8F00; }
+.labs-badge.beta { background: #1976D2; }
 .labs-badge.update { background: #1565C0; }
 
 html[data-theme="dark"] .channel-icon,

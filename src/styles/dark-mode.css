@@ -201,7 +201,7 @@ html[data-theme="dark"] .workshop-score-ref {
 
 /* 힌트(노란 박스) */
 html[data-theme="dark"] .workshop-hint {
-  background: rgba(255, 143, 0, 0.12);
+  background: rgba(21, 101, 192, 0.15);
   color: var(--text-secondary);
 }
 
@@ -274,8 +274,8 @@ html[data-theme="dark"] .write-scenario {
 }
 html[data-theme="dark"] .write-hint,
 html[data-theme="dark"] .result-quiz-explain {
-  background: rgba(255, 143, 0, 0.12);
-  border-color: rgba(255, 143, 0, 0.3);
+  background: rgba(21, 101, 192, 0.15);
+  border-color: rgba(21, 101, 192, 0.35);
 }
 
 /* 추천 항목 hover, CTA */
