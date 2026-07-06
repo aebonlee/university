@@ -8,11 +8,12 @@ import { signOut } from '../../utils/auth';
 const NAV_ITEMS = [
   { path: '/about', ko: 'About', en: 'About' },
   { path: '/materials/basic', ko: '기본학습', en: 'Basics' },
-  { path: '/materials/document', ko: '문서행정 자동화', en: 'Document Automation' },
-  { path: '/materials/hr', ko: '인사행정 자동화', en: 'HR Automation' },
+  { path: '/materials/document', ko: '문서행정', en: 'Documents' },
+  { path: '/materials/hr', ko: '인사행정', en: 'HR' },
   { path: '/prompt-eval', ko: '프롬프트 실습', en: 'Prompt Lab' },
   { path: '/tools', ko: '도구 가이드', en: 'Tool Guide' },
   { path: '/community', ko: '커뮤니티', en: 'Community' },
+  { path: '/recommended', ko: '추천사이트', en: 'Recommended Sites' },
 ];
 
 export default function Navbar() {

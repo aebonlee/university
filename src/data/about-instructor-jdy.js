@@ -86,7 +86,7 @@ A vocational education expert with over **20 years** of experience in the IT fie
 | 학위 | 학교 | 전공 | 연도 |
 |------|------|------|------|
 | **박사수료** | 경기대학교 대학원 | 직업학과 | 2024 |
-| **석사** | 가천대학교 | (관련 분야) | 2014 |
+| **석사** | 가천대학교 | — | 2014 |
 | **석사** | 국제문화대학원대학교 | 교육학 | 2012 |
 | **학사** | 부산외국어대학교 | 공학 | 1994 |
 
@@ -111,7 +111,7 @@ A vocational education expert with over **20 years** of experience in the IT fie
 | Degree | University | Major | Year |
 |--------|-----------|-------|------|
 | **Ph.D Coursework** | Kyonggi University | Vocational Studies | 2024 |
-| **Master's** | Gachon University | (Related Field) | 2014 |
+| **Master's** | Gachon University | — | 2014 |
 | **Master's** | International Graduate University of Culture | Education | 2012 |
 | **Bachelor's** | Busan University of Foreign Studies | Engineering | 1994 |
 

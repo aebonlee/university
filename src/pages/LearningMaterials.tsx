@@ -61,18 +61,18 @@ const BASIC_TOPICS: Topic[] = [
         titleEn: 'Major AI Service Comparison',
         contentKo: `| 서비스 | 개발사 | 특징 | 추천 용도 |
 |--------|--------|------|-----------|
-| **ChatGPT** | OpenAI | 범용성, 다양한 플러그인, GPT-4o 지원 | 문서 작성, 코드 생성, 브레인스토밍 |
+| **ChatGPT** | OpenAI | 범용성, 다양한 플러그인, 최신 GPT 모델 지원 | 문서 작성, 코드 생성, 브레인스토밍 |
 | **Gemini** | Google | 검색 연동, 멀티모달, Google Workspace 통합 | 정보 검색, 이미지 분석, 데이터 분석 |
-| **Claude** | Anthropic | 긴 문맥(200K 토큰), 정확성, 안전성 | 장문 분석, 보고서 작성, 코드 리뷰 |
+| **Claude** | Anthropic | 긴 문맥(최대 100만 토큰), 정확성, 안전성 | 장문 분석, 보고서 작성, 코드 리뷰 |
 
 **무료 vs 유료 기능 비교**
 - 무료 버전: 기본 대화, 간단한 문서 작성 가능
 - 유료 버전: 더 긴 문맥, 고급 분석, 파일 업로드, 이미지 생성 등 지원`,
         contentEn: `| Service | Developer | Features | Recommended Use |
 |---------|-----------|----------|-----------------|
-| **ChatGPT** | OpenAI | Versatile, plugins, GPT-4o | Document writing, code, brainstorming |
+| **ChatGPT** | OpenAI | Versatile, plugins, latest GPT models | Document writing, code, brainstorming |
 | **Gemini** | Google | Search integration, multimodal | Information search, image analysis |
-| **Claude** | Anthropic | Long context (200K), accuracy | Long document analysis, reports |
+| **Claude** | Anthropic | Long context (up to 1M tokens), accuracy | Long document analysis, reports |
 
 **Free vs Paid Features**
 - Free: Basic conversation, simple document writing
@@ -143,7 +143,7 @@ AI에게 특정 전문가 역할을 부여합니다.
 **C - Context (맥락)**
 작업의 배경과 구체적인 조건을 제공합니다.
 \`\`\`
-전남대학교 교무처에서 2024학년도 2학기 수강 신청 안내 공문을 작성해야 합니다.
+전남대학교 교무처에서 2026학년도 2학기 수강 신청 안내 공문을 작성해야 합니다.
 수강 신청 기간은 8월 19일~23일이며, 대상은 재학생 전체입니다.
 \`\`\`
 
@@ -164,7 +164,7 @@ You are a university administration expert proficient in official document writi
 **C - Context**
 Provide background and specific conditions.
 \`\`\`
-The Academic Affairs Office needs to write a course registration notice for the 2nd semester of 2024.
+The Academic Affairs Office needs to write a course registration notice for the 2nd semester of 2026.
 \`\`\`
 
 **F - Format**
@@ -710,16 +710,18 @@ PPT structure design and content generation
 |------|-----------|------|
 | 조건부 개수 | \`=COUNTIF(A:A,"*전남대*")\` | 특정 텍스트 포함 행 수 |
 | 조건부 합계 | \`=SUMIFS(C:C,B:B,">=100")\` | 조건에 맞는 합계 |
-| 날짜 필터 | \`=FILTER(A:D,YEAR(D:D)=2024)\` | 특정 연도 데이터 |
+| 날짜 필터 | \`=FILTER(A:D,YEAR(D:D)=2026)\` | 특정 연도 데이터 |
 | 중복 제거 | \`=UNIQUE(A2:A100)\` | 고유값 목록 |
 | VLOOKUP | \`=VLOOKUP(A2,Sheet2!A:C,3,0)\` | 다른 시트에서 값 찾기 |
+
+> ⚠️ \`FILTER\`·\`UNIQUE\` 등 스필(spill) 함수는 **Microsoft 365 / Excel 2021 이상**에서만 동작합니다. 관공서·대학의 구버전(2016·2019)에서는 \`#NAME?\` 오류가 나므로, AI에 "구버전 Excel에서 쓸 수 있는 배열수식으로 알려줘"라고 요청하세요.
 
 **수식 생성 프롬프트 예시**
 \`\`\`
 Excel에서 다음 작업을 수행하는 수식을 알려주세요:
 1. A열에서 "전남대학교" 텍스트가 포함된 행의 수를 세기
 2. B열의 값이 100 이상인 행만 C열의 합계 구하기
-3. D열의 날짜가 2024년인 데이터만 필터링하기
+3. D열의 날짜가 2026년인 데이터만 필터링하기
 각 수식에 대해 설명과 함께 알려주세요.
 \`\`\``,
         contentEn: `When you describe Excel tasks to AI, it automatically generates appropriate formulas.
@@ -730,16 +732,18 @@ Excel에서 다음 작업을 수행하는 수식을 알려주세요:
 |------|--------------|-------------|
 | Conditional count | \`=COUNTIF(A:A,"*text*")\` | Count rows containing text |
 | Conditional sum | \`=SUMIFS(C:C,B:B,">=100")\` | Sum meeting conditions |
-| Date filter | \`=FILTER(A:D,YEAR(D:D)=2024)\` | Filter by year |
+| Date filter | \`=FILTER(A:D,YEAR(D:D)=2026)\` | Filter by year |
 | Remove duplicates | \`=UNIQUE(A2:A100)\` | Unique value list |
 | VLOOKUP | \`=VLOOKUP(A2,Sheet2!A:C,3,0)\` | Find value from another sheet |
+
+> ⚠️ Spill functions like \`FILTER\` and \`UNIQUE\` require **Microsoft 365 / Excel 2021+**. Older versions (2016/2019) common in public offices return \`#NAME?\` — ask the AI for an "array formula that works in older Excel" instead.
 
 **Formula Generation Prompt Example**
 \`\`\`
 Please provide Excel formulas for:
 1. Count rows containing "University" in column A
 2. Sum column C where column B >= 100
-3. Filter data where column D dates are in 2024
+3. Filter data where column D dates are in 2026
 Include explanations for each formula.
 \`\`\``,
       },
@@ -801,7 +805,7 @@ Include comments for beginners.
       {
         titleKo: '종합 실습 시나리오',
         titleEn: 'Comprehensive Practice Scenario',
-        contentKo: `**실습 시나리오: "2024학년도 2학기 학과 평가 준비"**
+        contentKo: `**실습 시나리오: "2026학년도 2학기 학과 평가 준비"**
 
 다음 4개의 결과물을 AI를 활용하여 순서대로 완성해 보세요.
 
@@ -1025,7 +1029,7 @@ Organization intro, position, duties, qualifications, conditions, process, docum
 2. 김영희: 입학처 입학팀 과원 → 팀장 (승진)
 3. 이철수: 신규 채용 → 총무처 시설팀 (임용)
 [형식] 공문서 인사발령 통보문, 표 형식 포함
-[발령일] 2024년 9월 1일
+[발령일] 2026년 9월 1일
 \`\`\`
 
 **근로계약서 작성 시 주의사항**
@@ -1043,7 +1047,7 @@ Write a personnel appointment notice for:
 2. Kim: Admissions Staff → Team Lead (Promotion)
 3. Lee: New Hire → General Affairs (Appointment)
 [Format] Official appointment notice with table
-[Effective Date] September 1, 2024
+[Effective Date] September 1, 2026
 \`\`\`
 
 **Employment Contract Precautions**
@@ -1145,7 +1149,7 @@ Write a personnel appointment notice for:
 | 분석 항목 | Excel 수식 | 설명 |
 |-----------|-----------|------|
 | 부서별 평균 근무시간 | \`=AVERAGEIF(C:C,"기획처",G:G)\` | 특정 부서 평균 |
-| 월별 지각 건수 | \`=COUNTIFS(D:D,">="&DATE(2024,9,1),H:H,"지각")\` | 월별 지각 집계 |
+| 월별 지각 건수 | \`=COUNTIFS(D:D,">="&DATE(2026,9,1),H:H,"지각")\` | 월별 지각 집계 |
 | 개인별 초과근무 합계 | \`=SUMIFS(I:I,B:B,"홍길동")\` | 개인 초과근무 합산 |
 | 부서별 출근율 | \`=COUNTIFS(C:C,"교무처",H:H,"<>결근")/COUNTIF(C:C,"교무처")\` | 출근 비율 |`,
         contentEn: `**Attendance Data Organization Prompt**
@@ -1165,7 +1169,7 @@ Please organize the following attendance data for Excel analysis:
 | Analysis Item | Excel Formula | Description |
 |---------------|--------------|-------------|
 | Avg hours by dept | \`=AVERAGEIF(C:C,"Planning",G:G)\` | Specific dept average |
-| Monthly late count | \`=COUNTIFS(D:D,">="&DATE(2024,9,1),H:H,"Late")\` | Monthly late tally |
+| Monthly late count | \`=COUNTIFS(D:D,">="&DATE(2026,9,1),H:H,"Late")\` | Monthly late tally |
 | Individual overtime | \`=SUMIFS(I:I,B:B,"Hong")\` | Individual overtime total |
 | Dept attendance rate | \`=COUNTIFS(C:C,"Academic",H:H,"<>Absent")/COUNTIF(C:C,"Academic")\` | Attendance ratio |`,
       },
@@ -1390,7 +1394,7 @@ Please organize the following attendance data for Excel analysis:
 \`\`\`
 [프롬프트 ID] DOC-001
 [작업] 기안문 작성
-[버전] v3 (2024-09-15)
+[버전] v3 (2026-09-15)
 [변경 내용] 결재 라인 자동 포함 조건 추가
 [개선 효과] 후속 수정 50% 감소
 [작성자] 홍길동 (교무처)
@@ -1415,7 +1419,7 @@ Please organize the following attendance data for Excel analysis:
 \`\`\`
 [Prompt ID] DOC-001
 [Task] Proposal document writing
-[Version] v3 (2024-09-15)
+[Version] v3 (2026-09-15)
 [Changes] Added auto-include approval chain condition
 [Effect] 50% reduction in follow-up edits
 [Author] Hong (Academic Affairs)
@@ -1580,7 +1584,7 @@ Example: (2.5h - 0.8h) x 4 x 12 x 30,000 KRW = 2,448,000 KRW/year
       {
         titleKo: '인사행정 종합 실습 시나리오',
         titleEn: 'HR Administration Practice Scenario',
-        contentKo: `**실습 시나리오: "2024년 하반기 인사행정 업무 자동화"**
+        contentKo: `**실습 시나리오: "2026년 하반기 인사행정 업무 자동화"**
 
 다음 5개의 결과물을 AI를 활용하여 순서대로 완성해 보세요.
 
@@ -1606,7 +1610,7 @@ Example: (2.5h - 0.8h) x 4 x 12 x 30,000 KRW = 2,448,000 KRW/year
 **과제 5: 업무 자동화 제안서**
 - 반복 업무 1개를 선정하여 자동화 워크플로우 설계
 - ROI 계산 포함`,
-        contentEn: `**Practice Scenario: "2024 H2 HR Administration Automation"**
+        contentEn: `**Practice Scenario: "2026 H2 HR Administration Automation"**
 
 Complete the following 5 deliverables using AI in order.
 

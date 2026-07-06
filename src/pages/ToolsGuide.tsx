@@ -77,7 +77,7 @@ export default function ToolsGuide() {
               </div>
               <div className="tool-tip-row">
                 <span className="tool-tip-label">{isKo ? '긴 문서 분석' : 'Long Document Analysis'}</span>
-                <span className="tool-tip-value">Claude <small>(200K)</small></span>
+                <span className="tool-tip-value">Claude <small>(~1M)</small></span>
               </div>
             </div>
           </div>

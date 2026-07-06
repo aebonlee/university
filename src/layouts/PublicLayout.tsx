@@ -19,6 +19,7 @@ const BoardWrite = lazy(() => import('../pages/community/BoardWrite'));
 const AdminDashboard = lazy(() => import('../pages/admin/AdminDashboard'));
 const AdminUsers = lazy(() => import('../pages/admin/AdminUsers'));
 const AboutPage = lazy(() => import('../pages/AboutPage'));
+const RecommendedSites = lazy(() => import('../pages/RecommendedSites'));
 const NotFound = lazy(() => import('../pages/NotFound'));
 
 const AuthGuard = lazy(() => import('../components/AuthGuard'));
@@ -63,6 +64,7 @@ export default function PublicLayout() {
             <Route path="/admin/users" element={<Suspense fallback={<LoadingFallback />}><AdminGuard><AdminUsers /></AdminGuard></Suspense>} />
 
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/recommended" element={<RecommendedSites />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
