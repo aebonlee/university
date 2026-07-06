@@ -1,4 +1,4 @@
-import{j as t}from"./markdown-uD28ob7P.js";import{G as e}from"./GuidePage-DWGiG6H_.js";import"./vendor-j2q2Hh8J.js";import"./index-DNj1Qhhp.js";import"./supabase-ClMXFR6t.js";import"./SEOHead-8LPucjEe.js";const i={id:"about-site",icon:"fa-building-columns",title:"사이트 소개",titleEn:"About This Site",sections:[{title:"교육 과정 소개",titleEn:"Course Introduction",content:`**"생성형 AI 기반 문서·인사행정 실무 자동화"**는 전남대학교 직원 및 조교를 대상으로 한 **2일 과정(16교시)** 실무 중심 교육 프로그램입니다.
+import{j as t}from"./markdown-uD28ob7P.js";import{G as e}from"./GuidePage-kSAMtQdC.js";import"./vendor-j2q2Hh8J.js";import"./index-b4bQVif3.js";import"./supabase-ClMXFR6t.js";import"./SEOHead-8LPucjEe.js";const i={id:"about-site",icon:"fa-building-columns",title:"사이트 소개",titleEn:"About This Site",sections:[{title:"교육 과정 소개",titleEn:"Course Introduction",content:`**"생성형 AI 기반 문서·인사행정 실무 자동화"**는 전남대학교 직원 및 조교를 대상으로 한 **2일 과정(16교시)** 실무 중심 교육 프로그램입니다.
 
 ChatGPT, Gemini, Claude 등 최신 생성형 AI를 활용하여 공문서 작성, 보고서 제작, PPT 제작, Excel 데이터 분석, 인사·근태 관리 업무를 효율화하는 방법을 학습합니다.
 
@@ -132,7 +132,7 @@ Learn to streamline official document writing, report creation, PPT production, 
 - Design repetitive task automation workflows
 - Present results and plan for future AI utilization`}]},a={id:"about-instructor-aebon",icon:"fa-user-tie",title:"이애본 강사",titleEn:"Instructor: Aebon Lee",sections:[{title:"프로필",titleEn:"Profile",content:`<div class="instructor-hero">
 <div class="instructor-hero-label">이애본 박사 프로필</div>
-<div class="instructor-hero-initials">이</div>
+<img src="/images/aebon.jpg" alt="이애본 박사 프로필" class="instructor-hero-photo" />
 <div class="instructor-hero-name">이애본</div>
 <div class="instructor-hero-title">드림아이티비즈(DreamIT Biz) 대표 · 한신대·한국기술교육대 겸임/외래교수</div>
 <div class="instructor-hero-quote">생성형 인공지능 교육과 에듀테크 플랫폼 개발을 전문으로 하는 강사입니다. 122개의 교육 사이트를 직접 설계·개발·운영하며, 대학교(경기대·한신대·한국기술교육대·전남대·서울대·서울시립대·한국외대·한라대·조선대 등)와 기업(KDN·KOMIPO 등)을 대상으로 AI 활용 교육을 진행하고 있습니다.</div>
@@ -165,7 +165,7 @@ Learn to streamline official document writing, report creation, PPT production, 
 - **이메일**: aebon@dreamitbiz.com
 - **홈페이지**: [www.dreamitbiz.com](https://www.dreamitbiz.com)`,contentEn:`<div class="instructor-hero">
 <div class="instructor-hero-label">Dr. Aebon Lee Profile</div>
-<div class="instructor-hero-initials">A</div>
+<img src="/images/aebon.jpg" alt="Dr. Aebon Lee Profile" class="instructor-hero-photo" />
 <div class="instructor-hero-name">Aebon Lee</div>
 <div class="instructor-hero-title">CEO, DreamIT Biz · Adjunct Professor at Hanshin Univ. & KOREATECH</div>
 <div class="instructor-hero-quote">An instructor specializing in generative-AI education and edtech platform development. Designs, develops, and operates 122 education sites, delivering AI training for universities (Kyonggi, Hanshin, KOREATECH, Chonnam, SNU, UOS, HUFS, Halla, Chosun, etc.) and corporations (KDN, KOMIPO, etc.).</div>
@@ -438,4 +438,4 @@ A vocational education expert with over **20 years** of experience in the IT fie
 - Future career trend analysis
 - AI-based vocational education innovation
 - Lifelong learning system design
-- Vocational psychology and career development`}]},s=[i,n,a,o];function v(){return t.jsx(e,{seoTitle:"About",seoTitleEn:"About",seoDescription:"생성형 AI 기반 문서·인사행정 실무 자동화 교육 프로그램 소개",path:"/about",dataFiles:s})}export{v as default};
+- Vocational psychology and career development`}]},s=[i,n,a,o];function g(){return t.jsx(e,{seoTitle:"About",seoTitleEn:"About",seoDescription:"생성형 AI 기반 문서·인사행정 실무 자동화 교육 프로그램 소개",path:"/about",dataFiles:s})}export{g as default};

@@ -1,4 +1,4 @@
-import{j as e}from"./markdown-uD28ob7P.js";import{G as t}from"./GuidePage-DWGiG6H_.js";/* empty css                 */import"./vendor-j2q2Hh8J.js";import"./index-DNj1Qhhp.js";import"./supabase-ClMXFR6t.js";import"./SEOHead-8LPucjEe.js";const a={id:"glossary",icon:"fa-book-bookmark",title:"용어 해설",titleEn:"Glossary",sections:[{title:"생성형 AI 기본 용어",titleEn:"Generative AI Basics",content:`교육에서 자주 등장하는 핵심 용어를 모았습니다. 모르는 말이 나오면 여기에서 찾아보세요.
+import{j as e}from"./markdown-uD28ob7P.js";import{G as t}from"./GuidePage-kSAMtQdC.js";/* empty css                 */import"./vendor-j2q2Hh8J.js";import"./index-b4bQVif3.js";import"./supabase-ClMXFR6t.js";import"./SEOHead-8LPucjEe.js";const a={id:"glossary",icon:"fa-book-bookmark",title:"용어 해설",titleEn:"Glossary",sections:[{title:"생성형 AI 기본 용어",titleEn:"Generative AI Basics",content:`교육에서 자주 등장하는 핵심 용어를 모았습니다. 모르는 말이 나오면 여기에서 찾아보세요.
 
 | 용어 | 쉬운 설명 |
 |------|-----------|
