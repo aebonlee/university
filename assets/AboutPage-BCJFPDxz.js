@@ -1,4 +1,4 @@
-import{j as t}from"./markdown-uD28ob7P.js";import{G as e}from"./GuidePage-D6b9sxI5.js";import"./vendor-j2q2Hh8J.js";import"./index-BSWzQojB.js";import"./supabase-ClMXFR6t.js";import"./SEOHead-CXt37xNM.js";const i={id:"about-site",icon:"fa-building-columns",title:"사이트 소개",titleEn:"About This Site",sections:[{title:"교육 과정 소개",titleEn:"Course Introduction",content:`**"생성형 AI 기반 문서·인사행정 실무 자동화"**는 전남대학교 직원 및 조교를 대상으로 한 **2일 과정(16교시)** 실무 중심 교육 프로그램입니다.
+import{j as t}from"./markdown-uD28ob7P.js";import{G as e}from"./GuidePage-Ddr7-sVn.js";import"./vendor-j2q2Hh8J.js";import"./index-C-XbqnWn.js";import"./supabase-ClMXFR6t.js";import"./SEOHead-CXt37xNM.js";const i={id:"about-site",icon:"fa-building-columns",title:"사이트 소개",titleEn:"About This Site",sections:[{title:"교육 과정 소개",titleEn:"Course Introduction",content:`**"생성형 AI 기반 문서·인사행정 실무 자동화"**는 전남대학교 직원 및 조교를 대상으로 한 **2일 과정(16교시)** 실무 중심 교육 프로그램입니다.
 
 ChatGPT, Gemini, Claude 등 최신 생성형 AI를 활용하여 공문서 작성, 보고서 제작, PPT 제작, Excel 데이터 분석, 인사·근태 관리 업무를 효율화하는 방법을 학습합니다.
 
@@ -24,7 +24,7 @@ Learn to streamline official document writing, report creation, PPT production, 
 | **Document Automation** | Create documents, reports, and presentations quickly with AI |
 | **Data Analysis** | Analyze and visualize Excel data with AI |
 | **HR Administration** | Apply AI to HR and attendance management |
-| **Workflow Design** | Design workflow automation for repetitive tasks |`},{title:"DreamIT Biz",titleEn:"DreamIT Biz",content:`**DreamIT Biz**는 AI 교육 전문 기업으로, **75개 이상의 교육 사이트**를 운영하며 대학교, 공공기관, 기업을 대상으로 AI 활용 역량 강화 교육을 제공합니다.
+| **Workflow Design** | Design workflow automation for repetitive tasks |`},{title:"DreamIT Biz",titleEn:"DreamIT Biz",content:`**DreamIT Biz**는 AI 교육 전문 기업으로, **100개 이상의 교육 사이트**를 운영하며 대학교, 공공기관, 기업을 대상으로 AI 활용 역량 강화 교육을 제공합니다.
 
 ### 주요 교육 분야
 
@@ -38,7 +38,7 @@ Learn to streamline official document writing, report creation, PPT production, 
 
 - **이메일**: aebon@dreamitbiz.com
 - **전화**: 010-3700-0629
-- **홈페이지**: [www.dreamitbiz.com](https://www.dreamitbiz.com)`,contentEn:`**DreamIT Biz** is an AI education company operating **75+ educational sites**, providing AI competency training for universities, public institutions, and corporations.
+- **홈페이지**: [www.dreamitbiz.com](https://www.dreamitbiz.com)`,contentEn:`**DreamIT Biz** is an AI education company operating **100+ educational sites**, providing AI competency training for universities, public institutions, and corporations.
 
 ### Key Education Areas
 
@@ -135,10 +135,10 @@ Learn to streamline official document writing, report creation, PPT production, 
 <div class="instructor-hero-initials">이</div>
 <div class="instructor-hero-name">이애본</div>
 <div class="instructor-hero-title">한신대학교 겸임교수 · 한국직업능력개발센터장</div>
-<div class="instructor-hero-quote">IT 교육 및 인적자원개발(HRD) 분야 26년 이상의 전문가로서, 75개 이상의 AI 교육 사이트를 운영하며 대학교·공공기관·기업을 대상으로 생성형 AI 활용 역량 강화 교육을 제공하고 있습니다.</div>
+<div class="instructor-hero-quote">IT 교육 및 인적자원개발(HRD) 분야 26년 이상의 전문가로서, 100개 이상의 AI 교육 사이트를 운영하며 대학교·공공기관·기업을 대상으로 생성형 AI 활용 역량 강화 교육을 제공하고 있습니다.</div>
 <div class="instructor-hero-stats">
 <div class="instructor-stat"><div class="instructor-stat-number">26<span style="font-size:16px">년+</span></div><div class="instructor-stat-label">교육 경력</div></div>
-<div class="instructor-stat"><div class="instructor-stat-number">75<span style="font-size:16px">+</span></div><div class="instructor-stat-label">교육 사이트</div></div>
+<div class="instructor-stat"><div class="instructor-stat-number">100<span style="font-size:16px">+</span></div><div class="instructor-stat-label">교육 사이트</div></div>
 <div class="instructor-stat"><div class="instructor-stat-number">20<span style="font-size:16px">+</span></div><div class="instructor-stat-label">전문 자격</div></div>
 </div>
 </div>
@@ -147,7 +147,7 @@ Learn to streamline official document writing, report creation, PPT production, 
 
 **한신대학교 겸임교수 · 한국직업능력개발센터장**
 
-IT 교육 및 인적자원개발(HRD) 분야에서 **26년 이상**의 경력을 보유한 교육 전문가입니다. 75개 이상의 AI 교육 사이트를 운영하며, 대학교·공공기관·기업을 대상으로 AI 활용 역량 강화 교육을 제공하고 있습니다.
+IT 교육 및 인적자원개발(HRD) 분야에서 **26년 이상**의 경력을 보유한 교육 전문가입니다. 100개 이상의 AI 교육 사이트를 운영하며, 대학교·공공기관·기업을 대상으로 AI 활용 역량 강화 교육을 제공하고 있습니다.
 
 ### 주요 활동
 
@@ -156,7 +156,7 @@ IT 교육 및 인적자원개발(HRD) 분야에서 **26년 이상**의 경력을
 | **현직** | 한신대학교 겸임교수 (2020~현재) |
 | **센터** | 한국직업능력개발센터장 (2015~현재) |
 | **기업** | DreamIT Biz 대표 |
-| **교육 사이트** | 75개 이상 운영 (dreamitbiz.com) |
+| **교육 사이트** | 100개 이상 운영 (dreamitbiz.com) |
 | **전문 분야** | 생성형 AI 활용, 프롬프트 엔지니어링, IT 교육 |
 
 ### 연락처
@@ -168,10 +168,10 @@ IT 교육 및 인적자원개발(HRD) 분야에서 **26년 이상**의 경력을
 <div class="instructor-hero-initials">A</div>
 <div class="instructor-hero-name">Aebon Lee</div>
 <div class="instructor-hero-title">Adjunct Professor, Hanshin Univ. · Director, Korea Vocational Skills Development Center</div>
-<div class="instructor-hero-quote">An expert with 26+ years in IT education and HRD, operating 75+ AI education sites and providing generative AI competency training for universities, public institutions, and corporations.</div>
+<div class="instructor-hero-quote">An expert with 26+ years in IT education and HRD, operating 100+ AI education sites and providing generative AI competency training for universities, public institutions, and corporations.</div>
 <div class="instructor-hero-stats">
 <div class="instructor-stat"><div class="instructor-stat-number">26<span style="font-size:16px">yr+</span></div><div class="instructor-stat-label">Experience</div></div>
-<div class="instructor-stat"><div class="instructor-stat-number">75<span style="font-size:16px">+</span></div><div class="instructor-stat-label">Edu Sites</div></div>
+<div class="instructor-stat"><div class="instructor-stat-number">100<span style="font-size:16px">+</span></div><div class="instructor-stat-label">Edu Sites</div></div>
 <div class="instructor-stat"><div class="instructor-stat-number">20<span style="font-size:16px">+</span></div><div class="instructor-stat-label">Certifications</div></div>
 </div>
 </div>
@@ -180,7 +180,7 @@ IT 교육 및 인적자원개발(HRD) 분야에서 **26년 이상**의 경력을
 
 **Adjunct Professor, Hanshin University · Director, Korea Vocational Skills Development Center**
 
-An education expert with over **26 years** of experience in IT education and Human Resource Development (HRD). Operates 75+ AI education sites, providing AI competency training for universities, public institutions, and corporations.
+An education expert with over **26 years** of experience in IT education and Human Resource Development (HRD). Operates 100+ AI education sites, providing AI competency training for universities, public institutions, and corporations.
 
 ### Key Activities
 
@@ -189,7 +189,7 @@ An education expert with over **26 years** of experience in IT education and Hum
 | **Current Position** | Adjunct Professor, Hanshin University (2020–Present) |
 | **Center** | Director, Korea Vocational Skills Development Center (2015–Present) |
 | **Company** | CEO, DreamIT Biz |
-| **Education Sites** | 75+ sites (dreamitbiz.com) |
+| **Education Sites** | 100+ sites (dreamitbiz.com) |
 | **Expertise** | Generative AI, Prompt Engineering, IT Education |
 
 ### Contact
@@ -277,7 +277,7 @@ An education expert with over **26 years** of experience in IT education and Hum
 
 ### DreamIT Biz 운영 현황
 
-- **교육 사이트**: 75개 이상 (React 19 + Vite, Next.js 기반)
+- **교육 사이트**: 100개 이상 (React 19 + Vite, Next.js 기반)
 - **주요 플랫폼**: 역량 평가, 취업 지원, 자격증 대비, LMS
 - **대상**: 대학교, 공공기관, 기업 (맞춤형 AI 교육)
 - **홈페이지**: [www.dreamitbiz.com](https://www.dreamitbiz.com)`,contentEn:`### University Teaching Experience
@@ -307,7 +307,7 @@ An education expert with over **26 years** of experience in IT education and Hum
 
 ### DreamIT Biz Operations
 
-- **Education Sites**: 75+ (React 19 + Vite, Next.js based)
+- **Education Sites**: 100+ (React 19 + Vite, Next.js based)
 - **Key Platforms**: Competency assessment, Career support, Certification prep, LMS
 - **Target**: Universities, Public institutions, Corporations (Custom AI training)
 - **Website**: [www.dreamitbiz.com](https://www.dreamitbiz.com)`}]},r={id:"about-instructor-jdy",icon:"fa-user-graduate",title:"정동엽 강사",titleEn:"Instructor: Dongyeop Jeong",sections:[{title:"프로필",titleEn:"Profile",content:`<div class="instructor-hero">
