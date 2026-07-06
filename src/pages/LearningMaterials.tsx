@@ -3,7 +3,7 @@ import { Link, useParams, useLocation } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import SEOHead from '../components/SEOHead';
 import CopyBlock from '../components/CopyBlock';
-import { PRACTICE_BANK, PracticeLevel } from '../data/practice-bank';
+import { PRACTICE_BANK, PracticeLevel, WORKED_EXAMPLES, WORKSHEETS } from '../data/practice-bank';
 
 const LEVEL_META: Record<PracticeLevel, { ko: string; en: string; badge: string }> = {
   basic: { ko: '🟢 기초 — 그대로 복사해 실행', en: '🟢 Basic — copy and run as-is', badge: 'basic' },
@@ -2162,6 +2162,57 @@ export default function LearningMaterials() {
                           </div>
                         );
                       })}
+                    </div>
+                  </div>
+                )}
+
+                {WORKED_EXAMPLES[topic.id] && (
+                  <div className="section-block">
+                    <h3 className="section-block-title">
+                      <i className="fa-solid fa-circle-play" style={{ marginRight: 8, color: 'var(--primary-blue)' }} />
+                      {isKo ? '완성형 실전 예시 (바로 실행)' : 'Worked Examples (ready to run)'}
+                    </h3>
+                    <div className="section-block-body">
+                      <p className="practice-bank-intro">
+                        {isKo
+                          ? '빈칸 없이 그대로 복사해 실행하면 결과가 나오는 완성 프롬프트입니다. 강의 중 시연하거나, 결과를 보고 나만의 상황으로 바꿔 보세요.'
+                          : 'Complete prompts you can copy and run as-is. Demo them in class, then adapt to your own situation.'}
+                      </p>
+                      {WORKED_EXAMPLES[topic.id].map((ex, i) => (
+                        <div key={i} className="worked-example">
+                          <div className="worked-example-title">{isKo ? ex.titleKo : ex.titleEn}</div>
+                          <CopyBlock code={isKo ? ex.promptKo : ex.promptEn} isKo={isKo} />
+                          <div className="worked-example-output">
+                            <i className="fa-solid fa-arrow-turn-down" />
+                            <span>{isKo ? ex.outputKo : ex.outputEn}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {WORKSHEETS[topic.id] && (
+                  <div className="section-block">
+                    <h3 className="section-block-title">
+                      <i className="fa-solid fa-list-check" style={{ marginRight: 8, color: 'var(--primary-blue)' }} />
+                      {isKo ? '단계별 실습 워크시트' : 'Step-by-Step Worksheet'}
+                    </h3>
+                    <div className="section-block-body">
+                      <div className="worksheet-goal">
+                        <strong>{isKo ? WORKSHEETS[topic.id].titleKo : WORKSHEETS[topic.id].titleEn}</strong>
+                        <p>{isKo ? WORKSHEETS[topic.id].goalKo : WORKSHEETS[topic.id].goalEn}</p>
+                      </div>
+                      {WORKSHEETS[topic.id].steps.map((s, i) => (
+                        <div key={i} className="worksheet-step">
+                          <div className="worksheet-step-title">{isKo ? s.stepKo : s.stepEn}</div>
+                          <CopyBlock code={isKo ? s.promptKo : s.promptEn} isKo={isKo} />
+                          <div className="worksheet-step-check">
+                            <i className="fa-solid fa-square-check" />
+                            <span>{isKo ? s.checkKo : s.checkEn}</span>
+                          </div>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 )}

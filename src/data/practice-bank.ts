@@ -1204,3 +1204,387 @@ export const PRACTICE_BANK: Record<string, PracticeItem[]> = {
     },
   ],
 };
+
+/* ============================================
+   완성형 실전 예시 (바로 실행) — 빈칸 없이 붙여넣으면 결과가 나오는 프롬프트
+   ============================================ */
+export interface WorkedExample {
+  titleKo: string;
+  titleEn: string;
+  promptKo: string;
+  promptEn: string;
+  outputKo: string; // 예상 결과물 요약
+  outputEn: string;
+}
+
+export const WORKED_EXAMPLES: Record<string, WorkedExample[]> = {
+  'official-documents': [
+    {
+      titleKo: '수강신청 안내 공문 (완성 예시)',
+      titleEn: 'Registration Notice (worked)',
+      promptKo: `당신은 대학 교무처 학사팀 담당자입니다. 재학생 대상 '2026학년도 2학기 수강신청 안내' 공문을 작성해 주세요.
+- 수강신청 기간: 2026년 8월 18일(화)~22일(토), 매일 10:00~16:00
+- 방법: 학사정보시스템(sugang.univ.ac.kr) 로그인 후 신청
+- 유의사항: 신청 정정 기간은 개강 첫 주, 미신청 시 수강 불가
+- 문의: 교무처 학사팀 062-000-0000
+형식은 공문 안내문으로, 「제목 → 안내 인사 → 일정(표) → 신청 방법 → 유의사항 → 문의처」 순서로, 정중한 공문체로 작성하세요.`,
+      promptEn: `You are an academic-affairs staff member. Write a "Fall 2026 Course Registration" notice for enrolled students.
+- Period: Aug 18–22, 2026, daily 10:00–16:00
+- Method: log in to the academic system and apply
+- Notes: correction period is the first week of the term; no registration = no attendance
+- Contact: Academic Affairs 062-000-0000
+Format as an official notice: title → greeting → schedule (table) → how to apply → notes → contact.`,
+      outputKo: '예상 결과: 제목·인사·일정표·신청방법·유의사항·문의처를 갖춘 공문 초안 1건. HWP에 옮겨 서식만 다듬으면 바로 사용 가능.',
+      outputEn: 'Expected: a complete notice draft (title, greeting, schedule table, steps, notes, contact) — ready after light formatting in HWP.',
+    },
+    {
+      titleKo: '행사 예산 신청 기안문 (완성 예시)',
+      titleEn: 'Event Budget Proposal (worked)',
+      promptKo: `당신은 대학 학생지원처 담당자입니다. 아래 행사의 예산 신청 기안문을 작성해 주세요.
+- 행사명: 2026 진로·취업 페스티벌
+- 일시/장소: 2026년 10월 8일(수) 10:00~17:00, 대학본부 대강당
+- 예산: 총 800만 원 (외부 강사료 300 / 부스 운영 200 / 홍보물 150 / 다과·운영 150)
+- 기대효과: 재학생 취업역량 강화, 기업 네트워킹
+형식은 공문 기안문으로 「제목 → 기안 배경 → 추진 개요 → 예산 내역(표) → 기대효과 → 협조 요청」 순서로 작성하세요.`,
+      promptEn: `You are a student-support staff member. Write a budget-request proposal for the event below.
+- Event: 2026 Career Festival
+- When/where: Oct 8, 2026 10:00–17:00, Main Hall
+- Budget: KRW 8M (speakers 3.0 / booths 2.0 / promo 1.5 / catering 1.5)
+- Impact: student employability, corporate networking
+Format as a proposal: title → background → overview → budget table → impact → cooperation request.`,
+      outputKo: '예상 결과: 예산 내역표를 포함한 기안문 초안. 금액·항목만 우리 부서 값으로 바꾸면 재사용 가능.',
+      outputEn: 'Expected: a proposal draft with a budget table — reusable by swapping amounts/items.',
+    },
+  ],
+
+  'meeting-reports': [
+    {
+      titleKo: '회의록 자동 정리 (완성 예시)',
+      titleEn: 'Auto Minutes (worked)',
+      promptKo: `다음 회의 메모를 정식 회의록으로 정리해 주세요.
+[메모] 오늘 학사운영 회의. 참석 교무처장, 학사팀장 등 6명. 2학기 개강일 9월 1일 확정. 수강신청 오류 대응 위해 헬프데스크 운영키로(학사팀 담당, 8월 3주차). 계절학기 강의실 부족 문제 제기됨, 정보전산원과 협의 예정. 성적입력 마감 12월 20일로 잠정.
+형식: 「회의 개요(일시·장소·참석자) → 안건별 논의 요약 → 결정사항 → 후속조치(담당·기한)」 표를 포함해 정리.`,
+      promptEn: `Turn the meeting memo below into formal minutes.
+[Memo] Academic ops meeting, 6 attendees. Fall term starts Sep 1. A help desk will handle registration errors (Academic team, 3rd week of Aug). Seasonal-term room shortage raised, to consult IT center. Grade-entry deadline tentatively Dec 20.
+Format: overview (time/place/attendees) → discussion summary → decisions → follow-ups (owner/deadline), with a table.`,
+      outputKo: '예상 결과: 개요·안건·결정사항·후속조치(담당/기한) 표를 갖춘 회의록. 후속조치가 실행 항목으로 명확히 정리됨.',
+      outputEn: 'Expected: minutes with overview, decisions, and a follow-up table (owner/deadline).',
+    },
+    {
+      titleKo: '주간 업무보고 (완성 예시)',
+      titleEn: 'Weekly Report (worked)',
+      promptKo: `아래 내용을 부서장 보고용 주간 업무보고로 정리해 주세요.
+- 완료: 2학기 강의계획서 92% 취합, 수강신청 시스템 점검 완료
+- 진행중: 계절학기 강의실 배정 협의(정보전산원), 장학금 심사
+- 예정: 성적입력 안내 공지 발송, 학사경고 대상자 상담
+형식: 「완료 / 진행중 / 예정」 3구분 표로, 각 항목 한 줄 요약. 부서장이 1분 안에 파악하도록 핵심만.`,
+      promptEn: `Compile a weekly report for a dept head.
+- Done: 92% syllabi collected, registration system checked
+- In progress: seasonal-term room consultation, scholarship review
+- Planned: grade-entry notice, academic-warning counseling
+Format: 3-group table (Done/In progress/Planned), one line each, 1-minute read.`,
+      outputKo: '예상 결과: 3구분 표 형태의 간결한 주간보고. 매주 항목만 갱신해 재사용.',
+      outputEn: 'Expected: a concise 3-group weekly report — reuse by updating items weekly.',
+    },
+  ],
+
+  'ppt-structure': [
+    {
+      titleKo: '신입생 OT 발표 목차 (완성 예시)',
+      titleEn: 'New-Student OT Outline (worked)',
+      promptKo: `대학 신입생 오리엔테이션 발표 PPT의 슬라이드 목차를 설계해 주세요.
+- 대상: 2026학년도 신입생 / 발표 시간: 20분
+- 다룰 내용: 대학 소개, 학사 제도(수강신청·학점), 학생 지원(장학·상담·동아리), 캠퍼스 생활 안내, Q&A
+슬라이드 번호 → 제목 → 핵심 메시지 표로, 표지·목차·본문·마무리 흐름을 갖춰 12장 내외로 제안하세요.`,
+      promptEn: `Design a slide outline for a new-student orientation deck.
+- Audience: 2026 freshmen / Time: 20 min
+- Topics: university intro, academics (registration/credits), student support, campus life, Q&A
+Slide # → title → key message table, ~12 slides with cover/TOC/body/closing.`,
+      outputKo: '예상 결과: 12장 내외의 슬라이드별 제목·핵심 메시지 표. 이 구조에 내용만 채우면 발표자료 완성.',
+      outputEn: 'Expected: a ~12-slide title/message table — fill in content to finish the deck.',
+    },
+    {
+      titleKo: '사업 성과보고 PPT 구조 (완성 예시)',
+      titleEn: 'Program Result PPT (worked)',
+      promptKo: `대학 산학협력단의 '2026 상반기 창업지원사업 성과보고' 발표 PPT 구조를 설계해 주세요.
+- 청중: 처장 및 팀장 / 시간: 10분
+- 주요 성과: 지원 기업 25개, 창업 12건, 매출 발생 8개사, 만족도 4.3/5
+- 원하는 결론: 하반기 예산 확대 요청
+「요약(1장) → 사업 개요 → 성과(정량·정성) → 우수 사례 → 하반기 계획·예산 요청 → 결론」 흐름으로, 슬라이드별 메시지 포함.`,
+      promptEn: `Design a PPT structure for an "H1 2026 Startup Support Program Results" report.
+- Audience: directors / Time: 10 min
+- Results: 25 firms supported, 12 startups, 8 revenue-generating, 4.3/5 satisfaction
+- Desired conclusion: request H2 budget increase
+Flow: summary(1) → overview → results (quant/qual) → best cases → H2 plan/budget → conclusion, per-slide message.`,
+      outputKo: '예상 결과: 결론 지향적 성과보고 PPT 구조. 수치만 바꾸면 다른 사업 보고에도 재사용.',
+      outputEn: 'Expected: a conclusion-oriented results PPT structure — reusable for other programs.',
+    },
+  ],
+
+  'ppt-design': [
+    {
+      titleKo: '예산 데이터 차트 추천 (완성 예시)',
+      titleEn: 'Budget Chart Recommendation (worked)',
+      promptKo: `아래 예산 집행 데이터를 발표에서 효과적으로 보여줄 차트를 추천해 주세요.
+- 부서별 집행률: 교무처 92%, 학생처 78%, 총무처 85%, 입학처 60%
+- 월별 집행 추이: 1~6월 점진 증가
+- 강조하고 싶은 점: 입학처 집행 저조, 전반적 상반기 집행 순조
+각 데이터에 적합한 차트 유형과 이유, 강조 색상, 배치 순서를 제안하세요.`,
+      promptEn: `Recommend charts to present the budget-execution data below.
+- Execution by dept: Academic 92%, Student 78%, General 85%, Admissions 60%
+- Monthly trend: gradual rise Jan–Jun
+- Emphasize: Admissions is low; overall H1 on track
+Recommend chart type + reason + accent color + layout order for each.`,
+      outputKo: '예상 결과: 부서 비교(막대)·추이(선) 등 데이터별 차트 추천과 강조 방법. 슬라이드 시각화에 바로 반영.',
+      outputEn: 'Expected: chart recommendations per dataset with emphasis guidance.',
+    },
+    {
+      titleKo: 'Gamma 발표자료 생성 프롬프트 (완성 예시)',
+      titleEn: 'Gamma Deck Prompt (worked)',
+      promptKo: `Gamma로 발표자료를 만들 프롬프트입니다. 아래 지시를 Gamma 입력창에 붙여넣으세요.
+주제: 대학 행정직원을 위한 '생성형 AI 업무 활용' 소개
+대상: 교직원 / 분량: 8슬라이드 / 톤: 전문적이되 친근하게 / 색상: 네이비+그린 계열
+구성: 표지 → AI란 무엇인가 → 행정 업무 활용 사례 3가지 → 시작하는 법 → 주의사항 → 마무리(Q&A)
+각 슬라이드는 제목과 3개 이내 불릿, 관련 아이콘 제안 포함.`,
+      promptEn: `A prompt to build a deck in Gamma. Paste the instruction below into Gamma.
+Topic: "Using Generative AI for University Admin Work"
+Audience: staff / Length: 8 slides / Tone: professional yet friendly / Colors: navy+green
+Structure: cover → what is AI → 3 admin use cases → how to start → cautions → wrap-up (Q&A)
+Each slide: title + up to 3 bullets + suggested icon.`,
+      outputKo: '예상 결과: Gamma가 8슬라이드 초안을 자동 생성. 색상·아이콘까지 반영된 초안을 다듬어 사용.',
+      outputEn: 'Expected: Gamma auto-generates an 8-slide draft with colors/icons to refine.',
+    },
+  ],
+
+  'excel-analysis': [
+    {
+      titleKo: '부서별 예산 집계 수식 (완성 예시)',
+      titleEn: 'Budget Aggregation Formula (worked)',
+      promptKo: `Excel에서 다음을 계산하는 수식을 알려 주세요. (열 구성: A=부서, B=항목, C=예산, D=집행액)
+1) 부서별 예산 합계와 집행 합계
+2) 부서별 집행률(집행액/예산)
+3) 집행률이 70% 미만인 부서만 표시
+각 수식과 한 줄 설명을 주고, 구버전 Excel(2016)에서도 되는 대체 수식이 있으면 함께 알려 주세요.`,
+      promptEn: `Give Excel formulas for (columns: A=dept, B=item, C=budget, D=spent):
+1) Budget and spend totals per dept
+2) Execution rate per dept (spent/budget)
+3) Show only depts with <70% execution
+Each formula + one-line note; add legacy-Excel (2016) alternatives if any.`,
+      outputKo: '예상 결과: SUMIF/집행률 계산/필터 수식 세트와 설명. 실제 예산 시트에 바로 적용 가능.',
+      outputEn: 'Expected: a set of SUMIF/rate/filter formulas ready to apply.',
+    },
+    {
+      titleKo: '근태 데이터 피벗 요약 (완성 예시)',
+      titleEn: 'Attendance Pivot (worked)',
+      promptKo: `아래 근태 데이터로 월별·부서별 요약 피벗 테이블을 만드는 방법을 단계별로 알려 주세요.
+- 데이터 열: 날짜, 부서, 직원명, 근무상태(정상/지각/결근/연차)
+- 원하는 결과: 부서별로 정상·지각·결근·연차 건수를 월별로 집계
+피벗의 행/열/값/필터에 각각 어떤 필드를 넣을지, 만드는 순서, 결과 해석 팁까지 설명하세요.`,
+      promptEn: `Explain step by step how to build a monthly/dept pivot from the attendance data.
+- Columns: date, dept, name, status (normal/late/absent/leave)
+- Goal: count normal/late/absent/leave per dept, by month
+Explain fields for rows/cols/values/filter, the steps, and interpretation tips.`,
+      outputKo: '예상 결과: 피벗 필드 배치와 생성 순서 안내. 그대로 따라 하면 근태 요약표 완성.',
+      outputEn: 'Expected: pivot field placement and steps — follow to get the summary.',
+    },
+  ],
+
+  'doc-practice': [
+    {
+      titleKo: '도서관 휴관 안내 (완성 예시)',
+      titleEn: 'Library Closure Notice (worked)',
+      promptKo: `전 구성원 대상 도서관 임시 휴관 안내 공지문을 작성해 주세요.
+- 휴관 기간: 2026년 8월 5일(수)~7일(금)
+- 사유: 냉방설비 교체 공사
+- 대체 안내: 전자자료는 정상 이용 가능, 반납 기한 자동 연장
+- 문의: 학술정보관 062-000-0000
+형식: 홈페이지 공지문. 「제목 → 핵심 안내 → 상세(기간·사유) → 대체 이용 안내 → 문의처」 순서로 읽기 쉽게.`,
+      promptEn: `Write an all-member notice for a temporary library closure.
+- Period: Aug 5–7, 2026 / Reason: AC replacement
+- Alt: e-resources available, due dates auto-extended
+- Contact: Library 062-000-0000
+Format: website notice — title → key notice → details → alternatives → contact.`,
+      outputKo: '예상 결과: 게시판에 바로 올릴 수 있는 공지문. 날짜·사유만 바꾸면 다른 휴관 안내에도 재사용.',
+      outputEn: 'Expected: a ready-to-post notice — reusable by changing dates/reason.',
+    },
+    {
+      titleKo: '워크숍 문서 세트 (완성 예시)',
+      titleEn: 'Workshop Document Set (worked)',
+      promptKo: `'2026 교직원 역량강화 워크숍'을 위한 문서 3종을 순서대로 작성해 주세요.
+- 공통 정보: 2026년 9월 15일(월) 09:00~17:00, 교육관 201호, 대상 전 교직원 100명
+① 개최 기안문(예산 200만 원) ② 참가 신청 안내 통보문(신청 마감 9월 8일) ③ 강의실·기자재 협조문(정보전산원)
+세 문서 모두 공문 형식으로, 공통 정보(일시·장소·대상)를 일관되게 반영하세요.`,
+      promptEn: `Write 3 documents for a "2026 Staff Capacity Workshop," in order.
+- Shared: Sep 15, 2026 09:00–17:00, Room 201, 100 staff
+① proposal (KRW 2M) ② participation notice (apply by Sep 8) ③ room/equipment request (IT center)
+All official format; keep shared info consistent across the three.`,
+      outputKo: '예상 결과: 기안문·통보문·협조문 3종이 일관된 정보로 생성. 실제 행사 준비에 바로 활용.',
+      outputEn: 'Expected: 3 consistent documents (proposal/notice/request) ready for event prep.',
+    },
+  ],
+};
+
+/* ============================================
+   단계별 실습 워크시트 — 한 주제를 A→Z로 완성
+   ============================================ */
+export interface WorksheetStep {
+  stepKo: string;
+  stepEn: string;
+  promptKo: string; // 이 단계에서 쓸 프롬프트(없으면 빈 문자열)
+  promptEn: string;
+  checkKo: string;  // 확인 포인트
+  checkEn: string;
+}
+export interface Worksheet {
+  titleKo: string;
+  titleEn: string;
+  goalKo: string;
+  goalEn: string;
+  steps: WorksheetStep[];
+}
+
+export const WORKSHEETS: Record<string, Worksheet> = {
+  'official-documents': {
+    titleKo: '공문 1건 완성하기 (A→Z)', titleEn: 'Complete One Document (A→Z)',
+    goalKo: '실제 업무 상황 하나를 골라, 프롬프트 작성부터 최종 검토까지 공문 1건을 완성합니다.',
+    goalEn: 'Pick one real situation and complete a document from prompt to final review.',
+    steps: [
+      {
+        stepKo: '1단계 — 문서 유형·목적 정하기',
+        stepEn: 'Step 1 — Define type & purpose',
+        promptKo: `내가 작성할 공문의 유형(기안문/통보문/협조문/회신문)과 목적, 수신 대상을 한 문장으로 정리해 줘. 상황: [내 업무 상황을 여기에]`,
+        promptEn: `Summarize in one sentence the document type (proposal/notice/cooperation/response), purpose, and recipient. Situation: [describe here]`,
+        checkKo: '유형과 목적이 명확한가? 수신 대상이 정해졌는가?',
+        checkEn: 'Are type, purpose, and recipient clear?',
+      },
+      {
+        stepKo: '2단계 — RCF로 프롬프트 작성',
+        stepEn: 'Step 2 — Write an RCF prompt',
+        promptKo: `위 상황으로 공문을 만들 프롬프트를 [역할]-[맥락]-[형식] 구조로 작성해 줘. 필요한 정보(일시·대상·핵심 내용)를 빠짐없이 포함해.`,
+        promptEn: `Write a document-generation prompt in [Role]-[Context]-[Format] structure for the situation above, including all needed info.`,
+        checkKo: '역할·맥락·형식이 모두 들어갔는가? 빠진 정보는 없는가?',
+        checkEn: 'Are role/context/format all present? Any missing info?',
+      },
+      {
+        stepKo: '3단계 — 초안 생성',
+        stepEn: 'Step 3 — Generate a draft',
+        promptKo: `(2단계에서 만든 프롬프트를 그대로 실행해 초안을 받으세요.)`,
+        promptEn: `(Run the Step-2 prompt to get a draft.)`,
+        checkKo: '초안의 구조가 요청한 형식과 일치하는가?',
+        checkEn: 'Does the draft match the requested format?',
+      },
+      {
+        stepKo: '4단계 — 사실·형식 검토',
+        stepEn: 'Step 4 — Review facts & format',
+        promptKo: `위 초안을 검토해 줘. 날짜·수신처·금액 등 사실 정보 오류, 공문 형식 부적합, 어조 문제, 오탈자를 항목별로 지적하고 수정안을 제시해.`,
+        promptEn: `Review the draft: flag factual errors (dates/recipient/amounts), format issues, tone, typos, and give fixes.`,
+        checkKo: '사실 정보를 실제 값과 대조했는가? 결재 라인·문의처가 정확한가?',
+        checkEn: 'Verified facts against reality? Approval line/contact correct?',
+      },
+      {
+        stepKo: '5단계 — HWP 편집·최종 확인',
+        stepEn: 'Step 5 — HWP edit & finalize',
+        promptKo: `(HWP 표준 서식에 옮기고, 4단계 지적사항을 반영해 최종본을 완성하세요.)`,
+        promptEn: `(Move to standard HWP format, apply Step-4 fixes, finalize.)`,
+        checkKo: '기관 서식을 따랐는가? 첨부·붙임 목록이 누락되지 않았는가?',
+        checkEn: 'Followed the org template? Attachments complete?',
+      },
+    ],
+  },
+
+  'excel-analysis': {
+    titleKo: '데이터 분석 1건 완성하기 (A→Z)', titleEn: 'Complete One Analysis (A→Z)',
+    goalKo: '내 부서의 실제 데이터 한 세트를 골라, 정리부터 요약 보고까지 완성합니다.',
+    goalEn: 'Pick one real dataset and go from cleanup to a summary report.',
+    steps: [
+      {
+        stepKo: '1단계 — 분석 목적·데이터 파악',
+        stepEn: 'Step 1 — Define goal & data',
+        promptKo: `다음 데이터로 무엇을 알고 싶은지 분석 목적을 정리하고, 필요한 열이 무엇인지 알려 줘. 데이터 설명: [열 구성과 내용]`,
+        promptEn: `Clarify the analysis goal and needed columns. Data: [describe columns]`,
+        checkKo: '분석 목적이 한 문장으로 명확한가?',
+        checkEn: 'Is the goal clear in one sentence?',
+      },
+      {
+        stepKo: '2단계 — 데이터 정리',
+        stepEn: 'Step 2 — Clean the data',
+        promptKo: `아래 데이터의 중복·공백·형식 불일치를 정리하는 순서와 Excel 기능을 알려 줘. (샘플 데이터 붙여넣기)`,
+        promptEn: `Give the cleanup order and Excel functions for dedupe/blanks/format issues. (paste sample)`,
+        checkKo: '중복·오류가 제거되었는가? 형식이 통일되었는가?',
+        checkEn: 'Duplicates/errors removed? Formats normalized?',
+      },
+      {
+        stepKo: '3단계 — 집계·수식',
+        stepEn: 'Step 3 — Aggregate',
+        promptKo: `정리된 데이터로 [분석 목적]에 필요한 집계 수식(또는 피벗) 구성을 알려 줘.`,
+        promptEn: `Give the aggregation formulas (or pivot) for the goal.`,
+        checkKo: '수식이 정상 작동하는가? 합계·비율이 맞는가?',
+        checkEn: 'Do formulas work? Totals/ratios correct?',
+      },
+      {
+        stepKo: '4단계 — 시각화',
+        stepEn: 'Step 4 — Visualize',
+        promptKo: `집계 결과를 가장 잘 보여줄 차트 유형과 강조 방법을 추천해 줘. (집계 결과 요약 붙여넣기)`,
+        promptEn: `Recommend the best chart type and emphasis for the results. (paste summary)`,
+        checkKo: '차트가 메시지를 왜곡 없이 전달하는가?',
+        checkEn: 'Does the chart convey the message without distortion?',
+      },
+      {
+        stepKo: '5단계 — 요약 보고 문장',
+        stepEn: 'Step 5 — Summary sentences',
+        promptKo: `집계·시각화 결과를 보고서에 넣을 3~4문장 요약으로 만들어 줘. 전월/전년 대비 증감 표현 포함. (수치 붙여넣기)`,
+        promptEn: `Turn the results into 3–4 report sentences with MoM/YoY change. (paste numbers)`,
+        checkKo: '핵심 수치와 시사점이 담겼는가?',
+        checkEn: 'Do the sentences carry key figures and implications?',
+      },
+    ],
+  },
+
+  'doc-practice': {
+    titleKo: '행사 하나를 문서로 완성하기 (A→Z)', titleEn: 'Run an Event via Documents (A→Z)',
+    goalKo: '가상의(또는 실제) 행사 하나를 골라, 준비부터 보고까지 필요한 문서를 순서대로 만듭니다.',
+    goalEn: 'Pick an event and create every document from prep to report, in order.',
+    steps: [
+      {
+        stepKo: '1단계 — 개최 기안문',
+        stepEn: 'Step 1 — Proposal',
+        promptKo: `[행사명]을 개최하는 기안문을 작성해 줘. 일시·장소·대상·예산을 포함해. 정보: [입력]`,
+        promptEn: `Write a proposal to hold [event] with time/place/target/budget. Info: [enter]`,
+        checkKo: '예산 내역과 추진 근거가 명확한가?',
+        checkEn: 'Are budget and rationale clear?',
+      },
+      {
+        stepKo: '2단계 — 참가 안내 통보문',
+        stepEn: 'Step 2 — Participation notice',
+        promptKo: `위 행사의 참가 신청 안내 통보문을 작성해 줘. 신청 방법·마감일 포함.`,
+        promptEn: `Write a participation notice with how-to-apply and deadline.`,
+        checkKo: '신청 절차가 명확하고 마감일이 포함됐는가?',
+        checkEn: 'Are steps clear and the deadline included?',
+      },
+      {
+        stepKo: '3단계 — 협조 요청 협조문',
+        stepEn: 'Step 3 — Cooperation request',
+        promptKo: `행사에 필요한 강의실·기자재 협조를 요청하는 협조문을 작성해 줘. 요청 사항·기간 포함.`,
+        promptEn: `Write a cooperation request for rooms/equipment with items and period.`,
+        checkKo: '요청 대상 부서와 기간이 정확한가?',
+        checkEn: 'Are the target dept and period correct?',
+      },
+      {
+        stepKo: '4단계 — 결과보고서',
+        stepEn: 'Step 4 — Result report',
+        promptKo: `행사 종료 후 결과보고서를 작성해 줘. 참석 인원·주요 성과·개선점·향후 계획 포함. (결과 정보 입력)`,
+        promptEn: `Write a result report with attendance/outcomes/improvements/next steps. (enter results)`,
+        checkKo: '정량·정성 성과가 균형 있게 담겼는가?',
+        checkEn: 'Are quantitative and qualitative outcomes balanced?',
+      },
+      {
+        stepKo: '5단계 — 보고 PPT 구조',
+        stepEn: 'Step 5 — Report PPT',
+        promptKo: `결과보고서를 3분 발표용 PPT 구조로 바꿔 줘. 슬라이드별 핵심 메시지 포함.`,
+        promptEn: `Turn the result report into a 3-minute PPT structure with per-slide messages.`,
+        checkKo: '문서→발표로 핵심이 잘 압축됐는가?',
+        checkEn: 'Is the essence well compressed for presentation?',
+      },
+    ],
+  },
+};

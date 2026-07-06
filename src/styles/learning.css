@@ -457,3 +457,81 @@ html[data-theme="dark"] .practice-bank-level-title.applied {
 html[data-theme="dark"] .practice-bank-level-title.advanced {
     background: rgba(229, 62, 62, 0.16);
 }
+
+/* ─── 완성형 실전 예시 ─── */
+.worked-example {
+    margin-bottom: 18px;
+    padding-bottom: 4px;
+}
+.worked-example-title {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+.worked-example-output {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 8px;
+    padding: 10px 14px;
+    background: rgba(76, 175, 80, 0.08);
+    border-left: 3px solid #4CAF50;
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+.worked-example-output i {
+    color: #4CAF50;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+html[data-theme="dark"] .worked-example-output {
+    background: rgba(129, 199, 132, 0.12);
+}
+
+/* ─── 단계별 워크시트 ─── */
+.worksheet-goal {
+    padding: 14px 18px;
+    background: var(--bg-light-gray);
+    border-radius: var(--radius-md);
+    margin-bottom: 18px;
+}
+.worksheet-goal strong {
+    display: block;
+    font-size: 15px;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+.worksheet-goal p {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+.worksheet-step {
+    margin-bottom: 16px;
+    padding-left: 16px;
+    border-left: 2px solid var(--border-light);
+}
+.worksheet-step-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-bottom: 8px;
+}
+.worksheet-step-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+.worksheet-step-check i {
+    color: var(--primary-blue);
+    margin-top: 3px;
+    flex-shrink: 0;
+}
