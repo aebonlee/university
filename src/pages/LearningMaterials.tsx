@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useParams, useLocation } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import SEOHead from '../components/SEOHead';
@@ -2052,6 +2052,7 @@ export default function LearningMaterials() {
   const location = useLocation();
 
   const cat = CATEGORIES.find(c => c.id === category) || CATEGORIES[0];
+  const [activeTopic, setActiveTopic] = useState<string>('');
 
   // Hash-based scroll
   useEffect(() => {
@@ -2062,6 +2063,28 @@ export default function LearningMaterials() {
       window.scrollTo({ top: 0 });
     }
   }, [location.hash, category]);
+
+  // Scroll-spy: 현재 화면에 보이는 주제 섹션을 사이드바에서 활성화
+  useEffect(() => {
+    const sections = cat.topics
+      .map(t => document.getElementById(t.id))
+      .filter((el): el is HTMLElement => !!el);
+    if (sections.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter(e => e.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+        if (visible.length > 0) {
+          setActiveTopic(visible[0].target.id);
+        }
+      },
+      { rootMargin: `-${80}px 0px -60% 0px`, threshold: 0 }
+    );
+    sections.forEach(s => observer.observe(s));
+    return () => observer.disconnect();
+  }, [cat]);
 
   return (
     <div className="learning-page">
@@ -2082,9 +2105,10 @@ export default function LearningMaterials() {
                 <a
                   key={topic.id}
                   href={`#${topic.id}`}
-                  className="sidebar-item"
+                  className={`sidebar-item ${activeTopic === topic.id ? 'active' : ''}`}
                   onClick={(e) => {
                     e.preventDefault();
+                    setActiveTopic(topic.id);
                     document.getElementById(topic.id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   }}
                 >

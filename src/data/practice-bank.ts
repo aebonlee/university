@@ -1422,6 +1422,228 @@ All official format; keep shared info consistent across the three.`,
       outputEn: 'Expected: 3 consistent documents (proposal/notice/request) ready for event prep.',
     },
   ],
+
+  'hr-ai': [
+    {
+      titleKo: '근태 데이터 요약 (완성 예시)',
+      titleEn: 'Attendance Summary (worked)',
+      promptKo: `당신은 인사 담당자입니다. 아래 8월 근태 요약 데이터를 분석해 관리자 보고용 요약을 만들어 주세요.
+- 총원 42명, 근무일 22일
+- 지각: 총 18건(A팀 11 / B팀 4 / C팀 3)
+- 결근: 3건(모두 병가) / 연차 사용: 총 96일(1인 평균 2.3일)
+- 초과근무: 총 210시간(A팀 집중)
+형식: 「핵심 지표 요약(표) → 주목할 점 3가지 → 관리 제언 1가지」. 개인 식별 없이 팀 단위로만 서술.`,
+      promptEn: `You are an HR staff member. Analyze the August attendance summary for a manager report.
+- 42 staff, 22 workdays
+- Late: 18 (A11/B4/C3), Absent: 3 (sick), Leave: 96 days (avg 2.3), Overtime: 210h (A-team heavy)
+Format: key metrics (table) → 3 findings → 1 recommendation. Team-level only, no individuals.`,
+      outputKo: '예상 결과: 지표 요약표 + A팀 지각·초과근무 집중 등 시사점 + 관리 제언. 개인정보 배제.',
+      outputEn: 'Expected: metrics table + findings (A-team concentration) + a recommendation, no personal data.',
+    },
+    {
+      titleKo: '복지제도 안내 답변 (완성 예시)',
+      titleEn: 'Benefits Q&A (worked)',
+      promptKo: `당신은 인사 담당자입니다. 직원 문의가 잦은 복지제도 3가지에 대한 표준 안내 답변을 만들어 주세요.
+- 경조사비 지원 / 종합건강검진 / 자기계발 교육비 지원
+각 항목을 「대상 / 지원 내용 / 신청 방법 / 유의사항」 4가지로 정리하고, 안내데스크에서 바로 읽어줄 수 있게 간결하게 작성하세요.`,
+      promptEn: `You are an HR staff member. Write standard answers for 3 common benefit questions.
+- Family-event allowance / health checkup / self-development tuition
+Each with: eligibility / benefit / how to apply / notes — concise for a help desk.`,
+      outputKo: '예상 결과: 3개 복지제도의 표준 안내 세트. FAQ·챗봇·안내데스크에 바로 활용.',
+      outputEn: 'Expected: a standard set for 3 benefits — ready for FAQ/chatbot/help desk.',
+    },
+  ],
+
+  'hr-documents': [
+    {
+      titleKo: '채용공고 (완성 예시)',
+      titleEn: 'Job Posting (worked)',
+      promptKo: `당신은 인사 담당자입니다. 아래 조건으로 채용공고를 작성해 주세요.
+- 직무: 학사행정 지원 계약직 1명
+- 자격: 대졸 이상, 행정 실무 경력 2년 이상, 한글·엑셀 능숙
+- 근무: 교무처, 09:00~18:00, 계약기간 1년(연장 가능)
+- 접수: 2026년 8월 1일~14일, 이메일 접수 / 문의: 062-000-0000
+형식: 「모집 개요 → 담당 업무 → 지원 자격 → 전형 절차 → 제출 서류 → 문의처」 순서로 작성.`,
+      promptEn: `You are an HR staff member. Write a job posting.
+- Role: 1 contract academic-admin support
+- Reqs: bachelor+, 2+ yrs admin, HWP/Excel
+- Work: Academic Affairs, 09:00–18:00, 1-yr (renewable)
+- Apply: Aug 1–14, 2026 by email / Contact: 062-000-0000
+Format: overview → duties → qualifications → process → documents → contact.`,
+      outputKo: '예상 결과: 게시 가능한 채용공고 초안. 직무·자격만 바꾸면 다른 채용에도 재사용.',
+      outputEn: 'Expected: a postable job-posting draft — reusable by swapping role/reqs.',
+    },
+    {
+      titleKo: '인사발령 통보문 (완성 예시)',
+      titleEn: 'Appointment Notice (worked)',
+      promptKo: `당신은 인사 담당자입니다. 아래 인사 이동을 통보하는 공문을 작성해 주세요.
+- 김민수: 교무처 학사팀 → 기획처 기획팀 (전보)
+- 이서연: 입학처 입학팀 팀원 → 팀장 (승진)
+- 박준호: 신규 임용 → 총무처 시설팀
+- 발령일: 2026년 9월 1일
+형식: 공문 인사발령 통보문으로, 표(성명·현소속·발령내용·사유)를 포함하세요.`,
+      promptEn: `You are an HR staff member. Write an appointment notice.
+- Kim: Academic → Planning (transfer)
+- Lee: Admissions member → team lead (promotion)
+- Park: new hire → General Affairs
+- Date: Sep 1, 2026
+Format: official appointment notice with a table (name/current/appointment/reason).`,
+      outputKo: '예상 결과: 표를 포함한 인사발령 통보문. 명단만 바꾸면 매 발령 시 재사용.',
+      outputEn: 'Expected: an appointment notice with a table — reusable each cycle.',
+    },
+  ],
+
+  'attendance-excel': [
+    {
+      titleKo: '지각·결근 집계 수식 (완성 예시)',
+      titleEn: 'Late/Absence Formula (worked)',
+      promptKo: `Excel 근태표에서 다음을 계산하는 수식을 알려 주세요. (열: A=날짜, B=부서, C=직원명, D=상태)
+1) 직원별 지각 횟수 (상태가 "지각")
+2) 부서별 결근 합계 (상태가 "결근")
+3) 이번 달 지각 3회 이상인 직원 표시
+각 수식과 한 줄 설명, 구버전 Excel 대체 수식(있으면)을 함께 알려 주세요.`,
+      promptEn: `Excel formulas from an attendance table (A=date, B=dept, C=name, D=status):
+1) Late count per employee 2) Absence total per dept 3) Flag employees with 3+ lates
+Each with a note and a legacy alternative if any.`,
+      outputKo: '예상 결과: COUNTIFS 기반 집계 수식 세트. 실제 근태표에 바로 적용.',
+      outputEn: 'Expected: COUNTIFS-based formulas ready to apply.',
+    },
+    {
+      titleKo: '연차 사용률 집계 (완성 예시)',
+      titleEn: 'Leave Usage (worked)',
+      promptKo: `Excel에서 직원별 연차 사용 현황을 집계하는 수식을 알려 주세요. (열: A=직원명, B=부여일수, C=사용일수)
+1) 개인별 잔여 연차 2) 개인별 사용률(%) 3) 잔여가 5일 이상 남은(소진 독려 대상) 직원 표시
+각 수식과 설명을 주고, 잔여 과다자 강조용 조건부 서식 규칙도 알려 주세요.`,
+      promptEn: `Excel formulas for leave usage per employee (A=name, B=granted, C=used):
+1) Remaining 2) Usage % 3) Flag those with 5+ days left
+Each with a note; add a conditional-format rule to highlight high-remaining.`,
+      outputKo: '예상 결과: 잔여·사용률 수식 + 조건부 서식 규칙. 연차 소진 관리에 활용.',
+      outputEn: 'Expected: remaining/usage formulas + conditional-format rule for leave management.',
+    },
+  ],
+
+  'hr-report': [
+    {
+      titleKo: '인사 현황 요약 (완성 예시)',
+      titleEn: 'HR Status Summary (worked)',
+      promptKo: `당신은 인사 담당자입니다. 아래 인사 현황을 경영진 보고용으로 요약해 주세요.
+- 정원 120명 / 현원 112명(충원율 93%)
+- 직급: 5급 8, 6급 24, 7급 45, 8급 이하 35
+- 평균 근속 9.2년 / 상반기 신규 임용 6명, 퇴직 4명
+형식: 「핵심 지표 요약(표) → 한 문단 총평 → 유의점 1가지」. 경영진이 30초에 파악하도록.`,
+      promptEn: `Summarize HR status for executives.
+- Quota 120 / actual 112 (93%) / ranks: 8/24/45/35 / avg tenure 9.2y / H1 hires 6, exits 4
+Format: metrics table → one-paragraph overview → one caution. 30-second read.`,
+      outputKo: '예상 결과: 지표 요약표 + 총평 + 유의점. 인사 정기보고에 바로 활용.',
+      outputEn: 'Expected: metrics table + overview + caution for regular HR reporting.',
+    },
+    {
+      titleKo: '경영진 보고 PPT 구조 (완성 예시)',
+      titleEn: 'Executive HR PPT (worked)',
+      promptKo: `당신은 인사 담당자입니다. '2026 상반기 인력운영 현황' 경영진 보고 PPT 구조를 설계해 주세요.
+- 청중: 총장·부총장 / 시간: 7분
+- 핵심 메시지: 충원율 개선됐으나 특정 부서 과부하 지속
+- 원하는 의사결정: 하반기 2명 추가 채용 승인
+「요약(1장) → 인력 현황 → 부서별 과부하 분석 → 채용 필요성 → 제안·결론」 흐름으로 슬라이드별 메시지 포함.`,
+      promptEn: `Design an executive PPT for "H1 2026 Workforce Status."
+- Audience: president / Time: 7 min
+- Message: fill rate up, but some depts overloaded
+- Decision: approve 2 more hires in H2
+Flow: summary(1) → status → overload analysis → hiring need → proposal, per-slide message.`,
+      outputKo: '예상 결과: 의사결정 지향 인사보고 PPT 구조. 수치만 바꿔 재사용.',
+      outputEn: 'Expected: a decision-oriented HR report PPT structure — reusable.',
+    },
+  ],
+
+  'work-template': [
+    {
+      titleKo: '이메일 회신 템플릿 (완성 예시)',
+      titleEn: 'Email Reply Template (worked)',
+      promptKo: `자주 받는 '증명서 발급 문의' 이메일에 대한 회신 템플릿을 만들어 주세요.
+- 발급 서류: 재직증명서, 경력증명서
+- 방법: 학사시스템 온라인 발급 또는 방문 발급
+- 소요: 온라인 즉시, 방문 당일
+- 문의: 총무처 인사팀 062-000-0000
+형식: 인사 → 발급 방법 안내(번호 목록) → 소요 시간 → 추가 문의 → 맺음말. 정중한 업무 이메일체. 바뀌는 부분은 [ ]로 표시.`,
+      promptEn: `Create a reply template for a common "certificate request" email.
+- Docs: employment/career certificate / Method: online or in-person / Time: instant/same-day / Contact: 062-000-0000
+Format: greeting → steps (numbered) → time → further contact → closing. Mark variables with [ ].`,
+      outputKo: '예상 결과: 재사용 이메일 회신 템플릿. [ ] 부분만 바꿔 매번 활용.',
+      outputEn: 'Expected: a reusable email-reply template — swap [ ] each time.',
+    },
+    {
+      titleKo: '업무 인수인계서 (완성 예시)',
+      titleEn: 'Handover Form (worked)',
+      promptKo: `학사팀 담당 업무를 후임자에게 넘길 인수인계서 양식을 만들어 주세요.
+- 담당 업무: 수강신청 운영, 강의계획서 관리, 성적 처리 지원
+형식: 「담당 업무 목록 → 진행중 사안(현황·다음 조치) → 주요 연락처 → 자료·파일 위치 → 인수인계 시 유의사항」 표 형태로, 각 항목을 채우기만 하면 되게 구성.`,
+      promptEn: `Make a handover form for academic-team duties.
+- Duties: registration ops, syllabi management, grade support
+Format: task list → in-progress (status/next) → key contacts → file locations → cautions, as a fill-in table.`,
+      outputKo: '예상 결과: 채우기만 하면 되는 인수인계서 양식. 인사이동·휴직 시 재사용.',
+      outputEn: 'Expected: a fill-in handover form — reuse on transfers/leave.',
+    },
+  ],
+
+  'work-automation': [
+    {
+      titleKo: '반복 업무 단계 분해 (완성 예시)',
+      titleEn: 'Break Down a Task (worked)',
+      promptKo: `아래 반복 업무를 단계별로 분해하고, 각 단계에서 AI가 도울 수 있는 부분을 표시해 주세요.
+- 업무: 매월 부서별 근태 취합 → 이상 건 확인 → 요약표 작성 → 부서장 공유
+각 단계를 「현재 방식 → 소요 시간 → AI 활용 가능성(상/중/하) → 활용 아이디어」 표로 정리하세요.`,
+      promptEn: `Break the recurring task into steps and mark where AI helps.
+- Task: monthly attendance collection → anomaly check → summary → share with managers
+Table: current way → time → AI potential (H/M/L) → idea, per step.`,
+      outputKo: '예상 결과: 단계별 AI 활용 가능성 표. 자동화 우선순위 판단에 활용.',
+      outputEn: 'Expected: a per-step AI-potential table for prioritizing automation.',
+    },
+    {
+      titleKo: '문서 생성 자동화 절차 (완성 예시)',
+      titleEn: 'Document Automation Procedure (worked)',
+      promptKo: `매주 반복하는 '주간 업무보고 작성'을 AI로 자동화하는 절차서를 만들어 주세요.
+- 현재: 팀원 메모를 모아 수작업 정리(약 40분)
+형식: 「준비물(메모 양식) → 단계별 실행(AI 프롬프트 포함) → 확인 포인트 → 예외 처리」 순서로, 다른 담당자도 따라 할 수 있게 구체적으로 작성.`,
+      promptEn: `Write a procedure to automate the weekly work report with AI.
+- Now: manually compiling team memos (~40 min)
+Format: prereqs (memo form) → steps (with AI prompts) → checkpoints → exceptions — detailed enough for anyone.`,
+      outputKo: '예상 결과: 따라 하면 되는 자동화 절차서. 주간보고 작성 시간 대폭 단축.',
+      outputEn: 'Expected: a follow-along automation procedure that cuts report time.',
+    },
+  ],
+
+  'hr-practice': [
+    {
+      titleKo: '인사 공지문 (완성 예시)',
+      titleEn: 'HR Announcement (worked)',
+      promptKo: `전 직원 대상 인사 공지문을 작성해 주세요.
+- 내용: 2026년 하반기 정기 인사평가 실시 안내
+- 평가 기간: 2026년 12월 1일~12월 12일
+- 방법: 인사시스템 온라인 평가(자기평가 → 1차 평가자 → 2차 평가자)
+- 문의: 총무처 인사팀
+형식: 제목 → 안내 인사 → 평가 개요 → 일정(표) → 방법 → 문의처. 명확하고 간결하게.`,
+      promptEn: `Write an all-staff HR announcement.
+- Topic: H2 2026 regular appraisal / Period: Dec 1–12, 2026 / Method: online (self → 1st → 2nd) / Contact: HR
+Format: title → greeting → overview → schedule (table) → method → contact. Clear and concise.`,
+      outputKo: '예상 결과: 게시 가능한 인사 공지문. 일정·내용만 바꿔 재사용.',
+      outputEn: 'Expected: a postable HR announcement — reusable by editing schedule/content.',
+    },
+    {
+      titleKo: '인사평가 피드백 문서 (완성 예시)',
+      titleEn: 'Appraisal Feedback (worked)',
+      promptKo: `아래 평가 결과로 피드백 면담용 문서를 작성해 주세요.
+- 대상: 학사팀 7급 직원 / 종합 등급: B+
+- 강점: 정확한 문서 처리, 민원 응대 친절
+- 개선점: 마감 관리, 신규 업무 학습 속도
+- 다음 목표: 반복 업무 자동화로 마감 여유 확보
+형식: 강점 인정 → 구체적 개선 사례 → 다음 기간 목표(SMART) → 지원 방안. 성장 중심의 존중하는 어조.`,
+      promptEn: `Write a feedback-session document from the results.
+- Grade: B+ / Strengths: accurate docs, courteous service / Improve: deadline mgmt, ramp-up / Goal: automate repetitive work
+Format: recognize strengths → concrete improvements → next goals (SMART) → support. Respectful, growth-oriented.`,
+      outputKo: '예상 결과: 면담에 바로 쓸 피드백 문서. 대상·내용만 바꿔 재사용.',
+      outputEn: 'Expected: a ready feedback document — reusable by editing the subject.',
+    },
+  ],
 };
 
 /* ============================================
@@ -1584,6 +1806,150 @@ export const WORKSHEETS: Record<string, Worksheet> = {
         promptEn: `Turn the result report into a 3-minute PPT structure with per-slide messages.`,
         checkKo: '문서→발표로 핵심이 잘 압축됐는가?',
         checkEn: 'Is the essence well compressed for presentation?',
+      },
+    ],
+  },
+
+  'hr-documents': {
+    titleKo: '채용 1건 문서로 완성하기 (A→Z)', titleEn: 'Complete One Hire via Documents (A→Z)',
+    goalKo: '가상의(또는 실제) 채용 건 하나를 골라, 공고부터 발령까지 필요한 인사 문서를 순서대로 만듭니다.',
+    goalEn: 'Pick one hire and create every HR document from posting to appointment.',
+    steps: [
+      {
+        stepKo: '1단계 — 채용공고',
+        stepEn: 'Step 1 — Job posting',
+        promptKo: `[직무]에 대한 채용공고를 작성해 줘. 자격·근무조건·전형절차·접수방법 포함. 정보: [입력]`,
+        promptEn: `Write a job posting for [role] with reqs/conditions/process/how-to-apply. Info: [enter]`,
+        checkKo: '자격 요건과 전형 절차가 명확한가?',
+        checkEn: 'Are requirements and process clear?',
+      },
+      {
+        stepKo: '2단계 — 서류심사 안내',
+        stepEn: 'Step 2 — Screening notice',
+        promptKo: `지원자에게 서류심사 결과와 면접 안내를 통보하는 문서를 작성해 줘. 면접 일정 포함.`,
+        promptEn: `Write a notice of screening result and interview info, including schedule.`,
+        checkKo: '면접 일시·장소·준비물이 빠짐없는가?',
+        checkEn: 'Are interview time/place/items complete?',
+      },
+      {
+        stepKo: '3단계 — 합격 통보문',
+        stepEn: 'Step 3 — Acceptance notice',
+        promptKo: `최종 합격자에게 합격 사실과 임용 절차(제출 서류·출근일)를 안내하는 통보문을 작성해 줘.`,
+        promptEn: `Write an acceptance notice with appointment steps (documents, start date).`,
+        checkKo: '제출 서류와 출근일이 명확한가?',
+        checkEn: 'Are documents and start date clear?',
+      },
+      {
+        stepKo: '4단계 — 근로계약서 초안',
+        stepEn: 'Step 4 — Contract draft',
+        promptKo: `합격자의 근로계약서 초안을 작성해 줘. 기간·급여·근무시간·직무 등 필수 조항 포함. ※ 법무 검토 필요 문구 추가.`,
+        promptEn: `Draft the employment contract with essential clauses. Add a "requires legal review" note.`,
+        checkKo: '필수 조항이 근로기준법에 부합하는가? 법무 검토 표시했는가?',
+        checkEn: 'Do clauses meet labor law? Legal-review noted?',
+      },
+      {
+        stepKo: '5단계 — 인사발령 통보문',
+        stepEn: 'Step 5 — Appointment notice',
+        promptKo: `임용 확정에 따른 인사발령 통보문을 작성해 줘. 표(성명·소속·발령·사유) 포함.`,
+        promptEn: `Write the appointment notice with a table (name/dept/appointment/reason).`,
+        checkKo: '발령 정보와 발령일이 정확한가?',
+        checkEn: 'Are appointment details and date correct?',
+      },
+    ],
+  },
+
+  'attendance-excel': {
+    titleKo: '근태 분석 1건 완성하기 (A→Z)', titleEn: 'Complete One Attendance Analysis (A→Z)',
+    goalKo: '한 달치 근태 데이터를 골라, 정리부터 대시보드용 요약까지 완성합니다.',
+    goalEn: 'Take one month of attendance data from cleanup to a dashboard summary.',
+    steps: [
+      {
+        stepKo: '1단계 — 데이터 점검',
+        stepEn: 'Step 1 — Inspect data',
+        promptKo: `근태 데이터의 열 구성을 확인하고, 분석 전에 정리해야 할 이상값(음수 시간, 24시간 초과, 빈 값)을 찾는 방법을 알려 줘. (데이터 설명 입력)`,
+        promptEn: `Check the columns and how to find anomalies (negative hours, >24h, blanks) before analysis. (describe data)`,
+        checkKo: '이상값 판별 기준이 명확한가?',
+        checkEn: 'Are anomaly criteria clear?',
+      },
+      {
+        stepKo: '2단계 — 집계 수식',
+        stepEn: 'Step 2 — Aggregate',
+        promptKo: `직원별·부서별 지각·결근·연차 건수를 집계하는 수식을 알려 줘.`,
+        promptEn: `Formulas to count late/absent/leave per employee and per dept.`,
+        checkKo: '집계 결과가 원자료 합계와 일치하는가?',
+        checkEn: 'Do totals match the raw data?',
+      },
+      {
+        stepKo: '3단계 — 피벗 요약',
+        stepEn: 'Step 3 — Pivot summary',
+        promptKo: `부서별·월별 근태 요약 피벗 테이블 구성(행/열/값/필터)을 알려 줘.`,
+        promptEn: `Give the pivot layout (rows/cols/values/filter) for a dept/month summary.`,
+        checkKo: '피벗이 원하는 요약을 보여주는가?',
+        checkEn: 'Does the pivot show the intended summary?',
+      },
+      {
+        stepKo: '4단계 — 지표·차트',
+        stepEn: 'Step 4 — KPIs & charts',
+        promptKo: `부서장이 볼 근태 핵심 지표(출근율·지각률·초과근무)를 정의하고, 각 지표에 맞는 차트를 추천해 줘.`,
+        promptEn: `Define key attendance KPIs (attendance/late/overtime) and recommend a chart for each.`,
+        checkKo: '지표가 관리 목적에 부합하는가?',
+        checkEn: 'Do the KPIs fit the management goal?',
+      },
+      {
+        stepKo: '5단계 — 요약 코멘트',
+        stepEn: 'Step 5 — Summary comment',
+        promptKo: `분석 결과를 보고용 3~4문장으로 요약하고, 관리가 필요한 부서와 제언을 한 줄 덧붙여 줘. (결과 수치 입력)`,
+        promptEn: `Summarize in 3–4 report sentences and add a one-line dept-to-watch recommendation. (enter numbers)`,
+        checkKo: '개인정보 없이 팀 단위로 서술했는가?',
+        checkEn: 'Written at team level, no personal data?',
+      },
+    ],
+  },
+
+  'hr-practice': {
+    titleKo: '인사 업무 1건 완성하기 (A→Z)', titleEn: 'Complete One HR Task (A→Z)',
+    goalKo: '신규 채용 확정자 1명에 대해, 분석부터 문서·보고까지 인사 업무 흐름을 완성합니다.',
+    goalEn: 'For one confirmed new hire, complete the HR flow from data to documents to report.',
+    steps: [
+      {
+        stepKo: '1단계 — 배치 검토',
+        stepEn: 'Step 1 — Placement review',
+        promptKo: `아래 부서별 인력 현황을 보고 신규 직원을 어느 부서에 배치하면 좋을지 근거와 함께 제안해 줘. (인력 현황 입력)`,
+        promptEn: `Given the headcount by dept, suggest where to place the new hire, with reasons. (enter data)`,
+        checkKo: '배치 근거가 데이터에 기반하는가?',
+        checkEn: 'Is the placement data-based?',
+      },
+      {
+        stepKo: '2단계 — 합격·임용 문서',
+        stepEn: 'Step 2 — Acceptance & appointment',
+        promptKo: `합격 통보문과 인사발령 통보문을 공통 정보(성명·부서·출근일) 기반으로 일관되게 작성해 줘.`,
+        promptEn: `Write the acceptance and appointment notices consistently from shared info (name/dept/start).`,
+        checkKo: '두 문서의 정보가 서로 일치하는가?',
+        checkEn: 'Is the info consistent across both?',
+      },
+      {
+        stepKo: '3단계 — 온보딩 안내',
+        stepEn: 'Step 3 — Onboarding guide',
+        promptKo: `신규 직원 첫 주 온보딩 안내(제출 서류·계정·부서 소개·근무 규칙)를 체크리스트로 작성해 줘.`,
+        promptEn: `Write a first-week onboarding checklist (documents/accounts/dept intro/rules).`,
+        checkKo: '입사 초기에 필요한 항목이 빠짐없는가?',
+        checkEn: 'Are all first-week items covered?',
+      },
+      {
+        stepKo: '4단계 — 인력 현황 갱신',
+        stepEn: 'Step 4 — Update headcount',
+        promptKo: `신규 임용 반영 후 부서별 충원율을 다시 집계하는 Excel 수식을 알려 줘.`,
+        promptEn: `Excel formula to recompute fill rate by dept after the new hire.`,
+        checkKo: '충원율이 정확히 반영됐는가?',
+        checkEn: 'Is the fill rate correctly updated?',
+      },
+      {
+        stepKo: '5단계 — 인사 보고',
+        stepEn: 'Step 5 — HR report',
+        promptKo: `이번 임용을 포함한 이달 인사 현황을 경영진 보고용 한 페이지 요약으로 정리해 줘.`,
+        promptEn: `Summarize this month's HR status incl. the hire into a 1-page executive brief.`,
+        checkKo: '핵심 변동과 시사점이 담겼는가?',
+        checkEn: 'Are key changes and implications included?',
       },
     ],
   },

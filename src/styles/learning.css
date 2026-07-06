@@ -74,6 +74,21 @@
     background: #E8F5E9;
     color: var(--primary-blue);
 }
+.sidebar-item.active {
+    background: #E8F5E9;
+    color: var(--primary-blue);
+    font-weight: 700;
+    border-left: 3px solid var(--primary-blue);
+    padding-left: 17px;
+}
+html[data-theme="dark"] .sidebar-item:hover,
+html[data-theme="dark"] .sidebar-item.active {
+    background: rgba(129, 199, 132, 0.14);
+    color: var(--primary-blue-light);
+}
+html[data-theme="dark"] .sidebar-item.active {
+    border-left-color: var(--primary-blue-light);
+}
 
 /* Session links in sidebar */
 .sidebar-session {
