@@ -281,6 +281,55 @@ export const PRACTICE_BANK: Record<string, PracticeItem[]> = {
       promptKo: `[심화 과제] 여러 시트(월별 데이터)를 통합해 분기 요약 리포트를 자동으로 만드는 절차를 프롬프트로 설계하세요. 통합 방법(수식/파워쿼리) → 요약 지표 → 최종 리포트 형식까지 단계별로 지정하는 것이 핵심입니다.`,
       promptEn: `[Advanced] Design a prompt for a procedure that merges monthly sheets into a quarterly summary report. Specify the merge method (formula/Power Query) → summary metrics → final report format, step by step.`,
     },
+    {
+      level: 'basic', titleKo: 'VLOOKUP·XLOOKUP 자동 생성', titleEn: 'VLOOKUP/XLOOKUP Helper',
+      promptKo: `[역할] 대학 행정 담당자
+[맥락] 두 시트를 연결하는 조회 수식을 만들어 주세요.
+- Sheet1의 학번으로 Sheet2에서 이름·학과를 가져오기
+[형식] VLOOKUP과 XLOOKUP 두 방식 수식 + 차이 설명. 오류 시 대체값(IFERROR) 포함.`,
+      promptEn: `[Role] University administrator
+[Context] Build a lookup formula linking two sheets.
+- Pull name/dept from Sheet2 by student ID in Sheet1
+[Format] Both VLOOKUP and XLOOKUP, with the difference and an IFERROR fallback.`,
+    },
+    {
+      level: 'basic', titleKo: '조건부 서식 규칙 만들기', titleEn: 'Conditional Formatting Rules',
+      promptKo: `[역할] 데이터 담당자
+[맥락] 아래 표에서 눈에 띄게 표시할 조건부 서식 규칙을 알려 주세요.
+- 예산 초과(빨강), 마감 임박 7일 이내(노랑), 완료(회색 처리)
+[형식] 각 규칙의 조건식과 서식 설정 방법을 단계별로 설명.`,
+      promptEn: `[Role] Data staff
+[Context] Conditional-formatting rules to highlight the table.
+- Over budget (red), due within 7 days (yellow), done (gray)
+[Format] Formula and setup steps for each rule.`,
+    },
+    {
+      level: 'applied', titleKo: '설문 응답 집계·교차분석', titleEn: 'Survey Tally & Cross-tab',
+      promptKo: `[역할] 통계 담당자
+[맥락] 아래 설문 응답 데이터를 집계하고 교차분석해 주세요.
+- (문항별 응답 데이터) / 교차 기준: [부서 × 만족도 등]
+[형식] 문항별 빈도·비율 집계표 + 교차표 구성 방법(피벗) + 해석 포인트.`,
+      promptEn: `[Role] Statistics staff
+[Context] Tally and cross-tabulate the survey responses.
+- (response data) / Cross by: [dept × satisfaction...]
+[Format] Frequency/ratio table + cross-tab (pivot) + interpretation points.`,
+    },
+    {
+      level: 'applied', titleKo: '데이터 → 자동 요약 문장', titleEn: 'Data → Auto Summary Text',
+      promptKo: `[역할] 보고 담당자
+[맥락] 아래 집계 데이터를 보고서에 넣을 요약 문장으로 바꿔 주세요.
+- (수치/증감 데이터)
+[형식] 핵심 수치를 담은 3~4문장 요약 + 전월/전년 대비 증감 표현 포함.`,
+      promptEn: `[Role] Reporting staff
+[Context] Turn the aggregated data into report summary sentences.
+- (numbers/changes)
+[Format] 3–4 sentences with key figures and MoM/YoY change phrasing.`,
+    },
+    {
+      level: 'advanced', titleKo: '재사용 분석 템플릿 설계', titleEn: 'Reusable Analysis Template',
+      promptKo: `[심화 과제] 매달 같은 형식으로 들어오는 데이터를 붙여넣기만 하면 집계표·차트·요약이 자동으로 나오도록, 수식·피벗·조건부서식을 조합한 재사용 분석 템플릿의 구성을 프롬프트로 설계하세요. 입력 영역과 결과 영역을 분리하도록 지정하는 것이 핵심입니다.`,
+      promptEn: `[Advanced] Design a prompt for a reusable analysis template where pasting monthly same-format data auto-produces tables, charts, and a summary using formulas/pivots/conditional formatting. The key is separating input and output areas.`,
+    },
   ],
 
   'doc-practice': [
