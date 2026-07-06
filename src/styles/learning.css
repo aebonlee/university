@@ -407,3 +407,53 @@
     white-space: pre-wrap;
     border: none;
 }
+
+/* ─── 난이도별 실습 문제 뱅크 ─── */
+.section-block-body .practice-bank-intro {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+.practice-bank-level {
+    margin-bottom: 22px;
+}
+.practice-bank-level-title {
+    font-size: 14.5px;
+    font-weight: 700;
+    margin: 0 0 12px;
+    padding: 8px 14px;
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+}
+.practice-bank-level-title.basic {
+    background: rgba(76, 175, 80, 0.10);
+    border-left: 4px solid #4CAF50;
+}
+.practice-bank-level-title.applied {
+    background: rgba(255, 143, 0, 0.10);
+    border-left: 4px solid #FF8F00;
+}
+.practice-bank-level-title.advanced {
+    background: rgba(229, 62, 62, 0.10);
+    border-left: 4px solid #E53E3E;
+}
+.practice-bank-item {
+    margin-bottom: 14px;
+}
+.practice-bank-item-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+    padding-left: 2px;
+}
+html[data-theme="dark"] .practice-bank-level-title.basic {
+    background: rgba(129, 199, 132, 0.14);
+}
+html[data-theme="dark"] .practice-bank-level-title.applied {
+    background: rgba(255, 167, 38, 0.14);
+}
+html[data-theme="dark"] .practice-bank-level-title.advanced {
+    background: rgba(229, 62, 62, 0.16);
+}

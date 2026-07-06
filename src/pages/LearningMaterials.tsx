@@ -3,6 +3,13 @@ import { Link, useParams, useLocation } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import SEOHead from '../components/SEOHead';
 import CopyBlock from '../components/CopyBlock';
+import { PRACTICE_BANK, PracticeLevel } from '../data/practice-bank';
+
+const LEVEL_META: Record<PracticeLevel, { ko: string; en: string; badge: string }> = {
+  basic: { ko: '🟢 기초 — 그대로 복사해 실행', en: '🟢 Basic — copy and run as-is', badge: 'basic' },
+  applied: { ko: '🟡 응용 — [  ]를 바꿔 실행', en: '🟡 Applied — change [  ] and run', badge: 'applied' },
+  advanced: { ko: '🔴 심화 — 직접 설계', en: '🔴 Advanced — design it yourself', badge: 'advanced' },
+};
 
 /* ─── Types ─── */
 interface TopicSection {
@@ -2125,6 +2132,39 @@ export default function LearningMaterials() {
                     </div>
                   </div>
                 ))}
+
+                {PRACTICE_BANK[topic.id] && (
+                  <div className="section-block">
+                    <h3 className="section-block-title">
+                      <i className="fa-solid fa-dumbbell" style={{ marginRight: 8, color: 'var(--primary-blue)' }} />
+                      {isKo ? '실습 문제 (난이도별)' : 'Practice (by Level)'}
+                    </h3>
+                    <div className="section-block-body">
+                      <p className="practice-bank-intro">
+                        {isKo
+                          ? '진도에 맞춰 골라 연습하세요. 각 프롬프트는 복사 버튼으로 복사해 ChatGPT·Claude 등에 붙여넣고 실습할 수 있습니다.'
+                          : 'Pick by your pace. Copy each prompt and paste it into ChatGPT/Claude to practice.'}
+                      </p>
+                      {(['basic', 'applied', 'advanced'] as PracticeLevel[]).map(lvl => {
+                        const items = PRACTICE_BANK[topic.id].filter(p => p.level === lvl);
+                        if (items.length === 0) return null;
+                        return (
+                          <div key={lvl} className="practice-bank-level">
+                            <h4 className={`practice-bank-level-title ${LEVEL_META[lvl].badge}`}>
+                              {isKo ? LEVEL_META[lvl].ko : LEVEL_META[lvl].en}
+                            </h4>
+                            {items.map((p, i) => (
+                              <div key={i} className="practice-bank-item">
+                                <div className="practice-bank-item-title">{isKo ? p.titleKo : p.titleEn}</div>
+                                <CopyBlock code={isKo ? p.promptKo : p.promptEn} isKo={isKo} />
+                              </div>
+                            ))}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
               </div>
             </section>
           ))}
