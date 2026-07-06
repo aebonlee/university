@@ -1,4 +1,4 @@
-import{j as e}from"./markdown-uD28ob7P.js";import{G as t}from"./GuidePage-HGDxDSQA.js";/* empty css                 */import"./vendor-j2q2Hh8J.js";import"./index-C1V0k_ih.js";import"./supabase-ClMXFR6t.js";import"./SEOHead-CXt37xNM.js";const a={id:"glossary",icon:"fa-book-bookmark",title:"용어 해설",titleEn:"Glossary",sections:[{title:"생성형 AI 기본 용어",titleEn:"Generative AI Basics",content:`교육에서 자주 등장하는 핵심 용어를 모았습니다. 모르는 말이 나오면 여기에서 찾아보세요.
+import{j as e}from"./markdown-uD28ob7P.js";import{G as t}from"./GuidePage-w0Fq-Jdx.js";/* empty css                 */import"./vendor-j2q2Hh8J.js";import"./index-ClaSFsyL.js";import"./supabase-ClMXFR6t.js";import"./SEOHead-CXt37xNM.js";const a={id:"glossary",icon:"fa-book-bookmark",title:"용어 해설",titleEn:"Glossary",sections:[{title:"생성형 AI 기본 용어",titleEn:"Generative AI Basics",content:`교육에서 자주 등장하는 핵심 용어를 모았습니다. 모르는 말이 나오면 여기에서 찾아보세요.
 
 | 용어 | 쉬운 설명 |
 |------|-----------|
@@ -109,7 +109,45 @@ import{j as e}from"./markdown-uD28ob7P.js";import{G as t}from"./GuidePage-HGDxDS
 4. **Show 1–2 examples (few-shot)**.
 5. **Iterate** — draft → "make this more polite" → "turn into a table".
 
-> Universal template: **[Role] + [Context] + [Request] + [Format] + [Constraints]**`},{title:"환각(거짓 정보) 줄이기",titleEn:"Reducing Hallucinations",content:`AI는 모르는 것도 자신 있게 답할 수 있습니다. 다음 습관으로 위험을 줄이세요.
+> Universal template: **[Role] + [Context] + [Request] + [Format] + [Constraints]**`},{title:"조건을 한 줄로 조합하기",titleEn:"Stack Conditions in One Line",content:`여러 요구사항(문체·표현·분량·형식)을 한 문장에 함께 넣으면, 여러 번 고칠 필요 없이 **한 번에** 원하는 결과가 나옵니다.
+
+### 한 줄 조합 예시
+> "이 내용을 격식 있는 **공문체(개조식·하십시오체)**로, **번역투 없이**, **공백 포함 500자 이내**로 정리해줘."
+
+이 한 문장에는 4가지 조건이 들어 있습니다.
+
+| 조건 유형 | 이 예시 | 바꿔 쓸 수 있는 표현 |
+|-----------|---------|----------------------|
+| **문체·어조** | 공문체(개조식·하십시오체) | 정중한 존댓말 / 보고체 / 안내문체 |
+| **표현 품질** | 번역투 없이 | 자연스러운 한국어로 / 군더더기 없이 |
+| **분량** | 공백 포함 500자 이내 | 3문장 이내 / A4 반 페이지 / 5개 항목으로 |
+| **형식** | ('정리해줘') | 표로 / 번호 목록으로 / 개조식 불릿으로 |
+
+### 공문서에 자주 쓰는 조합
+- "위 내용을 **기안문 형식**으로, **개조식**으로, **핵심만** 정리해줘"
+- "**정중한 통보문**으로, **수신 → 제목 → 본문 → 붙임** 순서로 작성해줘"
+- "**표로**, **부서·항목·금액** 3열로, **합계 행 포함**해 정리해줘"
+
+> 조건이 많아 헷갈리면 **[문체] → [표현] → [분량] → [형식]** 순서로 이어 붙이면 빠짐없이 지정할 수 있습니다.`,contentEn:`Stacking several requirements (tone, style, length, format) into one sentence gets you the result **in one shot** — no back-and-forth edits.
+
+### One-line example
+> "Rewrite this in a formal official tone (bullet-point, deferential), **without translationese**, **within 500 characters including spaces**."
+
+This single sentence carries four conditions:
+
+| Type | In the example | Alternatives |
+|------|----------------|--------------|
+| **Tone/style** | formal official (bullet/deferential) | polite / report style / notice style |
+| **Quality** | no translationese | natural Korean / no filler |
+| **Length** | ≤ 500 chars incl. spaces | ≤ 3 sentences / half A4 / 5 items |
+| **Format** | ("summarize") | as a table / numbered list / bullets |
+
+### Common stacks for official documents
+- "Rewrite as a **proposal (기안문)**, bullet-point, essentials only."
+- "As a **polite notice**, in order: recipient → title → body → attachments."
+- "As a **table**, 3 columns (dept·item·amount), with a total row."
+
+> When there are many, stack them in order **[tone] → [quality] → [length] → [format]** so nothing is missed.`},{title:"환각(거짓 정보) 줄이기",titleEn:"Reducing Hallucinations",content:`AI는 모르는 것도 자신 있게 답할 수 있습니다. 다음 습관으로 위험을 줄이세요.
 
 - **"확실하지 않으면 모른다고 말해줘"** 를 프롬프트에 넣기
 - 숫자·날짜·인용·규정은 **반드시 원문으로 재확인**
