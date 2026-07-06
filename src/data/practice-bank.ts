@@ -74,6 +74,55 @@ export const PRACTICE_BANK: Record<string, PracticeItem[]> = {
       promptKo: `[심화 과제] 하나의 회의 녹취를 입력하면 ① 공식 회의록 ② 참석자용 할 일 목록 ③ 전 직원 공지문 초안을 한 번에 일관되게 생성하는 프롬프트를 직접 설계해 실행하세요. 세 산출물의 형식·어조를 각각 지정하는 것이 핵심입니다.`,
       promptEn: `[Advanced] Design a prompt that, from one transcript, produces ① formal minutes ② a to-do list for attendees ③ a staff announcement draft — consistently, in one pass. The key is specifying each output's format and tone.`,
     },
+    {
+      level: 'basic', titleKo: '간담회·워크숍 결과 정리', titleEn: 'Workshop Result Notes',
+      promptKo: `[역할] 행정 담당자
+[맥락] 아래 간담회/워크숍에서 나온 의견을 정리해 주세요.
+- (참석자 발언·메모 붙여넣기)
+[형식] 주요 의견 그룹화 → 공통 제안 → 반대/유의 의견 → 후속 검토 사항.`,
+      promptEn: `[Role] Administrator
+[Context] Organize opinions from the workshop below.
+- (paste remarks/notes)
+[Format] Group key opinions → common proposals → concerns → items to review.`,
+    },
+    {
+      level: 'basic', titleKo: '월간 업무보고', titleEn: 'Monthly Work Report',
+      promptKo: `[역할] 부서 담당자
+[맥락] 이번 달 업무 실적을 월간 보고로 정리해 주세요.
+- 주요 실적: [ ] / 미흡 사항: [ ] / 다음 달 계획: [ ]
+[형식] 실적 요약(표) → 정성 평가 → 다음 달 중점 과제. 경영진이 3분에 읽을 분량.`,
+      promptEn: `[Role] Dept staff
+[Context] Compile this month's results into a monthly report.
+- Results/gaps/next-month plan: [ ]
+[Format] Results table → qualitative note → next-month priorities. 3-min read.`,
+    },
+    {
+      level: 'applied', titleKo: '회의 요약 → 이메일 공유문', titleEn: 'Minutes → Share Email',
+      promptKo: `[역할] 회의 주관자
+[맥락] 아래 회의록을 참석하지 못한 동료에게 공유할 이메일로 바꿔 주세요.
+- (회의록 붙여넣기)
+[형식] 제목 → 인사 → 핵심 결정 3줄 → 각자 할 일 → 다음 회의 안내. 간결한 업무 이메일체.`,
+      promptEn: `[Role] Meeting host
+[Context] Turn the minutes into a share email for absent colleagues.
+- (paste minutes)
+[Format] Subject → greeting → 3 key decisions → action items → next meeting. Concise business tone.`,
+    },
+    {
+      level: 'applied', titleKo: '보고서 → 1페이지 요약', titleEn: 'Report → 1-Page Brief',
+      promptKo: `[역할] 보고 담당자
+[맥락] 아래 장문 보고서를 경영진용 1페이지 요약으로 압축해 주세요.
+- (보고서 본문 붙여넣기)
+[형식] 핵심 결론(맨 위) → 배경 3줄 → 주요 수치 → 의사결정 요청 사항.`,
+      promptEn: `[Role] Reporting staff
+[Context] Compress the long report into a 1-page executive brief.
+- (paste report)
+[Format] Conclusion first → 3-line background → key figures → decision request.`,
+    },
+    {
+      level: 'advanced', titleKo: '주간회의 누적 요약·이슈 추적', titleEn: 'Weekly Rollup & Issue Tracking',
+      promptKo: `[심화 과제] 매주 열리는 회의의 회의록을 누적해, 지난주 결정사항의 이행 여부를 추적하고 미결 이슈를 다음 회의 안건으로 자동 정리하는 프롬프트를 설계하세요. 이행완료/지연/신규 이슈를 구분해 표시하도록 지정하는 것이 핵심입니다.`,
+      promptEn: `[Advanced] Design a prompt that accumulates weekly minutes, tracks whether last week's decisions were done, and rolls unresolved issues into the next agenda. Mark done/delayed/new distinctly.`,
+    },
   ],
 
   'ppt-structure': [
@@ -125,6 +174,55 @@ export const PRACTICE_BANK: Record<string, PracticeItem[]> = {
       level: 'advanced', titleKo: '청중별 2버전 구조', titleEn: 'Two Versions by Audience',
       promptKo: `[심화 과제] 같은 내용을 ① 경영진용(3분·핵심만) ② 실무진용(10분·상세)의 두 버전 PPT 구조로 동시에 설계하는 프롬프트를 만드세요. 청중에 따라 강조점과 슬라이드 수가 어떻게 달라지는지 명시하도록 지정하는 것이 핵심입니다.`,
       promptEn: `[Advanced] Design a prompt that structures the same content in two versions — ① executives (3 min, essentials) ② staff (10 min, detailed). Specify how emphasis and slide count differ by audience.`,
+    },
+    {
+      level: 'basic', titleKo: '사업설명회 발표 구조', titleEn: 'Program Briefing Structure',
+      promptKo: `[역할] 대학 행정 담당자
+[맥락] [사업/제도] 설명회 발표 PPT 구조를 설계해 주세요.
+- 청중: 신청 대상자 / 목표: 신청 유도
+[형식] 개요 → 지원 내용 → 신청 방법 → 자주 묻는 질문 → 문의처. 슬라이드별 메시지 포함.`,
+      promptEn: `[Role] University administrator
+[Context] Structure a briefing deck for a [program].
+- Audience: applicants / Goal: drive applications
+[Format] Overview → benefits → how to apply → FAQ → contact, with per-slide message.`,
+    },
+    {
+      level: 'basic', titleKo: '교육·오리엔테이션 슬라이드 흐름', titleEn: 'Orientation Slide Flow',
+      promptKo: `[역할] 교육 담당자
+[맥락] [대상] 오리엔테이션 슬라이드 흐름을 설계해 주세요.
+- 소요: [시간] / 다룰 내용: [ ]
+[형식] 환영 → 일정 안내 → 주요 정보 → 실습/활동 → 마무리(Q&A). 지루하지 않게 완급 조절 제안.`,
+      promptEn: `[Role] Training staff
+[Context] Design an orientation slide flow for [audience].
+- Duration: [ ] / Topics: [ ]
+[Format] Welcome → schedule → key info → activity → wrap-up (Q&A), with pacing tips.`,
+    },
+    {
+      level: 'applied', titleKo: '문제해결형 발표 구조', titleEn: 'Problem-Solving Structure',
+      promptKo: `[역할] [우리 부서] 발표자
+[맥락] [문제 상황]을 다루는 문제해결형 발표 구조를 설계해 주세요.
+- 문제: [ ] / 제안하고 싶은 해법: [ ]
+[형식] 현황(문제 규모) → 원인 분석 → 대안 비교 → 권고안 → 기대효과. 근거 슬라이드 위치 명시.`,
+      promptEn: `[Role] [Your dept] presenter
+[Context] Structure a problem-solving talk on [problem].
+- Problem: [ ] / Proposed solution: [ ]
+[Format] Situation → root cause → options → recommendation → expected impact, with evidence slides.`,
+    },
+    {
+      level: 'applied', titleKo: '3분 브리핑 구조', titleEn: '3-Minute Briefing',
+      promptKo: `[역할] 실무 담당자
+[맥락] [주제]를 상급자에게 3분 안에 브리핑할 슬라이드 구조를 설계해 주세요.
+- 핵심 요청/결론: [ ]
+[형식] 3~4장으로 압축: 결론 → 근거 → 요청. 각 장에 딱 한 문장의 핵심 메시지.`,
+      promptEn: `[Role] Staff
+[Context] Structure a 3-minute briefing on [topic] for a manager.
+- Ask/conclusion: [ ]
+[Format] 3–4 slides: conclusion → evidence → ask. One key line per slide.`,
+    },
+    {
+      level: 'advanced', titleKo: '발표 목적별 구조 분기 설계', titleEn: 'Purpose-Branching Structure',
+      promptKo: `[심화 과제] 같은 주제라도 발표 목적(정보 전달 / 설득 / 보고)에 따라 슬라이드 구조가 달라지도록, 목적을 입력하면 그에 맞는 구조를 제안하는 프롬프트를 설계하세요. 목적별로 강조 요소와 순서가 어떻게 바뀌는지 규칙을 명시하는 것이 핵심입니다.`,
+      promptEn: `[Advanced] Design a prompt where the same topic yields a different slide structure by purpose (inform / persuade / report) — input the purpose, get a matching structure. Specify how emphasis and order change by purpose.`,
     },
   ],
 
@@ -386,6 +484,58 @@ export const PRACTICE_BANK: Record<string, PracticeItem[]> = {
       promptKo: `[심화 과제] 우리 부서 실제 업무 1건을 골라, 기안문 작성 → 보고 PPT 구조 → Excel 집계표까지 한 흐름으로 AI를 활용해 처리하는 프롬프트 세트를 직접 설계하세요. 각 단계의 입력·출력이 다음 단계로 자연스럽게 이어지도록 구성하는 것이 핵심입니다.`,
       promptEn: `[Advanced] Pick one real task and design a prompt set to handle it end-to-end: proposal → report PPT structure → Excel summary. The key is chaining each step's output into the next.`,
     },
+    {
+      level: 'basic', titleKo: '민원 답변 공문', titleEn: 'Civil Inquiry Reply',
+      promptKo: `[역할] 대학 행정 담당자
+[맥락] 아래 민원에 대한 답변 공문을 작성해 주세요.
+- 민원 내용: [주차 공간 부족 개선 요청 등]
+- 조치/계획: [ ]
+[형식] 민원 요지 확인 → 검토 결과 → 조치/계획 → 추가 안내. 정중한 어조.`,
+      promptEn: `[Role] University administrator
+[Context] Write a reply to the civil inquiry below.
+- Inquiry: [e.g., parking shortage] / Action: [ ]
+[Format] Restate → review result → action/plan → guidance. Courteous tone.`,
+    },
+    {
+      level: 'basic', titleKo: '공지사항 게시문', titleEn: 'Announcement Post',
+      promptKo: `[역할] 행정 담당자
+[맥락] 아래 내용을 홈페이지/게시판 공지문으로 작성해 주세요.
+- 공지 주제: [ ] / 기간·대상: [ ]
+[형식] 제목(눈에 띄게) → 핵심 안내 → 상세 내용 → 문의처. 읽기 쉬운 단락 구성.`,
+      promptEn: `[Role] Administrator
+[Context] Write a website/board announcement.
+- Topic: [ ] / Period·target: [ ]
+[Format] Eye-catching title → key notice → details → contact. Easy-to-read paragraphs.`,
+    },
+    {
+      level: 'applied', titleKo: '규정 개정 문서 세트', titleEn: 'Regulation Amendment Set',
+      promptKo: `[역할] 주관 부서 담당자
+[맥락] [규정] 개정에 필요한 문서 세트를 작성해 주세요.
+- ① 개정안(신구대조표) ② 개정 안내문 ③ 시행 공지
+- 개정 사유·주요 변경: [ ]
+[형식] 세 문서를 일관된 정보로. 신구대조표는 조항/기존/개정 3열 표.`,
+      promptEn: `[Role] Owning dept staff
+[Context] Write a document set for a [regulation] amendment.
+- ① amendment (old/new table) ② notice ③ effective announcement
+- Reason·changes: [ ]
+[Format] Consistent info; old/new table in 3 columns (clause/old/new).`,
+    },
+    {
+      level: 'applied', titleKo: '감사 대응 소명 공문', titleEn: 'Audit Response Statement',
+      promptKo: `[역할] 피감 부서 담당자
+[맥락] 감사에서 지적된 사항에 대한 소명 공문을 작성해 주세요.
+- 지적 사항: [ ] / 실제 경위: [ ] / 개선 조치: [ ]
+[형식] 지적 사항 확인 → 사실 관계(경위) → 개선 조치·재발방지 → 향후 이행 계획. 사실 중심 어조.`,
+      promptEn: `[Role] Audited dept staff
+[Context] Write a response statement to an audit finding.
+- Finding/context/corrective action: [ ]
+[Format] Restate finding → facts → corrective action → future plan. Fact-based tone.`,
+    },
+    {
+      level: 'advanced', titleKo: '연간 반복 공문 캘린더 설계', titleEn: 'Annual Recurring-Doc Calendar',
+      promptKo: `[심화 과제] 우리 부서가 매년 정해진 시기에 반복 발송하는 공문들을 월별 캘린더로 정리하고, 각 공문의 재사용 템플릿까지 함께 생성하는 프롬프트를 설계하세요. 발송 시기·대상·변경값을 함께 관리하도록 지정하는 것이 핵심입니다.`,
+      promptEn: `[Advanced] Design a prompt that maps our dept's yearly recurring documents onto a monthly calendar and also generates a reusable template for each. The key is tracking timing, recipients, and variable values together.`,
+    },
   ],
 
   /* ─────────── 인사행정 ─────────── */
@@ -439,6 +589,55 @@ export const PRACTICE_BANK: Record<string, PracticeItem[]> = {
       level: 'advanced', titleKo: '근태 이상패턴 탐지 설계', titleEn: 'Anomaly Detection Design',
       promptKo: `[심화 과제] 근태 데이터에서 이상 패턴(반복 지각, 특정 요일 결근, 과다 초과근무 등)을 자동으로 탐지하고 조치 방안까지 제안하는 프롬프트를 설계하세요. 판별 기준과 개인정보 유의사항을 함께 지정하는 것이 핵심입니다.`,
       promptEn: `[Advanced] Design a prompt that auto-detects anomaly patterns in attendance (repeated lateness, weekday absences, excess overtime) and proposes actions. The key is specifying detection criteria and privacy caveats.`,
+    },
+    {
+      level: 'basic', titleKo: '신규 입사자 온보딩 안내', titleEn: 'New Hire Onboarding Guide',
+      promptKo: `[역할] 인사 담당자
+[맥락] 신규 입사자에게 첫 주에 필요한 것들을 안내하는 문서를 작성해 주세요.
+- 제출 서류, 시스템 계정, 부서 소개, 근무 규칙 등
+[형식] 체크리스트 형식 + 담당자/기한. 친절하고 환영하는 어조.`,
+      promptEn: `[Role] HR staff
+[Context] Write a first-week onboarding guide for a new hire.
+- Documents, system accounts, dept intro, work rules
+[Format] Checklist + owner/deadline. Warm, welcoming tone.`,
+    },
+    {
+      level: 'basic', titleKo: '인사 제도 쉬운 설명', titleEn: 'Explain HR Policy Simply',
+      promptKo: `[역할] 인사 담당자
+[맥락] 아래 인사 제도를 직원이 이해하기 쉽게 풀어 설명해 주세요.
+- 제도: [연금·성과급·유연근무 등]
+[형식] 한 줄 정의 → 대상·조건 → 예시 → 자주 묻는 질문 2개. 전문용어 최소화.`,
+      promptEn: `[Role] HR staff
+[Context] Explain the HR policy below in plain terms.
+- Policy: [pension/bonus/flex work...]
+[Format] One-line definition → who/conditions → example → 2 FAQs. Minimal jargon.`,
+    },
+    {
+      level: 'applied', titleKo: '부서별 인력현황 분석', titleEn: 'Headcount Analysis by Dept',
+      promptKo: `[역할] 인사 담당자
+[맥락] 아래 인력 데이터로 부서별 현황을 분석해 주세요.
+- (부서·직급·정원·현원 데이터)
+[형식] 부서별 충원율 표 + 인력 과부족 부서 강조 + 충원/재배치 제언.`,
+      promptEn: `[Role] HR staff
+[Context] Analyze headcount by department from the data.
+- (dept/rank/quota/actual)
+[Format] Fill-rate table + flag over/under-staffed depts + hiring/reassignment advice.`,
+    },
+    {
+      level: 'applied', titleKo: '복지제도 안내 답변 세트', titleEn: 'Benefits Q&A Set',
+      promptKo: `[역할] 인사 담당자
+[맥락] 직원 문의가 잦은 복지제도에 대한 표준 답변 세트를 만들어 주세요.
+- 항목: [경조사비·건강검진·교육비 지원 등]
+[형식] 항목별 「대상 / 지원 내용 / 신청 방법 / 유의사항」. 챗봇·안내데스크에서 바로 활용 가능하게.`,
+      promptEn: `[Role] HR staff
+[Context] Build a standard Q&A set for common benefit questions.
+- Items: [family events/health checkup/education support...]
+[Format] Per item: eligibility / benefit / how to apply / notes. Ready for a chatbot/help desk.`,
+    },
+    {
+      level: 'advanced', titleKo: '월간 인사 인사이트 리포트 설계', titleEn: 'Monthly HR Insight Report',
+      promptKo: `[심화 과제] 채용·근태·이직 등 여러 인사 데이터를 종합해 매달 경영진에게 제공할 인사 인사이트 리포트를 설계하세요. 핵심 지표 선정 → 전월 대비 변화 → 주목할 시그널 → 제언까지 자동 생성하도록 구성하는 것이 핵심입니다.`,
+      promptEn: `[Advanced] Design a monthly HR insight report combining hiring/attendance/turnover data for executives. Auto-generate: key metrics → MoM change → notable signals → recommendations.`,
     },
   ],
 
@@ -494,6 +693,55 @@ export const PRACTICE_BANK: Record<string, PracticeItem[]> = {
       promptKo: `[심화 과제] 하나의 채용 건에 대해 채용공고 + 서류심사 안내 + 최종 합격 통보문 3종을 공통 정보(직무·일정) 기반으로 일관되게 생성하는 프롬프트를 설계하세요. 문서 간 날짜·명칭이 어긋나지 않도록 지정하는 것이 핵심입니다.`,
       promptEn: `[Advanced] Design a prompt that generates a hiring set — posting + screening notice + final acceptance — consistently from shared info (role/schedule). The key is keeping dates/names aligned across documents.`,
     },
+    {
+      level: 'basic', titleKo: '재직·경력 증명서 문구', titleEn: 'Employment/Career Certificate',
+      promptKo: `[역할] 인사 담당자
+[맥락] 아래 정보로 재직증명서(또는 경력증명서) 문구를 작성해 주세요.
+- 성명·부서·직급·재직 기간·용도: [ ]
+[형식] 증명서 표준 문구 형식. 발급 목적·증명 내용·발급일·기관장 명의 포함.`,
+      promptEn: `[Role] HR staff
+[Context] Draft an employment/career certificate.
+- Name/dept/rank/period/purpose: [ ]
+[Format] Standard certificate wording: purpose, statement, issue date, issuer.`,
+    },
+    {
+      level: 'basic', titleKo: '표창장·감사장', titleEn: 'Award/Appreciation Letter',
+      promptKo: `[역할] 인사 담당자
+[맥락] 아래 공적에 대한 표창장(또는 감사장) 문구를 작성해 주세요.
+- 수상자·공적 내용·시상 사유: [ ]
+[형식] 격식 있는 표창장 문구. 공적 요약 → 표창 문구 → 수여자·일자.`,
+      promptEn: `[Role] HR staff
+[Context] Write an award/appreciation letter for the achievement below.
+- Recipient/achievement/reason: [ ]
+[Format] Formal wording: achievement → citation → issuer·date.`,
+    },
+    {
+      level: 'applied', titleKo: '인사평가 결과 통보문', titleEn: 'Performance Result Notice',
+      promptKo: `[역할] 인사 담당자
+[맥락] 인사평가 결과를 대상자에게 통보하는 문서를 작성해 주세요.
+- 평가 기간·등급·주요 강점·개선점: [ ]
+[형식] 결과 요약 → 강점 → 개선 방향 → 이의신청 안내. 존중하는 어조.`,
+      promptEn: `[Role] HR staff
+[Context] Write a performance-result notice to an employee.
+- Period/grade/strengths/improvements: [ ]
+[Format] Result → strengths → improvement direction → appeal info. Respectful tone.`,
+    },
+    {
+      level: 'applied', titleKo: '전보·파견 명령서', titleEn: 'Transfer/Dispatch Order',
+      promptKo: `[역할] 인사 담당자
+[맥락] 아래 전보 또는 파견 명령서를 작성해 주세요.
+- 대상·현소속·전보(파견)처·기간·사유: [ ]
+[형식] 공문 명령서 형식. 발령 내용(표) → 근무 조건 → 유의사항 → 결재란.`,
+      promptEn: `[Role] HR staff
+[Context] Write a transfer/dispatch order.
+- Name/current/destination/period/reason: [ ]
+[Format] Official order: appointment (table) → conditions → notes → approval.`,
+    },
+    {
+      level: 'advanced', titleKo: '직원 생애주기 문서 패키지', titleEn: 'Employee Lifecycle Package',
+      promptKo: `[심화 과제] 입사 → 재직(발령·평가·복지) → 퇴직에 이르는 직원 생애주기 단계별로 필요한 인사 문서 목록을 정의하고, 각 단계 대표 문서의 템플릿을 일관된 서식으로 생성하는 프롬프트를 설계하세요. 단계별 필수 문서를 빠짐없이 정리하는 것이 핵심입니다.`,
+      promptEn: `[Advanced] Design a prompt that defines the HR documents needed at each employee-lifecycle stage (hire → tenure → exit) and generates a consistent template for each stage's key document. The key is completeness per stage.`,
+    },
   ],
 
   'attendance-excel': [
@@ -545,6 +793,55 @@ export const PRACTICE_BANK: Record<string, PracticeItem[]> = {
       level: 'advanced', titleKo: '근태 대시보드 지표 설계', titleEn: 'Attendance Dashboard Design',
       promptKo: `[심화 과제] 부서장이 한눈에 보는 근태 대시보드에 넣을 핵심 지표(KPI)를 정의하고, 각 지표를 어떤 차트로 표현할지, 어떤 수식으로 계산할지까지 프롬프트로 설계하세요. 지표 선정 근거를 함께 지정하는 것이 핵심입니다.`,
       promptEn: `[Advanced] Design a prompt defining key attendance KPIs for a manager dashboard, which chart shows each, and the formula behind it. The key is justifying the KPI selection.`,
+    },
+    {
+      level: 'basic', titleKo: '연차 사용 현황 집계', titleEn: 'Leave Usage Tally',
+      promptKo: `[역할] 인사 담당자
+[맥락] 직원별 연차 사용 현황을 집계하는 방법을 알려 주세요.
+- 데이터: [부여일수·사용일수·잔여] 열 구성
+[형식] 개인별 사용률·잔여 집계 수식 + 잔여 과다(소진 독려 대상) 표시 방법.`,
+      promptEn: `[Role] HR staff
+[Context] How to tally leave usage per employee.
+- Columns: granted/used/remaining
+[Format] Usage-rate/remaining formulas + how to flag high-remaining employees.`,
+    },
+    {
+      level: 'basic', titleKo: '근무일수 계산(주말·공휴일 제외)', titleEn: 'Working Days (excl. holidays)',
+      promptKo: `[역할] 데이터 담당자
+[맥락] 두 날짜 사이의 실제 근무일수를 계산하는 수식을 알려 주세요.
+- 주말과 공휴일(별도 목록)을 제외
+[형식] NETWORKDAYS 계열 수식과 공휴일 목록 지정 방법. 반차 처리 팁도.`,
+      promptEn: `[Role] Data staff
+[Context] Formula for actual working days between two dates.
+- Exclude weekends and holidays (separate list)
+[Format] NETWORKDAYS-family formula + how to set the holiday list; half-day tip.`,
+    },
+    {
+      level: 'applied', titleKo: '유연근무 시간 정산', titleEn: 'Flex-Time Settlement',
+      promptKo: `[역할] 인사 담당자
+[맥락] 유연근무제 직원의 월 근무시간을 정산하는 방법을 설계해 주세요.
+- (일자별 출퇴근·의무근무시간 데이터)
+[형식] 일별 근무시간 산출 → 월 합계 → 의무시간 대비 과부족 → 정산 결과표.`,
+      promptEn: `[Role] HR staff
+[Context] Design a monthly flex-time settlement.
+- (daily punch + required hours)
+[Format] Daily hours → monthly total → vs required → settlement table.`,
+    },
+    {
+      level: 'applied', titleKo: '부서별 출근율 비교', titleEn: 'Attendance Rate by Dept',
+      promptKo: `[역할] 인사 담당자
+[맥락] 아래 데이터로 부서별 출근율을 비교 분석해 주세요.
+- (부서·근무일·출근일 데이터) / 기간: [ ]
+[형식] 부서별 출근율 집계표 + 상·하위 부서 + 시각화(막대) 추천 + 해석.`,
+      promptEn: `[Role] HR staff
+[Context] Compare attendance rate by department.
+- (dept/workdays/present) / Period: [ ]
+[Format] Rate table + top/bottom depts + chart (bar) recommendation + interpretation.`,
+    },
+    {
+      level: 'advanced', titleKo: '휴가 집중기 인력공백 분석', titleEn: 'Peak-Leave Coverage Analysis',
+      promptKo: `[심화 과제] 연차·휴가가 특정 시기에 몰릴 때 발생하는 부서별 인력 공백을 사전에 파악하고, 업무 연속성을 위한 대응(대체 인력·업무 조정)을 제안하는 분석을 프롬프트로 설계하세요. 시기·부서·최소 필요 인력을 함께 고려하도록 지정하는 것이 핵심입니다.`,
+      promptEn: `[Advanced] Design an analysis that foresees per-dept coverage gaps when leave concentrates in certain periods and proposes continuity measures (backup staff, task shifts). Consider timing, dept, and minimum staffing.`,
     },
   ],
 
@@ -598,6 +895,55 @@ export const PRACTICE_BANK: Record<string, PracticeItem[]> = {
       promptKo: `[심화 과제] 분기 인사보고서를 ① 1페이지 요약본 ② 상세 보고본 두 버전으로, 동일 데이터에서 일관되게 생성하는 프롬프트를 설계하세요. 요약본은 의사결정 포인트만, 상세본은 근거까지 담도록 지정하는 것이 핵심입니다.`,
       promptEn: `[Advanced] Design a prompt that generates a quarterly HR report in two versions — ① 1-page summary ② detailed — consistently from the same data. Summary carries decision points only; detailed adds the evidence.`,
     },
+    {
+      level: 'basic', titleKo: '교육 이수 현황 보고', titleEn: 'Training Completion Report',
+      promptKo: `[역할] 인사 담당자
+[맥락] 아래 교육 이수 데이터를 현황 보고로 정리해 주세요.
+- (교육명·대상·이수·미이수 데이터)
+[형식] 교육별 이수율 표 + 미이수자 안내 방안 + 다음 차수 계획 제언.`,
+      promptEn: `[Role] HR staff
+[Context] Summarize training completion into a status report.
+- (course/target/completed/not)
+[Format] Completion-rate table + follow-up for non-completers + next-round plan.`,
+    },
+    {
+      level: 'basic', titleKo: '인력 충원 필요 보고 문구', titleEn: 'Staffing-Need Report Lines',
+      promptKo: `[역할] 인사 담당자
+[맥락] 특정 부서의 인력 충원 필요성을 보고할 슬라이드 문구를 작성해 주세요.
+- 부서·현 인력·업무량 근거: [ ]
+[형식] 슬라이드 제목 + 근거 bullet 3개 + 요청 사항 한 줄.`,
+      promptEn: `[Role] HR staff
+[Context] Write slide lines reporting a dept's staffing need.
+- Dept/current staff/workload basis: [ ]
+[Format] Title + 3 evidence bullets + one-line ask.`,
+    },
+    {
+      level: 'applied', titleKo: '이직·퇴직 분석 보고', titleEn: 'Turnover Analysis Report',
+      promptKo: `[역할] 인사 담당자
+[맥락] 아래 퇴직 데이터를 분석해 보고자료로 만들어 주세요.
+- (기간·부서·사유·근속 데이터)
+[형식] 퇴직률 추이 → 주요 사유 → 부서별 특징 → 대응 제언. 시각화 포인트 표시.`,
+      promptEn: `[Role] HR staff
+[Context] Analyze the turnover data into a report.
+- (period/dept/reason/tenure)
+[Format] Turnover trend → key reasons → dept patterns → recommendations, with viz points.`,
+    },
+    {
+      level: 'applied', titleKo: '인건비 현황 보고자료', titleEn: 'Labor Cost Report',
+      promptKo: `[역할] 인사 담당자
+[맥락] 아래 인건비 데이터를 경영진 보고자료로 정리해 주세요.
+- (부서·항목·예산·집행 데이터)
+[형식] 예산 대비 집행률 표 → 증감 요인 → 유의 부서 → 향후 전망. 핵심 수치 강조.`,
+      promptEn: `[Role] HR staff
+[Context] Compile the labor-cost data into an executive report.
+- (dept/item/budget/spend)
+[Format] Execution-rate table → change drivers → watch depts → outlook, key figures highlighted.`,
+    },
+    {
+      level: 'advanced', titleKo: '연간 인사백서 설계', titleEn: 'Annual HR Yearbook Design',
+      promptKo: `[심화 과제] 한 해의 인사 활동(채용·교육·평가·복지·조직)을 종합한 연간 인사백서의 목차를 설계하고, 각 장에 넣을 데이터·표·서술 문단을 생성하는 프롬프트를 설계하세요. 장별로 '수치 → 해석 → 시사점' 구조를 일관되게 유지하도록 지정하는 것이 핵심입니다.`,
+      promptEn: `[Advanced] Design a prompt for an annual HR yearbook: outline the chapters covering the year's HR activities (hiring/training/appraisal/benefits/org) and generate each chapter's data, tables, and narrative. Keep a consistent "numbers → interpretation → implications" structure.`,
+    },
   ],
 
   'work-template': [
@@ -649,6 +995,55 @@ export const PRACTICE_BANK: Record<string, PracticeItem[]> = {
       level: 'advanced', titleKo: '부서 공용 프롬프트 가이드', titleEn: 'Team Prompt Guide',
       promptKo: `[심화 과제] 부서원 누구나 같은 품질로 쓸 수 있는 공용 프롬프트 가이드라인을 설계하세요. 업무 유형 분류 → 유형별 표준 프롬프트 → 사용 규칙(개인정보·검토 절차)까지 포함하도록 지정하는 것이 핵심입니다.`,
       promptEn: `[Advanced] Design a shared team prompt guideline anyone can use for consistent quality: task taxonomy → standard prompt per type → usage rules (privacy, review). The key is including the rules.`,
+    },
+    {
+      level: 'basic', titleKo: '이메일 회신 템플릿', titleEn: 'Email Reply Template',
+      promptKo: `[역할] 행정 담당자
+[맥락] 자주 받는 [문의 유형]에 대한 이메일 회신 템플릿을 만들어 주세요.
+- 문의 유형: [일정 문의·자료 요청 등]
+[형식] 인사 → 답변 본문(자리표시자) → 안내 → 맺음말. 정중한 업무 이메일체.`,
+      promptEn: `[Role] Administrator
+[Context] Create an email reply template for a common [inquiry type].
+- Type: [schedule/data request...]
+[Format] Greeting → body (placeholders) → guidance → closing. Polite business tone.`,
+    },
+    {
+      level: 'basic', titleKo: '업무 인수인계서 양식', titleEn: 'Handover Document Form',
+      promptKo: `[역할] 행정 담당자
+[맥락] 담당 업무를 후임자에게 넘길 인수인계서 양식을 만들어 주세요.
+- 업무 범위: [ ]
+[형식] 「담당 업무 목록 → 진행중 사안 → 주요 연락처 → 파일 위치 → 유의사항」 표.`,
+      promptEn: `[Role] Administrator
+[Context] Make a handover form for a successor.
+- Scope: [ ]
+[Format] Task list → in-progress items → key contacts → file locations → notes (table).`,
+    },
+    {
+      level: 'applied', titleKo: '프로젝트 진행보고 템플릿', titleEn: 'Project Status Template',
+      promptKo: `[역할] 사업 담당자
+[맥락] [프로젝트]의 정기 진행보고 템플릿을 설계해 주세요.
+- 보고 주기: [주간/월간]
+[형식] 「전체 진척률 → 이번 기간 완료 → 진행중 → 이슈/리스크 → 다음 계획」. 매번 채우기만 하면 되게.`,
+      promptEn: `[Role] Project staff
+[Context] Design a periodic status-report template for [project].
+- Cadence: [weekly/monthly]
+[Format] Overall progress → done → in progress → issues/risks → next. Fill-in-the-blank.`,
+    },
+    {
+      level: 'applied', titleKo: '회의 준비·진행 템플릿', titleEn: 'Meeting Prep/Run Template',
+      promptKo: `[역할] 회의 주관자
+[맥락] 회의를 효율적으로 준비하고 진행할 템플릿을 만들어 주세요.
+- 회의 유형: [정기회의·킥오프 등]
+[형식] 사전(안건·자료·참석자) / 진행(시간배분·역할) / 사후(회의록·후속조치) 3부 체크리스트.`,
+      promptEn: `[Role] Meeting host
+[Context] Make a template to prep and run meetings efficiently.
+- Type: [regular/kickoff...]
+[Format] Before (agenda/materials/attendees) / During (timing/roles) / After (minutes/follow-up).`,
+    },
+    {
+      level: 'advanced', titleKo: '신입 업무 매뉴얼 자동 생성', titleEn: 'New-Staff Manual Generator',
+      promptKo: `[심화 과제] 우리 부서 업무를 처음 맡는 사람이 바로 따라 할 수 있는 업무 매뉴얼을, 업무 목록만 입력하면 각 업무의 목적·절차·주의사항·관련 양식까지 일관된 형식으로 생성하는 프롬프트를 설계하세요. 초보자가 이해할 수준으로 서술하도록 지정하는 것이 핵심입니다.`,
+      promptEn: `[Advanced] Design a prompt that, from just a task list, generates a beginner-ready work manual — each task's purpose, steps, cautions, and related forms — in a consistent format. The key is writing at a novice level.`,
     },
   ],
 
@@ -757,6 +1152,55 @@ export const PRACTICE_BANK: Record<string, PracticeItem[]> = {
       level: 'advanced', titleKo: '인사 업무 End-to-End 포트폴리오', titleEn: 'HR End-to-End Portfolio',
       promptKo: `[심화 과제] 실제 인사 업무 1건을 골라, 데이터 분석 → 문서 작성 → 보고자료 제작까지 AI로 처리하는 전 과정을 프롬프트 세트로 설계하고, 결과물을 포트폴리오로 정리하세요. 각 단계 산출물이 다음 단계 입력으로 이어지도록 구성하는 것이 핵심입니다.`,
       promptEn: `[Advanced] Pick one real HR task and design a prompt set covering the whole flow — data analysis → document writing → report — then compile the outputs as a portfolio. The key is chaining each step's output into the next.`,
+    },
+    {
+      level: 'basic', titleKo: '인사 공지문 작성', titleEn: 'HR Announcement',
+      promptKo: `[역할] 인사 담당자
+[맥락] 전 직원 대상 인사 공지문을 작성해 주세요.
+- 공지 내용: [정기 인사발령·평가 일정 안내 등]
+[형식] 제목 → 핵심 안내 → 일정/대상 → 문의처. 명확하고 간결하게.`,
+      promptEn: `[Role] HR staff
+[Context] Write an all-staff HR announcement.
+- Topic: [regular appointments/appraisal schedule...]
+[Format] Title → key notice → schedule/target → contact. Clear and concise.`,
+    },
+    {
+      level: 'basic', titleKo: '근태 이상 사례 정리', titleEn: 'Attendance Issue Notes',
+      promptKo: `[역할] 인사 담당자
+[맥락] 아래 근태 이상 사례들을 관리 대장으로 정리해 주세요.
+- (사례 데이터: 대상·유형·발생일)
+[형식] 유형별 분류 표 + 반복 사례 표시 + 조치 필요/완료 상태. ※ 개인정보 취급 주의 문구.`,
+      promptEn: `[Role] HR staff
+[Context] Organize the attendance issues into a log.
+- (cases: person/type/date)
+[Format] Type table + repeat flags + action needed/done. Add a privacy-handling note.`,
+    },
+    {
+      level: 'applied', titleKo: '인사평가 피드백 문서', titleEn: 'Appraisal Feedback Document',
+      promptKo: `[역할] 평가 담당자
+[맥락] 아래 평가 결과를 바탕으로 피드백 면담용 문서를 작성해 주세요.
+- 강점·개선점·목표: [ ]
+[형식] 강점 인정 → 구체적 개선 사례 → 다음 기간 목표(SMART) → 지원 방안. 성장 중심 어조.`,
+      promptEn: `[Role] Appraiser
+[Context] Write a feedback-session document from the results.
+- Strengths/improvements/goals: [ ]
+[Format] Recognize strengths → concrete improvements → next-period goals (SMART) → support. Growth-oriented tone.`,
+    },
+    {
+      level: 'applied', titleKo: '인력운영 개선 제안서', titleEn: 'Workforce Improvement Proposal',
+      promptKo: `[역할] 인사 기획 담당자
+[맥락] 아래 현황을 근거로 인력운영 개선 제안서를 작성해 주세요.
+- 문제 현황: [업무 편중·공백 등] / 제안 방향: [ ]
+[형식] 현황·문제 → 원인 → 개선 제안(대안 비교) → 기대효과 → 실행 일정.`,
+      promptEn: `[Role] HR planning staff
+[Context] Write a workforce-improvement proposal from the situation.
+- Problem: [workload imbalance/gaps...] / Direction: [ ]
+[Format] Situation → cause → proposal (options) → expected impact → timeline.`,
+    },
+    {
+      level: 'advanced', titleKo: '인사팀 1개월 업무 종합 시뮬레이션', titleEn: 'One-Month HR Ops Simulation',
+      promptKo: `[심화 과제] 인사팀의 한 달치 대표 업무(채용 1건·평가 정리·근태 분석·복지 안내·보고 1건)를 골라, 각 업무를 AI로 처리하는 프롬프트를 순서대로 설계하고 하나의 업무 흐름으로 엮으세요. 업무 간 데이터·문서가 재활용되도록 연결하는 것이 핵심입니다.`,
+      promptEn: `[Advanced] Pick one month's representative HR tasks (a hire, appraisal compilation, attendance analysis, benefits notice, one report), design an AI prompt for each in sequence, and weave them into one workflow. The key is reusing data/documents across tasks.`,
     },
   ],
 };
