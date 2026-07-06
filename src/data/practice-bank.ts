@@ -178,6 +178,55 @@ export const PRACTICE_BANK: Record<string, PracticeItem[]> = {
       promptKo: `[심화 과제] 기관 브랜드 톤(색상·서체·여백 규칙)을 먼저 정의하고, 그 규칙에 맞춰 표지·간지·본문·마무리 슬라이드 디자인 가이드를 일관되게 생성하는 프롬프트를 설계하세요. 재사용 가능한 디자인 규칙을 산출하도록 지정하는 것이 핵심입니다.`,
       promptEn: `[Advanced] First define a brand tone (color/type/spacing), then design a prompt that generates consistent cover/divider/body/closing slide guidelines to match. The key is producing reusable design rules.`,
     },
+    {
+      level: 'basic', titleKo: '색상 팔레트 추천', titleEn: 'Color Palette Recommendation',
+      promptKo: `[역할] 발표 디자인 담당자
+[맥락] [기관/주제]에 어울리는 발표자료 색상 팔레트를 추천해 주세요.
+- 분위기: [신뢰감/활기참/차분함 등] / 기본 색상: [있으면 입력]
+[형식] 메인·보조·강조·배경 색을 HEX 코드로 제시하고, 각 색의 용도와 대비 주의점 설명.`,
+      promptEn: `[Role] Presentation designer
+[Context] Recommend a deck color palette for [org/topic].
+- Mood: [trustworthy/energetic/calm...] / Base color: [if any]
+[Format] Main/secondary/accent/background as HEX, with each color's use and contrast caveats.`,
+    },
+    {
+      level: 'basic', titleKo: '아이콘·픽토그램 선정', titleEn: 'Icon/Pictogram Selection',
+      promptKo: `[역할] 발표 디자인 담당자
+[맥락] 아래 슬라이드 항목들에 어울리는 아이콘을 추천해 주세요.
+- 항목: [예: 예산, 일정, 인력, 성과]
+[형식] 항목별 추천 아이콘(개념)과 검색 키워드(Flaticon/Noun Project용), 배치 팁.`,
+      promptEn: `[Role] Presentation designer
+[Context] Recommend icons for the slide items below.
+- Items: [e.g., budget, schedule, staff, outcome]
+[Format] Icon concept + search keywords (Flaticon/Noun Project) + placement tip per item.`,
+    },
+    {
+      level: 'applied', titleKo: '인포그래픽 설계', titleEn: 'Infographic Design',
+      promptKo: `[역할] 발표 디자인 담당자
+[맥락] 아래 내용을 한 장의 인포그래픽으로 설계해 주세요.
+- 전달 메시지: [ ] / 핵심 수치: [ ]
+[형식] 레이아웃 구획(제목·핵심수치·흐름·결론), 각 구획의 시각 요소와 색상, 시선 흐름 제안.`,
+      promptEn: `[Role] Presentation designer
+[Context] Design a one-page infographic for the content below.
+- Message: [ ] / Key numbers: [ ]
+[Format] Layout zones (title/numbers/flow/conclusion), visuals and colors per zone, reading flow.`,
+    },
+    {
+      level: 'applied', titleKo: '표를 시각적으로 개선', titleEn: 'Improve a Table Visually',
+      promptKo: `[역할] 발표 자료 담당자
+[맥락] 아래 밋밋한 표를 발표에서 잘 보이게 개선하는 방법을 제안해 주세요.
+- (표 데이터 붙여넣기)
+[형식] 강조할 셀·색상 규칙, 불필요한 열 정리, 표 대신 차트로 바꿀지 여부와 이유.`,
+      promptEn: `[Role] Presentation staff
+[Context] Suggest how to make the plain table below presentation-ready.
+- (paste table)
+[Format] Cells/colors to emphasize, columns to trim, whether to switch to a chart and why.`,
+    },
+    {
+      level: 'advanced', titleKo: '발표 노트 + 시각 강조 설계', titleEn: 'Speaker Notes + Visual Emphasis',
+      promptKo: `[심화 과제] 완성된 슬라이드마다 ① 발표 스크립트(노트)와 ② 청중 시선을 끌 시각 강조 포인트(애니메이션·하이라이트 위치)를 함께 생성하는 프롬프트를 설계하세요. 슬라이드 내용과 발표 흐름이 어긋나지 않도록 지정하는 것이 핵심입니다.`,
+      promptEn: `[Advanced] Design a prompt that, per finished slide, generates ① speaker notes and ② visual-emphasis points (animation/highlight placement) to draw the audience's eye. The key is keeping slide content and delivery flow aligned.`,
+    },
   ],
 
   'excel-analysis': [
