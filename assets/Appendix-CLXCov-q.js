@@ -1,4 +1,4 @@
-import{j as e}from"./markdown-uD28ob7P.js";import{G as t}from"./GuidePage-w0Fq-Jdx.js";/* empty css                 */import"./vendor-j2q2Hh8J.js";import"./index-ClaSFsyL.js";import"./supabase-ClMXFR6t.js";import"./SEOHead-CXt37xNM.js";const a={id:"glossary",icon:"fa-book-bookmark",title:"용어 해설",titleEn:"Glossary",sections:[{title:"생성형 AI 기본 용어",titleEn:"Generative AI Basics",content:`교육에서 자주 등장하는 핵심 용어를 모았습니다. 모르는 말이 나오면 여기에서 찾아보세요.
+import{j as e}from"./markdown-uD28ob7P.js";import{G as t}from"./GuidePage-ViJ_fjjx.js";/* empty css                 */import"./vendor-j2q2Hh8J.js";import"./index-aNmxzKxs.js";import"./supabase-ClMXFR6t.js";import"./SEOHead-CXt37xNM.js";const a={id:"glossary",icon:"fa-book-bookmark",title:"용어 해설",titleEn:"Glossary",sections:[{title:"생성형 AI 기본 용어",titleEn:"Generative AI Basics",content:`교육에서 자주 등장하는 핵심 용어를 모았습니다. 모르는 말이 나오면 여기에서 찾아보세요.
 
 | 용어 | 쉬운 설명 |
 |------|-----------|
@@ -173,7 +173,47 @@ This single sentence carries four conditions:
 - For code: "add comments on each line for beginners."
 - For long output: "3-line summary first, then details."
 
-> Mask personal/sensitive info before uploading; follow campus policy.`},{title:"보안·윤리·저작권",titleEn:"Security, Ethics, Copyright",content:`- 학생·직원 개인정보(주민번호·연락처·인사기록)는 교내 개인정보 정책에 맞게 신중히 다루기
+> Mask personal/sensitive info before uploading; follow campus policy.`},{title:"AI가 만든 문서의 서식 기호 (한글·워드)",titleEn:"Formatting Marks in AI-made Documents",content:`AI가 만들어 준 한글(HWP)·워드(DOCX) 문서를 열면 글자가 아닌 **서식 기호**가 보일 때가 있습니다. 대부분 **화면에만 보이고 인쇄되지 않는** 표시이니 당황하지 마세요.
+
+### 무엇이라 부르나
+| 화면에 보이는 것 | 이름(정식 명칭) | 인쇄 여부 |
+|------------------|-----------------|-----------|
+| ¶ · → (문단·공백·탭) | **편집 기호**(비인쇄 서식 기호) | 인쇄 안 됨 |
+| 제목 왼쪽의 작은 **■** | "**다음 단락과 함께 / 줄 나눔 방지**" 단락 속성 표시 | 인쇄 안 됨 |
+| 번호·제목 앞 회색 **[ ]** 또는 **⌶** | **숨은 책갈피**(목차·상호참조 앵커, _Toc·_Ref) | 인쇄 안 됨 |
+| **□**(네모 안에 코드) | **두부 글자** = 글꼴이 표현 못 하는 특수·제어문자 | **인쇄에 남음** |
+
+### 제거·정리 방법
+- **편집 기호 켜고 끄기**: \`Ctrl+Shift+8\` (또는 홈 탭의 ¶ 버튼) — 전체 표시/숨김
+- **제목 왼쪽 ■ 없애기**: 제목 스타일 수정 → 단락 → "줄 및 페이지 나눔"에서 **[다음과 함께]·[페이지 나눔 방지] 체크 해제**
+- **숨은 책갈피 안 보이게**: \`파일 → 옵션 → 고급 → 책갈피 표시\` 체크 해제 (※ 자동 목차가 있으면 표시만 끄고 \`_Toc…\` 삭제는 금지 — 목차가 깨집니다)
+- **□ 두부 글자 없애기**: \`Ctrl+H(바꾸기)\`로 해당 특수문자를 찾아 삭제, 또는 번호 서식을 정상 번호로 재지정
+
+### AI에게 요청할 때 (예방)
+- "**표식·제어문자 없이 깔끔한 서식**으로, 제목은 스타일만 쓰고 특수기호는 넣지 말아줘"
+- 받은 뒤 \`Ctrl+Shift+8\`로 편집 기호를 한 번 확인하고, **인쇄 미리보기**로 실제 인쇄 모습을 점검
+
+> 대부분은 인쇄에 안 나오는 화면 표시입니다. **인쇄에도 남는 건 □(두부 글자)뿐**이니, 그것만 찾아 지우면 됩니다.`,contentEn:`When you open an AI-made HWP/DOCX file, you may see **formatting marks** that aren't actual text. Most are **screen-only and don't print** — no need to worry.
+
+### What they're called
+| What you see | Name | Prints? |
+|--------------|------|---------|
+| ¶ · → (paragraph/space/tab) | **Formatting marks** (non-printing) | No |
+| Small **■** left of a heading | "**Keep with next / Keep lines together**" paragraph property | No |
+| Gray **[ ]** or **⌶** before number/heading | **Hidden bookmark** (TOC/cross-ref anchor, _Toc·_Ref) | No |
+| **□** (box with a code) | **Tofu** = a special/control char the font can't render | **Yes** |
+
+### How to remove
+- **Toggle marks**: \`Ctrl+Shift+8\` (or the ¶ button) — show/hide all.
+- **Remove ■**: edit the heading style → Paragraph → Line and Page Breaks → uncheck **Keep with next / Keep lines together**.
+- **Hide bookmarks**: \`File → Options → Advanced → Show bookmarks\` off (if you have an auto TOC, only hide — don't delete \`_Toc…\`, it breaks the TOC).
+- **Remove □ tofu**: use \`Ctrl+H\` to find/delete the special character, or reset the numbering format.
+
+### Ask the AI (prevention)
+- "Use **clean formatting with no marks or control characters**; use heading styles only, no special symbols."
+- After receiving, toggle marks with \`Ctrl+Shift+8\` and check **Print Preview**.
+
+> Most are screen-only. **Only □ (tofu) actually prints** — find and delete just those.`},{title:"보안·윤리·저작권",titleEn:"Security, Ethics, Copyright",content:`- 학생·직원 개인정보(주민번호·연락처·인사기록)는 교내 개인정보 정책에 맞게 신중히 다루기
 - AI가 만든 공문·인사 자료도 **사실·규정 부합 여부를 검토**한 뒤 사용
 - 대외로 나가는 문서는 기관의 **AI 활용·정보보안 지침**을 확인
 - 생성 이미지·자료의 **저작권/라이선스** 확인
