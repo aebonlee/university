@@ -39,7 +39,7 @@ Learn to streamline official document writing, report creation, PPT production, 
     {
       title: 'DreamIT Biz',
       titleEn: 'DreamIT Biz',
-      content: `**DreamIT Biz**는 AI 교육 전문 기업으로, **100개 이상의 교육 사이트**를 운영하며 대학교, 공공기관, 기업을 대상으로 AI 활용 역량 강화 교육을 제공합니다.
+      content: `**DreamIT Biz**는 AI 교육 전문 기업으로, **122개 이상의 교육 사이트**를 운영하며 대학교, 공공기관, 기업을 대상으로 AI 활용 역량 강화 교육을 제공합니다.
 
 ### 주요 교육 분야
 
@@ -54,7 +54,7 @@ Learn to streamline official document writing, report creation, PPT production, 
 - **이메일**: aebon@dreamitbiz.com
 - **전화**: 010-3700-0629
 - **홈페이지**: [www.dreamitbiz.com](https://www.dreamitbiz.com)`,
-      contentEn: `**DreamIT Biz** is an AI education company operating **100+ educational sites**, providing AI competency training for universities, public institutions, and corporations.
+      contentEn: `**DreamIT Biz** is an AI education company operating **122+ educational sites**, providing AI competency training for universities, public institutions, and corporations.
 
 ### Key Education Areas
 
