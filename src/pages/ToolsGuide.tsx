@@ -1,5 +1,45 @@
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import SEOHead from '../components/SEOHead';
+
+/* 전남대 aioni 등에서 사용할 수 있는 제공사별 대표 모델 (2026.07 기준) */
+const MODEL_PROVIDERS = [
+  {
+    provider: 'Upstage · Solar', icon: 'fa-flag',
+    tagKo: '국산 · 한국어 특화', tagEn: 'Korean-first',
+    models: 'Solar Pro3 · Pro2 · Mini',
+    descKo: '한국어·한글 공문서에 최적화된 국산 모델. 문서 OCR·표/정보 추출(Document AI)에 강점.',
+    descEn: 'Korean-optimized domestic model; strong at HWP documents and Document AI (OCR/extraction).',
+  },
+  {
+    provider: 'OpenAI · ChatGPT', icon: 'fa-robot',
+    tagKo: '범용 표준 · 에이전트', tagEn: 'Versatile standard',
+    models: 'GPT-5.x · o-시리즈(추론) · Codex',
+    descKo: '가장 범용적. 문서 작성·코드·멀티모달·에이전트 생태계가 넓습니다.',
+    descEn: 'Most versatile; broad ecosystem for writing, code, multimodal, and agents.',
+  },
+  {
+    provider: 'Google · Gemini', icon: 'fa-gem',
+    tagKo: '멀티모달 · 검색 · 초장문', tagEn: 'Multimodal · long context',
+    models: 'Gemini 3.1 Pro · 3 Flash',
+    descKo: '이미지·PDF를 네이티브로 처리하고, 구글 검색 그라운딩으로 최신 정보에 강합니다.',
+    descEn: 'Native image/PDF handling; strong on current info via Google Search grounding.',
+  },
+  {
+    provider: 'Anthropic · Claude', icon: 'fa-brain',
+    tagKo: '장문 · 지시 준수 · 안전', tagEn: 'Long-context · faithful',
+    models: 'Opus 4.8 · Sonnet 5 · Haiku 4.5',
+    descKo: '긴 문맥과 정확한 지시 준수, 안전성이 강점. 학술·행정 문서와 코드에 강합니다.',
+    descEn: 'Long context, faithful instruction-following, safety; great for admin docs and code.',
+  },
+  {
+    provider: 'Meta Llama · Mistral', icon: 'fa-cubes',
+    tagKo: '오픈웨이트', tagEn: 'Open-weight',
+    models: 'Llama 4 Scout · Mistral',
+    descKo: '가중치가 공개된 오픈 모델. 자체 구축·파인튜닝·비용 통제에 유리합니다.',
+    descEn: 'Open-weight models; good for self-hosting, fine-tuning, and cost control.',
+  },
+];
 
 const AI_TOOLS = [
   { name: 'ChatGPT', icon: 'fa-robot', url: 'https://chat.openai.com', descKo: 'OpenAI의 대화형 AI. 범용적인 문서 작성, 코드 생성, 아이디어 브레인스토밍에 강합니다.', descEn: 'OpenAI conversational AI. Strong in document writing, code generation, and brainstorming.', badge: '필수', badgeEn: 'Essential' },
@@ -44,6 +84,51 @@ export default function ToolsGuide() {
             </a>
           ))}
         </div>
+
+        {/* 전남대 AI 활용 플랫폼 (aioni) + 제공사별 모델 */}
+        <div className="section-header" style={{ marginTop: 64 }}>
+          <h2 className="section-title">{isKo ? '전남대 AI 활용 플랫폼 · 제공사별 모델' : 'CNU AI Platform · Models by Provider'}</h2>
+          <p className="section-subtitle">{isKo ? '전남대학교 자체 AI 플랫폼과, 그 안에서 고를 수 있는 주요 모델을 안내합니다' : 'The CNU AI platform and the main models you can choose within it'}</p>
+        </div>
+
+        <a
+          href="https://aioni.jnu.ac.kr/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="aioni-banner"
+        >
+          <div className="aioni-banner-icon"><i className="fa-solid fa-graduation-cap" /></div>
+          <div className="aioni-banner-text">
+            <strong>AI for All @CNU — aioni <span className="aioni-url">aioni.jnu.ac.kr</span></strong>
+            <p>{isKo
+              ? '전남대학교 자체 AI 종합 플랫폼. 교내 구성원이 로그인 한 번으로 여러 제공사의 AI 모델(아래)을 한 곳에서 골라 사용할 수 있습니다.'
+              : "Chonnam National University's own AI platform — sign in once and use models from multiple providers (below) in one place."}</p>
+          </div>
+          <i className="fa-solid fa-arrow-up-right-from-square aioni-banner-go" />
+        </a>
+
+        <div className="model-provider-grid">
+          {MODEL_PROVIDERS.map(m => (
+            <div key={m.provider} className="model-provider-card">
+              <div className="model-provider-head">
+                <div className="model-provider-icon"><i className={`fa-solid ${m.icon}`} /></div>
+                <div>
+                  <h3>{m.provider}</h3>
+                  <span className="model-provider-tag">{isKo ? m.tagKo : m.tagEn}</span>
+                </div>
+              </div>
+              <div className="model-provider-models">{m.models}</div>
+              <p>{isKo ? m.descKo : m.descEn}</p>
+            </div>
+          ))}
+        </div>
+
+        <p className="model-provider-note">
+          <i className="fa-solid fa-circle-info" />
+          {isKo ? '모델별 세대·강점·가격은 자주 바뀝니다. 잘 모르겠으면 플랫폼의 기본(Auto) 설정을 쓰고, 더 자세한 안내는 ' : 'Model versions/strengths/prices change often. When unsure, use the platform default (Auto); for details see '}
+          <Link to="/appendix">{isKo ? '부록 → AI 모델 고르기' : 'Appendix → Choosing a Model'}</Link>
+          {isKo ? ' 를 참고하세요.' : '.'}
+        </p>
 
         {/* AI 도구 활용 팁 */}
         <div className="section-header" style={{ marginTop: 64 }}>

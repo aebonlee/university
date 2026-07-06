@@ -201,15 +201,6 @@ const SITES: SiteItem[] = [
     descEn: 'AI utilization guides and educational content specialized for university education.',
     category: 'company',
   },
-  {
-    name: '문서·인사행정 실습보드',
-    nameEn: 'Docs & HR Admin Board',
-    url: 'https://padlet.com/aebon/cnu2603',
-    icon: 'fa-clipboard-list',
-    descKo: '문서·인사행정 과정의 실습 자료를 모은 패들렛 보드입니다.',
-    descEn: 'Padlet board for the Documents & HR Administration course.',
-    category: 'company',
-  },
 ];
 
 export default function RecommendedSites(): ReactElement {

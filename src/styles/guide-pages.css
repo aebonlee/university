@@ -68,19 +68,37 @@
     font-family: inherit;
 }
 .guide-nav-link:hover {
-    background: #E8F5E9;
+    background: rgba(27, 94, 32, 0.07);
     color: var(--primary-blue);
 }
 .guide-nav-link.active {
-    background: #E8F5E9;
+    background: rgba(27, 94, 32, 0.10);
     color: var(--primary-blue);
     font-weight: 600;
-    border-left: 3px solid #4CAF50;
+    border-left: 3px solid var(--primary-blue);
+}
+html[data-theme="dark"] .guide-nav-link:hover {
+    background: rgba(129, 199, 132, 0.12);
+    color: var(--primary-blue-light);
+}
+html[data-theme="dark"] .guide-nav-link.active {
+    background: rgba(129, 199, 132, 0.18);
+    color: var(--primary-blue-light);
+    border-left-color: var(--primary-blue-light);
 }
 
-/* ── Sidebar Groups (collapsible accordion) ── */
+/* ── Sidebar Groups (collapsible accordion) — 카드형 그룹 디자인 ── */
 .guide-nav-group {
-    margin-bottom: 4px;
+    margin: 0 8px 6px;
+    border-radius: 12px;
+    transition: background 0.2s;
+}
+.guide-nav-group.expanded {
+    background: rgba(27, 94, 32, 0.05);
+    padding-bottom: 6px;
+}
+html[data-theme="dark"] .guide-nav-group.expanded {
+    background: rgba(129, 199, 132, 0.08);
 }
 .guide-nav-group-toggle {
     display: flex;
@@ -88,37 +106,80 @@
     justify-content: space-between;
     gap: 8px;
     width: 100%;
-    padding: 12px 20px 6px;
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: #2E7D32;
+    padding: 11px 12px;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--text-primary);
     background: transparent;
     border: none;
+    border-radius: 12px;
     cursor: pointer;
     transition: var(--transition-base);
     font-family: inherit;
     text-align: left;
 }
+.guide-nav-group-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+}
+.guide-nav-group-icon {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    border-radius: 8px;
+    background: rgba(27, 94, 32, 0.10);
+    color: var(--primary-blue);
+    transition: var(--transition-base);
+}
+html[data-theme="dark"] .guide-nav-group-icon {
+    background: rgba(129, 199, 132, 0.16);
+    color: var(--primary-blue-light);
+}
 .guide-nav-group-toggle:hover {
     color: var(--primary-blue);
 }
+.guide-nav-group-toggle:hover .guide-nav-group-icon,
+.guide-nav-group-toggle.active .guide-nav-group-icon {
+    background: var(--primary-blue);
+    color: #fff;
+}
 .guide-nav-group-toggle.active {
     color: var(--primary-blue);
+    font-weight: 700;
+}
+html[data-theme="dark"] .guide-nav-group-toggle.active {
+    color: var(--primary-blue-light);
 }
 .guide-nav-group-toggle .group-chevron {
-    font-size: 9px;
-    opacity: 0.4;
+    font-size: 10px;
+    opacity: 0.45;
     flex-shrink: 0;
+    transition: var(--transition-base);
+}
+.guide-nav-group-toggle:hover .group-chevron,
+.guide-nav-group-toggle.active .group-chevron {
+    opacity: 0.8;
 }
 .guide-nav-sub-list {
     list-style: none;
-    margin-bottom: 4px;
+    margin: 2px 0 4px;
+    padding-left: 20px;
+    border-left: 1.5px solid rgba(27, 94, 32, 0.14);
+    margin-left: 25px;
+}
+html[data-theme="dark"] .guide-nav-sub-list {
+    border-left-color: rgba(129, 199, 132, 0.22);
 }
 .guide-nav-link.guide-nav-sub {
-    padding-left: 24px;
+    padding: 7px 10px;
     font-size: 12.5px;
+    border-radius: 8px;
 }
 
 /* ── Sidebar Footer (CTA Links) ── */
@@ -916,4 +977,142 @@
     color: var(--text-secondary);
     line-height: 1.8;
     margin-bottom: 6px;
+}
+
+/* ─── 전남대 aioni 배너 + 제공사별 모델 ─── */
+.aioni-banner {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 22px 26px;
+    margin-bottom: 24px;
+    background: linear-gradient(135deg, rgba(27, 94, 32, 0.10), rgba(255, 143, 0, 0.06));
+    border: 1px solid rgba(27, 94, 32, 0.22);
+    border-radius: 16px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.aioni-banner:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+.aioni-banner-icon {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: #fff;
+    background: var(--primary-blue);
+}
+.aioni-banner-text { flex: 1; min-width: 0; }
+.aioni-banner-text strong {
+    display: block;
+    font-size: 16px;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+.aioni-url {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--primary-blue);
+    margin-left: 6px;
+}
+.aioni-banner-text p {
+    margin: 0;
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+.aioni-banner-go {
+    color: var(--primary-blue);
+    font-size: 15px;
+    flex-shrink: 0;
+}
+
+.model-provider-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+}
+.model-provider-card {
+    padding: 20px 22px;
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    border-radius: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.model-provider-card:hover {
+    border-color: var(--primary-blue);
+    box-shadow: var(--shadow-md);
+}
+.model-provider-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+.model-provider-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    background: rgba(27, 94, 32, 0.10);
+    color: var(--primary-blue);
+}
+.model-provider-head h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 3px;
+}
+.model-provider-tag {
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--accent-amber);
+}
+.model-provider-models {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--primary-blue);
+    background: rgba(27, 94, 32, 0.07);
+    border-radius: 8px;
+    padding: 7px 12px;
+    margin-bottom: 10px;
+}
+.model-provider-card p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+.model-provider-note {
+    margin-top: 16px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+.model-provider-note i { color: var(--primary-blue); margin-right: 6px; }
+.model-provider-note a { color: var(--primary-blue); font-weight: 600; }
+
+html[data-theme="dark"] .model-provider-icon,
+html[data-theme="dark"] .model-provider-models {
+    background: rgba(129, 199, 132, 0.14);
+    color: var(--primary-blue-light);
+}
+html[data-theme="dark"] .aioni-banner {
+    background: linear-gradient(135deg, rgba(129, 199, 132, 0.12), rgba(255, 167, 38, 0.08));
+    border-color: rgba(129, 199, 132, 0.24);
+}
+@media (max-width: 640px) {
+    .model-provider-grid { grid-template-columns: 1fr; }
+    .aioni-banner { flex-direction: column; align-items: flex-start; }
 }
