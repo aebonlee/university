@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { CURRICULUM, SessionInfo } from '../config/site';
@@ -95,24 +95,126 @@ export default function Home() {
   const daySessions = CURRICULUM.filter(s => s.day === activeDay);
   const features = t('features.items');
 
+  // 히어로 SVG 마우스 패럴랙스 효과
+  const heroRef = useRef<HTMLElement>(null);
+  useEffect(() => {
+    const el = heroRef.current;
+    if (!el || window.matchMedia('(hover: none)').matches) return;
+    let raf = 0;
+    const onMove = (e: MouseEvent) => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        const r = el.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5;
+        const y = (e.clientY - r.top) / r.height - 0.5;
+        el.style.setProperty('--px', x.toFixed(3));
+        el.style.setProperty('--py', y.toFixed(3));
+      });
+    };
+    const onLeave = () => {
+      el.style.setProperty('--px', '0');
+      el.style.setProperty('--py', '0');
+    };
+    el.addEventListener('mousemove', onMove);
+    el.addEventListener('mouseleave', onLeave);
+    return () => {
+      el.removeEventListener('mousemove', onMove);
+      el.removeEventListener('mouseleave', onLeave);
+      cancelAnimationFrame(raf);
+    };
+  }, []);
+
   return (
     <>
       <SEOHead />
 
       {/* Hero */}
-      <section className="hero-section">
-        <div className="container">
-          <div className="hero-badge">
-            <i className="fa-solid fa-graduation-cap" /> {t('hero.badge')}
+      <section className="hero-section" ref={heroRef}>
+        <div className="container hero-grid">
+          <div className="hero-left">
+            <div className="hero-badge">
+              <i className="fa-solid fa-graduation-cap" /> {t('hero.badge')}
+            </div>
+            <h1 className="hero-title">
+              {t('hero.title')}
+              <span className="hero-title-highlight">{t('hero.titleHighlight')}</span>
+            </h1>
+            <p className="hero-description">{t('hero.description')}</p>
+            <div className="hero-actions">
+              <Link to="/materials/basic" className="btn btn-primary-large">{t('hero.cta')}</Link>
+              <Link to="/tools" className="btn btn-secondary" style={{ borderColor: '#fff', color: '#fff' }}>{t('hero.ctaSecondary')}</Link>
+            </div>
           </div>
-          <h1 className="hero-title">
-            {t('hero.title')}
-            <span className="hero-title-highlight">{t('hero.titleHighlight')}</span>
-          </h1>
-          <p className="hero-description">{t('hero.description')}</p>
-          <div className="hero-actions">
-            <Link to="/materials/basic" className="btn btn-primary-large">{t('hero.cta')}</Link>
-            <Link to="/tools" className="btn btn-secondary" style={{ borderColor: '#fff', color: '#fff' }}>{t('hero.ctaSecondary')}</Link>
+
+          <div className="hero-right">
+            <svg className="hero-illustration" viewBox="0 0 520 460" role="img" aria-label={isKo ? '문서 자동화 일러스트' : 'Document automation illustration'}>
+              {/* 배경 블롭 */}
+              <ellipse className="hero-blob" cx="270" cy="240" rx="215" ry="200" />
+              <circle className="hero-ring hero-ring-1" cx="270" cy="235" r="150" />
+              <circle className="hero-ring hero-ring-2" cx="270" cy="235" r="185" />
+
+              {/* 입력 문서 (원본) */}
+              <g className="hero-doc hero-doc-in" data-depth="14">
+                <rect x="70" y="150" width="150" height="190" rx="14" />
+                <rect className="doc-head" x="70" y="150" width="150" height="34" rx="14" />
+                <rect className="doc-line" x="90" y="205" width="110" height="9" rx="4.5" />
+                <rect className="doc-line" x="90" y="228" width="95" height="9" rx="4.5" />
+                <rect className="doc-line" x="90" y="251" width="112" height="9" rx="4.5" />
+                <rect className="doc-line" x="90" y="274" width="80" height="9" rx="4.5" />
+                <rect className="doc-line" x="90" y="297" width="100" height="9" rx="4.5" />
+              </g>
+
+              {/* 흐름 화살표 */}
+              <path className="hero-flow" d="M225 245 H295" />
+              <path className="hero-flow-arrow" d="M289 238 L299 245 L289 252" />
+
+              {/* AI 처리 노드 */}
+              <g className="hero-ai" data-depth="26">
+                <circle className="ai-orbit" cx="270" cy="130" r="44" />
+                <circle className="ai-core" cx="270" cy="130" r="30" />
+                <g className="ai-orbit-spin">
+                  <circle className="ai-orbit-dot" cx="270" cy="86" r="5" />
+                  <circle className="ai-orbit-dot small" cx="270" cy="174" r="3.5" />
+                </g>
+                <text className="ai-label" x="270" y="136" textAnchor="middle">AI</text>
+              </g>
+              <circle className="hero-spark s1" cx="315" cy="95" r="4" />
+              <circle className="hero-spark s2" cx="230" cy="100" r="3" />
+              <circle className="hero-spark s3" cx="300" cy="165" r="3" />
+
+              {/* 출력 문서 (자동화 완료) */}
+              <g className="hero-doc hero-doc-out" data-depth="20">
+                <rect x="300" y="165" width="160" height="205" rx="14" />
+                <rect className="doc-head-out" x="300" y="165" width="160" height="36" rx="14" />
+                {/* 체크 항목 3개 */}
+                <g className="doc-check c1">
+                  <circle cx="326" cy="232" r="9" />
+                  <path d="M322 232 l3 3 5-6" />
+                </g>
+                <rect className="doc-line-out" x="345" y="227" width="95" height="9" rx="4.5" />
+                <g className="doc-check c2">
+                  <circle cx="326" cy="266" r="9" />
+                  <path d="M322 266 l3 3 5-6" />
+                </g>
+                <rect className="doc-line-out" x="345" y="261" width="80" height="9" rx="4.5" />
+                <g className="doc-check c3">
+                  <circle cx="326" cy="300" r="9" />
+                  <path d="M322 300 l3 3 5-6" />
+                </g>
+                <rect className="doc-line-out" x="345" y="295" width="90" height="9" rx="4.5" />
+                <rect className="doc-line-out dim" x="326" y="330" width="110" height="8" rx="4" />
+              </g>
+
+              {/* 떠다니는 작은 아이콘 */}
+              <g className="hero-float f1" data-depth="34">
+                <rect x="120" y="80" width="42" height="42" rx="11" />
+                <path className="mini-icon" d="M132 96 h18 M132 103 h14 M132 110 h18" />
+              </g>
+              <g className="hero-float f2" data-depth="30">
+                <rect x="400" y="380" width="46" height="46" rx="12" />
+                <path className="mini-check" d="M411 403 l6 6 12-14" />
+              </g>
+            </svg>
           </div>
         </div>
       </section>
