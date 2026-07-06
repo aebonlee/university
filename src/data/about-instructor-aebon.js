@@ -12,10 +12,10 @@ export default {
 <div class="instructor-hero-initials">이</div>
 <div class="instructor-hero-name">이애본</div>
 <div class="instructor-hero-title">한신대학교 겸임교수 · 한국직업능력개발센터장</div>
-<div class="instructor-hero-quote">IT 교육 및 인적자원개발(HRD) 분야 26년 이상의 전문가로서, 75개 이상의 AI 교육 사이트를 운영하며 대학교·공공기관·기업을 대상으로 생성형 AI 활용 역량 강화 교육을 제공하고 있습니다.</div>
+<div class="instructor-hero-quote">IT 교육 및 인적자원개발(HRD) 분야 26년 이상의 전문가로서, 100개 이상의 AI 교육 사이트를 운영하며 대학교·공공기관·기업을 대상으로 생성형 AI 활용 역량 강화 교육을 제공하고 있습니다.</div>
 <div class="instructor-hero-stats">
 <div class="instructor-stat"><div class="instructor-stat-number">26<span style="font-size:16px">년+</span></div><div class="instructor-stat-label">교육 경력</div></div>
-<div class="instructor-stat"><div class="instructor-stat-number">75<span style="font-size:16px">+</span></div><div class="instructor-stat-label">교육 사이트</div></div>
+<div class="instructor-stat"><div class="instructor-stat-number">100<span style="font-size:16px">+</span></div><div class="instructor-stat-label">교육 사이트</div></div>
 <div class="instructor-stat"><div class="instructor-stat-number">20<span style="font-size:16px">+</span></div><div class="instructor-stat-label">전문 자격</div></div>
 </div>
 </div>
@@ -24,7 +24,7 @@ export default {
 
 **한신대학교 겸임교수 · 한국직업능력개발센터장**
 
-IT 교육 및 인적자원개발(HRD) 분야에서 **26년 이상**의 경력을 보유한 교육 전문가입니다. 75개 이상의 AI 교육 사이트를 운영하며, 대학교·공공기관·기업을 대상으로 AI 활용 역량 강화 교육을 제공하고 있습니다.
+IT 교육 및 인적자원개발(HRD) 분야에서 **26년 이상**의 경력을 보유한 교육 전문가입니다. 100개 이상의 AI 교육 사이트를 운영하며, 대학교·공공기관·기업을 대상으로 AI 활용 역량 강화 교육을 제공하고 있습니다.
 
 ### 주요 활동
 
@@ -33,7 +33,7 @@ IT 교육 및 인적자원개발(HRD) 분야에서 **26년 이상**의 경력을
 | **현직** | 한신대학교 겸임교수 (2020~현재) |
 | **센터** | 한국직업능력개발센터장 (2015~현재) |
 | **기업** | DreamIT Biz 대표 |
-| **교육 사이트** | 75개 이상 운영 (dreamitbiz.com) |
+| **교육 사이트** | 100개 이상 운영 (dreamitbiz.com) |
 | **전문 분야** | 생성형 AI 활용, 프롬프트 엔지니어링, IT 교육 |
 
 ### 연락처
@@ -46,10 +46,10 @@ IT 교육 및 인적자원개발(HRD) 분야에서 **26년 이상**의 경력을
 <div class="instructor-hero-initials">A</div>
 <div class="instructor-hero-name">Aebon Lee</div>
 <div class="instructor-hero-title">Adjunct Professor, Hanshin Univ. · Director, Korea Vocational Skills Development Center</div>
-<div class="instructor-hero-quote">An expert with 26+ years in IT education and HRD, operating 75+ AI education sites and providing generative AI competency training for universities, public institutions, and corporations.</div>
+<div class="instructor-hero-quote">An expert with 26+ years in IT education and HRD, operating 100+ AI education sites and providing generative AI competency training for universities, public institutions, and corporations.</div>
 <div class="instructor-hero-stats">
 <div class="instructor-stat"><div class="instructor-stat-number">26<span style="font-size:16px">yr+</span></div><div class="instructor-stat-label">Experience</div></div>
-<div class="instructor-stat"><div class="instructor-stat-number">75<span style="font-size:16px">+</span></div><div class="instructor-stat-label">Edu Sites</div></div>
+<div class="instructor-stat"><div class="instructor-stat-number">100<span style="font-size:16px">+</span></div><div class="instructor-stat-label">Edu Sites</div></div>
 <div class="instructor-stat"><div class="instructor-stat-number">20<span style="font-size:16px">+</span></div><div class="instructor-stat-label">Certifications</div></div>
 </div>
 </div>
@@ -58,7 +58,7 @@ IT 교육 및 인적자원개발(HRD) 분야에서 **26년 이상**의 경력을
 
 **Adjunct Professor, Hanshin University · Director, Korea Vocational Skills Development Center**
 
-An education expert with over **26 years** of experience in IT education and Human Resource Development (HRD). Operates 75+ AI education sites, providing AI competency training for universities, public institutions, and corporations.
+An education expert with over **26 years** of experience in IT education and Human Resource Development (HRD). Operates 100+ AI education sites, providing AI competency training for universities, public institutions, and corporations.
 
 ### Key Activities
 
@@ -67,7 +67,7 @@ An education expert with over **26 years** of experience in IT education and Hum
 | **Current Position** | Adjunct Professor, Hanshin University (2020–Present) |
 | **Center** | Director, Korea Vocational Skills Development Center (2015–Present) |
 | **Company** | CEO, DreamIT Biz |
-| **Education Sites** | 75+ sites (dreamitbiz.com) |
+| **Education Sites** | 100+ sites (dreamitbiz.com) |
 | **Expertise** | Generative AI, Prompt Engineering, IT Education |
 
 ### Contact
@@ -166,7 +166,7 @@ An education expert with over **26 years** of experience in IT education and Hum
 
 ### DreamIT Biz 운영 현황
 
-- **교육 사이트**: 75개 이상 (React 19 + Vite, Next.js 기반)
+- **교육 사이트**: 100개 이상 (React 19 + Vite, Next.js 기반)
 - **주요 플랫폼**: 역량 평가, 취업 지원, 자격증 대비, LMS
 - **대상**: 대학교, 공공기관, 기업 (맞춤형 AI 교육)
 - **홈페이지**: [www.dreamitbiz.com](https://www.dreamitbiz.com)`,
@@ -197,7 +197,7 @@ An education expert with over **26 years** of experience in IT education and Hum
 
 ### DreamIT Biz Operations
 
-- **Education Sites**: 75+ (React 19 + Vite, Next.js based)
+- **Education Sites**: 100+ (React 19 + Vite, Next.js based)
 - **Key Platforms**: Competency assessment, Career support, Certification prep, LMS
 - **Target**: Universities, Public institutions, Corporations (Custom AI training)
 - **Website**: [www.dreamitbiz.com](https://www.dreamitbiz.com)`,
