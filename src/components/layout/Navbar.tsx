@@ -5,28 +5,15 @@ import { useLanguage } from '../../contexts/LanguageContext';
 import { useAuth } from '../../contexts/AuthContext';
 import { signOut } from '../../utils/auth';
 
-type NavChild = { path: string; ko: string; en: string };
-type NavItem = { ko: string; en: string; path?: string; children?: NavChild[] };
-
-const NAV_ITEMS: NavItem[] = [
+const NAV_ITEMS = [
   { path: '/about', ko: 'About', en: 'About' },
-  {
-    ko: '학습자료', en: 'Materials',
-    children: [
-      { path: '/materials/basic', ko: '기본학습', en: 'Basics' },
-      { path: '/materials/document', ko: '문서행정', en: 'Documents' },
-      { path: '/materials/hr', ko: '인사행정', en: 'HR' },
-    ],
-  },
+  { path: '/materials/basic', ko: '기본학습', en: 'Basics' },
+  { path: '/materials/document', ko: '문서행정', en: 'Documents' },
+  { path: '/materials/hr', ko: '인사행정', en: 'HR' },
   { path: '/prompt-eval', ko: '프롬프트 실습', en: 'Prompt Lab' },
-  {
-    ko: '자료실', en: 'Resources',
-    children: [
-      { path: '/tools', ko: '도구 가이드', en: 'Tool Guide' },
-      { path: '/appendix', ko: '부록', en: 'Appendix' },
-      { path: '/recommended', ko: '추천사이트', en: 'Recommended' },
-    ],
-  },
+  { path: '/tools', ko: '도구 가이드', en: 'Tools' },
+  { path: '/appendix', ko: '부록', en: 'Appendix' },
+  { path: '/recommended', ko: '추천사이트', en: 'Sites' },
   { path: '/community', ko: '커뮤니티', en: 'Community' },
 ];
 
@@ -83,35 +70,14 @@ export default function Navbar() {
 
           <ul className="nav-links">
             {NAV_ITEMS.map((item, idx) => (
-              item.children ? (
-                <li key={idx} className="nav-item nav-item-dropdown">
-                  <span className={`nav-link nav-link-parent ${item.children.some(c => location.pathname.startsWith(c.path)) ? 'active' : ''}`}>
-                    {isKo ? item.ko : item.en}
-                    <i className="fa-solid fa-chevron-down nav-caret" />
-                  </span>
-                  <ul className="nav-dropdown-menu">
-                    {item.children.map((c, ci) => (
-                      <li key={ci}>
-                        <Link
-                          to={c.path}
-                          className={`nav-dropdown-item ${location.pathname.startsWith(c.path) ? 'active' : ''}`}
-                        >
-                          {isKo ? c.ko : c.en}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </li>
-              ) : (
-                <li key={idx} className="nav-item">
-                  <Link
-                    to={item.path || '/'}
-                    className={`nav-link ${item.path && location.pathname.startsWith(item.path) ? 'active' : ''}`}
-                  >
-                    {isKo ? item.ko : item.en}
-                  </Link>
-                </li>
-              )
+              <li key={idx} className="nav-item">
+                <Link
+                  to={item.path}
+                  className={`nav-link ${location.pathname.startsWith(item.path) ? 'active' : ''}`}
+                >
+                  {isKo ? item.ko : item.en}
+                </Link>
+              </li>
             ))}
           </ul>
 
@@ -180,22 +146,11 @@ export default function Navbar() {
       <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
         <ul className="mobile-nav-links">
           {NAV_ITEMS.map((item, idx) => (
-            item.children ? (
-              <li key={idx} className="mobile-nav-group">
-                <div className="mobile-nav-group-title">{isKo ? item.ko : item.en}</div>
-                {item.children.map((c, ci) => (
-                  <Link key={ci} to={c.path} className="mobile-nav-link mobile-nav-sub">
-                    {isKo ? c.ko : c.en}
-                  </Link>
-                ))}
-              </li>
-            ) : (
-              <li key={idx}>
-                <Link to={item.path || '/'} className="mobile-nav-link">
-                  {isKo ? item.ko : item.en}
-                </Link>
-              </li>
-            )
+            <li key={idx}>
+              <Link to={item.path} className="mobile-nav-link">
+                {isKo ? item.ko : item.en}
+              </Link>
+            </li>
           ))}
         </ul>
         <div className="mobile-menu-actions">

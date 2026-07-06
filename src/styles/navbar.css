@@ -45,7 +45,7 @@
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 1px;
     list-style: none;
     flex-wrap: nowrap;
     white-space: nowrap;
@@ -55,9 +55,10 @@
     display: flex;
     align-items: center;
     gap: 4px;
-    padding: 10px 16px;
-    font-size: 15px;
+    padding: 8px 10px;
+    font-size: 14px;
     font-weight: 500;
+    letter-spacing: -0.02em;
     color: var(--text-secondary);
     text-decoration: none;
     border-radius: var(--radius-sm);
@@ -66,6 +67,12 @@
     background: none;
     border: none;
     font-family: inherit;
+    white-space: nowrap;
+}
+/* 좁은 데스크톱에서 더 촘촘하게 (모바일 전환 전) */
+@media (max-width: 1200px) {
+    .navbar-inner { padding: 0 20px; }
+    .nav-link { padding: 8px 8px; font-size: 13.5px; }
 }
 .nav-link:hover,
 .nav-link.active {

@@ -77,18 +77,18 @@ export default {
     {
       title: '보안·윤리·저작권',
       titleEn: 'Security, Ethics, Copyright',
-      content: `- 학생 개인정보·미공개 연구데이터는 교내 정책에 맞게 신중히 다루기
-- AI가 만든 글·코드도 **사실·표절 여부를 검토**한 뒤 사용
-- 논문·과제에 AI를 썼다면 학회/기관의 **AI 사용 지침**을 확인하고 필요한 경우 밝히기
+      content: `- 학생·직원 개인정보(주민번호·연락처·인사기록)는 교내 개인정보 정책에 맞게 신중히 다루기
+- AI가 만든 공문·인사 자료도 **사실·규정 부합 여부를 검토**한 뒤 사용
+- 대외로 나가는 문서는 기관의 **AI 활용·정보보안 지침**을 확인
 - 생성 이미지·자료의 **저작권/라이선스** 확인
-- 전남대GPT는 교내 전용이라 일반 ChatGPT보다 데이터 측면에서 안전하지만, 그래도 **민감정보 최소화** 원칙은 동일
+- 공공 AI 서비스에 입력한 내용은 외부로 나갈 수 있으니, **민감정보는 가리거나 최소화**한 뒤 활용
 
 > "편리함"과 "책임"은 함께 갑니다. AI는 도구, 판단은 사람.`,
-      contentEn: `- Handle student PII and unpublished data per campus policy.
-- Review AI-made text/code for accuracy and plagiarism.
-- Follow your venue's AI-use guidelines; disclose when required.
+      contentEn: `- Handle student/staff PII (IDs, contacts, HR records) per campus privacy policy.
+- Review AI-made documents for accuracy and compliance with regulations.
+- Follow your institution's AI-use and information-security guidelines for outgoing documents.
 - Check copyright/license of generated images/materials.
-- JNU GPT is campus-only and safer, but still minimize sensitive data.`,
+- Content entered into public AI may leave your org — mask or minimize sensitive data.`,
     },
   ],
 };
